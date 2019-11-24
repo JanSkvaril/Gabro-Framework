@@ -1,0 +1,43 @@
+@import '../../colorScheme.scss';
+
+.icon-list {
+    .table-view {
+        td {
+            padding: 15px;
+            padding-right: 20px;
+            padding-left: 20px;
+
+        }
+
+        .table-heading {
+            font-weight: bold;
+            font-size: 20px;
+            text-align: right;
+            min-width: 300px;
+        }
+
+        .table-text {
+            font-size: 18px;
+        }
+
+
+    }
+
+    .list-view {
+        table {
+            font-size: 15px;
+            font-weight: bold;
+
+            //text-align: center;
+            .text-colum {
+                padding-left: 20px;
+
+            }
+
+            .img-colum {
+                width: 82px;
+            }
+        }
+    }
+
+}

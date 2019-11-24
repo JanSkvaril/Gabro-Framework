@@ -1,0 +1,52 @@
+.landing-page {
+    $break-medium: 800px;
+    $break-large: 1300px;
+
+    color: white;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+
+    .icon-tittle {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        color: white;
+    }
+
+    .header {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(+50%, -50%);
+        width: 100%;
+
+        .main-tittle {
+            @media screen and (min-width: $break-medium) {
+                font-size: 100px;
+            }
+
+            @media screen and (min-width: $break-large) {
+                font-size: 150px;
+            }
+
+            margin: 0px;
+            font-size: 50px;
+        }
+
+        .secondary-tittle {
+            @media screen and (min-width: $break-medium) {
+                font-size: 30px;
+            }
+
+            @media screen and (min-width: $break-large) {
+                font-size: 50px;
+            }
+
+            font-size: 25px;
+            margin: 0px;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+.dialog-gallery {
+    .img-holder {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+
+        img {
+            margin: 0px;
+            width: 100%;
+
+            @media screen and (min-width: 800px) {
+                width: 25%;
+
+
+            }
+        }
+    }
+}
