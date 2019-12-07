@@ -21,7 +21,8 @@ class App extends Component {
           mainTittle="Firma skvělá"
           secondaryTittle="Co je fakt super..."
           shadow={true}
-          bg="linear-gradient(#5918b6, #7b1fa2)" />
+          bg="linear-gradient(#5918b6, #7b1fa2)"
+          color="white" />
         <Section
 
         >
@@ -37,7 +38,7 @@ class App extends Component {
           shadow={true}
           color="white"
         >
-          <div className="full">
+          <div className="half">
             <h2>Ceník:</h2>
             <table>
               <tr>
@@ -56,6 +57,9 @@ class App extends Component {
                 <td>15 500,-</td>
               </tr>
             </table>
+          </div>
+          <div className="half">
+            <p>Pokud by se pro stejný účel použil smysluplný text, bylo by těžké hodnotit pouze vzhled, aniž by se pozorovatel nechal svést ke čtení obsahu. </p>
           </div>
         </Section>
       </div>
