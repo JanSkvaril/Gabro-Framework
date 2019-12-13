@@ -1,15 +1,18 @@
 .section {
     $break-medium: 800px;
     $break-large: 1300px;
+
+    position: relative;
     width: 100%;
     min-height: 700px;
     display: flex;
     display: flex;
     // align-items: center;
     justify-content: center;
-    flex-direction:column;
+    flex-direction: column;
+
     @media screen and (min-width: $break-medium) {
-        flex-direction:row;
+        flex-direction: row;
     }
 
 
@@ -82,10 +85,11 @@
         justify-content: center;
         flex-direction: column;
         width: 100%;
+
         @media screen and (min-width: $break-medium) {
-          width: 50%;
+            width: 50%;
         }
-        
+
     }
 
     .full {

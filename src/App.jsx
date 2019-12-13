@@ -6,6 +6,7 @@ import LandingPage from './components/LandingPage/LandingPage';
 import Section from './components/Section/Section';
 import ContactForm from './components/ContactForm/ContactForm';
 import './App.scss'
+import Gallery from './components/Gallery/Gallery';
 
 class App extends Component {
 
@@ -64,6 +65,12 @@ class App extends Component {
               <h2>Kontaktní formulář</h2>
               <p>A možná vám odepíšem ;)</p>
             </ContactForm>
+          </div>
+        </Section>
+
+        <Section>
+          <div className="full">
+            <Gallery pics={12} ext=".jpg" />
           </div>
         </Section>
       </div>

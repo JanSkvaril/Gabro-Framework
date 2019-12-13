@@ -135,4 +135,21 @@ showMessage("Zpráva byla úspěšně odeslána, děkujeme!", "succes");
 * *zprava* - samotný text, co se má zobrazovat
 * *typ* - může být "succes", "error", "normal"
 
+### ContactForm (beta)
+Kontaktní formulář. Vyžaduje soubor send-mail.php v rootové složce finálního webu. V souboru se nastaví mail na který to má chodit, zak zhruba zpráva vypadá apod.
 
+Měl by být v **Section**, importuje si SnackMessages. Není ještě úplně hotový, text fields se špatně upravuje barva, časem se bude mění, zatím používat bílé, nebo světlé pozadí
+
+`import ContactForm from './components/ContactForm/ContactForm';`
+```
+<ContactForm shadow={true} bg="white" color="black">
+    <h2>Kontaktní formulář</h2>
+    <p>A možná vám odepíšem ;)</p>
+</ContactForm>
+```
+* *bg* - co by bylo normálně psáno do css vlastnosti background
+* *color* - barva textu
+* *shadow* - má mít boxshadow - bool
+#### Podporované tagy 
+* `<h2>` - měl by být pouze jeden kvůli responzivitě, zarovnán na prostředek
+* `<p>` - zarovnán do prava
