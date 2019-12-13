@@ -4,6 +4,30 @@ po naklonování:
 `npm i`
 pro spuštění:
 `npm start`
+
+Hlavní frameworky: material-ui, React.js
+## Theming
+U většiny komponent jde nastavit pozadí, barva apod. avšak u komponentů, které používají material-ui (tlačítka, inputy,...) se barva nastavuje v soubory **index.jsx** následovně:
+```
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            main: "#ff00ff",
+            contrastText: "#ffffff"
+        },
+        secondary: {
+            main: "#FFBC42",
+            contrastText: "#000000"
+        }
+    },
+});
+```
+## Constanty
+#### SASS
+```
+$break-medium: 800px;
+$break-large: 1300px;
+```
 ## Komponenty
 ### Navbar
 Navigační panel s odkazi na jednotlivé stránky

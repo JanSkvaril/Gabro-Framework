@@ -1,0 +1,33 @@
+.contact-form {
+    $break-medium: 800px;
+    $break-large: 1300px;
+
+
+
+    width: 90%;
+    max-width: 500px;
+
+    padding: 20px;
+
+
+    h2 {
+        font-size: 35px;
+
+        @media screen and (min-width: $break-medium) {
+            font-size: 50px;
+        }
+    }
+
+    p {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 20px;
+
+
+        @media screen and (min-width: $break-medium) {
+            font-size: 25px;
+        }
+    }
+
+
+}

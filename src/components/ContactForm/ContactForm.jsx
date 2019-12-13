@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { TextField, Button } from '@material-ui/core';
 import { Send } from '@material-ui/icons/';
-import SnackMessages, { showMessage } from '../SnackMesseges/SnackMessages';
+import SnackMessages, { showMessage } from '../SnackMessages/SnackMessages';
+import './ContactForm.scss';
 class ContactForm extends Component {
 
     constructor() {
@@ -80,17 +81,24 @@ class ContactForm extends Component {
     }
 
     render() {
-        return (
-            <div>
-                <SnackMes />
+        let props = this.props;
+        let styles = {
+            boxShadow: props.shadow ? "0px 0px 77px -16px rgba(0,0,0,0.75)" : "none",
+            background: props.bg,
+            color: !!props.color ? props.color : "white",
+        };
 
-                <div className="form">
+        return (
+            <React.Fragment>
+
+
+                <div className="contact-form" style={styles}>
+                    {props.children}
                     <form action="send-mail.php" method="post" id="mailForm">
-                        <h2>Kontaktní formulář</h2>
                         <TextField
                             label="Váš E-mail"
                             margin="normal"
-                            color="primary"
+                            color="secondary"
                             name="mailAdress"
                             value={this.state.mailAdress}
                             onChange={this.handleInputChange}
@@ -100,7 +108,7 @@ class ContactForm extends Component {
                         <TextField
                             id="outlined-multiline-flexible"
                             label="Vaše zpráva"
-                            color="primary"
+                            color="secondary"
                             multiline
                             rows={10}
                             //rowsMax={12}
@@ -116,7 +124,8 @@ class ContactForm extends Component {
                         </Button>
                     </form>
                 </div>
-            </div>
+                <SnackMessages />
+            </React.Fragment>
         );
     }
 }

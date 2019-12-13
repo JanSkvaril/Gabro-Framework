@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import LandingPage from './components/LandingPage/LandingPage';
 import Section from './components/Section/Section';
+import ContactForm from './components/ContactForm/ContactForm';
 import './App.scss'
 
 class App extends Component {
@@ -59,7 +60,10 @@ class App extends Component {
             </table>
           </div>
           <div className="half">
-            <p>Pokud by se pro stejný účel použil smysluplný text, bylo by těžké hodnotit pouze vzhled, aniž by se pozorovatel nechal svést ke čtení obsahu. </p>
+            <ContactForm shadow={true} bg="white" color="black">
+              <h2>Kontaktní formulář</h2>
+              <p>A možná vám odepíšem ;)</p>
+            </ContactForm>
           </div>
         </Section>
       </div>
