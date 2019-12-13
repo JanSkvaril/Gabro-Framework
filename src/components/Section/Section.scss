@@ -7,6 +7,10 @@
     display: flex;
     // align-items: center;
     justify-content: center;
+    flex-direction:column;
+    @media screen and (min-width: $break-medium) {
+        flex-direction:row;
+    }
 
 
     h2 {
@@ -77,10 +81,11 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-
-        // min-height: 500px;
-        // height: 100%;
-        width: 50%;
+        width: 100%;
+        @media screen and (min-width: $break-medium) {
+          width: 50%;
+        }
+        
     }
 
     .full {

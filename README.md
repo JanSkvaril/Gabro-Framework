@@ -6,6 +6,8 @@ pro spuštění:
 `npm start`
 ## Komponenty
 ### Navbar
+Navigační panel s odkazi na jednotlivé stránky
+
 `import Navbar from './components/Navbar/Navbar';`
 
 ```
@@ -26,6 +28,8 @@ pro spuštění:
 * *trans* - jestli bude navbar na landing page průhledný - bool
 
 ### Landing page
+"Přístávací stránka" - první věc co se uživateli zobrazí
+
 `import LandingPage from './components/LandingPage/LandingPage';`
 ```
 <LandingPage
@@ -41,6 +45,8 @@ pro spuštění:
 * *color* - barva textu
 
 ### Section
+Sekce zabírá 100% šířku a nějakou výšku, může obsahovat cokoliv. Například rubriky jako o nás, služby a podobně. Dále třeba ceník, kontaktní formulář. Sekce navíc styluje určité tagy jako nadpisy, text a podobně, viz níže. Některé komponenty musí být v sekci.
+
 `import Section from './components/Section/Section';`
 ```
 <Section 
@@ -88,4 +94,21 @@ Přepůlí sekci
 * `<table> <tr> <td>`
 * `<h2> <h3>`
 * `<p>`
+
+### SnackMessages
+Zobrazí zprávu v nějakém rohu. Zpráva může být succes, error, nebo jenom obyčejná zpráva.
+
+`import SnackMessages, { showMessage } from './SnackMessages/SnackMessages';`
+
+```
+<SnackMes />
+
+...
+
+showMessage("Zpráva byla úspěšně odeslána, děkujeme!", "succes");
+```
+#### *showMessage(*string zprava*, *string typ*)*
+* *zprava* - samotný text, co se má zobrazovat
+* *typ* - může být "succes", "error", "normal"
+
 
