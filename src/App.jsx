@@ -9,9 +9,6 @@ import './App.scss'
 import Gallery from './components/Gallery/Gallery';
 
 class App extends Component {
-
-
-
   render() {
     return (
       <div>

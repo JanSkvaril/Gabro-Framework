@@ -8,7 +8,7 @@ pro spuštění:
 Hlavní frameworky: material-ui, React.js
 ## Theming
 U většiny komponent jde nastavit pozadí, barva apod. avšak u komponentů, které používají material-ui (tlačítka, inputy,...) se barva nastavuje v soubory **index.jsx** následovně:
-```
+```jsx
 const theme = createMuiTheme({
     palette: {
         primary: {
@@ -24,17 +24,52 @@ const theme = createMuiTheme({
 ```
 ## Constanty
 #### SASS
+Minimální rozlišení
 ```
 $break-medium: 800px;
 $break-large: 1300px;
 ```
+## Jak s frameworkem pracovat
+Vše se odehrává v souboru **App.jsx**, ten v základu vypadá nějak takto:
+```jsx
+import React, { Component } from 'react';
+
+//zde se importují komponenty
+import Navbar from './components/Navbar/Navbar';
+import LandingPage from './components/LandingPage/LandingPage';
+
+import './App.scss'
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        //zde se jednotlivé komponenty vkládají
+        <Navbar
+          tittle="Firma skvělá"
+          menu={[{ text: "Test", link: "/" }]}
+          color="#ff12aa" txtColor="black" />
+        <LandingPage
+          mainTittle="Firma skvělá"
+          secondaryTittle="Co je fakt super..."
+          shadow={true}
+          bg="linear-gradient(#5918b6, #7b1fa2)"
+          color="white" />
+      </div>
+    );
+  }
+}
+
+export default App;
+```
+Pro dodatečné stylování slouží **App.scss**, ale smyslem frameworku je co nejméně používat vlastní styli.
 ## Komponenty
 ### Navbar
 Navigační panel s odkazi na jednotlivé stránky
 
 `import Navbar from './components/Navbar/Navbar';`
 
-```
+```jsx
 <Navbar
     tittle="Firma skvělá"
     menu={
@@ -55,7 +90,7 @@ Navigační panel s odkazi na jednotlivé stránky
 "Přístávací stránka" - první věc co se uživateli zobrazí
 
 `import LandingPage from './components/LandingPage/LandingPage';`
-```
+```jsx
 <LandingPage
     mainTittle="Firma skvělá"
     secondaryTittle="Co je fakt super..."
@@ -72,7 +107,7 @@ Navigační panel s odkazi na jednotlivé stránky
 Sekce zabírá 100% šířku a nějakou výšku, může obsahovat cokoliv. Například rubriky jako o nás, služby a podobně. Dále třeba ceník, kontaktní formulář. Sekce navíc styluje určité tagy jako nadpisy, text a podobně, viz níže. Některé komponenty musí být v sekci.
 
 `import Section from './components/Section/Section';`
-```
+```jsx
 <Section 
     bg="linear-gradient(#5918b6, #7b1fa2)"
     shadow={true}
@@ -94,7 +129,7 @@ Sekce zabírá 100% šířku a nějakou výšku, může obsahovat cokoliv. Např
 Uvnitř **Section** vždy musí být buď **half** nebo **full**. Na poloviny je normálně možné dávat další styly. 
 
 Přepůlí sekci
-```
+```jsx
 <Section>
     <div className="half">
         <p>Nějaký text.</p>
@@ -106,7 +141,7 @@ Přepůlí sekci
 ```
 
 100% šířka 
-```
+```jsx
 <Section>
     <div className="full">
         <p>Nějaký text.</p>
@@ -124,7 +159,7 @@ Zobrazí zprávu v nějakém rohu. Zpráva může být succes, error, nebo jenom
 
 `import SnackMessages, { showMessage } from './SnackMessages/SnackMessages';`
 
-```
+```jsx
 <SnackMes />
 
 ...
@@ -141,7 +176,7 @@ Kontaktní formulář. Vyžaduje soubor send-mail.php v rootové složce fináln
 Měl by být v **Section**, importuje si SnackMessages. Není ještě úplně hotový, text fields se špatně upravuje barva, časem se bude mění, zatím používat bílé, nebo světlé pozadí
 
 `import ContactForm from './components/ContactForm/ContactForm';`
-```
+```jsx
 <ContactForm shadow={true} bg="white" color="black">
     <h2>Kontaktní formulář</h2>
     <p>A možná vám odepíšem ;)</p>
@@ -153,3 +188,5 @@ Měl by být v **Section**, importuje si SnackMessages. Není ještě úplně ho
 #### Podporované tagy 
 * `<h2>` - měl by být pouze jeden kvůli responzivitě, zarovnán na prostředek
 * `<p>` - zarovnán do prava
+
+### Galerie
