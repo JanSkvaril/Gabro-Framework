@@ -1,5 +1,7 @@
 # Gabro Framework 1.0
 ## Jak spustit
+V počítači je nutno mít nainstalováno Node.js!!!!
+
 po naklonování:
 `npm i`
 pro spuštění:
