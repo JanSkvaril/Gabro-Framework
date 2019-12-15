@@ -1,5 +1,7 @@
 # Gabro Framework 1.0
 ## Jak spustit
+V počítači je nutno mít nainstalováno Node.js!!!!
+
 po naklonování:
 `npm i`
 pro spuštění:
@@ -188,5 +190,8 @@ Měl by být v **Section**, importuje si SnackMessages. Není ještě úplně ho
 #### Podporované tagy 
 * `<h2>` - měl by být pouze jeden kvůli responzivitě, zarovnán na prostředek
 * `<p>` - zarovnán do prava
+<<<<<<< HEAD
 
 ### Galerie
+=======
+>>>>>>> 584f754ef8381a5531930298d22f5121e15645e3
