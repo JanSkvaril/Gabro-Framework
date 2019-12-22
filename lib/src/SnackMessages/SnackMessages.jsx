@@ -21,17 +21,17 @@ const styles = theme => ({
 })
 
 class SnackMes extends React.Component {
-    state = {
-        open: false,
-        text: "",
-        type: "normal"
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            open: false,
+            text: "",
+            type: "normal"
+        };
+    }
 
-    handleClick = () => {
-        this.setState({ open: true });
-    };
 
-    handleClose = (event, reason) => {
+    handleClose(event, reason) {
         if (reason === 'clickaway') {
             return;
         }
@@ -53,7 +53,7 @@ class SnackMes extends React.Component {
                     }}
                     open={this.state.open}
                     autoHideDuration={5000}
-                    onClose={this.handleClose}
+                    onClose={this.handleClose.bind(this)}
                     ContentProps={{
                         'aria-describedby': 'message-id',
                     }}
@@ -67,7 +67,7 @@ class SnackMes extends React.Component {
                                     key="close"
                                     aria-label="Close"
                                     color="inherit"
-                                    onClick={this.handleClose}
+                                    onClick={this.handleClose.bind(this)}
                                 >
                                     <Close />
 

@@ -1,13 +1,10 @@
 
 import React, { Component } from 'react';
 
-import Navbar from './components/Navbar/Navbar';
-import LandingPage from './components/LandingPage/LandingPage';
-import Section from './components/Section/Section';
-import ContactForm from './components/ContactForm/ContactForm';
-import './App.scss'
-import Gallery from './components/Gallery/Gallery';
+import { Navbar, LandingPage, Section, ContactForm } from 'gabro_framework'; //imports framework
+import './App.scss'; //custom css
 
+console.log(Navbar)
 class App extends Component {
   render() {
     return (
@@ -65,11 +62,7 @@ class App extends Component {
           </div>
         </Section>
 
-        <Section>
-          <div className="full">
-            <Gallery pics={12} ext=".jpg" />
-          </div>
-        </Section>
+
       </div>
     );
   }

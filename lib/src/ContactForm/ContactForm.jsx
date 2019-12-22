@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { TextField, Button } from '@material-ui/core';
 import { Send } from '@material-ui/icons/';
-import SnackMessages, { showMessage } from '../SnackMessages/SnackMessages';
+import SnackMessages, { showMessage } from '../SnackMessages/SnackMessages.jsx';
 import './ContactForm.scss';
 class ContactForm extends Component {
 
