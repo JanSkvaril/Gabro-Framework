@@ -46,8 +46,8 @@
     p {
         font-size: 20px;
         max-width: 80%;
-        margin-top: 50px;
-        margin-bottom: 50px;
+        margin-top: 25px;
+        margin-bottom: 25px;
         text-align: justify;
 
         @media screen and (min-width: $break-medium) {
@@ -97,5 +97,6 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        padding-bottom: 40px;
     }
 }

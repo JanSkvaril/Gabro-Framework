@@ -78,7 +78,7 @@ class Navbar extends Component {
     render() {
         let styles = {
             top: this.state.navbarHidden ? "-70px" : "0px",
-            backgroundColor: this.props.color,
+            background: this.props.color,
             color: this.props.txtColor,
         }
         if (this.state.transparent) styles.backgroundColor = "transparent";

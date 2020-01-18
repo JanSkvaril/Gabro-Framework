@@ -104,6 +104,7 @@ Navigační panel s odkazi na jednotlivé stránky
 * *shadow* - má mít boxshadow - bool
 * *bg* - co by bylo normálně psáno do css vlastnosti background
 * *color* - barva textu
+* *bgSize* - css styl background-size, default: cover
 
 ### Section
 Sekce zabírá 100% šířku a nějakou výšku, může obsahovat cokoliv. Například rubriky jako o nás, služby a podobně. Dále třeba ceník, kontaktní formulář. Sekce navíc styluje určité tagy jako nadpisy, text a podobně, viz níže. Některé komponenty musí být v sekci.

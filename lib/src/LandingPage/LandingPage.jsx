@@ -7,6 +7,8 @@ const LandingPage = (props) => {
         boxShadow: props.shadow ? "0px 0px 77px -16px rgba(0,0,0,0.75)" : "none",
         background: props.bg,
         color: !!props.color ? props.color : "white",
+        backgroundSize: !!props.bgSize ? props.bgSize : "cover",
+        zIndex: !!props.shadow ? 5 : -1,
     };
     return (
         <div className="landing-page" style={styles}>
