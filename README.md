@@ -87,6 +87,7 @@ Navigační panel s odkazi na jednotlivé stránky
 * *color* - barva pozadí navbaru
 * *txtColor* - barva odkazů
 * *trans* - jestli bude navbar na landing page průhledný - bool
+* *bgFilter* - "backdrop-filter", například blur(5px), apod.
 
 ### Landing page
 "Přístávací stránka" - první věc co se uživateli zobrazí

@@ -34,7 +34,7 @@ class Navbar extends Component {
                 //transparent navbar when on top
                 if (this.props.trans) {
                     if (window.pageYOffset < 100) {
-                        if (this.state.transparent != true && this.state.navbarHidden != false) {
+                        if (this.state.transparent != true) {
                             this.setState({
                                 transparent: true
                             })
@@ -80,8 +80,9 @@ class Navbar extends Component {
             top: this.state.navbarHidden ? "-70px" : "0px",
             background: this.props.color,
             color: this.props.txtColor,
+            backdropFilter: !!this.props.bgFilter ? this.props.bgFilter : "",
         }
-        if (this.state.transparent) styles.backgroundColor = "transparent";
+        if (this.state.transparent) styles.background = "transparent";
 
         let menuButtons = [];
         let listButtons = [];
@@ -133,7 +134,7 @@ class Navbar extends Component {
                 >
                     <div className="drawerBg"
                         style={{
-                            backgroundColor: this.props.color,
+                            background: this.props.color,
                             color: this.props.txtColor,
                         }}>
                         <List>
