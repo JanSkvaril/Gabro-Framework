@@ -128,6 +128,7 @@ Sekce zabírá 100% šířku a nějakou výšku, může obsahovat cokoliv. Např
 * *bg* - co by bylo normálně psáno do css vlastnosti background
 * *color* - barva textu
 * *shadow* - má mít boxshadow - bool
+* *backgroundSize* - css styl background-size, default: cover
 
 #### half / full
 Uvnitř **Section** vždy musí být buď **half** nebo **full**. Na poloviny je normálně možné dávat další styly. 
@@ -215,4 +216,5 @@ Karty, ideální pro služby a podobně. Do prostoru icon jde dát buď ikonku, 
 * *conColor* - barva textu v kontent
 * *headline* - nadpis pod icon
 * *icon* - svg které bude vloženo jako icon
+* *bgFilter* - "backdrop-filter", například blur(5px), apod.
 

@@ -6,6 +6,7 @@ const Section = (props) => {
         background: !!props.bg ? props.bg : "#ffffff",
         zIndex: !!props.shadow ? 5 : -1,
         color: !!props.color ? props.color : "#000000",
+        backgroundSize: !!props.bgSize ? props.bgSize : "cover",
     };
     return (
         <div className="section" style={styles}>

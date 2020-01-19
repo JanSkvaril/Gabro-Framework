@@ -6,6 +6,7 @@ const Card = (props) => {
     let styles = {
         boxShadow: !!props.shadow ? "0px 3.78437px 37.8437px rgba(0, 0, 0, 0.25)" : "none",
         height: !!props.height ? props.height : "310px",
+        backdropFilter: !!props.bgFilter ? props.bgFilter : "",
     };
     let iconStyles = {
         background: !!props.iconBg ? props.iconBg : "#ffffff",
