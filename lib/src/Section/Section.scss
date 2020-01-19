@@ -99,4 +99,9 @@
         flex-direction: column;
         padding-bottom: 40px;
     }
+
+    .full.row {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 }
