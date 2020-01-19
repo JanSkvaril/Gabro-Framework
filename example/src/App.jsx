@@ -1,9 +1,9 @@
 
 import React, { Component } from 'react';
 
-import { Navbar, LandingPage, Section, ContactForm } from 'gabro_framework'; //imports framework
+import { Navbar, LandingPage, Section, ContactForm, Card } from 'gabro_framework'; //imports framework
 import './App.scss'; //custom css
-
+import AndroidIcon from '@material-ui/icons/Android';
 console.log(Navbar)
 class App extends Component {
   render() {
@@ -55,10 +55,16 @@ class App extends Component {
             </table>
           </div>
           <div className="half">
-            <ContactForm shadow={true} bg="white" color="black">
-              <h2>Kontaktní formulář</h2>
-              <p>A možná vám odepíšem ;)</p>
-            </ContactForm>
+            <Card
+              shadow={true}
+              iconBg="rgb(255, 18, 170)"
+              iconColor="white"
+              conBg="white"
+              conColor="black"
+              headline="služby"
+              icon={<AndroidIcon />}>
+              Kontent
+            </Card>
           </div>
         </Section>
 

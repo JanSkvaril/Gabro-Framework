@@ -192,3 +192,27 @@ Měl by být v **Section**, importuje si SnackMessages. Není ještě úplně ho
 #### Podporované tagy 
 * `<h2>` - měl by být pouze jeden kvůli responzivitě, zarovnán na prostředek
 * `<p>` - zarovnán do prava
+
+### Card
+Karty, ideální pro služby a podobně. Do prostoru icon jde dát buď ikonku, nebo bacground-image
+
+```jsx
+ <Card
+    shadow={true}
+    iconBg="rgb(255, 18, 170)"
+    iconColor="white"
+    conBg="white"
+    conColor="black"
+    headline="služby"
+    icon={<AndroidIcon />}>
+        Kontent
+</Card>
+```
+* *shadow* - má mít boxshadow - bool
+* *iconBg* - background styly prostoru pro icon
+* *iconColor* - barva nadpisu a ikonky v prostoru icon
+* *conBg* - background styly prostoru pro kontent
+* *conColor* - barva textu v kontent
+* *headline* - nadpis pod icon
+* *icon* - svg které bude vloženo jako icon
+
