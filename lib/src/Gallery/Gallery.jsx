@@ -7,12 +7,11 @@ class Gallery extends Component {
         super(props);
         this.state = {
             photoIndex: 0,
-            zoomed: false,
+            zoomed: true,
         }
-        this.images = [];
-        for (let i = 1; i < this.props.pics; i++) {
-            this.images.push(require('../../imgs/' + i + '_img' + this.props.ext))
-        }
+        this.images = this.props.imgs;
+
+
     }
     ToggleZoom() {
         console.log(this.state.zoomed);
@@ -41,6 +40,7 @@ class Gallery extends Component {
         let lBox = null;
         if (this.state.zoomed) {
             lBox = <Lightbox
+
                 mainSrc={images[photoIndex]}
                 nextSrc={images[(photoIndex + 1) % images.length]}
                 prevSrc={images[(photoIndex + images.length - 1) % images.length]}

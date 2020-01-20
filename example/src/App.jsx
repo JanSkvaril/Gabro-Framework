@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 
-import { Navbar, LandingPage, Section, ContactForm, Card } from 'gabro_framework'; //imports framework
+import { Navbar, LandingPage, Section, Gallery, Card } from 'gabro_framework'; //imports framework
 import './App.scss'; //custom css
 import AndroidIcon from '@material-ui/icons/Android';
 console.log(Navbar)
@@ -65,6 +65,21 @@ class App extends Component {
               icon={<AndroidIcon />}>
               Kontent
             </Card>
+          </div>
+        </Section>
+
+        <Section>
+          <div className="full">
+            <Gallery imgs={(() => {
+              let a = []
+              for (; a.length < 4;) {
+
+                a.push(require("./imgs/" + (a.length + 1) + "_img.jpg"));
+                console.log(a);
+              }
+              return a;
+            }
+            )()} />
           </div>
         </Section>
 
