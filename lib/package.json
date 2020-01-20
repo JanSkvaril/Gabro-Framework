@@ -16,6 +16,7 @@
     "css-loader": "^3.4.0",
     "node-sass": "^4.13.1",
     "react-image-lightbox": "^5.1.1",
+    "react-lightbox-component": "^1.2.1",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.1.1",
     "webpack": "4.41.2"

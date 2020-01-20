@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './Gallery.scss';
 import Lightbox from 'react-image-lightbox';
-
+import 'react-image-lightbox/style.css';
 class Gallery extends Component {
     constructor(props) {
         super(props);
         this.state = {
             photoIndex: 0,
-            zoomed: true,
+            zoomed: false,
         }
         this.images = this.props.imgs;
 
