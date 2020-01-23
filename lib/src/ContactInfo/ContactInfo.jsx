@@ -5,7 +5,7 @@ import { Phone, PhoneAndroid, EmailOutlined, LocationOn } from '@material-ui/ico
 function getPhoneNumberString(string) {
     return (
         <React.Fragment>
-            &nbsp;{string.substring(0, 2)}&nbsp;{string.substring(3, 5)}&nbsp;{string.substring(6, 8)}
+            &nbsp;{string.substring(0, 3)}&nbsp;{string.substring(3, 6)}&nbsp;{string.substring(6, 9)}
         </React.Fragment>)
 
 }
@@ -29,7 +29,7 @@ const ContactInfo = (props) => {
         color: !!props.color ? props.color : "#000000",
         backgroundSize: !!props.bgSize ? props.bgSize : "cover",
     };
-    let sections = createContactSections();
+    let sections = createContactSections(props);
 
 
     return (
@@ -47,8 +47,8 @@ function createContactSections(props) {
         for (let item of props.phone) {
             rows.push(
                 <tr>
-                    <td>{item.name}</td>
-                    <td>
+                    <td className="left">{item.name}</td>
+                    <td className="right">
                         <strong>
                             <Phone fontSize="small" className="text-icon" />
                             {getPhoneNumberString(item.number)}
@@ -63,8 +63,8 @@ function createContactSections(props) {
         for (let item of props.mobile) {
             rows.push(
                 <tr>
-                    <td>{item.name}</td>
-                    <td>
+                    <td className="left">{item.name}</td>
+                    <td className="right">
                         <strong>
                             <PhoneAndroid fontSize="small" className="text-icon" />
                             {getPhoneNumberString(item.number)}
@@ -79,14 +79,14 @@ function createContactSections(props) {
         for (let item of props.email) {
             rows.push(
                 <tr>
-                    <td>{item.name}</td>
-                    <td>
+                    <td className="left">{item.name}</td>
+                    <td className="right">
                         <strong><EmailOutlined fontSize="small" className="text-icon" />&nbsp;{item.email}</strong>
                     </td>
                 </tr>
             )
         }
-        sections.push({ wrapWithSectionTable(rows) });
+        sections.push(wrapWithSectionTable(rows));
     }
     if (!!props.place) {
         sections.push(
@@ -102,8 +102,8 @@ function createContactSections(props) {
         for (let item of props.mobile) {
             rows.push(
                 <tr>
-                    <td>{item.name}</td>
-                    <td>
+                    <td className="left">{item.name}</td>
+                    <td className="right">
                         <strong>
                             {item.text}
                         </strong></td>

@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 
-import { Navbar, LandingPage, Section, Gallery, Card } from 'gabro_framework'; //imports framework
+import { Navbar, LandingPage, Section, Gallery, Card, ContactInfo } from 'gabro_framework'; //imports framework
 import './App.scss'; //custom css
 import AndroidIcon from '@material-ui/icons/Android';
 console.log(Navbar)
@@ -35,24 +35,12 @@ class App extends Component {
           color="white"
         >
           <div className="half">
-            <h2>Ceník:</h2>
-            <table>
-              <tr>
-                <td>Služba</td>
-                <td>Čas</td>
-                <td>Cena</td>
-              </tr>
-              <tr>
-                <td>Uklízení</td>
-                <td>10:50</td>
-                <td>10 000,-</td>
-              </tr>
-              <tr>
-                <td>Něco jinýho</td>
-                <td>10:00</td>
-                <td>15 500,-</td>
-              </tr>
-            </table>
+            <ContactInfo
+              phone={[
+                { name: "Honza Nějaký", number: "776555222" },
+                { name: "Honza Jiný", number: "752252358" }]}
+              place="Někde super"
+              email={[{ name: "Franta Zahradník", email: "franta@zahr.cz" }]} />
           </div>
           <div className="half">
             <Card
