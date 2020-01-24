@@ -8,8 +8,10 @@ const Section = (props) => {
         color: !!props.color ? props.color : "#000000",
         backgroundSize: !!props.bgSize ? props.bgSize : "cover",
     };
+    let classes = "section";
+    if (!!props.styled) classes += " styled";
     return (
-        <div className="section" style={styles}>
+        <div className={classes} style={styles}>
             {props.children}
         </div>
     );

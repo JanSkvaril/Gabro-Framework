@@ -34,7 +34,6 @@ const ContactInfo = (props) => {
 
     return (
         <div className="contact-info">
-            <h3>Kontakt</h3>
             {sections}
         </div>
     );

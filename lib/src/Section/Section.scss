@@ -1,20 +1,6 @@
-.section {
+@mixin styled {
     $break-medium: 800px;
     $break-large: 1300px;
-
-    position: relative;
-    width: 100%;
-    min-height: 700px;
-    display: flex;
-    display: flex;
-    // align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-    @media screen and (min-width: $break-medium) {
-        flex-direction: row;
-    }
-
 
     h2 {
         text-align: center;
@@ -78,6 +64,28 @@
 
         }
     }
+}
+
+.section {
+    $break-medium: 800px;
+    $break-large: 1300px;
+
+    position: relative;
+    width: 100%;
+    min-height: 700px;
+    display: flex;
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    @media screen and (min-width: $break-medium) {
+        flex-direction: row;
+    }
+
+    .styled {
+        @include styled();
+    }
 
     .half {
         display: flex;
@@ -104,4 +112,8 @@
         flex-direction: row;
         flex-wrap: wrap;
     }
+}
+
+.section.styled {
+    @include styled;
 }

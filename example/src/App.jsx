@@ -19,7 +19,7 @@ class App extends Component {
           shadow={true}
           bg="linear-gradient(#5918b6, #7b1fa2)"
           color="white" />
-        <Section
+        <Section styled
 
         >
           <div className="full">
