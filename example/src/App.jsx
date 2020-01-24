@@ -25,6 +25,7 @@ class App extends Component {
           <div className="full">
             <h2>O nás</h2>
             <h3>Aneb něco</h3>
+            <h4>Malej uplně</h4>
             <p>Pokud by se pro stejný účel použil smysluplný text, bylo by těžké hodnotit pouze vzhled, aniž by se pozorovatel nechal svést ke čtení obsahu. Pokud by byl naopak použit nesmyslný, ale pravidelný text (např. opakování „asdf asdf asdf…“), oko by při posuzování vzhledu bylo vyrušováno pravidelnou strukturou textu, která se od běžného textu liší. Text lorem ipsum na první pohled připomíná běžný text, slova jsou různě dlouhá, frekvence písmen je podobná běžné řeči, interpunkce vypadá přirozeně atd.</p>
           </div>
 
@@ -51,7 +52,7 @@ class App extends Component {
               conColor="black"
               headline="služby"
               icon={<AndroidIcon />}>
-              Kontent
+              Možnost stravování formou snídaní, polopenzí i plnou penzí. Připravíme pro Vás svatbu, rodinnou oslavu, firemní večírek, rauty a jiné.
             </Card>
           </div>
         </Section>
