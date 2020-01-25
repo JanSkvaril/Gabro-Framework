@@ -1,7 +1,6 @@
-@mixin styled {
-    $break-medium: 800px;
-    $break-large: 1300px;
+@import '../variables';
 
+@mixin styled {
     h2 {
         text-align: center;
         margin-top: 50px;
@@ -80,9 +79,6 @@
 }
 
 .section {
-    $break-medium: 800px;
-    $break-large: 1300px;
-
     position: relative;
     width: 100%;
     min-height: 450px;

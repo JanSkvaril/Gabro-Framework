@@ -1,6 +1,7 @@
 import React from 'react';
 import './ContactInfo.scss';
-import { Phone, PhoneAndroid, EmailOutlined, LocationOn } from '@material-ui/icons/';
+import { Phone, PhoneAndroid, EmailOutlined, LocationOn, Facebook } from '@material-ui/icons/';
+import { Link } from '@material-ui/core';
 
 function getPhoneNumberString(string) {
     return (
@@ -90,9 +91,18 @@ function createContactSections(props) {
     if (!!props.place) {
         sections.push(
             <div className="contact-info-section">
-                <strong>
-                    <LocationOn fontSize="small" className="text-icon" />&nbsp;{props.place}
-                </strong>
+
+                <LocationOn fontSize="small" className="text-icon" />&nbsp;{props.place}
+
+            </div>
+        );
+    }
+    if (!!props.facebook) {
+        sections.push(
+            <div className="contact-info-section">
+                <a href={props.facebook} target="_blank">
+                    <Facebook fontSize="small" className="text-icon" />&nbsp;Facebook
+                </a>
             </div>
         );
     }

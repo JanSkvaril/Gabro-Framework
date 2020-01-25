@@ -1,3 +1,5 @@
+@import '../variables';
+
 .gallery {
     width: 100%;
     display: flex;
@@ -13,7 +15,7 @@
         width: 100%;
         height: auto;
 
-        @media screen and (min-width: 800px) {
+        @media screen and (min-width: $break-medium) {
             width: auto;
             height: 250px;
         }

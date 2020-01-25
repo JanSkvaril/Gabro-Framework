@@ -1,10 +1,26 @@
+@import '../variables';
+
 .contact-info {
     width: 90%;
     max-width: 600px;
     font-size: 15px !important;
 
-    @media screen and (min-width: 500px) {
+    @media screen and (min-width: $break-small) {
         font-size: 20px !important;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        padding: 5px;
+
+        transition: 0.4s;
+    }
+
+    a:hover {
+
+        transition: 0.25s;
+        background-color: rgba(0, 0, 0, 0.3);
     }
 
     table {
@@ -17,7 +33,7 @@
             vertical-align: top;
             font-size: 15px !important;
 
-            @media screen and (min-width: 500px) {
+            @media screen and (min-width: $break-small) {
                 font-size: 20px !important;
             }
         }

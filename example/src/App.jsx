@@ -41,7 +41,9 @@ class App extends Component {
                 { name: "Honza Nějaký", number: "776555222" },
                 { name: "Honza Jiný", number: "752252358" }]}
               place="Někde super"
-              email={[{ name: "Franta Zahradník", email: "franta@zahr.cz" }]} />
+              email={[{ name: "Franta Zahradník", email: "franta@zahr.cz" }]}
+              facebook="https://www.google.com/" />
+
           </div>
           <div className="half">
             <Card

@@ -1,6 +1,6 @@
 {
   "name": "gabro_framework",
-  "version": "1.0.26",
+  "version": "1.0.27",
   "description": "Framework for rapid and simple web development",
   "main": "build/index.js",
   "directories": {
