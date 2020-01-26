@@ -79,14 +79,19 @@ function createContactSections(props) {
         for (let item of props.email) {
             rows.push(
                 <tr>
-                    <td className="left">{item.name}</td>
-                    <td className="right">
+                    {/* <td className="left">{item.name}</td> */}
+                    <td
+                    //  className="right"
+                    >
                         <strong><EmailOutlined fontSize="small" className="text-icon" />&nbsp;{item.email}</strong>
                     </td>
                 </tr>
             )
         }
-        sections.push(wrapWithSectionTable(rows));
+        sections.push(
+            wrapWithSectionTable(rows)
+
+        );
     }
     if (!!props.place) {
         sections.push(
