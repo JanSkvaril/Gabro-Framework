@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 
-import { Navbar, LandingPage, Section, Gallery, Card, ContactInfo } from 'gabro_framework'; //imports framework
+import { Navbar, LandingPage, Section, Gallery, Card, ContactInfo, ContactForm } from 'gabro_framework'; //imports framework
 import './App.scss'; //custom css
 import AndroidIcon from '@material-ui/icons/Android';
 console.log(Navbar)
@@ -71,6 +71,11 @@ class App extends Component {
               return a;
             }
             )()} />
+          </div>
+        </Section>
+        <Section>
+          <div className="full">
+            <ContactForm formColor="#f500ff" />
           </div>
         </Section>
 

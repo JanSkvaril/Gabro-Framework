@@ -11,13 +11,13 @@ const LandingPage = (props) => {
         zIndex: !!props.shadow ? 5 : -1,
     };
     return (
-        <div className="landing-page" style={styles}>
+        <div className="landing-page" style={styles} id="landing-page">
             <span className="header">
                 <h1 className="main-tittle" >{props.mainTittle}</h1>
                 <h2 className="secondary-tittle"> {props.secondaryTittle}</h2>
             </span>
 
-            <IconButton className="icon-tittle">
+            <IconButton className="icon-tittle" href={props.link}>
                 <KeyboardArrowDown fontSize="large" />
             </IconButton>
         </div>
