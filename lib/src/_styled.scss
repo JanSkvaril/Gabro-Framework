@@ -1,0 +1,133 @@
+@mixin h2 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 50px;
+
+    @media screen and (min-width: $break-medium) {
+        font-size: 70px;
+    }
+
+    @media screen and (min-width: $break-large) {
+        font-size: 100px;
+    }
+}
+
+@mixin h3 {
+    text-align: center;
+    font-size: 25px;
+
+    @media screen and (min-width: $break-medium) {
+        font-size: 30px;
+    }
+
+    @media screen and (min-width: $break-large) {
+        font-size: 50px;
+    }
+}
+
+@mixin h4 {
+    text-align: center;
+    font-size: 20px;
+
+    @media screen and (min-width: $break-medium) {
+        font-size: 25px;
+    }
+
+    @media screen and (min-width: $break-large) {
+        font-size: 40px;
+    }
+}
+
+@mixin p {
+    font-size: 20px;
+    max-width: 80%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: justify;
+
+    @media screen and (min-width: $break-medium) {
+        font-size: 25px;
+    }
+
+    @media screen and (min-width: $break-large) {
+        font-size: 30px;
+    }
+}
+
+@mixin table {
+    font-size: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+
+    @media screen and (min-width: $break-medium) {
+        font-size: 25px;
+    }
+
+    @media screen and (min-width: $break-large) {
+        font-size: 30px;
+    }
+
+    td {
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+}
+
+@mixin styledOnParent {
+    h2 {
+        @include h2;
+    }
+
+    h3 {
+        @include h3;
+    }
+
+    h4 {
+        @include h4;
+    }
+
+    p {
+        @include p;
+    }
+
+    table {
+        @include table;
+    }
+}
+
+
+@mixin styledOnTag {
+    h2.styled {
+        @include h2;
+    }
+
+    h3.styled {
+        @include h3;
+    }
+
+    h4.styled {
+        @include h4;
+    }
+
+    p.styled {
+        @include p;
+    }
+
+    table.styled {
+        @include table;
+    }
+}
+
+@mixin styledClass {
+    .styled {
+        @include styledOnParent;
+    }
+}
+
+@mixin styled {
+    @include styledClass;
+    @include styledOnTag;
+}

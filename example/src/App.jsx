@@ -73,9 +73,56 @@ class App extends Component {
             )()} />
           </div>
         </Section>
-        <Section>
+        <Section styled>
           <div className="full">
-            <ContactForm formColor="#f500ff" />
+            <h2>Nadpis</h2>
+          </div>
+          <div className="half">
+            <p>Pokud by se pro stejný účel použil smysluplný text, bylo by těžké hodnotit pouze vzhled, aniž by se pozorovatel nechal svést ke čtení obsahu. Pokud by byl naopak použit nesmyslný, ale pravidelný text (např. opakování „asdf asdf asdf…“), oko by při posuzování vzhledu bylo vyrušováno pravidelnou strukturou textu, která se od běžného textu liší. Text lorem ipsum na první pohled připomíná běžný text, slova jsou různě dlouhá, frekvence písmen je podobná běžné řeči, interpunkce vypadá přirozeně atd.</p>
+
+          </div>
+          <div className="half">
+            <h3 id="info">Otevírací doba:</h3>
+            <table>
+              <tbody>
+                <tr>
+                  <td>pondělí</td>
+                  <td colSpan="2">zavřeno</td>
+                </tr>
+                <tr>
+                  <td>úterý</td>
+                  <td>10:30</td>
+                  <td>23:00</td>
+                </tr>
+                <tr>
+                  <td>středa</td>
+                  <td>10:30</td>
+
+                  <td>23:00</td>
+                </tr>
+                <tr>
+                  <td>čtvrtek</td>
+                  <td>10:30</td>
+                  <td>23:00</td>
+                </tr>
+                <tr>
+                  <td>pátek</td>
+                  <td>10:30</td>
+                  <td>23:00</td>
+                </tr>
+                <tr>
+                  <td>sobota</td>
+                  <td>10:30</td>
+                  <td>23:00</td>
+                </tr>
+                <tr>
+                  <td>neděle</td>
+                  <td>10:30</td>
+                  <td>23:00</td>
+                </tr>
+
+              </tbody>
+            </table>
           </div>
         </Section>
 

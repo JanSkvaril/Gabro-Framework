@@ -1,83 +1,5 @@
 @import '../variables';
-
-@mixin styled {
-    h2 {
-        text-align: center;
-        margin-top: 50px;
-        font-size: 50px;
-
-        @media screen and (min-width: $break-medium) {
-            font-size: 70px;
-        }
-
-        @media screen and (min-width: $break-large) {
-            font-size: 100px;
-        }
-    }
-
-    h3 {
-        text-align: center;
-        font-size: 25px;
-
-        @media screen and (min-width: $break-medium) {
-            font-size: 30px;
-        }
-
-        @media screen and (min-width: $break-large) {
-            font-size: 50px;
-        }
-    }
-
-    h4 {
-        text-align: center;
-        font-size: 20px;
-
-        @media screen and (min-width: $break-medium) {
-            font-size: 25px;
-        }
-
-        @media screen and (min-width: $break-large) {
-            font-size: 40px;
-        }
-    }
-
-    p {
-        font-size: 20px;
-        max-width: 80%;
-        margin-top: 25px;
-        margin-bottom: 25px;
-        text-align: justify;
-
-        @media screen and (min-width: $break-medium) {
-            font-size: 25px;
-        }
-
-        @media screen and (min-width: $break-large) {
-            font-size: 30px;
-        }
-    }
-
-    table {
-        font-size: 20px;
-        margin-top: 50px;
-        margin-bottom: 50px;
-
-
-        @media screen and (min-width: $break-medium) {
-            font-size: 25px;
-        }
-
-        @media screen and (min-width: $break-large) {
-            font-size: 30px;
-        }
-
-        td {
-            padding: 10px;
-            padding-left: 18px;
-            padding-right: 18px;
-        }
-    }
-}
+@import '../styled';
 
 .section {
     position: relative;
@@ -90,13 +12,14 @@
     flex-direction: column;
     flex-wrap: wrap;
 
+    @include styled;
+
+
     @media screen and (min-width: $break-medium) {
         flex-direction: row;
     }
 
-    .styled {
-        @include styled;
-    }
+
 
     .half {
         display: flex;
@@ -127,5 +50,5 @@
 }
 
 .section.styled {
-    @include styled;
+    @include styledOnParent;
 }
