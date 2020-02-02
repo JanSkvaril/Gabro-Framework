@@ -4,8 +4,6 @@ import { Snackbar, IconButton, SnackbarContent } from '@material-ui/core';
 import { Close } from '@material-ui/icons';
 import { green, red } from '@material-ui/core/colors';
 
-let openFunc;
-
 const styles = theme => ({
     normal: {
 
@@ -39,10 +37,17 @@ class SnackMes extends React.Component {
         this.setState({ open: false });
     };
     Open(message, type) {
+        console.log(this);
         this.setState({ open: true, text: message, type: type });
     }
+    componentDidMount() {
+        this.props.onRef(this.Open.bind(this))
+    }
+    componentWillUnmount() {
+        this.props.onRef(undefined)
+    }
     render() {
-        openFunc = this.Open.bind(this);
+        // openFunc = this.Open.bind(this);
         const { classes } = this.props;
         return (
             <div>
@@ -83,7 +88,4 @@ class SnackMes extends React.Component {
     }
 }
 
-export function showMessage(message, type) {
-    openFunc(message, type);
-}
 export default withStyles(styles)(SnackMes);

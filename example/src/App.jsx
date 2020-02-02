@@ -125,6 +125,13 @@ class App extends Component {
             </table>
           </div>
         </Section>
+        <Section>
+          <div className="full">
+            <ContactForm>
+
+            </ContactForm>
+          </div>
+        </Section>
 
 
       </div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { TextField, Button } from '@material-ui/core';
 import { Send } from '@material-ui/icons/';
-import SnackMessages, { showMessage } from '../SnackMessages/SnackMessages.jsx';
+import SnackMessages from '../SnackMessages/SnackMessages.jsx';
 import './ContactForm.scss';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
@@ -17,7 +17,6 @@ class ContactForm extends Component {
             nottText: ""
         }
         this.handleInputChange = this.handleInputChange.bind(this);
-
     }
     handleInputChange(event) {
         const target = event.target;
@@ -66,7 +65,7 @@ class ContactForm extends Component {
             mailAdress: "",
             mailText: "",
         }, () => {
-            showMessage("Zpráva byla úspěšně odeslána, děkujeme!", "succes");
+            this.showMessage("Zpráva byla úspěšně odeslána, děkujeme!", "succes");
         });
     }
     handleClose(event, reason) {
@@ -77,10 +76,10 @@ class ContactForm extends Component {
         this.setState({ nottOpen: false });
     }
     error() {
-        showMessage("Nastala chyba, zpráva nebyla odeslána", "error");
+        this.showMessage("Nastala chyba, zpráva nebyla odeslána", "error");
     }
     empty() {
-        showMessage("Obě pole musí být vyplněny", "error");
+        this.showMessage("Obě pole musí být vyplněny", "error");
     }
 
     render() {
@@ -139,7 +138,7 @@ class ContactForm extends Component {
                             </Button>
                         </form>
                     </div>
-                    <SnackMessages />
+                    <SnackMessages onRef={ref => (this.showMessage = ref)} />
                 </ThemeProvider>
             </React.Fragment >
         );
