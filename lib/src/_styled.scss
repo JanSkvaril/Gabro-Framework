@@ -40,10 +40,11 @@
 
 @mixin p {
     font-size: 20px;
+    width: 100%;
     max-width: 80%;
     margin-top: 25px;
     margin-bottom: 25px;
-    text-align: justify;
+
 
     @media screen and (min-width: $break-medium) {
         font-size: 25px;

@@ -1,6 +1,6 @@
 {
   "name": "gabro_framework",
-  "version": "1.0.38",
+  "version": "1.0.43",
   "description": "Framework for rapid and simple web development",
   "main": "build/index.js",
   "directories": {
@@ -19,7 +19,7 @@
     "react-lightbox-component": "^1.2.1",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.1.1",
-    "webpack": "4.41.2"
+    "webpack": "4.41.5"
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
