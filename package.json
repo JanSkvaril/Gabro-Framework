@@ -1,5 +1,5 @@
 {
-  "name": "gabro_framework",
+  "name": "@JanSkvaril/Gabro-Framework",
   "version": "1.0.43",
   "description": "Framework for rapid and simple web development",
   "main": "build/index.js",
@@ -41,7 +41,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JanSkvaril/Gabro-Framework.git"
+    "url": "git://github.com/JanSkvaril/Gabro-Framework.git"
   },
   "author": "Jan Škvařil",
   "license": "ISC",
