@@ -18,7 +18,7 @@ class App extends Component {
           mainTittle="Firma skvělá"
           secondaryTittle="Co je fakt super..."
           shadow={true}
-          bg={GetImage(require("./imgs/img2.jpg")) + "center"}
+          bg={GetImage(require("./imgs/img2.jpg"))}
           //textShadow
           color="rgba(255,255,255,0.80)" />
         <Section styled

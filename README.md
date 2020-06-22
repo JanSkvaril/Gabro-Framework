@@ -90,7 +90,18 @@ Je přechod z jedné barvy do druhé
 
 `bg="linear-gradient(#5918b6, #7b1fa2)"`
 ##### Image
-TODO
+Používá se tak, že místo "nějaká barva" se napíše toto: 
+
+`bg={GetImage(require("./imgs/img2.jpg"))}`
+
+Je možné i měnit pozici obrázku pomocí +:
+
+`bg={GetImage(require("./imgs/img2.jpg")) + " center "}`
+
+Víc o různých pozicích [zde](https://www.w3schools.com/cssref/pr_background-position.asp)
+
+Dále je ještě možné přidat pomocí + na obrázek barva nebo gredient - musí být částečně průhledné aby byl obrázek vidět!!
+`bg={GetImage(require("./imgs/img2.jpg")) + " rgba(200,200,100,0.5) "}`
 #### bgFilter
 Slouží na aplikování "filtrů" na pozadí, nejčastější použití je na rozmazání pozadí:
 
