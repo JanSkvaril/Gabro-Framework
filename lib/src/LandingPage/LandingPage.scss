@@ -24,12 +24,14 @@
         width: 100%;
 
         .main-tittle {
+
+
             @media screen and (min-width: $break-medium) {
                 font-size: 100px;
             }
 
             @media screen and (min-width: $break-large) {
-                font-size: 150px;
+                font-size: 120px;
             }
 
             margin: 0px;
@@ -37,6 +39,7 @@
         }
 
         .secondary-tittle {
+
             @media screen and (min-width: $break-medium) {
                 font-size: 30px;
             }

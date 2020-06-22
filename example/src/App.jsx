@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 
-import { Navbar, LandingPage, Section, Gallery, Card, ContactInfo, ContactForm } from 'gabro_framework'; //imports framework
+import { GetImage, Navbar, LandingPage, Section, Gallery, Card, ContactInfo, ContactForm, ImageSection } from 'gabro_framework'; //imports framework
 import './App.scss'; //custom css
 import AndroidIcon from '@material-ui/icons/Android';
 console.log(Navbar)
@@ -11,16 +11,18 @@ class App extends Component {
       <div>
         <Navbar
           tittle="Firma skvělá"
+          //trans
           menu={[{ text: "Test", link: "/" }]}
-          color="#ff12aa" txtColor="black" />
+          color="rgba(200,181,50,0.8)" txtColor="black" />
         <LandingPage
           mainTittle="Firma skvělá"
           secondaryTittle="Co je fakt super..."
           shadow={true}
-          bg="linear-gradient(#5918b6, #7b1fa2)"
-          color="white" />
+          bg={GetImage(require("./imgs/img2.jpg")) + "center"}
+          //textShadow
+          color="rgba(255,255,255,0.80)" />
         <Section styled
-
+          color="rgba(0,0,0,0.75)"
         >
           <div className="full">
             <h2>O nás</h2>
@@ -59,7 +61,7 @@ class App extends Component {
           </div>
         </Section>
 
-        <Section>
+        {/* <Section>
           <div className="full">
             <Gallery imgs={(() => {
               let a = []
@@ -72,8 +74,11 @@ class App extends Component {
             }
             )()} />
           </div>
-        </Section>
-        <Section styled>
+        </Section> */}
+        <Section
+          styled
+          color="rgba(0,0,0,0.75)"
+        >
           <div className="full">
             <h2>Nadpis</h2>
           </div>
@@ -125,13 +130,21 @@ class App extends Component {
             </table>
           </div>
         </Section>
-        <Section>
-          <div className="full">
-            <ContactForm>
 
-            </ContactForm>
-          </div>
-        </Section>
+
+        <ImageSection
+          title="A i vaříme!"
+          img={require("./imgs/img1.jpg")}
+          line_color="#ff00ff"
+          img_position="to_edge"
+          img_align="left"
+          txt_color="purple"
+        >
+          <p>Pokud by se pro stejný účel použil smysluplný text, bylo by těžké hodnotit pouze vzhled, aniž by se pozorovatel nechal svést ke čtení obsahu. Pokud by byl naopak použit nesmyslný, ale pravidelný text (např. opakování „asdf asdf asdf…“), oko by při posuzování vzhledu bylo vyrušováno pravidelnou strukturou textu.</p>
+          <p>Pokud by se pro stejný účel použil smysluplný text, bylo by těžké hodnotit pouze vzhled, aniž by se pozorovatel nechal svést ke čtení obsahu. Pokud by byl naopak použit nesmyslný, ale pravidelný text (např. opakování „asdf asdf asdf…“), oko by při posuzování vzhledu bylo vyrušováno pravidelnou strukturou textu.</p>
+        </ImageSection>
+
+
 
 
       </div>

@@ -10,11 +10,15 @@ const LandingPage = (props) => {
         backgroundSize: !!props.bgSize ? props.bgSize : "cover",
         zIndex: !!props.shadow ? 5 : -1,
     };
+
+    let text_styles = {
+        textShadow: !!props.textShadow ? "0px 0px 4px rgba(50, 50, 50, 1)" : "none"
+    }
     return (
         <div className="landing-page" style={styles} id="landing-page">
             <span className="header">
-                <h1 className="main-tittle" >{props.mainTittle}</h1>
-                <h2 className="secondary-tittle"> {props.secondaryTittle}</h2>
+                <h1 className="main-tittle" style={text_styles} >{props.mainTittle}</h1>
+                <h2 className="secondary-tittle" style={text_styles}>  {props.secondaryTittle}</h2>
             </span>
 
             <IconButton className="icon-tittle" href={props.link}>
