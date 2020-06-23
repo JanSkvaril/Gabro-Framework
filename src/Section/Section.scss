@@ -47,8 +47,50 @@
         flex-direction: row;
         flex-wrap: wrap;
     }
+
+    .line {
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        width: 14px;
+        height: 80%;
+        transform: translate(0%, -50%);
+        border-radius: 10px;
+
+        @media screen and (max-width: $break-medium) {
+            display: none;
+        }
+    }
 }
+
+
 
 .section.styled {
     @include styledOnParent;
+}
+
+.section.h_left {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        width: 80%;
+        text-align: left;
+    }
+}
+
+.section.h_right {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        width: 80%;
+        text-align: right !important;
+    }
 }
