@@ -14,9 +14,22 @@ const LandingPage = (props) => {
     let text_styles = {
         textShadow: !!props.textShadow ? "0px 0px 4px rgba(50, 50, 50, 1)" : "none"
     }
+
+    let headline_variant = "header";
+    if (!!props.orientation) {
+        if (props.orientation == "left")
+            headline_variant = "header_left"
+    }
+    let block = "";
+    if (!!props.block) {
+        block = <div className="block" style={{ background: props.block }}></div >
+    }
+
     return (
         <div className="landing-page" style={styles} id="landing-page">
-            <span className="header">
+
+            {block}
+            <span className={headline_variant}>
                 <h1 className="main-tittle" style={text_styles} >{props.mainTittle}</h1>
                 <h2 className="secondary-tittle" style={text_styles}>  {props.secondaryTittle}</h2>
             </span>
@@ -24,6 +37,7 @@ const LandingPage = (props) => {
             <IconButton className="icon-tittle" href={props.link}>
                 <KeyboardArrowDown fontSize="large" />
             </IconButton>
+
         </div>
     );
 }
