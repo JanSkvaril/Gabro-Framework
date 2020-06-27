@@ -37,7 +37,8 @@ const Section = (props) => {
 
 const Full = (props) => {
     let styles = {
-        background: !!props.bg ? props.bg : "transparent",
+        background: (!!props.bg ? props.bg : "transparent") + " center",
+        backgroundSize: "cover",
         color: !!props.color ? props.color : "#inherit",
     }
 
@@ -47,9 +48,11 @@ const Full = (props) => {
         </div>);
 }
 
+
 const Half = (props) => {
     let styles = {
-        background: !!props.bg ? props.bg : "transparent",
+        background: (!!props.bg ? props.bg : "transparent") + " center",
+        backgroundSize: "cover",
         color: !!props.color ? props.color : "#inherit",
     }
 
@@ -61,7 +64,8 @@ const Half = (props) => {
 
 const Row = (props) => {
     let styles = {
-        background: !!props.bg ? props.bg : "transparent",
+        background: (!!props.bg ? props.bg : "transparent") + " center",
+        backgroundSize: "cover",
         color: !!props.color ? props.color : "inherit",
     }
 
