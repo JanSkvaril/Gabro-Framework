@@ -4,7 +4,11 @@ import ContactForm from './ContactForm/ContactForm.jsx';
 import Gallery from './Gallery/Gallery.jsx';
 //import IconList from './components/IconList/IconList';
 import LandingPage from './LandingPage/LandingPage.jsx';
-import Section from './Section/Section.jsx';
+import Section, {
+    Full,
+    Half,
+    Row
+} from './Section/Section.jsx';
 import SnackMessages from './SnackMessages/SnackMessages.jsx';
 import ContactInfo from './ContactInfo/ContactInfo.jsx';
 import ImageSection from './ImageSection/ImageSection.jsx'
@@ -23,6 +27,10 @@ export {
     Section,
     SnackMessages,
     ImageSection,
+
+    Full,
+    Half,
+    Row,
 
     GetImage,
 };
