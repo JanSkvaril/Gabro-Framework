@@ -18,7 +18,8 @@ class Navbar extends Component {
         if (!this.props.trans == undefined)
             this.props.trans = false;
 
-        this.InitScrolling();
+        if (props.version == "v1")
+            this.InitScrolling();
     }
 
     //hiding when scrolling up
@@ -98,11 +99,17 @@ class Navbar extends Component {
                 </ListItem>
             )
         }
+        let navbar_ver = "v2";
+        if (!!this.props.version) {
+            if (this.props.version == "v2") {
+                navbar_ver = "v2"
+            }
+        }
 
         return (
 
             <div
-                className="navbar"
+                className={"navbar " + navbar_ver}
                 id="navbar"
                 style={styles}>
                 <div className="container">
