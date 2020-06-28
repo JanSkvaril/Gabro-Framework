@@ -35,4 +35,45 @@ const Section = (props) => {
     );
 }
 
+const Full = (props) => {
+    let styles = {
+        background: (!!props.bg ? props.bg : "transparent") + " center",
+        backgroundSize: "cover",
+        color: !!props.color ? props.color : "#inherit",
+    }
+
+    return (
+        <div className="full" style={styles}>
+            {props.children}
+        </div>);
+}
+
+
+const Half = (props) => {
+    let styles = {
+        background: (!!props.bg ? props.bg : "transparent") + " center",
+        backgroundSize: "cover",
+        color: !!props.color ? props.color : "#inherit",
+    }
+
+    return (
+        <div className="half" style={styles}>
+            {props.children}
+        </div>);
+}
+
+const Row = (props) => {
+    let styles = {
+        background: (!!props.bg ? props.bg : "transparent") + " center",
+        backgroundSize: "cover",
+        color: !!props.color ? props.color : "inherit",
+    }
+
+    return (
+        <div className="full row" style={styles}>
+            {props.children}
+        </div>);
+}
+
+export { Row, Full, Half };
 export default Section;
