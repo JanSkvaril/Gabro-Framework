@@ -99,7 +99,7 @@ class Navbar extends Component {
                 </ListItem>
             )
         }
-        let navbar_ver = "v2";
+        let navbar_ver = "v1";
         if (!!this.props.version) {
             if (this.props.version == "v2") {
                 navbar_ver = "v2"
