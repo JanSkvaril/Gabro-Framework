@@ -7,6 +7,7 @@ const Section = (props) => {
         zIndex: !!props.shadow ? 5 : "auto",
         color: !!props.color ? props.color : "#000000",
         backgroundSize: !!props.bgSize ? props.bgSize : "cover",
+        backdropFilter: !!props.bgFilter ? props.bgFilter : "",
     };
     let classes = "section";
     if (!!props.styled) classes += " styled";
@@ -54,6 +55,7 @@ const Half = (props) => {
         background: (!!props.bg ? props.bg : "transparent") + " center",
         backgroundSize: "cover",
         color: !!props.color ? props.color : "#inherit",
+        backdropFilter: !!props.bgFilter ? props.bgFilter : "",
     }
     let line_styles = {
         display: "none",
