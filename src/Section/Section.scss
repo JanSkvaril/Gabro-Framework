@@ -22,6 +22,7 @@
 
 
     .half {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -32,6 +33,9 @@
             width: 50%;
         }
 
+        .line {
+            left: 0%;
+        }
     }
 
     .full {

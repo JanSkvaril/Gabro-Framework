@@ -55,10 +55,19 @@ const Half = (props) => {
         backgroundSize: "cover",
         color: !!props.color ? props.color : "#inherit",
     }
+    let line_styles = {
+        display: "none",
+    }
+    if (!!props.line) {
+        line_styles = {
+            background: props.line,
+        }
+    }
 
     return (
         <div className="half" style={styles}>
             {props.children}
+            <div className="line" style={line_styles}></div>
         </div>);
 }
 
