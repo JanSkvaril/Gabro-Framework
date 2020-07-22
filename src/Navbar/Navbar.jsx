@@ -18,7 +18,7 @@ class Navbar extends Component {
         if (!this.props.trans == undefined)
             this.props.trans = false;
 
-        if (props.version == "v1")
+        if (props.version == "v1" || !!props.version)
             this.InitScrolling();
     }
 
@@ -118,7 +118,7 @@ class Navbar extends Component {
 
                         <a href="#landing-page"
                             style={{ color: this.props.txtColor }}>
-                            {this.props.tittle}
+                            {this.props.title}
                         </a>
 
                     </span>

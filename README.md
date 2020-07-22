@@ -1,86 +1,46 @@
-# Gabro Framework 1.0
+# Gabro Framework 2.1
 ## Jak spustit
-V počítači je nutno mít nainstalováno Node.js!!!!
+Stačí dvakrát kliknout na **run.bat**
 
-po naklonování:
-`npm i`
-pro spuštění:
-`npm start`
-
-Hlavní frameworky: material-ui, React.js
-## Theming
-U většiny komponent jde nastavit pozadí, barva apod. avšak u komponentů, které používají material-ui (tlačítka, inputy,...) se barva nastavuje v soubory **index.jsx** následovně:
-```jsx
-const theme = createMuiTheme({
-    palette: {
-        primary: {
-            main: "#ff00ff",
-            contrastText: "#ffffff"
-        },
-        secondary: {
-            main: "#FFBC42",
-            contrastText: "#000000"
-        }
-    },
-});
-```
-## Constanty
-#### SASS
-Minimální rozlišení
-```
-$break-medium: 800px;
-$break-large: 1300px;
-```
 ## Jak s frameworkem pracovat
-Vše se odehrává v souboru **App.jsx**, ten v základu vypadá nějak takto:
-```jsx
-import React, { Component } from 'react';
+Vše se odehrává v souboru **App.jsx**. Pokaždé když uložíte změny, tak se stránka aktualizuje.
+## Základní tagy html
+* V html se vždy počítá jen jedna mezera, další se předělají na jednu
+* Enter nic nedělá, pokud chcete odřádkovat použíjte odstavec
+### Odstavec
+`<p> Obsah odstavce </p>`
+### Nadpis
+* `<h1> Nadpis první úrovně </h1>`
+* `<h2> Nadpis druhé úrovně </h2>`
+* `<h3> Nadpis třetí úrovně </h3>`
+* adtd..
+### Formátování textu
+* `<b> Tučný text </b>`
+* `<i> Kurzíva </i>`
 
-//zde se importují komponenty
-import Navbar from './components/Navbar/Navbar';
-import LandingPage from './components/LandingPage/LandingPage';
 
-import './App.scss'
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        //zde se jednotlivé komponenty vkládají
-        <Navbar
-          tittle="Firma skvělá"
-          menu={[{ text: "Test", link: "/" }]}
-          color="#ff12aa" txtColor="black" />
-        <LandingPage
-          mainTittle="Firma skvělá"
-          secondaryTittle="Co je fakt super..."
-          shadow={true}
-          bg="linear-gradient(#5918b6, #7b1fa2)"
-          color="white" />
-      </div>
-    );
-  }
-}
-
-export default App;
-```
-Pro dodatečné stylování slouží **App.scss**, ale smyslem frameworku je co nejméně používat vlastní styli.
-
-### Atributy
-#### Barva obecně
+## Atributy
+### Barva obecně
 Barva se zapisuje dvěma způsoby, první je RGBa, druhý je HEX. Doporučuji použít [picker](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Colors/Color_picker_tool) a ideálně použávat odzkoušené barvy [odsud](https://material.io/resources/color/#!/?view.left=0&view.right=0)
-##### RGBa
+#### RGBa
 `rgba(200,200,200,0.25)`
+
+takže například:
+
+`color="rgba(200,200,200,0.25)"`
 
 Jednotlivé hodnoty:
 1. Red 0 - 255
 2. Green 0 - 255
 3. Blue 0 - 255
 4. Alpha/průhlednost  0 - 1
-##### HEX
+#### HEX
 `#ff00ff`
 
-V 16tkové soustavě 
+V 16tkové soustavě. Například:
+
+`color="#ff00ff"`
 #### bg
 U hodně komponent se oběvuje atribut bg. Do toho lze dát barvu, gradient a nebo obrázek
 ##### Barva
@@ -100,7 +60,7 @@ Je možné i měnit pozici obrázku pomocí +:
 
 Víc o různých pozicích [zde](https://www.w3schools.com/cssref/pr_background-position.asp)
 
-Dále je ještě možné přidat pomocí + na obrázek barva nebo gredient - musí být částečně průhledné aby byl obrázek vidět!!
+Dále je ještě možné přidat pomocí + na obrázek barva nebo gredient - musí být částečně průhledné aby byl obrázek vidět!! Obrazky by se měli dávat do složky **imgs**.
 `bg={GetImage(require("./imgs/img2.jpg")) + " rgba(200,200,100,0.5) "}`
 #### bgFilter
 Slouží na aplikování "filtrů" na pozadí, nejčastější použití je na rozmazání pozadí:
@@ -114,11 +74,9 @@ Slouží na aplikování "filtrů" na pozadí, nejčastější použití je na r
 ### Navbar
 Navigační panel s odkazi na jednotlivé stránky
 
-`import Navbar from './components/Navbar/Navbar';`
-
 ```jsx
 <Navbar
-    tittle="Firma skvělá"
+    title="Firma skvělá"
     menu={
             [
                 { text: "O nás", link: "#about_us" },
@@ -132,50 +90,51 @@ Navigační panel s odkazi na jednotlivé stránky
     trans={true}
     bgFilter="blur(5px)"/>
 ```
-* *tittle* - titulek, automaticky odkazuje na landing page
+* *title* - titulek, automaticky odkazuje na landing page
 * *menu* - pole objektů ve formátu {text:"text linku", link: "#odkazNaKotvu"}
 * *color* - barva pozadí navbaru
 * *txtColor* - barva textu
 * *trans* - když user scrollne uplně nahoru na stránce, tak navbar bude průhledný
 * *bgFilter* - "backdrop-filter", například blur(5px)
+* *version* - hodnoty: "v1" nebo "v2". Defaultní je v1. Přepíná verze navbaru
 
 ### Landing page
 "Přístávací stránka" - první věc co se uživateli zobrazí
 
-`import LandingPage from './components/LandingPage/LandingPage';`
 ```jsx
 <LandingPage
-    mainTittle="Firma skvělá"
-    secondaryTittle="Co je fakt super..."
-    shadow={true}
+    mainTitle="Firma skvělá"
+    secondaryTitle="Co je fakt super..."
+    shadow
     link="#about_us" 
     bg="linear-gradient(#5918b6, #7b1fa2)" />
 ```
-* *mainTittle* - hlavní titulek
-* *secondaryTittle* - podtitulek (nemusí být)
+* *mainTitle* - hlavní titulek
+* *secondaryTitle* - podtitulek (nemusí být)
 * *shadow* - má mít stín
 * *bg* - barva pozadí, gradient, obrázek atd.
 * *color* - barva textu
 * *bgSize* - css styl background-size, default: cover
 * *link* - odkaz (kotva) kam má šipka dolů sjet
 * *textShadow* - přidá text shadow na nadpis a podnadpis pro lepší čitelnost
+* *orientation* - hodnoty: "left". Pokud bude zadáno landign page se přepne do levé orentace, nevhodné pro dlouhý text. Pokud nebude zadáno, bude se normálně centerovat
+* *block* - hodnota: barva. Pokud nezadáno nebude vidět. Blok přez polovinu obrazovky
 
 ### Section
 Sekce zabírá 100% šířku a nějakou výšku, může obsahovat cokoliv. Například rubriky jako o nás, služby a podobně. Dále třeba ceník, kontaktní formulář. Sekce navíc styluje určité tagy jako nadpisy, text a podobně, viz níže. Některé komponenty musí být v sekci.
 
-`import Section from './components/Section/Section';`
 ```jsx
 <Section 
     bg="linear-gradient(#5918b6, #7b1fa2)"
-    shadow={true}
+    shadow
     styled
     color="white">
 
-    <div className="full">
+    <Full>
         <h2>O nás</h2>
         <h3>Aneb něco</h3>
         <p>Nějaký text.</p>
-    </div>
+    <Full>
 
 </Section>
 ```
@@ -183,46 +142,68 @@ Sekce zabírá 100% šířku a nějakou výšku, může obsahovat cokoliv. Např
 * *color* - barva textu
 * *shadow* - má mít stín
 * *backgroundSize* - css styl background-size, default: cover
-
-#### half / full
-Uvnitř **Section** vždy musí být buď **half** nebo **full**. Na poloviny je normálně možné dávat další styly. 
+* *line* - barva čáry v pravo od textu, nezobrazí se pokud nebude zadána
+* *bgFilter* - "backdrop-filter", například blur(5px), apod.
+* *paddingBot* - v px, kolik pixelů se má odsazovat odspodu
+* *paddingTop* - v px, kolik pexelů se má odsazovat zvrchu
+* *headline_align* - hodnoty "left" nebo "right", zarovná nadpisy na danou stranu, když nezadáno tak na prostředek
+#### Half / Full / Row
+Uvnitř **Section** vždy musí být buď **half**, **full** nebo **Row**. Na poloviny je normálně možné dávat další styly. 
 
 Přepůlí sekci
 ```jsx
 <Section>
-    <div className="half">
+    <Half>
         <p>Nějaký text.</p>
-    </div>
-    <div className="half">
+    </Half>
+    <Half>
         <p>Nějaký text.</p>
-    </div>
+    </Half>
 </Section>
 ```
 
 100% šířka 
 ```jsx
 <Section>
-    <div className="full">
+    <Full>
         <p>Nějaký text.</p>
-    </div>
+    </Full>
+</Section>
+```
+ 
+Dává obsah do řady vedle sebe, ideální na karty
+```jsx
+<Section>
+    <Row>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+    </Row>
 </Section>
 ```
 
+Na **všechny** lze použít následující atributy
+* *bg* - pozadí, může být i obrázek, který se bude automaticky centrovat
+* *color* - barva textu
+
+Na **Half** lze ještě použít
+* *line* - barva čáry v pravo od textu, nezobrazí se pokud nebude zadána
+* *bgFilter* - "backdrop-filter", například blur(5px), apod.
 #### Tagy speciálně stylované v Section
 * `<table> <tr> <td>`
 * `<h2> <h3>`
 * `<p>`
 
+
 ### SnackMessages
 Zobrazí zprávu v nějakém rohu. Zpráva může být succes, error, nebo jenom obyčejná zpráva.
 
-`import SnackMessages, { showMessage } from './SnackMessages/SnackMessages';`
-
 ```jsx
+//komponenta, která někde musí být
 <SnackMessages onRef={ref => (this.showMessage = ref)} />
 
 ...
-
+//volání funkce - zobrazení zprávy
 this.showMessage("Obě pole musí být vyplněny", "error");
 ```
 #### *showMessage(*string zprava*, *string typ*)*
@@ -234,9 +215,8 @@ Kontaktní formulář. Vyžaduje soubor send-mail.php v rootové složce fináln
 
 Měl by být v **Section**, importuje si SnackMessages. Není ještě úplně hotový, text fields se špatně upravuje barva, časem se bude mění, zatím používat bílé, nebo světlé pozadí
 
-`import ContactForm from './components/ContactForm/ContactForm';`
 ```jsx
-<ContactForm shadow={true} bg="white" color="black">
+<ContactForm shadow bg="white" color="black">
     <h2>Kontaktní formulář</h2>
     <p>A možná vám odepíšem ;)</p>
 </ContactForm>
@@ -255,7 +235,7 @@ Karty, ideální pro služby a podobně. Do prostoru icon jde dát buď ikonku, 
 
 ```jsx
  <Card
-    shadow={true}
+    shadow
     iconBg="rgb(255, 18, 170)"
     iconColor="white"
     conBg="white"
@@ -276,7 +256,7 @@ Karty, ideální pro služby a podobně. Do prostoru icon jde dát buď ikonku, 
 * *bgFilter* - "backdrop-filter", například blur(5px), apod.
 * *height* - výška celé karty v pixelech, pokud není uvedeno tak bude 310px
 
-### ImageSection
+### ImageSection (beta)
 Obsahuje na polovině orbázek a na polovině text
 
 ```jsx

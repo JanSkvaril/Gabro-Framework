@@ -30,11 +30,11 @@ const LandingPage = (props) => {
 
             {block}
             <span className={headline_variant}>
-                <h1 className="main-tittle" style={text_styles} >{props.mainTittle}</h1>
-                <h2 className="secondary-tittle" style={text_styles}>  {props.secondaryTittle}</h2>
+                <h1 className="main-title" style={text_styles} >{props.title}</h1>
+                <h2 className="secondary-title" style={text_styles}>  {props.secondaryTitle}</h2>
             </span>
 
-            <IconButton className="icon-tittle" href={props.link}>
+            <IconButton className="icon-title" href={props.link}>
                 <KeyboardArrowDown fontSize="large" />
             </IconButton>
 

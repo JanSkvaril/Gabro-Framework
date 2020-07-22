@@ -8,6 +8,8 @@ const Section = (props) => {
         color: !!props.color ? props.color : "#000000",
         backgroundSize: !!props.bgSize ? props.bgSize : "cover",
         backdropFilter: !!props.bgFilter ? props.bgFilter : "",
+        paddingBottom: !!props.paddingBot ? props.paddingBot : "",
+        paddingTop: !!props.paddingTop ? props.paddingTop : "",
     };
     let classes = "section";
     if (!!props.styled) classes += " styled";
