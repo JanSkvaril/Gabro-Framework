@@ -118,7 +118,7 @@ class Navbar extends Component {
 
                         <a href="#landing-page"
                             style={{ color: this.props.txtColor }}>
-                            {this.props.tittle}
+                            {this.props.title}
                         </a>
 
                     </span>

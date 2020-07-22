@@ -48,12 +48,12 @@ class App extends Component {
       <div>
         //zde se jednotlivé komponenty vkládají
         <Navbar
-          tittle="Firma skvělá"
+          title="Firma skvělá"
           menu={[{ text: "Test", link: "/" }]}
           color="#ff12aa" txtColor="black" />
         <LandingPage
-          mainTittle="Firma skvělá"
-          secondaryTittle="Co je fakt super..."
+          maintitle="Firma skvělá"
+          secondaryTitle="Co je fakt super..."
           shadow
           bg="linear-gradient(#5918b6, #7b1fa2)"
           color="white" />
@@ -118,7 +118,7 @@ Navigační panel s odkazi na jednotlivé stránky
 
 ```jsx
 <Navbar
-    tittle="Firma skvělá"
+    title="Firma skvělá"
     menu={
             [
                 { text: "O nás", link: "#about_us" },
@@ -132,7 +132,7 @@ Navigační panel s odkazi na jednotlivé stránky
     trans={true}
     bgFilter="blur(5px)"/>
 ```
-* *tittle* - titulek, automaticky odkazuje na landing page
+* *title* - titulek, automaticky odkazuje na landing page
 * *menu* - pole objektů ve formátu {text:"text linku", link: "#odkazNaKotvu"}
 * *color* - barva pozadí navbaru
 * *txtColor* - barva textu
@@ -145,14 +145,14 @@ Navigační panel s odkazi na jednotlivé stránky
 `import LandingPage from './components/LandingPage/LandingPage';`
 ```jsx
 <LandingPage
-    mainTittle="Firma skvělá"
-    secondaryTittle="Co je fakt super..."
+    maintitle="Firma skvělá"
+    secondaryTitle="Co je fakt super..."
     shadow
     link="#about_us" 
     bg="linear-gradient(#5918b6, #7b1fa2)" />
 ```
-* *mainTittle* - hlavní titulek
-* *secondaryTittle* - podtitulek (nemusí být)
+* *maintitle* - hlavní titulek
+* *secondaryTitle* - podtitulek (nemusí být)
 * *shadow* - má mít stín
 * *bg* - barva pozadí, gradient, obrázek atd.
 * *color* - barva textu
