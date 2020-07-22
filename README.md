@@ -54,7 +54,7 @@ class App extends Component {
         <LandingPage
           mainTittle="Firma skvělá"
           secondaryTittle="Co je fakt super..."
-          shadow={true}
+          shadow
           bg="linear-gradient(#5918b6, #7b1fa2)"
           color="white" />
       </div>
@@ -147,7 +147,7 @@ Navigační panel s odkazi na jednotlivé stránky
 <LandingPage
     mainTittle="Firma skvělá"
     secondaryTittle="Co je fakt super..."
-    shadow={true}
+    shadow
     link="#about_us" 
     bg="linear-gradient(#5918b6, #7b1fa2)" />
 ```
@@ -167,7 +167,7 @@ Sekce zabírá 100% šířku a nějakou výšku, může obsahovat cokoliv. Např
 ```jsx
 <Section 
     bg="linear-gradient(#5918b6, #7b1fa2)"
-    shadow={true}
+    shadow
     styled
     color="white">
 
@@ -236,7 +236,7 @@ Měl by být v **Section**, importuje si SnackMessages. Není ještě úplně ho
 
 `import ContactForm from './components/ContactForm/ContactForm';`
 ```jsx
-<ContactForm shadow={true} bg="white" color="black">
+<ContactForm shadow bg="white" color="black">
     <h2>Kontaktní formulář</h2>
     <p>A možná vám odepíšem ;)</p>
 </ContactForm>
@@ -255,7 +255,7 @@ Karty, ideální pro služby a podobně. Do prostoru icon jde dát buď ikonku, 
 
 ```jsx
  <Card
-    shadow={true}
+    shadow
     iconBg="rgb(255, 18, 170)"
     iconColor="white"
     conBg="white"
