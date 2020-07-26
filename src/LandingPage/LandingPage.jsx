@@ -46,13 +46,14 @@ const LandingPage = (props) => {
 
     // VERSIONS
 
+    let txtSection = <span style={ txt_styles } className={ `txt-section ${ !! props.orientation ? props.orientation : "center" }` }>
+                        { props.children }
+                    </span>
+
     // v1
 
     let v1 = [
-        <span style={ txt_styles } className={ `txt-section ${ !! props.orientation ? props.orientation : "center" }` }>
-            { props.children }
-        </span>,
-
+        txtSection,
         scrollDownIcon
     ]
     
