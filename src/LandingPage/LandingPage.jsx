@@ -59,7 +59,7 @@ const LandingPage = (props) => {
 
 
     return (
-        <div className={ `landing-page ${ !! props.version ? props.version : "" } ${ !! props.orientation ? props.orientation : "" }` } style={ container_styles } id="landing-page">
+        <div className={ `landing-page ${ !! props.version ? props.version : "" }` } style={ container_styles } id="landing-page">
 
             {/* {block}
             <span className={headline_variant}>
