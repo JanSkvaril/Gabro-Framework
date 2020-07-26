@@ -99,25 +99,51 @@ Navigační panel s odkazi na jednotlivé stránky
 * *version* - hodnoty: "v1" nebo "v2". Defaultní je v1. Přepíná verze navbaru
 
 ### Landing page
-"Přístávací stránka" - první věc co se uživateli zobrazí
+"Přístávací stránka" - první věc co se uživateli zobrazí.
 
 ```jsx
 <LandingPage
-    mainTitle="Firma skvělá"
-    secondaryTitle="Co je fakt super..."
     shadow
     link="#about_us" 
-    bg="linear-gradient(#5918b6, #7b1fa2)" />
+    bg="linear-gradient(#5918b6, #7b1fa2)"> // nezapomenout na >
+
+    // Zde bude veškerý kontent jako text a tlačítka.
+    <h1>Hlavní nadpis</h1>
+    <h2>Podnadpis</h2>
+    <p>Nějakej hezkej text.</p>
+</ LandingPage>
 ```
-* *mainTitle* - hlavní titulek
-* *secondaryTitle* - podtitulek (nemusí být)
-* *shadow* - má mít stín
-* *bg* - barva pozadí, gradient, obrázek atd.
-* *color* - barva textu
-* *bgSize* - css styl background-size, default: cover
-* *link* - odkaz (kotva) kam má šipka dolů sjet
-* *textShadow* - přidá text shadow na nadpis a podnadpis pro lepší čitelnost
-* *orientation* - hodnoty: "left". Pokud bude zadáno landign page se přepne do levé orentace, nevhodné pro dlouhý text. Pokud nebude zadáno, bude se normálně centerovat
+> Je doporučené mít alespoň nadpis, podnadpis nebo nějaký jiný text. Je také možné sem vkládat např. tlačítka.
+
+* `shadow` - je-li uveden, celá landing page bude vrhat stín na objekty pod ní (např. na další sekci).
+* `link` - odkaz (kotva) kam má šipka dolů sjet.
+  * Není-li `link` uveden, šipečka ve spodní části se ani nezobrazí. 
+  * **Ikonka s linkem může na některých verzích landing page nebo rozlišeních zmizet!**
+* `bg` - barva pozadí, gradient, obrázek atd.
+* `color` - barva veškerého textu na landing page.
+  * Chcete-li změnit barvu pouze nadpisu a zbytek nechat jinou barvou, můžete využít *in-line* styly:
+    ```jsx
+    <LandingPage
+        color="black"
+        ... >
+
+        <h1 style={{ color: "red" }}>Hlavní nadpis</h1>
+        <h2>Podnadpis</h2>
+        <p>Nějakej hezkej text.</p>
+    </ LandingPage>
+    ``` 
+    Pouze `h1` bude červený, zbytek černý.
+    > Podobným postupem můžete nastavit i další vlastnosti textu, například velikost fontu, font, apd.
+
+* `bgSize` - css styl `background-size`, default: `cover`.
+* `textShadow` - přidá stín na nadpis (`h1`) a podnadpis (`h2`) pro lepší čitelnost.
+* `version` - verze landing page. Přehled verzí [najdete zde](gabro_example).
+* `orientation` - udává, na které straně bude text (na protější straně bude tedy obrázek či prázdné místo).
+  * Hodnoty: `left` (text je vlevo), `right` (text je vpravo). 
+  > Pokud verze landing page podporuje pouze zarovnání na střed či má specifické rozvrhnutí elementů, může být tato hodnota ignorována.
+
+
+
 * *block* - hodnota: barva. Pokud nezadáno nebude vidět. Blok přez polovinu obrazovky
 
 ### Section
