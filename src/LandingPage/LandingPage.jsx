@@ -46,14 +46,33 @@ const LandingPage = (props) => {
 
     // VERSIONS
 
-    let txtSection = <span style={ txt_styles } className={ `txt-section ${ !! props.orientation ? props.orientation : "center" }` }>
-                        { props.children }
-                    </span>
+    function getTxtSection(includeInClass) {
+        let classes = "";
+        if ( includeInClass ) {
+            includeInClass.forEach( element => {
+                classes = classes + " " + element
+            });
+        }
+
+        return  <span style={ txt_styles } className={ `txt-section ${ classes }` }>
+                    { props.children }
+                </span>
+    }
 
     // v1
 
     let v1 = [
-        txtSection,
+        getTxtSection([ props.orientation ]),
+        scrollDownIcon
+    ]
+
+    // v2
+
+    let v2 = [
+        <div className={ `container ${ !! props.orientation ? props.orientation : "" } ${ !! props.orientationMobile ? props.orientationMobile : "top" }` }>
+            { getTxtSection() }
+            <div className="img-section" style={{ backgroundImage: `url(${ props.img })` }}></div>
+        </div>,
         scrollDownIcon
     ]
     
@@ -67,7 +86,7 @@ const LandingPage = (props) => {
                 <h1 className="main-title" style={text_styles} >{props.title}</h1>
                 <h2 className="secondary-title" style={text_styles}>  {props.secondaryTitle}</h2>
             </span> */}
-            { v1 }
+            { props.version ? eval(props.version) : v1 }
 
         </div>
     );

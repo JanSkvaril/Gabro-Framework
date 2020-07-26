@@ -105,7 +105,11 @@ Navigační panel s odkazi na jednotlivé stránky
 <LandingPage
     shadow
     link="#about_us" 
-    bg="linear-gradient(#5918b6, #7b1fa2)"> // nezapomenout na >
+    bg="linear-gradient(#5918b6, #7b1fa2)"
+    version="v1"
+    color="red"
+    orientation="right"
+    img={ require('./path/to/img.png') }> // nezapomenout na >
 
     // Zde bude veškerý kontent jako text a tlačítka.
     <h1>Hlavní nadpis</h1>
@@ -141,7 +145,13 @@ Navigační panel s odkazi na jednotlivé stránky
 * `orientation` - udává, na které straně bude text (na protější straně bude tedy obrázek či prázdné místo).
   * Hodnoty: `left` (text je vlevo), `right` (text je vpravo). 
   > Pokud verze landing page podporuje pouze zarovnání na střed či má specifické rozvrhnutí elementů, může být tato hodnota ignorována.
-
+* `img` - obrázek, obvykle zobrazen vedle textu (např. u v2).
+  > Pokud verze nepodporuje obrázek, argument bude ignorován.
+* `orientationMobile` - udává, zda-li text bude nad obrázkem nebo pod obrázkem.
+  * Hodnoty: `top` (text je nad obrázkem), `bot` (text je pod obrázkem). 
+  * Samozřejmě platí pouze ve verzích kde je použit obrázek via `img` (výše).
+* `txtAlignMobile` - zarovnání textu na menších rozlišeních. 
+  * Hodnoty: `right`, `left`, `center`
 
 
 * *block* - hodnota: barva. Pokud nezadáno nebude vidět. Blok přez polovinu obrazovky

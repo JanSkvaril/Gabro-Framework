@@ -130,7 +130,7 @@
             font-size: 14px;
         }
     }
- }
+}
 
 
 .v1 {
@@ -196,5 +196,118 @@
 
     .center {
         right: 50%;
+    }
+}
+
+
+.v2 {
+    display: flex;
+
+    @media screen and (max-width: $break-large) {
+        justify-content: center;
+        align-items: center;
+    }
+
+    @mixin reset-to-center-medium() {
+        @media screen and (max-width: $break-large) {
+            text-align: center;
+            margin: 0;
+        }
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        padding: 0 5vw;
+
+        @media screen and (max-width: $break-large) {
+            max-height: 80vh;
+        }
+    
+
+        .txt-section {
+            max-width: 40%;
+
+            @media screen and (max-width: $break-large) {
+                max-width: 80%;
+            } 
+        }
+
+        .img-section {
+            max-width: 50%;
+            min-width: 40%;
+            height: 65vh;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            @media screen and (max-width: $break-large) {
+                max-width: 80%;
+                min-width: 75%;
+                height: 45vh;
+                text-align: center;
+            } 
+        }
+    }
+
+    .left {
+        flex-direction: row;
+
+        .txt-section {
+            right: 60%;
+            text-align: left;
+            margin-right: 40px;
+
+            @media screen and (max-width: $break-large) {
+                text-align: center;
+                margin: 0;
+            } 
+        }
+
+        .img-section {
+            right: 40%;
+        }
+    }
+
+    .right {
+        flex-direction: row-reverse;
+
+        .txt-section {
+            right: 40%;
+            text-align: right;
+            margin-left: 40px;
+
+            @media screen and (max-width: $break-large) {
+                text-align: center;
+                margin: 0;
+            } 
+        }
+
+
+        .img-section {
+            right: 60%;
+        }
+    }
+
+    .top {
+        @media screen and (max-width: $break-large) {
+            flex-direction: column;
+
+            
+        }
+    }
+
+    .bot {
+        @media screen and (max-width: $break-large) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    .icon-title {
+        @media screen and (max-width: 350px) {
+            visibility: hidden;
+        }
     }
 }
