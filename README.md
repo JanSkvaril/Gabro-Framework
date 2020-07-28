@@ -152,6 +152,7 @@ Navigační panel s odkazi na jednotlivé stránky
   * Samozřejmě platí pouze ve verzích kde je použit obrázek via `img` (výše).
 * `txtAlignMobile` - zarovnání textu na menších rozlišeních. 
   * Hodnoty: `right`, `left`, `center`
+* `iconColor` - barva ikonky ve spodní části landing page (scroll-down button s linkem).
 
 
 * *block* - hodnota: barva. Pokud nezadáno nebude vidět. Blok přez polovinu obrazovky
