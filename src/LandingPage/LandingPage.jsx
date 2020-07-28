@@ -38,7 +38,7 @@ const LandingPage = (props) => {
     let scrollDownIcon;
 
     if ( !! props.link ) {
-        scrollDownIcon = <IconButton className="icon-title" href={ props.link }>
+        scrollDownIcon = <IconButton className="icon-title" href={ props.link } style={{ color: !! props.iconColor ? props.iconColor : "white" }}>
                             <KeyboardArrowDown fontSize="large" />
                         </IconButton>
     }
@@ -106,6 +106,7 @@ LandingPage.propTypes = {
     textShadow:         PropTypes.bool,     // Stín textu
     version:            PropTypes.string,   // Která verze landing page
     orientation:        PropTypes.string,   // Zarovnání textu doprava/doleva
+    iconColor:          PropTypes.string,   // Barva scroll down ikonky
 }
 
 export default LandingPage;
