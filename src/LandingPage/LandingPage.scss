@@ -109,7 +109,8 @@
         margin-bottom: 0;
 
         @media screen and (max-width: $break-small) {
-            font-size: 3.2em;
+            font-size: 2.5em;
+            margin: 0;
         }
     }
 
@@ -243,10 +244,14 @@
             background-position: center;
 
             @media screen and (max-width: $break-large) {
-                max-width: 80%;
+                max-width: 85%;
                 min-width: 75%;
                 height: 45vh;
-                text-align: center;
+            } 
+
+            @media screen and (max-width: 370px) {
+                width: 90vw;
+                background-size: cover;
             } 
         }
     }
