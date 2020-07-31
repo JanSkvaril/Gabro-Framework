@@ -69,7 +69,7 @@ const LandingPage = (props) => {
     // v2
 
     let v2 = [
-        <div className={ `container ${ !! props.orientation ? props.orientation : "" } ${ !! props.orientationMobile ? props.orientationMobile : "top" }` }>
+        <div className={ `container ${ !! props.orientation ? props.orientation : "left" } ${ !! props.orientationMobile ? props.orientationMobile : "top" }` }>
             { getTxtSection() }
             <div className="img-section" style={{ backgroundImage: `url(${ props.img })` }}></div>
         </div>,

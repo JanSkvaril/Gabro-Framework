@@ -150,8 +150,6 @@ Navigační panel s odkazi na jednotlivé stránky
 * `orientationMobile` - udává, zda-li text bude nad obrázkem nebo pod obrázkem.
   * Hodnoty: `top` (text je nad obrázkem), `bot` (text je pod obrázkem). 
   * Samozřejmě platí pouze ve verzích kde je použit obrázek via `img` (výše).
-* `txtAlignMobile` - zarovnání textu na menších rozlišeních. 
-  * Hodnoty: `right`, `left`, `center`
 * `iconColor` - barva ikonky ve spodní části landing page (scroll-down button s linkem).
 
 
