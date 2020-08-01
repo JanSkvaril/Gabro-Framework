@@ -1,6 +1,6 @@
 import React from 'react'
 import { IconButton } from '@material-ui/core';
-import { KeyboardArrowDown, PortraitSharp } from '@material-ui/icons/';
+import { KeyboardArrowDown } from '@material-ui/icons/';
 import './LandingPage.scss';
 import PropTypes from 'prop-types';
 
@@ -21,7 +21,8 @@ const LandingPage = (props) => {
     // }
 
     // STYLES
-
+    
+    // Styles for the whole landing page
     let container_styles = {
         boxShadow:       !! props.shadow    ? "0px 0px 77px -16px rgba(0,0,0,0.75)"     : "none",
         background:         props.bg        ? props.bg                                  : "#407BFF",
@@ -29,34 +30,54 @@ const LandingPage = (props) => {
         zIndex:          !! props.shadow    ? 5                                         : -1   
     }
 
+    // Text styles
     let txt_styles = {
         color:              props.color     ? props.color                               : "#1C1C1C",
     }    
 
 
     // COMPONENTS
+
+    // Icon for scrolling down to another section
     let scrollDownIcon;
 
+    // Icon won't be shown when the user does not provide link prop
     if ( !! props.link ) {
-        scrollDownIcon = <IconButton className="icon-title" href={ props.link } style={{ color: !! props.iconColor ? props.iconColor : "white" }}>
-                            <KeyboardArrowDown fontSize="large" />
-                        </IconButton>
+        scrollDownIcon = 
+            <IconButton 
+                className="icon-title" 
+                href={ props.link } 
+                style={{ color: !! props.iconColor ? props.iconColor : "white" }}>
+                            
+                <KeyboardArrowDown fontSize="large" />
+            </IconButton>
     }
      
 
     // VERSIONS
 
+    // Generates a text section of the Landing Page
+    // param includeInClass:arr - array of string which should be classes for the text container.
+    //      For example you can pass some props into it for text alignment etc.
+    //      Usage: getTxtSection([ props.orientation, props.txtAlignMobile ])
     function getTxtSection(includeInClass) {
+
         let classes = "";
+
         if ( includeInClass ) {
             includeInClass.forEach( element => {
                 classes = classes + " " + element
             });
         }
 
-        return  <span style={ txt_styles } className={ `txt-section ${ classes }` }>
-                    { props.children }
-                </span>
+        return (
+            <span 
+                style={ txt_styles } 
+                className={ `txt-section ${ classes }` }>
+                    
+                { props.children }
+            </span>
+        )
     }
 
     // v1
@@ -69,17 +90,30 @@ const LandingPage = (props) => {
     // v2
 
     let v2 = [
-        <div className={ `container ${ !! props.orientation ? props.orientation : "left" } ${ !! props.orientationMobile ? props.orientationMobile : "top" }` }>
+        <div 
+            className={ 
+                `container 
+                ${ !! props.orientation         ? props.orientation         : "left" } 
+                ${ !! props.orientationMobile   ? props.orientationMobile   : "top"  }` }>
+            
             { getTxtSection() }
-            <div className="img-section" style={{ backgroundImage: `url(${ props.img })` }}></div>
+
+            <div 
+                className="img-section" 
+                style={{ backgroundImage: `url(${ props.img })` }}>
+                
+            </div>
         </div>,
+
         scrollDownIcon
     ]
     
 
-
     return (
-        <div className={ `landing-page ${ !! props.version ? props.version : "" }` } style={ container_styles } id="landing-page">
+        <div 
+            className={ `landing-page ${ !! props.version ? props.version : "" }` } 
+            style={ container_styles } 
+            id="landing-page">
 
             {/* {block}
             <span className={headline_variant}>
