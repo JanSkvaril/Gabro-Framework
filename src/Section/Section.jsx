@@ -48,6 +48,7 @@ const Section = (props) => {
             {props.children}
             {/* Left line */}
             <div className="line" style={line_styles}></div>
+
         </div>
     );
 }
