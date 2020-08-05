@@ -1,5 +1,8 @@
 import React from 'react';
 import './Section.scss';
+import PropTypes from 'prop-types';
+
+
 const Section = (props) => {
     //styles passed by props
     let styles = {
@@ -43,6 +46,12 @@ const Section = (props) => {
             <div className="line" style={line_styles}></div>
         </div>
     );
+}
+
+
+Section.propTypes = {
+    /** Text color teeeest */
+    color: PropTypes.string,
 }
 
 //In section must be one of "parts" - Full/Half/row
