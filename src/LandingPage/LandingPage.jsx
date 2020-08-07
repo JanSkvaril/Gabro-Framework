@@ -1,24 +1,10 @@
-import React from 'react'
+import React from 'react';
 import { IconButton } from '@material-ui/core';
 import { KeyboardArrowDown } from '@material-ui/icons/';
 import './LandingPage.scss';
 import PropTypes from 'prop-types';
 
 const LandingPage = (props) => {
-
-    // let text_styles = {
-    //     textShadow: !!props.textShadow ? "0px 0px 4px rgba(50, 50, 50, 1)" : "none"
-    // }
-
-    // let headline_variant = "header";
-    // if (!!props.orientation) {
-    //     if (props.orientation == "left")
-    //         headline_variant = "header_left"
-    // }
-    // let block = "";
-    // if (!!props.block) {
-    //     block = <div className="block" style={{ background: props.block }}></div >
-    // }
 
     // STYLES
     
@@ -71,12 +57,12 @@ const LandingPage = (props) => {
         }
 
         return (
-            <span 
+            <div 
                 style={ txt_styles } 
                 className={ `txt-section ${ classes }` }>
                     
                 { props.children }
-            </span>
+            </div>
         )
     }
 
@@ -107,7 +93,25 @@ const LandingPage = (props) => {
 
         scrollDownIcon
     ]
-    
+
+    // v3
+
+    let v3 = [
+        <div
+        className={ 
+            `container ${ !! props.orientation ? props.orientation : "left"} ${ !! props.orientationMobile ? props.orientationMobile : "top"} `}>
+
+            <div 
+                className="block" 
+                style={{ background: !! props.blockColor ? props.blockColor : "rgba(33, 33, 33, 0.5)" }}>
+
+                { getTxtSection() }
+
+            </div >
+        </div>,
+
+        scrollDownIcon
+    ]
 
     return (
         <div 
@@ -115,11 +119,6 @@ const LandingPage = (props) => {
             style={ container_styles } 
             id="landing-page">
 
-            {/* {block}
-            <span className={headline_variant}>
-                <h1 className="main-title" style={text_styles} >{props.title}</h1>
-                <h2 className="secondary-title" style={text_styles}>  {props.secondaryTitle}</h2>
-            </span> */}
             { props.version ? eval(props.version) : v1 }
 
         </div>

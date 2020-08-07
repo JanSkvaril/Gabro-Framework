@@ -11,95 +11,6 @@
         left: 50%;
         transform: translate(-50%, 0%);
     }
-
-    // .header {
-    //     // text-align: center;
-    //     // position: absolute;
-    //     // top: 50%;
-    //     // right: 50%;
-    //     // transform: translate(+50%, -50%);
-    //     // width: 100%;
-
-    //     .main-title {
-
-
-    //         @media screen and (min-width: $break-medium) {
-    //             font-size: 100px;
-    //         }
-
-    //         @media screen and (min-width: $break-large) {
-    //             font-size: 120px;
-    //         }
-
-    //         margin: 0px;
-    //         font-size: 50px;
-    //     }
-
-    //     .secondary-title {
-
-    //         @media screen and (min-width: $break-medium) {
-    //             font-size: 30px;
-    //         }
-
-    //         @media screen and (min-width: $break-large) {
-    //             font-size: 50px;
-    //         }
-
-    //         font-size: 25px;
-    //         margin: 0px;
-    //     }
-    // }
-
-    // .header_left {
-    //     text-align: center;
-    //     position: absolute;
-    //     top: 50%;
-    //     left: 10%;
-    //     transform: translate(0, -50%);
-    //     width: fit-content;
-    //     text-align: left;
-
-    //     .main-title {
-
-
-    //         @media screen and (min-width: $break-medium) {
-    //             font-size: 60px;
-    //         }
-
-    //         @media screen and (min-width: $break-large) {
-    //             font-size: 80px;
-    //         }
-
-    //         margin: 0px;
-    //         font-size: 50px;
-    //     }
-
-    //     .secondary-title {
-
-    //         @media screen and (min-width: $break-medium) {
-    //             font-size: 30px;
-    //         }
-
-    //         @media screen and (min-width: $break-large) {
-    //             font-size: 50px;
-    //         }
-
-    //         font-size: 25px;
-    //         margin: 0px;
-    //     }
-    // }
-
-    // .block {
-    //     height: 100%;
-    //     width: 100%;
-
-
-    //     @media screen and (min-width: $break-medium) {
-    //         clip-path: polygon(0 0, 60% 0, 40% 100%, 0% 100%);
-    //         //TODO: more variants
-    //     }
-
-    // }
 }
 
 // Styles for props.children
@@ -318,6 +229,112 @@
     .icon-title {
         @media screen and (max-width: 350px) {
             visibility: hidden;
+        }
+    }
+}
+
+
+.v3 {
+    display: flex;
+
+    .right {
+        justify-content: flex-end;
+        flex-direction: row;
+
+        .block {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 44% 100%);
+
+            .txt-section {
+                text-align: right;
+                right: 5%;
+            }
+        }
+    }
+
+    .left {
+        justify-content: flex-start;
+        flex-direction: row;
+
+        .block {
+            clip-path: polygon(0 0, 100% 0, 66% 100%, 0% 100%);
+
+            .txt-section {
+                text-align: left;
+                left: 5%;
+            }
+        }
+    }
+
+    .top {
+        @media screen and (max-width: $break-large) {
+            .block {
+                clip-path: polygon(0 0, 100% 0, 100% 74%, 0 100%);
+            }
+        }
+
+        @media screen and (max-width: $break-small) {
+            .block {
+                clip-path: polygon(0 0, 100% 0, 100% 84%, 0 100%);
+        
+            }
+        }
+    }
+
+    .bot {
+        @media screen and (max-width: $break-large) {
+            align-items: flex-end;
+            
+            .block {
+                clip-path: polygon(0 26%, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+
+        @media screen and (max-width: $break-small) {
+            .block {
+                clip-path: polygon(0 16%, 100% 0, 100% 100%, 0 100%);
+        
+            }
+        }
+    }
+
+    .container {
+        width: 100vw;
+        display: flex;
+
+        .block {
+            @media screen and (min-width: $break-large) {
+                height: 100%;
+                width: 60%;
+                display: flex;
+                align-items: center;
+            }
+
+            @media screen and (max-width: $break-large) {
+                width: 100vw;
+                height: 80%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            @media screen and (max-width: $break-small) {
+                min-height: 50%;
+            }
+
+            .txt-section {
+                position: absolute;
+
+                @media screen and (min-width: $break-large) {
+                    width: 35%;
+                }
+
+                @media screen and (max-width: $break-large) {
+                    right: auto;
+                    left: auto;
+                    width: 70vw;
+                    text-align: center;
+                }
+            }
         }
     }
 }
