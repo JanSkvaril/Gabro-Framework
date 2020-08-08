@@ -154,6 +154,18 @@ Navigační panel s odkazi na jednotlivé stránky
 * `blockColor` - barva blocku (například u v3).
 * `blockOrientation` - orientace blocku (širší částí nahoře nebo dole).
   * Hodnoty: `top` (širší část nahoře), `bot` (širší část je dole). 
+* `txtShadow` - nastavení, zda-li text bude mít stín nebo ne.
+    ```jsx
+    <LandingPage
+        color="black"
+        shadow // stačí pouze takto zmínit
+        ... >
+
+        <h1>Hlavní nadpis</h1>
+        <h2>Podnadpis</h2>
+        <p>Nějakej hezkej text.</p>
+    </ LandingPage>
+    ``` 
 
 
 * *block* - hodnota: barva. Pokud nezadáno nebude vidět. Blok přez polovinu obrazovky

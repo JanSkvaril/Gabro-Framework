@@ -19,6 +19,7 @@ const LandingPage = (props) => {
     // Text styles
     let txt_styles = {
         color:              props.color     ? props.color                               : "#1C1C1C",
+        textShadow:      !! props.txtShadow ? "0px 0px 4px rgba(0, 0, 0, 0.54)"         : "",
     }    
 
 
@@ -145,6 +146,7 @@ LandingPage.propTypes = {
     iconColor:          PropTypes.string,   // Barva scroll down ikonky
     blockColor:         PropTypes.string,   // Barva blocku
     blockOrientation:   PropTypes.string,   // Oreientace blocku (širší část nahoře nebo dole)
+    txtShadow:         PropTypes.bool,     // Strín textu
 }
 
 export default LandingPage;
