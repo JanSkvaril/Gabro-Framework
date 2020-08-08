@@ -99,7 +99,10 @@ const LandingPage = (props) => {
     let v3 = [
         <div
         className={ 
-            `container ${ !! props.orientation ? props.orientation : "left"} ${ !! props.orientationMobile ? props.orientationMobile : "top"} `}>
+            `container 
+            ${ !! props.orientation ? props.orientation : "left"} 
+            ${ !! props.orientationMobile ? props.orientationMobile : "top"} 
+            ${ !! props.blockOrientation ? "block-" + props.blockOrientation + "-" + props.orientation : "block-top-" + props.orientation } `}>
 
             <div 
                 className="block" 
@@ -141,6 +144,7 @@ LandingPage.propTypes = {
     orientation:        PropTypes.string,   // Zarovnání textu doprava/doleva
     iconColor:          PropTypes.string,   // Barva scroll down ikonky
     blockColor:         PropTypes.string,   // Barva blocku
+    blockOrientation:   PropTypes.string,   // Oreientace blocku (širší část nahoře nebo dole)
 }
 
 export default LandingPage;
