@@ -140,6 +140,7 @@ LandingPage.propTypes = {
     version:            PropTypes.string,   // Která verze landing page
     orientation:        PropTypes.string,   // Zarovnání textu doprava/doleva
     iconColor:          PropTypes.string,   // Barva scroll down ikonky
+    blockColor:         PropTypes.string,   // Barva blocku
 }
 
 export default LandingPage;

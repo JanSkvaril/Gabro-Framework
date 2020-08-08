@@ -151,6 +151,7 @@ Navigační panel s odkazi na jednotlivé stránky
   * Hodnoty: `top` (text je nad obrázkem), `bot` (text je pod obrázkem). 
   * Samozřejmě platí pouze ve verzích kde je použit obrázek via `img` (výše).
 * `iconColor` - barva ikonky ve spodní části landing page (scroll-down button s linkem).
+* `blockColor` - barva blocku (například u v3).
 
 
 * *block* - hodnota: barva. Pokud nezadáno nebude vidět. Blok přez polovinu obrazovky
