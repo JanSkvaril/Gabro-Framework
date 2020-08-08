@@ -242,8 +242,6 @@
         flex-direction: row;
 
         .block {
-            // clip-path: polygon(0 0, 100% 0, 100% 100%, 44% 100%);
-
             .txt-section {
                 text-align: right;
                 right: 5%;
@@ -256,8 +254,6 @@
         flex-direction: row;
 
         .block {
-            // clip-path: polygon(0 0, 100% 0, 66% 100%, 0% 100%);
-
             .txt-section {
                 text-align: left;
                 left: 5%;
@@ -340,22 +336,29 @@
 
     .block-top-left {
         .block {
-            clip-path: polygon(0 0, 100% 0, 66% 100%, 0% 100%);
+            @media screen and (min-width: $break-large) {
+                clip-path: polygon(0 0, 100% 0, 66% 100%, 0% 100%);
+            }
         }
     }
     .block-top-right {
         .block {
+            @media screen and (min-width: $break-large) {
             clip-path: polygon(0 0, 100% 0, 100% 100%, 44% 100%);
+            }
         }
     }
     .block-bot-left {
         .block {
+            @media screen and (min-width: $break-large) {
             clip-path: polygon(0 0, 66% 0, 100% 100%, 0% 100%);
         }
     }
+    }
     .block-bot-right {
         .block {
+            @media screen and (min-width: $break-large) {
             clip-path: polygon(44% 0, 100% 0, 100% 100%, 0% 100%);
-        }
+        }}
     }
 }
