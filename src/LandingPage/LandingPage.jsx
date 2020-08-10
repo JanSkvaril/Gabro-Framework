@@ -106,7 +106,7 @@ const LandingPage = (props) => {
             ${ !! props.blockOrientation ? "block-" + props.blockOrientation + "-" + props.orientation : "block-top-" + props.orientation } `}>
 
             <div 
-                className="block" 
+                className={ `block ${ !! props.blockShape ? props.blockShape : "square" }`} 
                 style={{ background: !! props.blockColor ? props.blockColor : "rgba(33, 33, 33, 0.5)" }}>
 
                 { getTxtSection() }
@@ -146,7 +146,8 @@ LandingPage.propTypes = {
     iconColor:          PropTypes.string,   // Barva scroll down ikonky
     blockColor:         PropTypes.string,   // Barva blocku
     blockOrientation:   PropTypes.string,   // Oreientace blocku (širší část nahoře nebo dole)
-    txtShadow:         PropTypes.bool,     // Strín textu
+    txtShadow:          PropTypes.bool,     // Strín textu
+    blockShape:         PropTypes.string,   // Tvar blocku
 }
 
 export default LandingPage;

@@ -234,17 +234,75 @@
 }
 
 
+// Version 3
 .v3 {
     display: flex;
 
+    // Full-screen container holding the block
+    .container {
+        display: flex;
+        width: 100vw;
+
+        // Div with a specific shape (values 'square', 'crossed') containing the text-section
+        .block {
+            display: flex;
+            align-items: center;
+            height: 100%;
+
+            @media screen and (max-width: $break-large) {
+                justify-content: center;
+                width: 100vw;
+            }
+
+            @media screen and (max-width: $break-small) {
+                min-height: 40%;
+            }
+
+            // Section with text
+            .txt-section {
+                position: absolute;
+                width: 35%;
+
+                @media screen and (max-width: $break-large) {
+                    position: relative;
+                    width: 85vw;
+                    text-align: center;
+                }
+            }
+        }
+
+        .crossed {
+            @media screen and (min-width: $break-large) {
+                width: 60%;
+            }
+
+            @media screen and (max-width: $break-large) {
+                height: fit-content;
+            }
+        }
+
+        .square {
+            @media screen and (min-width: $break-large) {
+                width: 45%;
+            }
+
+            @media screen and (max-width: $break-large) {
+                height: fit-content;
+            }
+        }
+    }
+
+    // Position of the block on large screen
     .right {
         justify-content: flex-end;
         flex-direction: row;
 
         .block {
             .txt-section {
-                text-align: right;
-                right: 5%;
+                @media screen and (min-width: $break-large) {
+                    text-align: right;
+                    right: 5%;
+                }
             }
         }
     }
@@ -255,110 +313,97 @@
 
         .block {
             .txt-section {
-                text-align: left;
-                left: 5%;
+                @media screen and (min-width: $break-large) {
+                    text-align: left;
+                    left: 5%;
+                }
+                
             }
         }
     }
 
+    // Orientation of the block on mobile
     .top {
         @media screen and (max-width: $break-large) {
             .block {
+                padding-top: 20%;
+            }
+
+            .crossed {
                 clip-path: polygon(0 0, 100% 0, 100% 74%, 0 100%);
+                padding-bottom: 25%;
+            }
+
+            .square {
+                padding-bottom: 8%;
             }
         }
 
         @media screen and (max-width: $break-small) {
-            .block {
+            .crossed {
                 clip-path: polygon(0 0, 100% 0, 100% 84%, 0 100%);
         
             }
         }
     }
 
+    // Orientation of the block on mobile
     .bot {
         @media screen and (max-width: $break-large) {
             align-items: flex-end;
-            
+
             .block {
+                padding-bottom: 20%;
+            }
+            
+            .crossed {
                 clip-path: polygon(0 26%, 100% 0, 100% 100%, 0 100%);
+                padding-top: 20%;
+            }
+
+            .square {
+                padding-top: 5%;
             }
         }
 
         @media screen and (max-width: $break-small) {
-            .block {
+            .crossed {
                 clip-path: polygon(0 16%, 100% 0, 100% 100%, 0 100%);
         
             }
         }
     }
 
-    .container {
-        width: 100vw;
-        display: flex;
-
-        .block {
-            @media screen and (min-width: $break-large) {
-                height: 100%;
-                width: 60%;
-                display: flex;
-                align-items: center;
-            }
-
-            @media screen and (max-width: $break-large) {
-                width: 100vw;
-                height: 70%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            @media screen and (max-width: $break-small) {
-                min-height: 50%;
-            }
-
-            .txt-section {
-                position: absolute;
-
-                @media screen and (min-width: $break-large) {
-                    width: 35%;
-                }
-
-                @media screen and (max-width: $break-large) {
-                    right: auto;
-                    left: auto;
-                    width: 90vw;
-                    text-align: center;
-                }
-            }
-        }
-    }
-
+    // Crossed block in different positions
     .block-top-left {
-        .block {
+        .crossed {
             @media screen and (min-width: $break-large) {
                 clip-path: polygon(0 0, 100% 0, 66% 100%, 0% 100%);
             }
         }
     }
+
     .block-top-right {
-        .block {
+        .crossed {
             @media screen and (min-width: $break-large) {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 44% 100%);
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 44% 100%);
             }
         }
     }
+
     .block-bot-left {
-        .block {
+        .crossed {
             @media screen and (min-width: $break-large) {
             clip-path: polygon(0 0, 66% 0, 100% 100%, 0% 100%);
+            }
         }
     }
-    }
+
     .block-bot-right {
-        .block {
+        .crossed {
             @media screen and (min-width: $break-large) {
-            clip-path: polygon(44% 0, 100% 0, 100% 100%, 0% 100%);
-        }}
+                clip-path: polygon(44% 0, 100% 0, 100% 100%, 0% 100%);
+            }   
+        }
     }
 }

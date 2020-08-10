@@ -166,9 +166,8 @@ Navigační panel s odkazi na jednotlivé stránky
         <p>Nějakej hezkej text.</p>
     </ LandingPage>
     ``` 
-
-
-* *block* - hodnota: barva. Pokud nezadáno nebude vidět. Blok přez polovinu obrazovky
+* `blockShape` - jak má block vypadat.
+  * Hodnoty: `square` - čtvercový, `crossed` - lichoběžník
 
 ### Section
 Sekce zabírá 100% šířku a nějakou výšku, může obsahovat cokoliv. Například rubriky jako o nás, služby a podobně. Dále třeba ceník, kontaktní formulář. Sekce navíc styluje určité tagy jako nadpisy, text a podobně, viz níže. Některé komponenty musí být v sekci.
