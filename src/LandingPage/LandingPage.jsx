@@ -42,14 +42,28 @@ const LandingPage = (props) => {
      
 
     // VERSIONS
+    // Version is an array of inner containers.
+    // Each version has a text-section and scrollDownIcon. 
+    //
+    // I will provide lists of available props for each version. If you use a prop which is not supported for the version, it will be ignored.
+    // Standard props (available for every version):
+    //      shadow
+    //      bg 
+    //      bgSize
+    //      color
+    //      txtShadow
+    //      link
+    //      iconColor
+    //      version
+    // See more about these props in the documentation.
 
-    // Generates a text section of the Landing Page
-    // param includeInClass:arr - array of string which should be classes for the text container.
-    //      For example you can pass some props into it for text alignment etc.
-    //      Usage: getTxtSection([ props.orientation, props.txtAlignMobile ])
     function getTxtSection(includeInClass) {
+        // Generates a text section of the Landing Page
+        // param includeInClass:array - array of strings which should be classes for the text container (section).
+        //      For example you can pass some props into it for text alignment etc.
+        //      Usage: getTxtSection([ props.orientation, props.txtAlignMobile ])
 
-        let classes = "";
+        let classes = "txt-section ";
 
         if ( includeInClass ) {
             includeInClass.forEach( element => {
@@ -60,7 +74,7 @@ const LandingPage = (props) => {
         return (
             <div 
                 style={ txt_styles } 
-                className={ `txt-section ${ classes }` }>
+                className={ classes }>
                     
                 { props.children }
             </div>
@@ -69,6 +83,10 @@ const LandingPage = (props) => {
 
     // v1
 
+    // Version with text, scrollDownIcon. 
+    // Available props:
+    //      orientation
+    // See more about the prop in the documentation.
     let v1 = [
         getTxtSection([ props.orientation ]),
         scrollDownIcon
@@ -76,6 +94,12 @@ const LandingPage = (props) => {
 
     // v2
 
+    // Version with text, scrollDownIcon, image.
+    // Available props:
+    //      orientation
+    //      orieantationMobile
+    //      img
+    // See more about these props in the documentation.
     let v2 = [
         <div 
             className={ 
@@ -97,6 +121,14 @@ const LandingPage = (props) => {
 
     // v3
 
+    // Version with text in a container called black, which can have some specific shape and background color, scrollDownIcon.
+    // Available props:
+    //      orientation
+    //      orientationMobile
+    //      blockOrientation
+    //      blockShape
+    //      blockColor
+    // See more about these props in the documentation.
     let v3 = [
         <div
         className={ 
@@ -145,8 +177,8 @@ LandingPage.propTypes = {
     orientation:        PropTypes.string,   // Zarovnání textu doprava/doleva
     iconColor:          PropTypes.string,   // Barva scroll down ikonky
     blockColor:         PropTypes.string,   // Barva blocku
-    blockOrientation:   PropTypes.string,   // Oreientace blocku (širší část nahoře nebo dole)
-    txtShadow:          PropTypes.bool,     // Strín textu
+    blockOrientation:   PropTypes.string,   // Orientace blocku (širší část nahoře nebo dole)
+    txtShadow:          PropTypes.bool,     // Stín textu
     blockShape:         PropTypes.string,   // Tvar blocku
 }
 

@@ -111,7 +111,7 @@ Navigační panel s odkazi na jednotlivé stránky
     orientation="right"
     img={ require('./path/to/img.png') }> // nezapomenout na >
 
-    // Zde bude veškerý kontent jako text a tlačítka.
+    // Zde bude veškerý kontent jako například text a tlačítka.
     <h1>Hlavní nadpis</h1>
     <h2>Podnadpis</h2>
     <p>Nějakej hezkej text.</p>
@@ -119,55 +119,57 @@ Navigační panel s odkazi na jednotlivé stránky
 ```
 > Je doporučené mít alespoň nadpis, podnadpis nebo nějaký jiný text. Je také možné sem vkládat např. tlačítka.
 
-* `shadow` - je-li uveden, celá landing page bude vrhat stín na objekty pod ní (např. na další sekci).
-* `link` - odkaz (kotva) kam má šipka dolů sjet.
-  * Není-li `link` uveden, šipečka ve spodní části se ani nezobrazí. 
-  * **Ikonka s linkem může na některých verzích landing page nebo rozlišeních zmizet!**
-* `bg` - barva pozadí, gradient, obrázek atd.
-* `color` - barva veškerého textu na landing page.
-  * Chcete-li změnit barvu pouze nadpisu a zbytek nechat jinou barvou, můžete využít *in-line* styly:
-    ```jsx
-    <LandingPage
-        color="black"
-        ... >
+#### Atributy
+* **Standardní atributy** - atributy jsou platné pro všechny verze landing page.
+  * `bg` - barva pozadí, gradient, obrázek atd.
+  * `color` - barva veškerého textu na landing page.
+    * Chcete-li změnit barvu pouze nadpisu a zbytek nechat jinou barvou, můžete využít *in-line* styly:
+      ```jsx
+      <LandingPage
+          color="black"
+          ... >
 
-        <h1 style={{ color: "red" }}>Hlavní nadpis</h1>
-        <h2>Podnadpis</h2>
-        <p>Nějakej hezkej text.</p>
-    </ LandingPage>
-    ``` 
-    Pouze `h1` bude červený, zbytek černý.
-    > Podobným postupem můžete nastavit i další vlastnosti textu, například velikost fontu, font, apd.
+          <h1 style={{ color: "red" }}>Hlavní nadpis</h1>
+          <h2>Podnadpis</h2>
+          <p>Nějakej hezkej text.</p>
+      </ LandingPage>
+      ``` 
+      Pouze `h1` bude červený, zbytek černý.
+      > Podobným postupem můžete nastavit i další vlastnosti textu, například velikost fontu, font, apd.
 
-* `bgSize` - css styl `background-size`, default: `cover`.
-* `textShadow` - přidá stín na nadpis (`h1`) a podnadpis (`h2`) pro lepší čitelnost.
-* `version` - verze landing page. Přehled verzí [najdete zde](gabro_example).
-* `orientation` - udává, na které straně bude text (na protější straně bude tedy obrázek či prázdné místo).
-  * Hodnoty: `left` (text je vlevo), `right` (text je vpravo). 
-  > Pokud verze landing page podporuje pouze zarovnání na střed či má specifické rozvrhnutí elementů, může být tato hodnota ignorována.
-* `img` - obrázek, obvykle zobrazen vedle textu (např. u v2).
-  > Pokud verze nepodporuje obrázek, argument bude ignorován.
-* `orientationMobile` - udává, zda-li text bude nad obrázkem nebo pod obrázkem.
-  * Hodnoty: `top` (text je nad obrázkem), `bot` (text je pod obrázkem). 
-  * Samozřejmě platí pouze ve verzích kde je použit obrázek via `img` (výše).
-* `iconColor` - barva ikonky ve spodní části landing page (scroll-down button s linkem).
-* `blockColor` - barva blocku (například u v3).
-* `blockOrientation` - orientace blocku (širší částí nahoře nebo dole).
-  * Hodnoty: `top` (širší část nahoře), `bot` (širší část je dole). 
-* `txtShadow` - nastavení, zda-li text bude mít stín nebo ne.
-    ```jsx
-    <LandingPage
-        color="black"
-        shadow // stačí pouze takto zmínit
-        ... >
+  * `shadow` - je-li uveden, celá landing page bude vrhat stín na objekty pod ní (např. na další sekci).
+  * `link` - odkaz (kotva) kam má šipka dolů sjet.
+    * Není-li `link` uveden, šipečka ve spodní části se ani nezobrazí. 
+    * **Ikonka s linkem může na některých verzích landing page nebo rozlišeních zmizet!**
+  * `iconColor` - barva ikonky ve spodní části landing page (scroll-down button s linkem).
+  * `bgSize` - css styl `background-size`, default: `cover`.
+  * `version` - verze landing page. Přehled verzí [najdete zde](gabro_example).
+  * `orientation` - udává, na které straně bude text (na protější straně bude tedy obrázek či prázdné místo).
+    * Hodnoty: `left` (text je vlevo), `right` (text je vpravo), některé verze podporují i `center`.
+  * `txtShadow` - nastavení, zda-li text bude mít stín nebo ne.
+      ```jsx
+      <LandingPage
+          color="black"
+          shadow
+          txtshadow // stačí pouze takto zmínit
+          ... >
 
-        <h1>Hlavní nadpis</h1>
-        <h2>Podnadpis</h2>
-        <p>Nějakej hezkej text.</p>
-    </ LandingPage>
-    ``` 
-* `blockShape` - jak má block vypadat.
-  * Hodnoty: `square` - čtvercový, `crossed` - lichoběžník
+          <h1>Hlavní nadpis</h1>
+          <h2>Podnadpis</h2>
+          <p>Nějakej hezkej text.</p>
+      </ LandingPage>
+      ```
+
+* **Version-based atributy**
+  * `img` [v2] - obrázek, obvykle zobrazen vedle textu (např. u v2).
+  * `orientationMobile` [v2, v3] - udává, zda-li text bude nahoře nebo dole (na druhé straně bude například obrázek).
+    * Hodnoty: `top` (text je nad obrázkem), `bot` (text je pod obrázkem). 
+  * `blockColor` [v3] - barva blocku (například u v3).
+  * `blockOrientation` [v3] - orientace blocku (širší částí nahoře nebo dole).
+    * Hodnoty: `top` (širší část nahoře), `bot` (širší část je dole). 
+ 
+  * `blockShape` [v3] - jak má block vypadat.
+    * Hodnoty: `square` - čtvercový, `crossed` - lichoběžník
 
 ### Section
 Sekce zabírá 100% šířku a nějakou výšku, může obsahovat cokoliv. Například rubriky jako o nás, služby a podobně. Dále třeba ceník, kontaktní formulář. Sekce navíc styluje určité tagy jako nadpisy, text a podobně, viz níže. Některé komponenty musí být v sekci.
