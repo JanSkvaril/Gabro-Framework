@@ -14,6 +14,25 @@ import PropTypes from 'prop-types';
  * The landing page component.
  * 
  * @version   2.2
+ * @example
+ * <LandingPage
+ *  shadow
+ *  txtShadow
+ *  link="#about_us" 
+ *  bg="linear-gradient(#5918b6, #7b1fa2)"
+ *  version="v3"
+ *  color="white"
+ *  orientation="left"
+ *  img={ require('./images/my.png') }
+ *  orientationMobile="bot"
+ *  iconColor="white"
+ *  blockColor="rgba(33, 33, 33, 0.5)"
+ *  blockOrientation="bot"
+ *  blockShape="square"> 
+ *
+ *  <h1>Lorem Ipsum.</h1>
+ *  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elt.</p>     
+ *  </ LandingPage>
  */
 const LandingPage = (props) => {
 
@@ -210,17 +229,6 @@ LandingPage.propTypes = {
      * 
      * It is a **standard prop** - this prop apply to every version of the landing page.
      * 
-     * > Possible values:
-     * * RGB, RGBA, HEX, name of the color (*white, red, black*), anything you can describe color with.
-     * 
-     * @default     "#407BFF"
-     * 
-     * @example
-     * <LandingPage
-     *   // bg="rgb(5, 25, 88)"
-     *   bg="red">
-     *   ...
-     * </LandingPage> 
     */
     bg:                 PropTypes.string,   
 
@@ -230,11 +238,6 @@ LandingPage.propTypes = {
      * It is a **standard prop** - this prop apply to every version of the landing page.
      * 
      * If you want a **different color for specific part of the text content, use **in-line styles**.
-     * 
-     * > Possible values:
-     * * RGB, RGBA, HEX, name of the color (*white, red, black*), anything you can describe color with.
-     * 
-     * @default     "#1C1C1C"
      * 
      * @example
      * <LandingPage
@@ -249,24 +252,9 @@ LandingPage.propTypes = {
      * 
      * It is a **standard prop** - this prop apply to every version of the landing page.
      * 
-     * > Possible values:
-     * * **auto** - The background image is displayed in its original size.
-     * * ***length*** - Sets the width and height of the background image. The first value sets the width, the second value sets the height. If only one value is given, the second is set to "auto".
-     * * ***percentage*** - Sets the width and height of the background image in percent of the parent element. The first value sets the width, the second value sets the height. If only one value is given, the second is set to "auto".
-     * * **cover** - Resize the background image to cover the entire container, even if it has to stretch the image or cut a little bit off one of the edges.
-     * * **contain** - 	Resize the background image to make sure the image is fully visible.
-     * * **intial** - Sets this property to its default value.
-     * * **inherit** - 	Inherits this property from its parent element.
-     * 
-     * Definitions of those values is from [w3schools](https://www.w3schools.com/cssref/css3_pr_background-size.asp).
+     * Definitions of the possible values can be find on [w3schools](https://www.w3schools.com/cssref/css3_pr_background-size.asp).
      *  
-     * @default cover
-     * 
-     * @example
-     * <LandingPage
-     *   bgSize="auto">
-     *   ...
-     * </LandingPage>                     
+     * @default cover                   
     */
     bgSize:             PropTypes.string,   
 
@@ -279,44 +267,20 @@ LandingPage.propTypes = {
      * * **v1** - Version with only **text** and **scroll-down icon**.
      * * **v2** - Version with **text**, **scroll-down icon** and an **image**.
      * * **v3** - Version with **text** in a container called `block`, which can have some specific **shape and background color**, **scrollDownIcon**.
-     *
-     * @example
-     * <LandingPage
-     *   version="v2">
-     *   ...
-     * </LandingPage> 
     */
-    version:            PropTypes.string,   
+    version:            PropTypes.oneOf(["v1", "v2", "v3"]),   
 
     /** 
      * **Position of the text** section on the landing page. 
      * 
      * It is a **standard prop** - this prop apply to every version of the landing page.
-     * 
-     * > Possible values: 
-     * * **left** - text is aligned to the left; 
-     * * **right** - text is aligned to the right.
-     * @example
-     * <LandingPage
-     *   orientation="left">
-     *   ...
-     * </LandingPage> 
     */
-    orientation:        PropTypes.string, 
+    orientation:        PropTypes.oneOf("left", "right"), 
 
     /** 
      * **Color** of the scroll down **icon**. 
      * 
      * It is a **standard prop** - this prop apply to every version of the landing page.
-     * 
-     * > Possible values:
-     * * RGB, RGBA, HEX, name of the color (*white, red, black*), anything you can describe color with.
-     * 
-     * @example
-     * <LandingPage
-     *   iconColor="white">
-     *   ...
-     * </LandingPage> 
     */
     iconColor:          PropTypes.string, 
 
@@ -324,15 +288,6 @@ LandingPage.propTypes = {
      * **Color** of the **block**. 
      * 
      * This props is avalilable for these versions: v3.
-     * 
-     * > Possible values:
-     * * RGB, RGBA, HEX, name of the color (*white, red, black*), anything you can describe color with.
-     * 
-     * @example
-     * <LandingPage
-     *   blockColor="rgba(20, 20, 20, 0.5)">
-     *   ...
-     * </LandingPage> 
     */
     blockColor:         PropTypes.string, 
 
@@ -341,19 +296,9 @@ LandingPage.propTypes = {
      * 
      * This props is avalilable for these versions: v3.
      * 
-     * > Possible values: 
-     * * **top** - wider path is on top, 
-     * * **bot** - widet path is on bottom.
-     * 
      * This will be ignored if the `blockShape` prop is symmetrical.
-     * 
-     * @example
-     * <LandingPage
-     *   blockorientation="left">
-     *   ...
-     * </LandingPage>
     */
-    blockOrientation:   PropTypes.string, 
+    blockOrientation:   PropTypes.oneOf(["top", "bot"]), 
 
     /** 
      * If mentioned, text in the text-section will cast **a shadow** on the background.
@@ -374,35 +319,15 @@ LandingPage.propTypes = {
      * **Shape of the block**. 
      * 
      * This props is avalilable for these versions: v3.
-     * 
-     * > Possible values: 
-     * * **square** - well, it is a **square** (rectangle maybe); 
-     * * **crossed** - it is some kind of **trapezoid**.
-     * 
-     * @example 
-     * <LandingPage
-     *   blockShape="square">
-     *   ...
-     * </LandingPage>
     */
-    blockShape:         PropTypes.string,   
+    blockShape:         PropTypes.oneOf(["square", "crossed"]),   
 
     /**
      * **Orientation** of the **text section** on **smaller screen size**. 
      * 
      * This props is avalilable for these versions: v2, v3.
-     * 
-     * > Possible values:
-     * * **top** - the text section is positioned on top of the landing page.
-     * * **bot** - the text section is positioned on bottom of the landing page.
-     * 
-     * @example 
-     * <LandingPage
-     *   orientationMobile="top">
-     *   ...
-     * </LandingPage>
      */
-    orientationMobile:  PropTypes.string,  
+    orientationMobile:  PropTypes.oneOf(["top", "bot"]),  
 }
 
 export default LandingPage;
