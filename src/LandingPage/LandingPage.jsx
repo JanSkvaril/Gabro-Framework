@@ -180,6 +180,7 @@ LandingPage.propTypes = {
     blockOrientation:   PropTypes.string,   // Orientace blocku (širší část nahoře nebo dole)
     txtShadow:          PropTypes.bool,     // Stín textu
     blockShape:         PropTypes.string,   // Tvar blocku
+    orientationMobile:  PropTypes.string,   // Orientace textu na mobilním zařízení
 }
 
 export default LandingPage;
