@@ -1,3 +1,9 @@
+/**
+ *  @fileOverview Card compponent
+ *
+ *  @author       Jan Škvařil    <jan.skvaril@gabros.cz>
+ */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Card.scss';
@@ -5,6 +11,18 @@ import './Card.scss';
 /**
  * @brief Simple Card element, great for listing information with images/icons
  * Can be used anywhere, but should be used in Section, Row part. 
+ * @example
+ *  <Card
+    shadow
+    iconBg="rgb(255, 18, 170)"
+    iconColor="white"
+    conBg="white"
+    conColor="black"
+    headline="služby"
+    height="310px"
+    icon={<AndroidIcon />}>
+        Kontent
+</Card>
  */
 const Card = (props) => {
     let styles = {
