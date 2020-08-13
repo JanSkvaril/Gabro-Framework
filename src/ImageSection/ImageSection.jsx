@@ -145,7 +145,7 @@ const ImageSection = (props) => {
 
   // == main container stuff ==
 
-  let containerClasses = generateClassesStr([ "text-section-container", !! props.version ? props.version : "v1" ]);
+  let containerClasses = generateClassesStr([ "text-section-container", !! props.version ? props.version + "_img-section" : "v1_img-section" ]);
 
 
   return (
