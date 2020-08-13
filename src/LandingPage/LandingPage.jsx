@@ -36,7 +36,7 @@ import PropTypes from 'prop-types';
  */
 const LandingPage = (props) => {
 
-    // STYLES
+    // == styles ==
     
     /** **Styles** for the whole **landing page**. */ 
     let container_styles = {
@@ -53,7 +53,27 @@ const LandingPage = (props) => {
     }    
 
 
-    // COMPONENTS
+    // == general functions ==
+
+    /**  
+     * Generates a string of classes for a section.
+     * 
+     * @param {Array} includeInClass - Array of string which should be classes for the section or anything.
+     */
+    function generateClassesStr(includeInClass) {
+        let classes = "";
+
+        if ( includeInClass ) {
+            includeInClass.forEach( element => {
+                classes = classes + " " + element
+            });
+        }
+
+        return classes
+    }
+
+
+    // == components ==
 
     /** 
      * **Icon** for scrolling down to another section.
@@ -74,22 +94,15 @@ const LandingPage = (props) => {
     }
      
 
-    // VERSIONS
+    // == versions ==
     // Version is an array of inner containers.
     // Each version has a text-section and scrollDownIcon. 
 
     /**  
      * Generates a text section of the landing page.
-     * @param {Array} includeInClass - Array of string which should be classes for the text container (section). For example you can pass some props into it for text alignment etc.
     */
     function getTxtSection(includeInClass) {
-        let classes = "txt-section ";
-
-        if ( includeInClass ) {
-            includeInClass.forEach( element => {
-                classes = classes + " " + element
-            });
-        }
+        let classes = generateClassesStr([ "txt-section", includeInClass ]) ;
 
         return (
             <div 
@@ -118,10 +131,11 @@ const LandingPage = (props) => {
      */
     let v2 = [
         <div 
-            className={ 
-                `container 
-                ${ !! props.orientation         ? props.orientation         : "left" } 
-                ${ !! props.orientationMobile   ? props.orientationMobile   : "top"  }` }>
+            className={ generateClassesStr([
+                "container",
+                !! props.orientation         ? props.orientation         : "left",
+                !! props.orientationMobile   ? props.orientationMobile   : "top"
+            ])}>
             
             { getTxtSection() }
 
@@ -142,14 +156,15 @@ const LandingPage = (props) => {
      */
     let v3 = [
         <div
-        className={ 
-            `container 
-            ${ !! props.orientation ? props.orientation : "left"} 
-            ${ !! props.orientationMobile ? props.orientationMobile : "top"} 
-            ${ !! props.blockOrientation ? "block-" + props.blockOrientation + "-" + props.orientation : "block-top-" + props.orientation } `}>
+            className={ generateClassesStr([ 
+                "container", 
+                !! props.orientation ? props.orientation : "left",
+                !! props.orientationMobile ? props.orientationMobile : "top",
+                !! props.blockOrientation ? "block-" + props.blockOrientation + "-" + props.orientation : "block-top-" + props.orientation 
+            ])}>
 
             <div 
-                className={ `block ${ !! props.blockShape ? props.blockShape : "square" }`} 
+                className={ generateClassesStr([ "block", !! props.blockShape ? props.blockShape : "square" ]) } 
                 style={{ background: !! props.blockColor ? props.blockColor : "rgba(33, 33, 33, 0.5)" }}>
 
                 { getTxtSection() }
@@ -162,7 +177,7 @@ const LandingPage = (props) => {
 
     return (
         <div 
-            className={ `landing-page ${ !! props.version ? props.version : "" }` } 
+            className={ generateClassesStr([ "landing-page", !! props.version ? props.version : "" ]) } 
             style={ container_styles } 
             id="landing-page">
 
