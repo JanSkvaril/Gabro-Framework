@@ -14,6 +14,12 @@
  * Description
  * 
  * @version   2.0.1
+ * 
+ * @example
+ * <Component
+ *    your_props="value">
+ *   ...
+ * </ Component>
  */
 ```
 ## Function
