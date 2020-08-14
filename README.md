@@ -99,26 +99,77 @@ Navigační panel s odkazi na jednotlivé stránky
 * *version* - hodnoty: "v1" nebo "v2". Defaultní je v1. Přepíná verze navbaru
 
 ### Landing page
-"Přístávací stránka" - první věc co se uživateli zobrazí
+"Přístávací stránka" - první věc co se uživateli zobrazí.
 
 ```jsx
 <LandingPage
-    mainTitle="Firma skvělá"
-    secondaryTitle="Co je fakt super..."
     shadow
     link="#about_us" 
-    bg="linear-gradient(#5918b6, #7b1fa2)" />
+    bg="linear-gradient(#5918b6, #7b1fa2)"
+    version="v1"
+    color="red"
+    orientation="right"
+    img={ require('./path/to/img.png') }> // nezapomenout na >
+
+    // Zde bude veškerý kontent jako například text a tlačítka.
+    <h1>Hlavní nadpis</h1>
+    <h2>Podnadpis</h2>
+    <p>Nějakej hezkej text.</p>
+</ LandingPage>
 ```
-* *mainTitle* - hlavní titulek
-* *secondaryTitle* - podtitulek (nemusí být)
-* *shadow* - má mít stín
-* *bg* - barva pozadí, gradient, obrázek atd.
-* *color* - barva textu
-* *bgSize* - css styl background-size, default: cover
-* *link* - odkaz (kotva) kam má šipka dolů sjet
-* *textShadow* - přidá text shadow na nadpis a podnadpis pro lepší čitelnost
-* *orientation* - hodnoty: "left". Pokud bude zadáno landign page se přepne do levé orentace, nevhodné pro dlouhý text. Pokud nebude zadáno, bude se normálně centerovat
-* *block* - hodnota: barva. Pokud nezadáno nebude vidět. Blok přez polovinu obrazovky
+> Je doporučené mít alespoň nadpis, podnadpis nebo nějaký jiný text. Je také možné sem vkládat např. tlačítka.
+
+#### Atributy
+* **Standardní atributy** - atributy jsou platné pro všechny verze landing page.
+  * `bg` - barva pozadí, gradient, obrázek atd.
+  * `color` - barva veškerého textu na landing page.
+    * Chcete-li změnit barvu pouze nadpisu a zbytek nechat jinou barvou, můžete využít *in-line* styly:
+      ```jsx
+      <LandingPage
+          color="black"
+          ... >
+
+          <h1 style={{ color: "red" }}>Hlavní nadpis</h1>
+          <h2>Podnadpis</h2>
+          <p>Nějakej hezkej text.</p>
+      </ LandingPage>
+      ``` 
+      Pouze `h1` bude červený, zbytek černý.
+      > Podobným postupem můžete nastavit i další vlastnosti textu, například velikost fontu, font, apd.
+
+  * `shadow` - je-li uveden, celá landing page bude vrhat stín na objekty pod ní (např. na další sekci).
+  * `link` - odkaz (kotva) kam má šipka dolů sjet.
+    * Není-li `link` uveden, šipečka ve spodní části se ani nezobrazí. 
+    * **Ikonka s linkem může na některých verzích landing page nebo rozlišeních zmizet!**
+  * `iconColor` - barva ikonky ve spodní části landing page (scroll-down button s linkem).
+  * `bgSize` - css styl `background-size`, default: `cover`.
+  * `version` - verze landing page. Přehled verzí [najdete zde](gabro_example).
+  * `orientation` - udává, na které straně bude text (na protější straně bude tedy obrázek či prázdné místo).
+    * Hodnoty: `left` (text je vlevo), `right` (text je vpravo), některé verze podporují i `center`.
+  * `txtShadow` - nastavení, zda-li text bude mít stín nebo ne.
+      ```jsx
+      <LandingPage
+          color="black"
+          shadow
+          txtshadow // stačí pouze takto zmínit
+          ... >
+
+          <h1>Hlavní nadpis</h1>
+          <h2>Podnadpis</h2>
+          <p>Nějakej hezkej text.</p>
+      </ LandingPage>
+      ```
+
+* **Version-based atributy**
+  * `img` [v2] - obrázek, obvykle zobrazen vedle textu (např. u v2).
+  * `orientationMobile` [v2, v3] - udává, zda-li text bude nahoře nebo dole (na druhé straně bude například obrázek).
+    * Hodnoty: `top` (text je nad obrázkem), `bot` (text je pod obrázkem). 
+  * `blockColor` [v3] - barva blocku (například u v3).
+  * `blockOrientation` [v3] - orientace blocku (širší částí nahoře nebo dole).
+    * Hodnoty: `top` (širší část nahoře), `bot` (širší část je dole). 
+ 
+  * `blockShape` [v3] - jak má block vypadat.
+    * Hodnoty: `square` - čtvercový, `crossed` - lichoběžník
 
 ### Section
 Sekce zabírá 100% šířku a nějakou výšku, může obsahovat cokoliv. Například rubriky jako o nás, služby a podobně. Dále třeba ceník, kontaktní formulář. Sekce navíc styluje určité tagy jako nadpisy, text a podobně, viz níže. Některé komponenty musí být v sekci.

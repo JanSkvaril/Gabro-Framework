@@ -1,8 +1,6 @@
 @import '../variables';
 
 .landing-page {
-
-    color: white;
     height: 100vh;
     width: 100%;
     position: relative;
@@ -12,95 +10,400 @@
         bottom: 30px;
         left: 50%;
         transform: translate(-50%, 0%);
-        color: white;
+    }
+}
+
+// Styles for props.children
+.txt-section {
+    h1 {
+        font-size: 5em;
+        margin-bottom: 0;
+
+        @media screen and (max-width: $break-small) {
+            font-size: 2.5em;
+            margin: 0;
+        }
     }
 
-    .header {
+    h2 {
+        font-size: 2em;
+        margin: 10px 0;
+
+        @media screen and (max-width: $break-small) {
+            font-size: 1.5;
+        }
+    }
+
+    p {
+        font-size: 15px;
+
+        @media screen and (max-width: $break-small) {
+            font-size: 14px;
+        }
+    }
+}
+
+
+.v1 {
+    .txt-section {
         text-align: center;
         position: absolute;
         top: 50%;
-        right: 50%;
+        right: 55%;
         transform: translate(+50%, -50%);
-        width: 100%;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-        .main-title {
-
-
-            @media screen and (min-width: $break-medium) {
-                font-size: 100px;
-            }
-
-            @media screen and (min-width: $break-large) {
-                font-size: 120px;
-            }
-
-            margin: 0px;
-            font-size: 50px;
+        p {
+            max-width: 80%;
         }
 
-        .secondary-title {
+        @media screen and (max-width: $break-medium) {
+            width: 70%;
+        }
 
-            @media screen and (min-width: $break-medium) {
-                font-size: 30px;
-            }
+        @media screen and (max-width: $break-small) {
+            top: 45%;
+            width: 80%;
+        }
 
-            @media screen and (min-width: $break-large) {
-                font-size: 50px;
-            }
-
-            font-size: 25px;
-            margin: 0px;
+        @media screen and (max-width: 350px) {
+            top: 50%
         }
     }
 
-    .header_left {
-        text-align: center;
-        position: absolute;
-        top: 50%;
-        left: 10%;
-        transform: translate(0, -50%);
-        width: fit-content;
+    .icon-title {
+        @media screen and (max-width: 350px) {
+            visibility: hidden;
+        }
+    }
+
+    @mixin reset-to-center-phone {
+        @media screen and (max-width: $break-small) {
+            text-align: center;
+            right: 50%;
+            align-items: center;
+        }
+    }
+
+    .left {
+        right: 60%;
         text-align: left;
+        align-items: flex-start;
 
-        .main-title {
+        @include reset-to-center-phone();
+    }
+
+    .right {
+        right: 40%;
+        text-align: right;
+        align-items: flex-end;
+
+        @include reset-to-center-phone();
+    }
+
+    .center {
+        right: 50%;
+    }
+}
 
 
-            @media screen and (min-width: $break-medium) {
-                font-size: 60px;
-            }
+.v2 {
+    display: flex;
 
-            @media screen and (min-width: $break-large) {
-                font-size: 80px;
-            }
+    @media screen and (max-width: $break-large) {
+        justify-content: center;
+        align-items: center;
+    }
 
-            margin: 0px;
-            font-size: 50px;
-        }
-
-        .secondary-title {
-
-            @media screen and (min-width: $break-medium) {
-                font-size: 30px;
-            }
-
-            @media screen and (min-width: $break-large) {
-                font-size: 50px;
-            }
-
-            font-size: 25px;
-            margin: 0px;
+    @mixin reset-to-center-medium() {
+        @media screen and (max-width: $break-large) {
+            text-align: center;
+            margin: 0;
         }
     }
 
-    .block {
-        height: 100%;
-        width: 100%;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        padding: 0 5vw;
 
+        @media screen and (max-width: $break-large) {
+            max-height: 80vh;
+        }
+    
 
-        @media screen and (min-width: $break-medium) {
-            clip-path: polygon(0 0, 60% 0, 40% 100%, 0% 100%);
-            //TODO: more variants
+        .txt-section {
+            max-width: 40%;
+
+            @media screen and (max-width: $break-large) {
+                max-width: 80%;
+            } 
         }
 
+        .img-section {
+            max-width: 50%;
+            min-width: 40%;
+            height: 65vh;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            @media screen and (max-width: $break-large) {
+                max-width: 85%;
+                min-width: 75%;
+                height: 45vh;
+            } 
+
+            @media screen and (max-width: 370px) {
+                width: 90vw;
+                background-size: cover;
+            } 
+        }
+    }
+
+    .left {
+        flex-direction: row;
+
+        .txt-section {
+            right: 60%;
+            text-align: left;
+            margin-right: 40px;
+
+            @media screen and (max-width: $break-large) {
+                text-align: center;
+                margin: 0;
+            } 
+        }
+
+        .img-section {
+            right: 40%;
+        }
+    }
+
+    .right {
+        flex-direction: row-reverse;
+
+        .txt-section {
+            right: 40%;
+            text-align: right;
+            margin-left: 40px;
+
+            @media screen and (max-width: $break-large) {
+                text-align: center;
+                margin: 0;
+            } 
+        }
+
+
+        .img-section {
+            right: 60%;
+        }
+    }
+
+    .top {
+        @media screen and (max-width: $break-large) {
+            flex-direction: column;
+
+            .txt-section {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    .bot {
+        @media screen and (max-width: $break-large) {
+            flex-direction: column-reverse;
+
+            .txt-section {
+                margin-top: 15px;
+            }
+        }
+    }
+
+    .icon-title {
+        @media screen and (max-width: 350px) {
+            visibility: hidden;
+        }
+    }
+}
+
+
+// Version 3
+.v3 {
+    display: flex;
+
+    // Full-screen container holding the block
+    .container {
+        display: flex;
+        width: 100vw;
+
+        // Div with a specific shape (values 'square', 'crossed') containing the text-section
+        .block {
+            display: flex;
+            align-items: center;
+            height: 100%;
+
+            @media screen and (max-width: $break-large) {
+                justify-content: center;
+                width: 100vw;
+            }
+
+            @media screen and (max-width: $break-small) {
+                min-height: 40%;
+            }
+
+            // Section with text
+            .txt-section {
+                position: absolute;
+                width: 35%;
+
+                @media screen and (max-width: $break-large) {
+                    position: relative;
+                    width: 85vw;
+                    text-align: center;
+                }
+            }
+        }
+
+        .crossed {
+            @media screen and (min-width: $break-large) {
+                width: 60%;
+            }
+
+            @media screen and (max-width: $break-large) {
+                height: fit-content;
+            }
+        }
+
+        .square {
+            @media screen and (min-width: $break-large) {
+                width: 45%;
+            }
+
+            @media screen and (max-width: $break-large) {
+                height: fit-content;
+            }
+        }
+    }
+
+    // Position of the block on large screen
+    .right {
+        justify-content: flex-end;
+        flex-direction: row;
+
+        .block {
+            .txt-section {
+                @media screen and (min-width: $break-large) {
+                    text-align: right;
+                    right: 5%;
+                }
+            }
+        }
+    }
+
+    .left {
+        justify-content: flex-start;
+        flex-direction: row;
+
+        .block {
+            .txt-section {
+                @media screen and (min-width: $break-large) {
+                    text-align: left;
+                    left: 5%;
+                }
+                
+            }
+        }
+    }
+
+    // Orientation of the block on mobile
+    .top {
+        @media screen and (max-width: $break-large) {
+            .block {
+                padding-top: 20%;
+            }
+
+            .crossed {
+                clip-path: polygon(0 0, 100% 0, 100% 74%, 0 100%);
+                padding-bottom: 25%;
+            }
+
+            .square {
+                padding-bottom: 8%;
+            }
+        }
+
+        @media screen and (max-width: $break-small) {
+            .crossed {
+                clip-path: polygon(0 0, 100% 0, 100% 84%, 0 100%);
+        
+            }
+        }
+    }
+
+    // Orientation of the block on mobile
+    .bot {
+        @media screen and (max-width: $break-large) {
+            align-items: flex-end;
+
+            .block {
+                padding-bottom: 20%;
+            }
+            
+            .crossed {
+                clip-path: polygon(0 26%, 100% 0, 100% 100%, 0 100%);
+                padding-top: 20%;
+            }
+
+            .square {
+                padding-top: 5%;
+            }
+        }
+
+        @media screen and (max-width: $break-small) {
+            .crossed {
+                clip-path: polygon(0 16%, 100% 0, 100% 100%, 0 100%);
+        
+            }
+        }
+    }
+
+    // Crossed block in different positions
+    .block-top-left {
+        .crossed {
+            @media screen and (min-width: $break-large) {
+                clip-path: polygon(0 0, 100% 0, 66% 100%, 0% 100%);
+            }
+        }
+    }
+
+    .block-top-right {
+        .crossed {
+            @media screen and (min-width: $break-large) {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 44% 100%);
+            }
+        }
+    }
+
+    .block-bot-left {
+        .crossed {
+            @media screen and (min-width: $break-large) {
+            clip-path: polygon(0 0, 66% 0, 100% 100%, 0% 100%);
+            }
+        }
+    }
+
+    .block-bot-right {
+        .crossed {
+            @media screen and (min-width: $break-large) {
+                clip-path: polygon(44% 0, 100% 0, 100% 100%, 0% 100%);
+            }   
+        }
     }
 }
