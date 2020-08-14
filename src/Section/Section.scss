@@ -7,20 +7,17 @@
     min-height: 450px;
     display: flex;
     display: flex;
-    // align-items: center;
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
-
     @include styled;
 
-
+    //elements are displayed next to each other on higher resolutions (for Half)
     @media screen and (min-width: $break-medium) {
         flex-direction: row;
     }
 
-
-
+    //50% width part of secton
     .half {
         position: relative;
         display: flex;
@@ -38,6 +35,7 @@
         }
     }
 
+    //100% width of section
     .full {
         width: 100%;
         display: flex;
@@ -47,6 +45,8 @@
         padding-bottom: 40px;
     }
 
+    //100% width of section
+    //for Cards, etc.
     .full.row {
         flex-direction: row;
         flex-wrap: wrap;
@@ -73,6 +73,7 @@
     @include styledOnParent;
 }
 
+//for headline_align left
 .section.h_left {
 
     h1,
@@ -86,6 +87,7 @@
     }
 }
 
+//for headline algin right
 .section.h_right {
 
     h1,

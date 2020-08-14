@@ -15,6 +15,7 @@
     "@material-ui/icons": "^4.2.1",
     "css-loader": "^3.4.0",
     "node-sass": "^4.13.1",
+    "prop-types": "^15.7.2",
     "react-image-lightbox": "^5.1.1",
     "react-lightbox-component": "^1.2.1",
     "sass-loader": "^8.0.0",

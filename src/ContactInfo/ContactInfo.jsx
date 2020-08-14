@@ -1,15 +1,30 @@
+/**
+ *  @fileOverview Contains ContactInfo component and nesesary functions
+ *  @author       Jan Škvařil    <jan.skvaril@gabros.cz>
+ */
+
 import React from 'react';
 import './ContactInfo.scss';
 import { Phone, PhoneAndroid, EmailOutlined, LocationOn, Facebook } from '@material-ui/icons/';
-import { Link } from '@material-ui/core';
-
-function getPhoneNumberString(string) {
+import PropTypes from 'prop-types';
+/**
+ * @brief Creates react fragment from number and ads hard spaces between every 3 numbers
+ * @param {string}  phone_number phone number in 111222333 format
+ * @returns {ReactFragment} React.Fragment with phone number
+ */
+function getPhoneNumberString(phone_number) {
     return (
         <React.Fragment>
-            &nbsp;{string.substring(0, 3)}&nbsp;{string.substring(3, 6)}&nbsp;{string.substring(6, 9)}
+            &nbsp;{phone_number.substring(0, 3)}&nbsp;{phone_number.substring(3, 6)}&nbsp;{phone_number.substring(6, 9)}
         </React.Fragment>)
 
 }
+
+/**
+ * @brief Wraps data in table and contact-info-section div
+ * @param {Comment} data rows, that should be wrapen in table
+ * @returns contact info section div containing table   
+ */
 function wrapWithSectionTable(data) {
     return (
         <div className="contact-info-section">
@@ -22,6 +37,23 @@ function wrapWithSectionTable(data) {
 
 }
 
+/**
+ * @brief Contact info is used for displaing things like phone numbers, emails, adressess etc. 
+ * @version   2.2.0
+ * @example 
+ * <ContactInfo
+        email={[
+            {"same_mail"},
+            {"different mail"}
+        ]}
+        phone={[
+            {name:"Phone:",number:"777555777"},
+            {name:"Phone 2:",number:"777555777"}
+        ]}
+        place="Adress 123"
+        facebook="https://www.facebook.com/SameUrl"
+    />
+ */
 const ContactInfo = (props) => {
     let styles = {
         boxShadow: !!props.shadow ? "0px 0px 77px -16px rgba(0,0,0,0.75)" : "none",
@@ -34,14 +66,62 @@ const ContactInfo = (props) => {
 
 
     return (
-        <div className="contact-info">
+        <div className="contact-info" style={styles}>
             {sections}
         </div>
     );
 }
 
+ContactInfo.propTypes = {
+    // == styles ==
+    /** If shadow should be displayed around section */
+    shadow: PropTypes.bool,
+    /** Background attribute of the section, can be color, image, gradient,... */
+    bg: PropTypes.string,
+    /** Text color */
+    color: PropTypes.string,
+    /** Background-size attribute, default is "cover" */
+    bgSize: PropTypes.string,
+    // == functional ==
+    /** Phone number. Array of object containing "name" and "number" */
+    phone: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string,     //name of the person
+            number: PropTypes.string    //phone number
+        })
+    ),
+    /** Phone number with mobile icon. Array of object containing "name" and "number" */
+    mobile: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string,     //name of the person
+            number: PropTypes.string    //phone number
+        })
+    ),
+    /** Email adress. Array of strings - email adresses */
+    email: PropTypes.arrayOf(
+        PropTypes.string
+    ),
+    /** Facebook url */
+    facebook: PropTypes.string,
+    /** Anything else, without icon. Array of object containing "name" and "text" */
+    other: PropTypes.arrayOf(
+        PropTypes.shape({
+            /** Left part */
+            name: PropTypes.string,
+            /** Right part */
+            text: PropTypes.string
+        })
+    ),
+}
+
+/**
+ * Genertates all sections for contact info
+ * @param {*} props 
+ * @returns all sections in one array
+ */
 function createContactSections(props) {
     let sections = [];
+    //phones (
     if (!!props.phone) {
         let rows = [];
         for (let item of props.phone) {
@@ -58,6 +138,7 @@ function createContactSections(props) {
         }
         sections.push(wrapWithSectionTable(rows));
     }
+    //mobile
     if (!!props.mobile) {
         let rows = [];
         for (let item of props.mobile) {
@@ -74,14 +155,13 @@ function createContactSections(props) {
         }
         sections.push(wrapWithSectionTable(rows));
     }
+    //email adress
     if (!!props.email) {
         let rows = [];
         for (let item of props.email) {
             rows.push(
                 <tr>
-                    {/* <td className="left">{item.name}</td> */}
                     <td
-                    //  className="right"
                     >
                         <strong><EmailOutlined fontSize="small" className="text-icon" />&nbsp;{item.email}</strong>
                     </td>
@@ -93,6 +173,7 @@ function createContactSections(props) {
 
         );
     }
+    //place / adress
     if (!!props.place) {
         sections.push(
             <div className="contact-info-section">
@@ -102,6 +183,7 @@ function createContactSections(props) {
             </div>
         );
     }
+    //url to facebook page
     if (!!props.facebook) {
         sections.push(
             <div className="contact-info-section">
@@ -111,6 +193,7 @@ function createContactSections(props) {
             </div>
         );
     }
+    //anything else
     if (!!props.other) {
         let rows = [];
         for (let item of props.mobile) {

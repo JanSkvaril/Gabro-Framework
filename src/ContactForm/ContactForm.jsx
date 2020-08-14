@@ -1,3 +1,8 @@
+/**
+ *  @fileOverview Contains ContactForm component and nessary functions
+ *  @author       Jan Škvařil      <jan.skvaril@gabros.cz>
+ */
+
 import React, { Component } from 'react';
 import { TextField, Button } from '@material-ui/core';
 import { Send } from '@material-ui/icons/';
@@ -5,7 +10,19 @@ import SnackMessages from '../SnackMessages/SnackMessages.jsx';
 import './ContactForm.scss';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
+import PropTypes from 'prop-types';
 
+/**
+ * @brief Simple contact form. Contains mail adress and text. Requires send-mail.php to be placed
+ * in root folder of the web and corectly configured.
+ * On submit sends email to specified email adress
+ * @version 2.2.0
+ * @example
+ *  <ContactForm shadow bg="white" color="black">
+        <h2>Here you can write headline</h2>
+        <p>Here you cant write some text</p>
+    </ContactForm>
+ */
 class ContactForm extends Component {
 
     constructor() {
@@ -18,6 +35,7 @@ class ContactForm extends Component {
         }
         this.handleInputChange = this.handleInputChange.bind(this);
     }
+    //handles changes in inputs
     handleInputChange(event) {
         const target = event.target;
         const value = target.value;
@@ -27,6 +45,7 @@ class ContactForm extends Component {
             [name]: value
         });
     }
+    //submits mail
     submit() {
         if (this.state.mailAdress === "" || this.state.mailText === "") {
             this.empty();
@@ -60,6 +79,7 @@ class ContactForm extends Component {
                 this.error();
             });
     }
+    //succes mesasge if form was submited
     succes() {
         this.setState({
             mailAdress: "",
@@ -75,9 +95,11 @@ class ContactForm extends Component {
 
         this.setState({ nottOpen: false });
     }
+    //displays error message
     error() {
         this.showMessage("Nastala chyba, zpráva nebyla odeslána", "error");
     }
+    //displays empty message
     empty() {
         this.showMessage("Obě pole musí být vyplněny", "error");
     }
@@ -143,6 +165,21 @@ class ContactForm extends Component {
             </React.Fragment >
         );
     }
+}
+ContactInfo.propTypes = {
+    // == styles ==
+    /** If shadow should be displayed around section */
+    shadow: PropTypes.bool,
+    /** Background attribute of the section, can be color, image, gradient,... */
+    bg: PropTypes.string,
+    /** Text color */
+    color: PropTypes.string,
+    // == form specific == 
+    /** Color of input elements - email adress and textbox */
+    formColor: PropTypes.string,
+    /** Color of submit button */
+    buttonColor: PropTypes.string,
+
 }
 
 export default ContactForm;

@@ -1,8 +1,17 @@
+/**
+ *  @fileOverview Contains Section component and nesesary functions
+ *  @author       Jan Škvařil    <jan.skvaril@gabros.cz>
+ */
+
 import React from 'react';
 import './Section.scss';
 import PropTypes from 'prop-types';
 
-
+/**
+ * @brief Section component contains part components, its main building block of gabro framework website
+ * Section component has 100% width a height dependent on its content. Its generally used for text block
+ * or to contain other components (like contact form, cords, etc.).
+ */
 const Section = (props) => {
     //styles passed by props
     let styles = {
@@ -44,21 +53,51 @@ const Section = (props) => {
             {props.children}
             {/* Left line */}
             <div className="line" style={line_styles}></div>
+
         </div>
     );
 }
 
-
+//proptypes for section
 Section.propTypes = {
-    /** Text color teeeest */
+    // == Styles ==
+    /** If shadow should be displayed around section */
+    shadow: PropTypes.bool,
+    /** Background attribute of the section, can be color, image, gradient,... */
+    bg: PropTypes.string,
+    /** Text color */
     color: PropTypes.string,
+    /** Background-size attribute, default is "cover" */
+    bgSize: PropTypes.string,
+    /** Backdrop-filter attribute, for example blur(5px) will blur the background */
+    bgFilter: PropTypes.string,
+    /** Padding-bottom attribute, for example 100px */
+    paddingBot: PropTypes.string,
+    /** Padding-top attribute, for example 100px */
+    paddingTop: PropTypes.string,
+    // == Other ==
+    /** If framework styles should be applied on content, default is "false" */
+    styled: PropTypes.bool,
+    /** Where should be headlines aligned. If not given, default will be middle */
+    headline_align: PropTypes.oneOf("left", "right"),
+    /** Background attribute (color, gradient) of Left line. Line will not be displayed if empty */
+    line: PropTypes.string,
 }
 
+//In section must be one of "parts" - Full/Half/row
+/**
+ * @enum {section_types}
+ */
 const part_types = {
     Full: "full",
     Half: "half",
     Row: "full row",
 }
+/**
+ * Generates one of parts
+ * @param {section_types} type Full/Half/Row
+ * @param {*} props 
+ */
 function Part(type, props) {
     let styles = {
         background: (!!props.bg ? props.bg : "transparent") + " center",
@@ -81,8 +120,6 @@ function Part(type, props) {
             <div className="line" style={line_styles}></div>
         </div>);
 }
-
-//In section must be one of "parts" - Full/Half/row
 
 //Will be 100% width
 const Full = (props) => {
