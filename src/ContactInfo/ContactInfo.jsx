@@ -1,8 +1,6 @@
 /**
  *  @fileOverview Contains ContactInfo component and nessary functions
- *
- *  @author       Shri Ganeshram    <email@example.com>
- *  @author       Jack Hanford      <email@example.com>
+ *  @author       Jan Škvařil    <jan.skvaril@gabros.cz>
  */
 
 import React from 'react';
@@ -76,6 +74,7 @@ const ContactInfo = (props) => {
 
 ContactInfo.propTypes = {
     // == styles ==
+    /** If shadow should be displayed around section */
     shadow: PropTypes.bool,
     /** Background attribute of the section, can be color, image, gradient,... */
     bg: PropTypes.string,
