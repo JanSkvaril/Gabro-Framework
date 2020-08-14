@@ -1,5 +1,5 @@
 /**
- *  @fileOverview Contains ContactInfo component and nessary functions
+ *  @fileOverview Contains ContactInfo component and nesesary functions
  *  @author       Jan Škvařil    <jan.skvaril@gabros.cz>
  */
 

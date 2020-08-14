@@ -1,3 +1,8 @@
+/**
+ *  @fileOverview Contains Section component and nesesary functions
+ *  @author       Jan Škvařil    <jan.skvaril@gabros.cz>
+ */¨
+
 import React from 'react';
 import './Section.scss';
 import PropTypes from 'prop-types';
