@@ -106,13 +106,23 @@ const ImageSection = (props) => {
     )
   }
 
+  let line;
+  if ( !! props.line ) {
+    line = <div className={ generateClassesStr([ "line", "line-" + props.orientation ]) } style={{ backgroundColor: props.line }}></div>
+  }
+
   // v1
   
   /**
    * Version with **text**.
    */
   let v1 = [
-    getTxtSection([ props.orientation ])
+    <div className={  generateClassesStr(["positioning-wrapper", props.orientation]) }>
+      <div className={  generateClassesStr(["text-wrapper", props.orientation]) }>
+        { line }
+        { getTxtSection([ props.orientation ]) }
+      </div>
+    </div>
   ];
 
 
