@@ -159,6 +159,8 @@ Navigační panel s odkazi na jednotlivé stránky
           <p>Nějakej hezkej text.</p>
       </ LandingPage>
       ```
+  * `className` - className(s) pro componentu
+  * `id` - id(s) pro componentu
 
 * **Version-based atributy**
   * `img` [v2] - obrázek, obvykle zobrazen vedle textu (např. u v2).
@@ -198,6 +200,8 @@ Sekce zabírá 100% šířku a nějakou výšku, může obsahovat cokoliv. Např
 * *paddingBot* - v px, kolik pixelů se má odsazovat odspodu
 * *paddingTop* - v px, kolik pexelů se má odsazovat zvrchu
 * *headline_align* - hodnoty "left" nebo "right", zarovná nadpisy na danou stranu, když nezadáno tak na prostředek
+* *className* - className(s) pro componentu
+* *id* - id(s) pro componentu
 #### Half / Full / Row
 Uvnitř **Section** vždy musí být buď **half**, **full** nebo **Row**. Na poloviny je normálně možné dávat další styly. 
 
@@ -306,6 +310,8 @@ Karty, ideální pro služby a podobně. Do prostoru icon jde dát buď ikonku, 
 * *icon* - svg které bude vloženo jako icon
 * *bgFilter* - "backdrop-filter", například blur(5px), apod.
 * *height* - výška celé karty v pixelech, pokud není uvedeno tak bude 310px
+* *className* - className(s) pro componentu
+* *id* - id(s) pro componentu
 
 ### ImageSection (beta)
 Obsahuje na polovině orbázek a na polovině text
