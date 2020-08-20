@@ -177,9 +177,9 @@ const LandingPage = (props) => {
 
     return (
         <div 
-            className={ generateClassesStr([ "landing-page", !! props.version ? props.version : "", props.className ]) } 
+            className={ generateClassesStr([ "landing-page", !! props.version ? props.version : "", !! props.className ? props.className : "" ]) } 
             style={ container_styles } 
-            id={`landing-page ${ props.id }`}>
+            id={`landing-page ${ !! props.id ? props.id : "" }`}>
 
             { props.version ? eval(props.version) : v1 }
 

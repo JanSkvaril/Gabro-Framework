@@ -26,7 +26,7 @@ const Section = (props) => {
     };
 
     //classes
-    let classes = `section ${ props.className }`
+    let classes = `section ${ !! props.className ? props.className : "" }`
     if (!!props.styled) classes += " styled";
     //align of h tags, default is middle
     if (!!props.headline_align) {
@@ -48,7 +48,7 @@ const Section = (props) => {
         }
     }
     return (
-        <div className={classes} style={styles} id={ props.id }>
+        <div className={classes} style={styles} {... !! props.id ? "id={ props.id }" : ""}>
             {/* Content ofsection */}
             {props.children}
             {/* Left line */}
