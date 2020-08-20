@@ -59,7 +59,7 @@ const Card = (props) => {
     );
 }
 //proptypes for cords
-Section.propTypes = {
+Card.propTypes = {
     /** If shadow around the card should be displayed */
     shadow: PropTypes.bool,
     /** Height of the card */
