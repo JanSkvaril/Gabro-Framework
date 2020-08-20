@@ -26,7 +26,7 @@ const Section = (props) => {
     };
 
     //classes
-    let classes = "section";
+    let classes = `section ${ props.className }`
     if (!!props.styled) classes += " styled";
     //align of h tags, default is middle
     if (!!props.headline_align) {
@@ -48,7 +48,7 @@ const Section = (props) => {
         }
     }
     return (
-        <div className={classes} style={styles}>
+        <div className={classes} style={styles} id={ props.id }>
             {/* Content ofsection */}
             {props.children}
             {/* Left line */}
@@ -62,26 +62,30 @@ const Section = (props) => {
 Section.propTypes = {
     // == Styles ==
     /** If shadow should be displayed around section */
-    shadow: PropTypes.bool,
+    shadow:         PropTypes.bool,
     /** Background attribute of the section, can be color, image, gradient,... */
-    bg: PropTypes.string,
+    bg:             PropTypes.string,
     /** Text color */
-    color: PropTypes.string,
+    color:          PropTypes.string,
     /** Background-size attribute, default is "cover" */
-    bgSize: PropTypes.string,
+    bgSize:         PropTypes.string,
     /** Backdrop-filter attribute, for example blur(5px) will blur the background */
-    bgFilter: PropTypes.string,
+    bgFilter:       PropTypes.string,
     /** Padding-bottom attribute, for example 100px */
-    paddingBot: PropTypes.string,
+    paddingBot:     PropTypes.string,
     /** Padding-top attribute, for example 100px */
-    paddingTop: PropTypes.string,
+    paddingTop:     PropTypes.string,
     // == Other ==
     /** If framework styles should be applied on content, default is "false" */
-    styled: PropTypes.bool,
+    styled:         PropTypes.bool,
     /** Where should be headlines aligned. If not given, default will be middle */
     headline_align: PropTypes.oneOf("left", "right"),
     /** Background attribute (color, gradient) of Left line. Line will not be displayed if empty */
-    line: PropTypes.string,
+    line:           PropTypes.string,
+    /** Cutsom classnames for Section component */
+    className:      PropTypes.string,
+    /** Custom ID for Section component */
+    id:             PropTypes.string,
 }
 
 //In section must be one of "parts" - Full/Half/row

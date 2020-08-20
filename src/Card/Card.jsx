@@ -42,7 +42,7 @@ const Card = (props) => {
         color: !!props.conColor ? props.conColor : "#000000",
     }
     return (
-        <div className="card" style={styles}>
+        <div className={`card ${ props.className }`} style={styles} id={ props.id }>
             <div className="icon-holder" style={iconStyles}>
                 <div>
                     {props.icon}
