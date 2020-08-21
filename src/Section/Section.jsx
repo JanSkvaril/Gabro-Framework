@@ -16,7 +16,7 @@ const Section = (props) => {
     //styles passed by props
     let styles = {
         boxShadow: !!props.shadow ? "0px 0px 77px -16px rgba(0,0,0,0.75)" : "none",
-        background: !!props.bg ? props.bg : "#ffffff",
+        background: (!!props.bg ? props.bg : "transparent") + " center",
         zIndex: !!props.shadow ? 5 : "auto",
         color: !!props.color ? props.color : "#000000",
         backgroundSize: !!props.bgSize ? props.bgSize : "cover",
@@ -103,6 +103,8 @@ function Part(type, props) {
         background: (!!props.bg ? props.bg : "transparent") + " center",
         backgroundSize: "cover",
         color: !!props.color ? props.color : "#inherit",
+        paddingBottom: !!props.paddingBot ? props.paddingBot : "",
+        paddingTop: !!props.paddingTop ? props.paddingTop : "",
     }
     let classes = type;
 

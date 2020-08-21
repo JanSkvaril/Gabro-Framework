@@ -1,4 +1,4 @@
-# Gabro Framework 2.1
+# Gabro Framework 2.2
 ## Jak spustit
 Stačí dvakrát kliknout na **run.bat**
 
@@ -236,6 +236,8 @@ Dává obsah do řady vedle sebe, ideální na karty
 Na **všechny** lze použít následující atributy
 * *bg* - pozadí, může být i obrázek, který se bude automaticky centrovat
 * *color* - barva textu
+* *paddingBot* - v px, kolik pixelů se má odsazovat odspodu
+* *paddingTop* - v px, kolik pexelů se má odsazovat zvrchu
 
 Na **Half** lze ještě použít
 * *line* - barva čáry v pravo od textu, nezobrazí se pokud nebude zadána
