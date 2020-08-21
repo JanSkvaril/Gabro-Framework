@@ -120,7 +120,7 @@ const LandingPage = (props) => {
      * Version with **text, scrollDownIcon**.
      */
     let v1 = [
-        getTxtSection([ props.orientation ]),
+        getTxtSection([ !! props.orientation ? props.orientation : "center" ]),
         scrollDownIcon
     ]
 
