@@ -349,14 +349,14 @@ Pro kontaktní informace
             {name:"Telefon:",number:"777555777"},
             {name:"Telefon 2:",number:"777555777"}
         ]}
-        place="Adresa 123"
+        place={text:"Adresa 123", link:"https://goo.gl/maps/..."}
         facebook="https://www.facebook.com/NejakyFb"
     />
 ```
 * *phone* - telefon, pole objektů {name:"string",number:"string"}, nepsát mezery mezi čísla!
 * *mobile* - mobil, pole objektů {name:"string",number:"string"}, nepsát mezery mezi čísla!
 * *email* - email, pole objektů {name:"string",email:"string"}
-* *place* - adresa, "string"
+* *place* - objekt {text:"string", link:"string"}, link je odkaz na google mapy na dané místo, po kliknutí na mobilu otevře aplikaci 
 * *facebook* - url na facebook
 * *other* ostatní (bez ikonky), pole objektů {name:"string",text:"string"}
 
