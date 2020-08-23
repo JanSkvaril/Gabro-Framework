@@ -102,7 +102,7 @@ const LandingPage = (props) => {
      * Generates a text section of the landing page.
     */
     function getTxtSection(includeInClass) {
-        let classes = generateClassesStr([ "txt-section", includeInClass ]) ;
+        let classes = generateClassesStr([ "txt-section_landing_page", includeInClass ]) ;
 
         return (
             <div 
@@ -177,7 +177,7 @@ const LandingPage = (props) => {
 
     return (
         <div 
-            className={ generateClassesStr([ "landing-page", !! props.version ? props.version : "", !! props.className ? props.className : "" ]) } 
+            className={ generateClassesStr([ "landing-page", !! props.version ? props.version +  "_landing_page" : "v1_landing_page", !! props.className ? props.className : "" ]) } 
             style={ container_styles } 
             id={`landing-page ${ !! props.id ? props.id : "" }`}>
 
