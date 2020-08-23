@@ -47,8 +47,9 @@ const Section = (props) => {
             background: props.line,
         }
     }
+
     return (
-        <div className={classes} style={styles} {... !! props.id ? "id={ props.id }" : ""}>
+        <div className={classes} style={styles} id={ !! props.id ? props.id : "" }>
             {/* Content ofsection */}
             {props.children}
             {/* Left line */}
