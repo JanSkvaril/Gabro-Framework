@@ -166,7 +166,7 @@ class ContactForm extends Component {
         );
     }
 }
-ContactInfo.propTypes = {
+ContactForm.propTypes = {
     // == styles ==
     /** If shadow should be displayed around section */
     shadow: PropTypes.bool,
