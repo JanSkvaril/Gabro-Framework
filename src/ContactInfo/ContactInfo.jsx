@@ -5,7 +5,7 @@
 
 import React from 'react';
 import './ContactInfo.scss';
-import { Phone, PhoneAndroid, EmailOutlined, LocationOn, Facebook } from '@material-ui/icons/';
+import { Phone, PhoneAndroid, EmailOutlined, LocationOn, Facebook, Instagram } from '@material-ui/icons/';
 import PropTypes from 'prop-types';
 /**
  * @brief Creates react fragment from number and ads hard spaces between every 3 numbers
@@ -108,6 +108,8 @@ ContactInfo.propTypes = {
     }),
     /** Facebook url */
     facebook: PropTypes.string,
+    /** Instagram url */
+    instagram: PropTypes.string,
     /** Anything else, without icon. Array of object containing "name" and "text" */
     other: PropTypes.arrayOf(
         PropTypes.shape({
@@ -206,6 +208,16 @@ function createContactSections(props) {
             <div className="contact-info-section">
                 <a href={props.facebook} target="_blank">
                     <Facebook fontSize="small" className="text-icon" />&nbsp;Facebook
+                </a>
+            </div>
+        );
+    }
+    //url to instagram page
+    if (!!props.instagram) {
+        sections.push(
+            <div className="contact-info-section">
+                <a href={props.instagram} target="_blank">
+                    <Instagram fontSize="small" className="text-icon" />&nbsp;Instagram
                 </a>
             </div>
         );
