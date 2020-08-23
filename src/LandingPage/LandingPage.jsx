@@ -160,7 +160,7 @@ const LandingPage = (props) => {
                 "container", 
                 !! props.orientation ? props.orientation : "left",
                 !! props.orientationMobile ? props.orientationMobile : "top",
-                !! props.blockOrientation ? "block-" + props.blockOrientation + "-" + props.orientation : "block-top-" + props.orientation 
+                !! props.blockOrientation ? "block-" + props.blockOrientation + "-" + props.orientation : "block-top-" + props.orientation,
             ])}>
 
             <div 
@@ -177,9 +177,9 @@ const LandingPage = (props) => {
 
     return (
         <div 
-            className={ generateClassesStr([ "landing-page", !! props.version ? props.version : "" ]) } 
+            className={ generateClassesStr([ "landing-page", !! props.version ? props.version : "", !! props.className ? props.className : "" ]) } 
             style={ container_styles } 
-            id="landing-page">
+            id={`landing-page ${ !! props.id ? props.id : "" }`}>
 
             { props.version ? eval(props.version) : v1 }
 
@@ -343,6 +343,12 @@ LandingPage.propTypes = {
      * This props is avalilable for these versions: v2, v3.
      */
     orientationMobile:  PropTypes.oneOf(["top", "bot"]),  
+
+    /**Your custom classnames. */
+    className:          PropTypes.string,
+    
+    /** ID of this section */
+    id:                 PropTypes.string,
 }
 
 export default LandingPage;
