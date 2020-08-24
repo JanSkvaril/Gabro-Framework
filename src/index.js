@@ -15,7 +15,7 @@ import ImageSection from './ImageSection/ImageSection.jsx'
 import {
     GetImage
 } from './Functions/Functions.js'
-
+import Footer from './Footer/Footer.jsx'
 
 export {
     Navbar,
@@ -31,6 +31,6 @@ export {
     Full,
     Half,
     Row,
-
+    Footer,
     GetImage,
 };

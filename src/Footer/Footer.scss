@@ -1,0 +1,83 @@
+@import '../variables';
+
+.footer {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (min-width: $break-small) {
+        height: 250px;
+    }
+
+    @media screen and (min-width: $break-medium) {
+        height: 300px;
+    }
+
+    .container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        @media screen and (min-width: $break-small) {
+            flex-direction: row;
+        }
+
+        img {
+            height: 100%;
+        }
+
+        .img_holder {
+
+            height: 150px;
+            // width: 100%;
+            text-align: center;
+
+            @media screen and (min-width: $break-small) {
+                //float: left;
+                //width: 50%;
+                //text-align: right;
+            }
+
+            @media screen and (min-width: $break-medium) {
+                height: 200px;
+            }
+
+
+        }
+
+        .text_holder {
+            max-width: 80%;
+            margin-top: 10px;
+
+            @media screen and (min-width: $break-small) {
+                margin-top: 0px;
+                max-width: 60%;
+            }
+
+            @media screen and (min-width: $break-medium) {
+                font-size: 20px;
+                max-width: 45%;
+            }
+
+            p {
+                //max-width: 90%;
+                font-size: 15px;
+                margin: 0px;
+
+                @media screen and (min-width: $break-small) {
+                    //max-width: 70%;
+                    margin-left: 30px;
+                }
+
+                @media screen and (min-width: $break-medium) {
+                    font-size: 20px;
+                }
+
+            }
+        }
+    }
+}
