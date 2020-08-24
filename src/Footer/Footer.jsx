@@ -8,6 +8,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Footer.scss';
 
+/**
+ * @brief This is footer component containing ad to our team, that we use for websites created by this ¨
+ * framework.
+ * @version   2.2.2
+ * @example
+    <Footer
+        bg="white"
+        color="rgba(0,0,0,0.65)"
+        logo={require("./imgs/logo.svg")}
+    >
+    <p>Some text</p>
+    </Footer>
+ */
 const Footer = (props) => {
     let styles = {
         background: (!!props.bg ? props.bg : "#ffffff") + " center",
@@ -21,7 +34,7 @@ const Footer = (props) => {
                     <img src={props.logo} />
                 </div>
                 <div className="text_holder">
-                    {props.text}
+                    <p>{props.children}</p>
                 </div>
 
 
@@ -29,6 +42,13 @@ const Footer = (props) => {
         </div>
     );
 }
-
+Footer.propTypes = {
+    /** Background attribute of the section, can be color, image, gradient,... */
+    background: PropTypes.string,
+    /** Text color */
+    color: PropTypes.string,
+    /** Path (with require) to image or svg */
+    logo: PropTypes.string,
+}
 
 export default Footer;
