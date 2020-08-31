@@ -32,7 +32,8 @@ const Card = (props) => {
     };
     //sstyles for icon
     let iconStyles = {
-        background: !!props.iconBg ? props.iconBg : "#ffffff",
+        background: (!!props.iconBg ? props.iconBg : "transparent") + " center",
+        backgroundSize: "cover",
         color: !!props.iconColor ? props.iconColor : "#000000",
         //border between icon and content
         borderBottom: !!props.divBorder ? props.divBorder : "2px solid"
@@ -42,10 +43,12 @@ const Card = (props) => {
         color: !!props.conColor ? props.conColor : "#000000",
     }
     return (
-        <div className={`card ${ !! props.className ? props.className : "" }`} style={ styles } id={ !! props.id ? props.id : "" }>
+        <div className={`card ${!!props.className ? props.className : ""}`} style={styles} id={!!props.id ? props.id : ""}>
             <div className="icon-holder" style={iconStyles}>
                 <div>
-                    {props.icon}
+                    <span className="icon">
+                        {props.icon}
+                    </span>
                 </div>
                 <h2>
                     {props.headline}

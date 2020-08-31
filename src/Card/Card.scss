@@ -13,9 +13,16 @@
         align-items: center;
         border-radius: 5px 5px 0px 0px;
 
-        svg {
+        .icon {
             height: 100px;
             width: 100px;
+
+            svg,
+            img {
+
+                width: 100px;
+                height: auto;
+            }
         }
 
         h2 {
