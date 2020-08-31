@@ -78,7 +78,11 @@ Card.propTypes = {
     /** Background (color, image, gradient) of content (bottom) part of the card */
     conBg: PropTypes.string,
     /** Color of the text in content (bottom) part of the card */
-    conColor: PropTypes.string
+    conColor: PropTypes.string,
+    /** svg or img component. Will be displayed in upper part of the card */
+    icon: PropTypes.object,
+    /** Headline displayed in icon part, will have same color as icon (iconColor prop) */
+    headline: PropTypes.string,
 }
 
 export default Card;
