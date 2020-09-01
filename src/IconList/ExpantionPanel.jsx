@@ -4,9 +4,13 @@ import { IconButton } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 class ExpantionPanel extends Component {
-    state = {
-        open: false
+    constructor(props) {
+        super(props);
+        this.state = {
+            open: false
+        }
     }
+
     HandleClick() {
         this.setState({ open: !this.state.open });
     }

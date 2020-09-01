@@ -1,5 +1,3 @@
-@import '../../colorScheme.scss';
-
 .icon-list {
     .table-view {
         td {
@@ -7,13 +5,19 @@
             padding-right: 20px;
             padding-left: 20px;
 
+
+            img {
+                width: 100px;
+                height: auto
+            }
+
         }
 
         .table-heading {
             font-weight: bold;
             font-size: 20px;
             text-align: right;
-            min-width: 300px;
+            min-width: 170px
         }
 
         .table-text {
@@ -24,9 +28,13 @@
     }
 
     .list-view {
+        margin-left: 30px;
+        margin-right: 20px;
+
         table {
             font-size: 15px;
             font-weight: bold;
+
 
             //text-align: center;
             .text-colum {
@@ -36,6 +44,11 @@
 
             .img-colum {
                 width: 82px;
+
+                img {
+                    max-width: 100%;
+                    height: auto
+                }
             }
         }
     }
