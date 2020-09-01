@@ -17,7 +17,7 @@ import ImageSection from './ImageSection/ImageSection.jsx'
 import {
     GetImage
 } from './Functions/Functions.js'
-
+import Footer from './Footer/Footer.jsx'
 
 export {
     IconListItem,
@@ -35,6 +35,6 @@ export {
     Full,
     Half,
     Row,
-
+    Footer,
     GetImage,
 };
