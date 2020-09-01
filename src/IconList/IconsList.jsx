@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './IconList.scss';
+import ExpantionPanel from './ExpantionPanel.jsx';
 
 
-import ExpantionPanel from '../MyExpantionPanel';
 class IconList extends Component {
     constructor(props) {
         super(props);
@@ -12,7 +12,7 @@ class IconList extends Component {
         window.onresize = this.CheckSize.bind(this);
     }
     CheckSize() {
-        if (window.innerWidth < 1050) {
+        if (window.innerWidth < 1200) {
             if (!this.state.small) {
                 this.setState({ small: true })
             }

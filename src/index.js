@@ -2,7 +2,9 @@ import Navbar from './Navbar/Navbar.jsx';
 import Card from './Card/Card.jsx';
 import ContactForm from './ContactForm/ContactForm.jsx';
 import Gallery from './Gallery/Gallery.jsx';
-//import IconList from './components/IconList/IconList';
+import IconList, {
+    IconListItem
+} from './IconList/IconsList.jsx';
 import LandingPage from './LandingPage/LandingPage.jsx';
 import Section, {
     Full,
@@ -18,6 +20,8 @@ import {
 
 
 export {
+    IconListItem,
+    IconList,
     Navbar,
     Card,
     ContactForm,
