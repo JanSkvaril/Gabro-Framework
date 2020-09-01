@@ -5,7 +5,7 @@
 
 import React from 'react';
 import './ContactInfo.scss';
-import { Phone, PhoneAndroid, EmailOutlined, LocationOn, Facebook } from '@material-ui/icons/';
+import { Phone, PhoneAndroid, EmailOutlined, LocationOn, Facebook, Instagram } from '@material-ui/icons/';
 import PropTypes from 'prop-types';
 /**
  * @brief Creates react fragment from number and ads hard spaces between every 3 numbers
@@ -39,7 +39,7 @@ function wrapWithSectionTable(data) {
 
 /**
  * @brief Contact info is used for displaing things like phone numbers, emails, adressess etc. 
- * @version   2.2.0
+ * @version   2.3.0
  * @example 
  * <ContactInfo
         email={[
@@ -101,8 +101,15 @@ ContactInfo.propTypes = {
     email: PropTypes.arrayOf(
         PropTypes.string
     ),
+    /** Real adress, Object containing text that will be displayed, and link to google maps */
+    place: PropTypes.shape({
+        text: PropTypes.string, //displayed text
+        link: PropTypes.string, //redirect link
+    }),
     /** Facebook url */
     facebook: PropTypes.string,
+    /** Instagram url */
+    instagram: PropTypes.string,
     /** Anything else, without icon. Array of object containing "name" and "text" */
     other: PropTypes.arrayOf(
         PropTypes.shape({
@@ -127,12 +134,17 @@ function createContactSections(props) {
         for (let item of props.phone) {
             rows.push(
                 <tr>
+
                     <td className="left">{item.name}</td>
                     <td className="right">
-                        <strong>
-                            <Phone fontSize="small" className="text-icon" />
-                            {getPhoneNumberString(item.number)}
-                        </strong></td>
+                        <a href={"tel:" + props.phone}>
+                            <strong>
+                                <Phone fontSize="small" className="text-icon" />
+                                {getPhoneNumberString(item.number)}
+                            </strong>
+                        </a>
+                    </td>
+
                 </tr>
             )
         }
@@ -144,12 +156,17 @@ function createContactSections(props) {
         for (let item of props.mobile) {
             rows.push(
                 <tr>
+
                     <td className="left">{item.name}</td>
                     <td className="right">
-                        <strong>
-                            <PhoneAndroid fontSize="small" className="text-icon" />
-                            {getPhoneNumberString(item.number)}
-                        </strong></td>
+                        <a href={"tel:" + props.mobile}>
+                            <strong>
+                                <PhoneAndroid fontSize="small" className="text-icon" />
+                                {getPhoneNumberString(item.number)}
+                            </strong>
+                        </a>
+                    </td>
+
                 </tr>
             )
         }
@@ -161,10 +178,12 @@ function createContactSections(props) {
         for (let item of props.email) {
             rows.push(
                 <tr>
-                    <td
-                    >
-                        <strong><EmailOutlined fontSize="small" className="text-icon" />&nbsp;{item.email}</strong>
+                    <td>
+                        <a href={"mailto:" + props.email}>
+                            <strong><EmailOutlined fontSize="small" className="text-icon" />&nbsp;{item.email}</strong>
+                        </a>
                     </td>
+
                 </tr>
             )
         }
@@ -177,10 +196,10 @@ function createContactSections(props) {
     if (!!props.place) {
         sections.push(
             <div className="contact-info-section">
-
-                <LocationOn fontSize="small" className="text-icon" />&nbsp;{props.place}
-
-            </div>
+                <a href={props.place.link}>
+                    <LocationOn fontSize="small" className="text-icon" />&nbsp;{props.place.text}
+                </a>
+            </div >
         );
     }
     //url to facebook page
@@ -189,6 +208,16 @@ function createContactSections(props) {
             <div className="contact-info-section">
                 <a href={props.facebook} target="_blank">
                     <Facebook fontSize="small" className="text-icon" />&nbsp;Facebook
+                </a>
+            </div>
+        );
+    }
+    //url to instagram page
+    if (!!props.instagram) {
+        sections.push(
+            <div className="contact-info-section">
+                <a href={props.instagram} target="_blank">
+                    <Instagram fontSize="small" className="text-icon" />&nbsp;Instagram
                 </a>
             </div>
         );
