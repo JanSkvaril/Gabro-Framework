@@ -8,9 +8,22 @@ import './Section.scss';
 
 
 /**
- * @brief Section component contains part components, its main building block of gabro framework website
+ * @brief Section component contains part components, its main building block of gabro framework website. 
  * Section component has 100% width a height dependent on its content. Its generally used for text block
  * or to contain other components (like contact form, cords, etc.).
+ * 
+ * **Example**
+ * 
+ * ```jsx
+ * <Section>
+ *      <Half styled>
+ *          <h2>Headline!</h2>
+ *      </Half>  
+ *      <Half>
+ *          
+ *      </Half>
+ * </Section>
+ * ```
  */
 const Section = (props: Props) => {
     //styles passed by props
@@ -142,18 +155,23 @@ function Part(type: section_types, props: PartProps) {
         </div>);
 }
 
-//Will be 100% width
+/**
+ * Will cover 100% of width
+ */
 const Full = (props: PartProps) => {
     return Part(section_types.Full, props);
 }
 
-//will cover 50% of width
+/**
+ * Will cover 50% of width on large screen, and 100% on mobile
+ */
 const Half = (props: PartProps) => {
     return Part(section_types.Half, props);
 }
-
-//will cover 100% of with, styled for elements displayed next to each other
-//e.g. for Card component
+/**
+ * Will cover 100% of with, styled for elements displayed next to each other.
+ * Great for card component
+ */
 const Row = (props: PartProps) => {
     return Part(section_types.Row, props);
 }

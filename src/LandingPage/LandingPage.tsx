@@ -10,10 +10,11 @@ import { KeyboardArrowDown } from '@material-ui/icons';
 import './LandingPage.scss';
 
 /**
- * The landing page component.
+ * @brief The landing page component.
  * 
- * @version   2.2
- * @example
+ * **Example**
+ * ```jsx
+ * 
  * <LandingPage
  *  shadow
  *  txtShadow
@@ -32,6 +33,7 @@ import './LandingPage.scss';
  *  <h1>Lorem Ipsum.</h1>
  *  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elt.</p>     
  *  </ LandingPage>
+ * ```
  */
 const LandingPage = (props: Props) => {
 
@@ -195,12 +197,13 @@ interface Props {
       * 
       * **Styled** tags: `h1`, `h2`, `p`. You can put anything into this section.
       * 
-      * @example
+      *```jsx
       * <Component>
       *   <h1>Heading 1</h1>
       *   <h2>Heading 2</h2>
       *   <p>Some text goes here.</p>
       * </ Component>
+      * ```
       */
     children?: any,
 
@@ -211,11 +214,12 @@ interface Props {
      * 
      * @default     false
      * 
-     * @example
+     * ```jsx
      * <LandingPage
      *   shadow>
      *   ...
      * </LandingPage>
+     * ```
     */
     shadow?: boolean,
 
@@ -227,11 +231,12 @@ interface Props {
      * > Possible values:
      * * URLs, IDs of other sections, etc.
      * 
-     * @example
+     * ```jsx
      * <LandingPage
      *   link="#about_us">
      *   ...
      * </LandingPage>
+     * ```
     */
     link?: string,
 
@@ -250,11 +255,12 @@ interface Props {
      * 
      * If you want a **different color for specific part of the text content, use **in-line styles**.
      * 
-     * @example
+     * ```jsx
      * <LandingPage
      *   color="red">
      *   <h1 style={{ color: "white" }}>Heading with a different color</h1> // Using in-line styles
      * </LandingPage> 
+     * ```
     */
     color?: string,
 
@@ -318,11 +324,12 @@ interface Props {
      * 
      * @default     false
      * 
-     * @example
+     * ```jsx
      * <LandingPage
      *   shadow>
      *   ...
      * </LandingPage>
+     * ```
     */
     txtShadow?: boolean,
 

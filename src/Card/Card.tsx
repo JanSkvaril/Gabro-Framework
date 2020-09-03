@@ -8,20 +8,22 @@ import React from 'react';
 import './Card.scss';
 
 /**
- * @brief Simple Card element, great for listing information with images/icons
+ * @brief Simple Card element, great for listing information with images/icons.
  * Can be used anywhere, but should be used in Section, Row part. 
- * @example
+ * 
+ * **Example**
+ * ```jsx
  *  <Card
-    shadow
-    iconBg="rgb(255, 18, 170)"
-    iconColor="white"
-    conBg="white"
-    conColor="black"
-    headline="služby"
-    height="310px"
-    icon={<AndroidIcon />}>
-        Content
-</Card>
+ *   shadow
+ *   iconBg="rgb(255, 18, 170)"
+ *   iconColor="white"
+ *   conBg="white"
+ *   conColor="black"
+ *   headline="služby"
+ *   height="310px"
+ *   icon={<AndroidIcon />}>
+ *       Content
+ * ```
  */
 function Card(props: Props): JSX.Element {
     let styles = {

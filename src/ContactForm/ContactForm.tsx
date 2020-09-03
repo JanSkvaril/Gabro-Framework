@@ -16,11 +16,14 @@ import { ThemeProvider } from '@material-ui/styles';
  * in root folder of the web and corectly configured.
  * On submit sends email to specified email adress
  * @version 2.2.0
- * @example
+ * 
+ * **Example**
+ * ```jsx
  *  <ContactForm shadow bg="white" color="black">
         <h2>Here you can write headline</h2>
         <p>Here you cant write some text</p>
     </ContactForm>
+    ```
  */
 class ContactForm extends Component {
     showMessage: any;

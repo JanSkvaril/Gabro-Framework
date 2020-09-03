@@ -39,19 +39,22 @@ function wrapWithSectionTable(data: JSX.Element[]) {
 /**
  * @brief Contact info is used for displaing things like phone numbers, emails, adressess etc. 
  * @version   2.3.0
- * @example 
+ * 
+ * **Example**
+ * ```jsx
  * <ContactInfo
-        email={[
-            {"same_mail"},
-            {"different mail"}
-        ]}
-        phone={[
-            {name:"Phone:",number:"777555777"},
-            {name:"Phone 2:",number:"777555777"}
-        ]}
-        place="Adress 123"
-        facebook="https://www.facebook.com/SameUrl"
-    />
+ *       email={[
+ *           "same_mail",
+ *           "different mail"
+ *       ]}
+ *       phone={[
+ *           {name:"Phone:",number:"777555777"},
+ *           {name:"Phone 2:",number:"777555777"}
+ *       ]}
+ *       place="Adress 123"
+ *       facebook="https://www.facebook.com/SameUrl"
+ *   />
+ *   ```
  */
 const ContactInfo = (props: Props) => {
     let styles = {

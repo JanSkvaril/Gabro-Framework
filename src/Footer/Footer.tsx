@@ -11,14 +11,16 @@ import './Footer.scss';
  * @brief This is footer component containing ad to our team, that we use for websites created by this ¨
  * framework.
  * @version   2.2.2
- * @example
-    <Footer
-        bg="white"
-        color="rgba(0,0,0,0.65)"
-        logo={require("./imgs/logo.svg")}
-    >
-    <p>Some text</p>
-    </Footer>
+ * **Example**
+ * ```jsx
+ *<Footer
+ *  bg="white"
+ *  color="rgba(0,0,0,0.65)"
+ *  logo={require("./imgs/logo.svg")}
+ *  >
+ *      <p>Some text</p>
+ *  </Footer>
+ *   ```
  */
 const Footer = (props: Props) => {
     let styles = {
