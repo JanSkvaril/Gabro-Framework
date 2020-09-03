@@ -6,9 +6,8 @@
 
 import React from 'react';
 import { IconButton } from '@material-ui/core';
-import { KeyboardArrowDown } from '@material-ui/icons/';
+import { KeyboardArrowDown } from '@material-ui/icons';
 import './LandingPage.scss';
-import PropTypes from 'prop-types';
 
 /**
  * The landing page component.
@@ -34,23 +33,23 @@ import PropTypes from 'prop-types';
  *  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elt.</p>     
  *  </ LandingPage>
  */
-const LandingPage = (props) => {
+const LandingPage = (props: Props) => {
 
     // == styles ==
-    
-    /** **Styles** for the whole **landing page**. */ 
+
+    /** **Styles** for the whole **landing page**. */
     let container_styles = {
-        boxShadow:       !! props.shadow    ? "0px 0px 77px -16px rgba(0,0,0,0.75)"     : "none",
-        background:         props.bg        ? props.bg                                  : "#407BFF",
-        backgroundSize:     props.bgSize    ? props.bgSize                              : "cover",
-        zIndex:          !! props.shadow    ? 5                                         : -1   
+        boxShadow: !!props.shadow ? "0px 0px 77px -16px rgba(0,0,0,0.75)" : "none",
+        background: props.bg ? props.bg : "#407BFF",
+        backgroundSize: props.bgSize ? props.bgSize : "cover",
+        zIndex: !!props.shadow ? 5 : -1
     }
 
     /** **Styles** for the **text section**. */
     let txt_styles = {
-        color:              props.color     ? props.color                               : "#1C1C1C",
-        textShadow:      !! props.txtShadow ? "0px 0px 4px rgba(0, 0, 0, 0.54)"         : "",
-    }    
+        color: props.color ? props.color : "#1C1C1C",
+        textShadow: !!props.txtShadow ? "0px 0px 4px rgba(0, 0, 0, 0.54)" : "",
+    }
 
 
     // == general functions ==
@@ -60,11 +59,11 @@ const LandingPage = (props) => {
      * 
      * @param {Array} includeInClass - Array of string which should be classes for the section or anything.
      */
-    function generateClassesStr(includeInClass) {
+    function generateClassesStr(includeInClass: string[]) {
         let classes = "";
 
-        if ( includeInClass ) {
-            includeInClass.forEach( element => {
+        if (includeInClass) {
+            includeInClass.forEach(element => {
                 classes = classes + " " + element
             });
         }
@@ -82,17 +81,17 @@ const LandingPage = (props) => {
      */
     let scrollDownIcon;
 
-    if ( !! props.link ) {
-        scrollDownIcon = 
-            <IconButton 
-                className="icon-title" 
-                href={ props.link } 
-                style={{ color: !! props.iconColor ? props.iconColor : "white" }}>
-                            
+    if (!!props.link) {
+        scrollDownIcon =
+            <IconButton
+                className="icon-title"
+                href={props.link}
+                style={{ color: !!props.iconColor ? props.iconColor : "white" }}>
+
                 <KeyboardArrowDown fontSize="large" />
             </IconButton>
     }
-     
+
 
     // == versions ==
     // Version is an array of inner containers.
@@ -101,15 +100,15 @@ const LandingPage = (props) => {
     /**  
      * Generates a text section of the landing page.
     */
-    function getTxtSection(includeInClass) {
-        let classes = generateClassesStr([ "txt-section_landing_page", includeInClass ]) ;
+    function getTxtSection(includeInClass?: any) {
+        let classes = generateClassesStr(["txt-section_landing_page", includeInClass]);
 
         return (
-            <div 
-                style={ txt_styles } 
-                className={ classes }>
-                    
-                { props.children }
+            <div
+                style={txt_styles}
+                className={classes}>
+
+                {props.children}
             </div>
         )
     }
@@ -120,7 +119,7 @@ const LandingPage = (props) => {
      * Version with **text, scrollDownIcon**.
      */
     let v1 = [
-        getTxtSection([ !! props.orientation ? props.orientation : "center" ]),
+        getTxtSection([!!props.orientation ? props.orientation : "center"]),
         scrollDownIcon
     ]
 
@@ -130,19 +129,19 @@ const LandingPage = (props) => {
      * Version with **text, scrollDownIcon, image**.
      */
     let v2 = [
-        <div 
-            className={ generateClassesStr([
+        <div
+            className={generateClassesStr([
                 "container",
-                !! props.orientation         ? props.orientation         : "left",
-                !! props.orientationMobile   ? props.orientationMobile   : "top"
+                !!props.orientation ? props.orientation : "left",
+                !!props.orientationMobile ? props.orientationMobile : "top"
             ])}>
-            
-            { getTxtSection() }
 
-            <div 
-                className="img-section" 
-                style={{ backgroundImage: `url(${ props.img })` }}>
-                
+            {getTxtSection()}
+
+            <div
+                className="img-section"
+                style={{ backgroundImage: `url(${props.img})` }}>
+
             </div>
         </div>,
 
@@ -156,18 +155,18 @@ const LandingPage = (props) => {
      */
     let v3 = [
         <div
-            className={ generateClassesStr([ 
-                "container", 
-                !! props.orientation ? props.orientation : "left",
-                !! props.orientationMobile ? props.orientationMobile : "top",
-                !! props.blockOrientation ? "block-" + props.blockOrientation + "-" + props.orientation : "block-top-" + props.orientation,
+            className={generateClassesStr([
+                "container",
+                !!props.orientation ? props.orientation : "left",
+                !!props.orientationMobile ? props.orientationMobile : "top",
+                !!props.blockOrientation ? "block-" + props.blockOrientation + "-" + props.orientation : "block-top-" + props.orientation,
             ])}>
 
-            <div 
-                className={ generateClassesStr([ "block", !! props.blockShape ? props.blockShape : "square" ]) } 
-                style={{ background: !! props.blockColor ? props.blockColor : "rgba(33, 33, 33, 0.5)" }}>
+            <div
+                className={generateClassesStr(["block", !!props.blockShape ? props.blockShape : "square"])}
+                style={{ background: !!props.blockColor ? props.blockColor : "rgba(33, 33, 33, 0.5)" }}>
 
-                { getTxtSection() }
+                {getTxtSection()}
 
             </div >
         </div>,
@@ -176,37 +175,34 @@ const LandingPage = (props) => {
     ]
 
     return (
-        <div 
-            className={ generateClassesStr([ "landing-page", !! props.version ? props.version +  "_landing_page" : "v1_landing_page", !! props.className ? props.className : "" ]) } 
-            style={ container_styles } 
-            id={`landing-page ${ !! props.id ? props.id : "" }`}>
+        <div
+            className={generateClassesStr(["landing-page", !!props.version ? props.version + "_landing_page" : "v1_landing_page", !!props.className ? props.className : ""])}
+            style={container_styles}
+            id={`landing-page ${!!props.id ? props.id : ""}`}>
 
-            { props.version ? eval(props.version) : v1 }
+            {props.version ? eval(props.version) : v1}
 
         </div>
     );
 }
 
 
-LandingPage.propTypes = {
-   /**
-     * Content of the **text section** (*text, buttons, etc.*).
-     * 
-     * It is a **standard prop** - this prop apply to every version of the landing page. 
-     * 
-     * **Styled** tags: `h1`, `h2`, `p`. You can put anything into this section.
-     * 
-     * @example
-     * <Component>
-     *   <h1>Heading 1</h1>
-     *   <h2>Heading 2</h2>
-     *   <p>Some text goes here.</p>
-     * </ Component>
-     */
-    children:           PropTypes.oneOfType([
-                            PropTypes.arrayOf(PropTypes.node),
-                            PropTypes.node
-                        ]).isRequired,   
+interface Props {
+    /**
+      * Content of the **text section** (*text, buttons, etc.*).
+      * 
+      * It is a **standard prop** - this prop apply to every version of the landing page. 
+      * 
+      * **Styled** tags: `h1`, `h2`, `p`. You can put anything into this section.
+      * 
+      * @example
+      * <Component>
+      *   <h1>Heading 1</h1>
+      *   <h2>Heading 2</h2>
+      *   <p>Some text goes here.</p>
+      * </ Component>
+      */
+    children?: any,
 
     /** 
      * If mentioned, landing page will cast **a shadow on other sections**.  
@@ -221,7 +217,7 @@ LandingPage.propTypes = {
      *   ...
      * </LandingPage>
     */
-    shadow:             PropTypes.bool,    
+    shadow?: boolean,
 
     /** 
      * **Link for the little arow** on bottom of the landing page. 
@@ -237,7 +233,7 @@ LandingPage.propTypes = {
      *   ...
      * </LandingPage>
     */
-    link:               PropTypes.string,   
+    link?: string,
 
     /** 
      * **Background** of the landing page. It can be *a color, a gradient, an image, etc.* 
@@ -245,7 +241,7 @@ LandingPage.propTypes = {
      * It is a **standard prop** - this prop apply to every version of the landing page.
      * 
     */
-    bg:                 PropTypes.string,   
+    bg?: string,
 
     /** 
      * **Color of the text** in the text section. This color will be applied on every text in the section. 
@@ -260,7 +256,7 @@ LandingPage.propTypes = {
      *   <h1 style={{ color: "white" }}>Heading with a different color</h1> // Using in-line styles
      * </LandingPage> 
     */
-    color:              PropTypes.string, 
+    color?: string,
 
     /** 
      * CSS value for `background-size`.
@@ -271,7 +267,7 @@ LandingPage.propTypes = {
      *  
      * @default cover                   
     */
-    bgSize:             PropTypes.string,   
+    bgSize?: string,
 
     /** 
      * Defines a version applied on landing page. Currently there are 3 available version. 
@@ -283,28 +279,28 @@ LandingPage.propTypes = {
      * * **v2** - Version with **text**, **scroll-down icon** and an **image**.
      * * **v3** - Version with **text** in a container called `block`, which can have some specific **shape and background color**, **scrollDownIcon**.
     */
-    version:            PropTypes.oneOf(["v1", "v2", "v3"]),   
+    version: "v1" | "v2" | "v3",
 
     /** 
      * **Position of the text** section on the landing page. 
      * 
      * It is a **standard prop** - this prop apply to every version of the landing page.
     */
-    orientation:        PropTypes.oneOf("left", "right"), 
+    orientation: "left" | "right",
 
     /** 
      * **Color** of the scroll down **icon**. 
      * 
      * It is a **standard prop** - this prop apply to every version of the landing page.
     */
-    iconColor:          PropTypes.string, 
+    iconColor?: string,
 
     /** 
      * **Color** of the **block**. 
      * 
      * This props is avalilable for these versions: v3.
     */
-    blockColor:         PropTypes.string, 
+    blockColor?: string,
 
     /** 
      * **Orientation of the block** - when `blockShape=crossed`, should the wider side be on top or bottom? 
@@ -313,7 +309,7 @@ LandingPage.propTypes = {
      * 
      * This will be ignored if the `blockShape` prop is symmetrical.
     */
-    blockOrientation:   PropTypes.oneOf(["top", "bot"]), 
+    blockOrientation: "top" | "bot",
 
     /** 
      * If mentioned, text in the text-section will cast **a shadow** on the background.
@@ -328,27 +324,29 @@ LandingPage.propTypes = {
      *   ...
      * </LandingPage>
     */
-    txtShadow:          PropTypes.bool, 
+    txtShadow?: boolean,
 
     /** 
      * **Shape of the block**. 
      * 
      * This props is avalilable for these versions: v3.
     */
-    blockShape:         PropTypes.oneOf(["square", "crossed"]),   
+    blockShape?: "square" | "crossed",
 
     /**
      * **Orientation** of the **text section** on **smaller screen size**. 
      * 
      * This props is avalilable for these versions: v2, v3.
      */
-    orientationMobile:  PropTypes.oneOf(["top", "bot"]),  
+    orientationMobile?: "top" | "bot",
+
+    img?: string,
 
     /**Your custom classnames. */
-    className:          PropTypes.string,
-    
+    className?: string,
+
     /** ID of this section */
-    id:                 PropTypes.string,
+    id?: string,
 }
 
 export default LandingPage;

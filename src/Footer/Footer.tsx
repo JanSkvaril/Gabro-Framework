@@ -5,7 +5,6 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import './Footer.scss';
 
 /**
@@ -21,7 +20,7 @@ import './Footer.scss';
     <p>Some text</p>
     </Footer>
  */
-const Footer = (props) => {
+const Footer = (props: Props) => {
     let styles = {
         background: (!!props.bg ? props.bg : "#ffffff") + " center",
         backgroundSize: "cover",
@@ -42,13 +41,15 @@ const Footer = (props) => {
         </div>
     );
 }
-Footer.propTypes = {
+interface Props {
     /** Background attribute of the section, can be color, image, gradient,... */
-    background: PropTypes.string,
+    bg?: string,
     /** Text color */
-    color: PropTypes.string,
+    color?: string,
     /** Path (with require) to image or svg */
-    logo: PropTypes.string,
+    logo?: string,
+
+    children?: any,
 }
 
 export default Footer;

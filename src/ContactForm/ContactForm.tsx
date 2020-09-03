@@ -5,12 +5,11 @@
 
 import React, { Component } from 'react';
 import { TextField, Button } from '@material-ui/core';
-import { Send } from '@material-ui/icons/';
+import { Send } from '@material-ui/icons';
 import SnackMessages from '../SnackMessages/SnackMessages.jsx';
 import './ContactForm.scss';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
-import PropTypes from 'prop-types';
 
 /**
  * @brief Simple contact form. Contains mail adress and text. Requires send-mail.php to be placed
@@ -24,9 +23,10 @@ import PropTypes from 'prop-types';
     </ContactForm>
  */
 class ContactForm extends Component {
-
-    constructor() {
-        super();
+    showMessage: any;
+    state: State;
+    constructor(props: Props) {
+        super(props);
         this.state = {
             mailAdress: "",
             mailText: "",
@@ -34,9 +34,10 @@ class ContactForm extends Component {
             nottText: ""
         }
         this.handleInputChange = this.handleInputChange.bind(this);
+
     }
     //handles changes in inputs
-    handleInputChange(event) {
+    handleInputChange(event: any) {
         const target = event.target;
         const value = target.value;
         const name = target.name;
@@ -88,7 +89,7 @@ class ContactForm extends Component {
             this.showMessage("Zpráva byla úspěšně odeslána, děkujeme!", "succes");
         });
     }
-    handleClose(event, reason) {
+    handleClose(event: any, reason: any) {
         if (reason === 'clickaway') {
             return;
         }
@@ -105,7 +106,7 @@ class ContactForm extends Component {
     }
 
     render() {
-        let props = this.props;
+        let props: Props = this.props as Props;
         let styles = {
             boxShadow: props.shadow ? "0px 0px 77px -16px rgba(0,0,0,0.45)" : "none",
             background: props.bg,
@@ -160,26 +161,34 @@ class ContactForm extends Component {
                             </Button>
                         </form>
                     </div>
-                    <SnackMessages onRef={ref => (this.showMessage = ref)} />
+                    <SnackMessages onRef={(ref: any) => (this.showMessage = ref)} />
                 </ThemeProvider>
             </React.Fragment >
         );
     }
 }
-ContactForm.propTypes = {
+interface Props {
     // == styles ==
     /** If shadow should be displayed around section */
-    shadow: PropTypes.bool,
+    shadow?: boolean,
     /** Background attribute of the section, can be color, image, gradient,... */
-    bg: PropTypes.string,
+    bg?: string,
     /** Text color */
-    color: PropTypes.string,
+    color?: string,
     // == form specific == 
     /** Color of input elements - email adress and textbox */
-    formColor: PropTypes.string,
+    formColor?: string,
     /** Color of submit button */
-    buttonColor: PropTypes.string,
+    buttonColor?: string,
 
+    children?: any,
+}
+
+interface State {
+    mailAdress: string,
+    mailText: string,
+    nottOpen: boolean,
+    nottText: string
 }
 
 export default ContactForm;

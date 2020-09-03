@@ -2,22 +2,19 @@ import './Navbar.scss';
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import Drawer from '@material-ui/core/Drawer';
-import { IconButton, List, ListItem, ListItemText, MenuList } from '@material-ui/core';
+import { IconButton, List, ListItem, ListItemText } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
-import PropTypes from 'prop-types';
 
-class Navbar extends Component {
-    constructor(props) {
+
+class Navbar extends Component<Props, State> {
+    constructor(props: Props) {
         super(props);
         this.state = {
             drawlerOpenned: false,
             navbarHidden: false,
-            transparent: false,
+            transparent: props.trans == undefined ? false : props.trans,
             galleryOpen: false
         }
-        if (!this.props.trans == undefined)
-            this.props.trans = false;
-
         if (props.version == "v1" || !!props.version)
             this.InitScrolling();
     }
@@ -28,8 +25,9 @@ class Navbar extends Component {
         let prevScrollpos = window.pageYOffset;
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) == false) {
             if (this.props.trans)
-                this.state.transparent = true;
-            window.onscroll = function () {
+                this.setState({ transparent: true });
+
+            window.onscroll = () => {
                 let currentScrollPos = window.pageYOffset;
 
                 //transparent navbar when on top
@@ -65,7 +63,7 @@ class Navbar extends Component {
                     }
                 }
                 prevScrollpos = currentScrollPos;
-            }.bind(this);
+            };
         }
     }
 
@@ -155,11 +153,21 @@ class Navbar extends Component {
     }
 }
 
-Navbar.propTypes = {
-    trans: PropTypes.bool,
-    color: PropTypes.string,
-    txtColor: PropTypes.string,
-    menu: PropTypes.array
+interface Props {
+    trans?: boolean,
+    color?: string,
+    txtColor?: string,
+    menu: any,
+    version: "v1" | "v2",
+    title: string,
+    bgFilter: string,
+}
+
+interface State {
+    drawlerOpenned: boolean,
+    navbarHidden: boolean,
+    transparent: boolean,
+    galleryOpen: boolean
 }
 
 export default Navbar;

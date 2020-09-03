@@ -1,58 +1,58 @@
 @import '../variables';
 
 .card {
-    max-width: 280px;
-    width: 100%;
-    margin: 20px;
+  max-width: 280px;
+  width: 100%;
+  margin: 20px;
 
-    .icon-holder {
-        height: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-radius: 5px 5px 0px 0px;
+  .icon-holder {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px 5px 0px 0px;
 
-        .icon {
-            height: 100px;
-            width: 100px;
+    .icon {
+      height: 100px;
+      width: 100px;
 
-            svg,
-            img {
+      svg,
+      img {
 
-                width: 100px;
-                height: auto;
-            }
-        }
-
-        h2 {
-            font-size: 24px;
-            font-weight: bold;
-            max-width: 80%;
-            text-align: center;
-            margin-top: 10px;
-        }
+        width: 100px;
+        height: auto;
+      }
     }
 
-    .content {
-        height: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 0px 0px 5px 5px;
-        flex-direction: column;
-        font-size: 15px;
-        padding-left: 20px;
-        padding-right: 20px;
-
-        @media screen and (min-width: $break-small) {
-            font-size: 18px;
-        }
-
-        table {
-            td {
-                vertical-align: top;
-            }
-        }
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      max-width: 80%;
+      text-align: center;
+      margin-top: 10px;
     }
+  }
+
+  .content {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 0px 5px 5px;
+    flex-direction: column;
+    font-size: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @media screen and (min-width: $break-small) {
+      font-size: 18px;
+    }
+
+    table {
+      td {
+        vertical-align: top;
+      }
+    }
+  }
 }

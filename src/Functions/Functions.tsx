@@ -9,7 +9,7 @@
  * @param {string} path path to file
  * @returns {string} 
  */
-function GetImage(path) {
+function GetImage(path: string): string {
     return "url(" + path + ")";
 }
 

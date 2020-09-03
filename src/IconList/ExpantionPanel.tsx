@@ -3,8 +3,8 @@ import Collapse from '@material-ui/core/Collapse';
 import { IconButton } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-class ExpantionPanel extends Component {
-    constructor(props) {
+class ExpantionPanel extends Component<Props, State> {
+    constructor(props: Props) {
         super(props);
         this.state = {
             open: false
@@ -26,7 +26,7 @@ class ExpantionPanel extends Component {
                     <table style={{ width: "100%" }}>
                         <tbody>
                             <tr>
-                                <td> {this.props.head}</td>
+                                <td> {this.props.headline}</td>
                                 <td style={{ width: "50px", }}>
                                     <IconButton style={iconStyles}>
                                         <ExpandMoreIcon />
@@ -44,6 +44,14 @@ class ExpantionPanel extends Component {
             </div>
         );
     }
+}
+
+interface Props {
+    headline: JSX.Element | string,
+    children: any,
+}
+interface State {
+    open: boolean
 }
 
 export default ExpantionPanel;

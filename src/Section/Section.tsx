@@ -5,19 +5,19 @@
 
 import React from 'react';
 import './Section.scss';
-import PropTypes from 'prop-types';
+
 
 /**
  * @brief Section component contains part components, its main building block of gabro framework website
  * Section component has 100% width a height dependent on its content. Its generally used for text block
  * or to contain other components (like contact form, cords, etc.).
  */
-const Section = (props) => {
+const Section = (props: Props) => {
     //styles passed by props
     let styles = {
         boxShadow: !!props.shadow ? "0px 0px 77px -16px rgba(0,0,0,0.75)" : "none",
         background: (!!props.bg ? props.bg : "transparent") + " center",
-        zIndex: !!props.shadow ? 5 : "auto",
+        zIndex: !!props.shadow ? 5 : 0,
         color: !!props.color ? props.color : "#000000",
         backgroundSize: !!props.bgSize ? props.bgSize : "cover",
         backdropFilter: !!props.bgFilter ? props.bgFilter : "",
@@ -41,11 +41,11 @@ const Section = (props) => {
     //left line, is not displayed by default
     let line_styles = {
         display: "none",
+        background: ""
     }
     if (!!props.line) {
-        line_styles = {
-            background: props.line,
-        }
+        line_styles.background = props.line;
+
     }
 
     return (
@@ -60,50 +60,63 @@ const Section = (props) => {
 }
 
 //proptypes for section
-Section.propTypes = {
+interface Props {
     // == Styles ==
     /** If shadow should be displayed around section */
-    shadow: PropTypes.bool,
+    shadow?: boolean,
     /** Background attribute of the section, can be color, image, gradient,... */
-    bg: PropTypes.string,
+    bg?: string,
     /** Text color */
-    color: PropTypes.string,
+    color?: string,
     /** Background-size attribute, default is "cover" */
-    bgSize: PropTypes.string,
+    bgSize?: string,
     /** Backdrop-filter attribute, for example blur(5px) will blur the background */
-    bgFilter: PropTypes.string,
+    bgFilter?: string,
     /** Padding-bottom attribute, for example 100px */
-    paddingBot: PropTypes.string,
+    paddingBot?: string,
     /** Padding-top attribute, for example 100px */
-    paddingTop: PropTypes.string,
+    paddingTop?: string,
     // == Other ==
     /** If framework styles should be applied on content, default is "false" */
-    styled: PropTypes.bool,
+    styled?: boolean,
     /** Where should be headlines aligned. If not given, default will be middle */
-    headline_align: PropTypes.oneOf("left", "right"),
+    headline_align?: "left" | "right",
     /** Background attribute (color, gradient) of Left line. Line will not be displayed if empty */
-    line: PropTypes.string,
+    line?: string,
     /** Cutsom classnames for Section component */
-    className: PropTypes.string,
+    className?: string,
     /** Custom ID for Section component */
-    id: PropTypes.string,
+    id?: string,
+
+    children?: any,
+}
+
+interface PartProps {
+    bg?: string,
+    color?: string,
+    paddingBot?: string,
+    paddingTop?: string,
+    styled?: boolean,
+    line?: string,
+    children?: any,
 }
 
 //In section must be one of "parts" - Full/Half/row
 /**
  * @enum {section_types}
  */
-const part_types = {
-    Full: "full",
-    Half: "half",
-    Row: "full row",
+enum section_types {
+    Full = "full",
+    Half = "half",
+    Row = "full row",
 }
+
 /**
  * Generates one of parts
  * @param {section_types} type Full/Half/Row
  * @param {*} props 
  */
-function Part(type, props) {
+function Part(type: section_types, props: PartProps) {
     let styles = {
         background: (!!props.bg ? props.bg : "transparent") + " center",
         backgroundSize: "cover",
@@ -111,15 +124,16 @@ function Part(type, props) {
         paddingBottom: !!props.paddingBot ? props.paddingBot : "",
         paddingTop: !!props.paddingTop ? props.paddingTop : "",
     }
-    let classes = type;
+    let classes: string = type;
     if (!!props.styled) classes += " styled";
+    //left line, is not displayed by default
     let line_styles = {
         display: "none",
+        background: ""
     }
     if (!!props.line) {
-        line_styles = {
-            background: props.line,
-        }
+        line_styles.background = props.line;
+
     }
     return (
         <div className={classes} style={styles}>
@@ -129,19 +143,19 @@ function Part(type, props) {
 }
 
 //Will be 100% width
-const Full = (props) => {
-    return Part(part_types.Full, props);
+const Full = (props: PartProps) => {
+    return Part(section_types.Full, props);
 }
 
 //will cover 50% of width
-const Half = (props) => {
-    return Part(part_types.Half, props);
+const Half = (props: PartProps) => {
+    return Part(section_types.Half, props);
 }
 
 //will cover 100% of with, styled for elements displayed next to each other
 //e.g. for Card component
-const Row = (props) => {
-    return Part(part_types.Row, props);
+const Row = (props: PartProps) => {
+    return Part(section_types.Row, props);
 }
 
 export { Row, Full, Half };

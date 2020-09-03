@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './ImageSection.scss';
 
-const ImageSection = (props) => {
+const ImageSection = (props: Props) => {
 
-  const checkImgMobileAlignment = (img_align, img_align_mobile) => {
+  const checkImgMobileAlignment = (img_align: string | undefined, img_align_mobile: string | undefined) => {
     if (img_align_mobile == null) {
       if (img_align === "left") {
         return "top";
@@ -96,20 +95,22 @@ const ImageSection = (props) => {
   );
 }
 
-ImageSection.propTypes = {
-  title: PropTypes.string,
-  sub_title: PropTypes.string,
-  text: PropTypes.string.isRequired,
-  title_color: PropTypes.string,
-  sub_title_color: PropTypes.string,
-  txt_color: PropTypes.string,
-  img: PropTypes.node.isRequired,
-  alt: PropTypes.string,
-  line_color: PropTypes.string, // If the color is not entered, the line is not rendered!
-  img_align: PropTypes.string, // The image is on the left/right from the text; values: 'left', 'right'; default: 'right'
-  img_align_mobile: PropTypes.string, // The image is on above/below the text; values: 'top', 'bot'; default: 'top'
-  img_position: PropTypes.string, // Values: 'to_edge' 
-  img_full_width_mobile: PropTypes.bool    // On the phone small-desktop screen and smaller, should the image be full-screen or not
+interface Props {
+  title?: string,
+  sub_title?: string,
+  text?: string,
+  title_color?: string,
+  sub_title_color?: string,
+  txt_color?: string,
+  img?: string,
+  alt?: string,
+  line_color?: string, // If the color is not entered, the line is not rendered!
+  img_align?: string, // The image is on the left/right from the text; values: 'left', 'right'; default: 'right'
+  img_align_mobile?: string, // The image is on above/below the text; values: 'top', 'bot'; default: 'top'
+  img_position?: string, // Values: 'to_edge' 
+  img_full_width_mobile?: boolean    // On the phone small-desktop screen and smaller, should the image be full-screen or not
+  section_link?: string,
+  children?: any,
 }
 
 export default ImageSection;

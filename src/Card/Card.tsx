@@ -5,7 +5,6 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import './Card.scss';
 
 /**
@@ -21,10 +20,10 @@ import './Card.scss';
     headline="služby"
     height="310px"
     icon={<AndroidIcon />}>
-        Kontent
+        Content
 </Card>
  */
-const Card = (props) => {
+function Card(props: Props): JSX.Element {
     let styles = {
         boxShadow: !!props.shadow ? "0px 3.78437px 37.8437px rgba(0, 0, 0, 0.25)" : "none",
         height: !!props.height ? props.height : "310px",
@@ -62,27 +61,31 @@ const Card = (props) => {
     );
 }
 //proptypes for cords
-Card.propTypes = {
+interface Props {
     /** If shadow around the card should be displayed */
-    shadow: PropTypes.bool,
+    shadow?: string,
     /** Height of the card */
-    height: PropTypes.string,
+    height?: string,
     /** Backdrop-filter attribute for the card (e.g blur(5px)) */
-    bgFilter: PropTypes.string,
+    bgFilter?: string,
     /** Background (color, image, gradient) for upper part of the card */
-    iconBg: PropTypes.string,
+    iconBg?: string,
     /** Color of the icon */
-    iconColor: PropTypes.string,
+    iconColor?: string,
     /** Dividing line between first and second half part of the card (e.g "none", "2px solid black,...") */
-    divBorder: PropTypes.string,
+    divBorder?: string,
     /** Background (color, image, gradient) of content (bottom) part of the card */
-    conBg: PropTypes.string,
+    conBg?: string,
     /** Color of the text in content (bottom) part of the card */
-    conColor: PropTypes.string,
+    conColor?: string,
     /** svg or img component. Will be displayed in upper part of the card */
-    icon: PropTypes.object,
+    icon?: JSX.Element,
     /** Headline displayed in icon part, will have same color as icon (iconColor prop) */
-    headline: PropTypes.string,
-}
+    headline?: string,
+
+    children?: any,
+    id?: string,
+    className?: string,
+};
 
 export default Card;

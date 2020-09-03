@@ -3,8 +3,8 @@ import './IconList.scss';
 import ExpantionPanel from './ExpantionPanel.jsx';
 
 
-class IconList extends Component {
-    constructor(props) {
+class IconList extends Component<Props, State> {
+    constructor(props: Props) {
         super(props);
         this.state = {
             small: true,
@@ -57,7 +57,7 @@ class IconList extends Component {
                 listData.push(
                     <ExpantionPanel
                         key={key++}
-                        head={
+                        headline={
                             <table>
                                 <tbody>
                                     <tr>
@@ -85,8 +85,19 @@ class IconList extends Component {
     }
 }
 
+interface Props {
+    data: IconListItem[],
+
+}
+interface State {
+    small: boolean
+}
+
 export class IconListItem {
-    constructor(heading, icon, text) {
+    heading: string;
+    icon: string;
+    text: JSX.Element | string;
+    constructor(heading: string, icon: string, text: JSX.Element | string) {
         this.heading = heading;
         this.icon = icon;
         this.text = text;

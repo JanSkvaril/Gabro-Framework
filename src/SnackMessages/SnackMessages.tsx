@@ -4,7 +4,7 @@ import { Snackbar, IconButton, SnackbarContent } from '@material-ui/core';
 import { Close } from '@material-ui/icons';
 import { green, red } from '@material-ui/core/colors';
 
-const styles = theme => ({
+const styles = () => ({
     normal: {
 
     },
@@ -18,18 +18,20 @@ const styles = theme => ({
     }
 })
 
-class SnackMes extends React.Component {
-    constructor(props) {
+
+
+class SnackMes extends React.Component<Props, State> {
+    constructor(props: Props) {
         super(props);
         this.state = {
             open: false, //if snackmessage is displayed
             text: "", //content of the message
-            type: "normal" //type of message, can be "succes", "error", "normal"
+            type: Types.normal //type of message, can be "succes", "error", "normal"
         };
     }
 
     //closing message
-    handleClose(event, reason) {
+    handleClose(event: any, reason: any) {
         if (reason === 'clickaway') {
             return;
         }
@@ -38,7 +40,7 @@ class SnackMes extends React.Component {
     };
 
     //function, that opens the message called by parrent
-    Open(message, type) {
+    Open(message: string, type: Types | string) {
         console.log(this);
         this.setState({ open: true, text: message, type: type });
     }
@@ -54,7 +56,7 @@ class SnackMes extends React.Component {
     }
 
     render() {
-        const { classes } = this.props;
+        const classes = this.props.classes;
         return (
             <div>
                 <Snackbar
@@ -95,5 +97,14 @@ class SnackMes extends React.Component {
         );
     }
 }
-
+interface Props {
+    onRef?: any,
+    classes?: any,
+}
+interface State {
+    open: boolean,
+    text: string, //content of the message
+    type: Types | string //type of message, can be "succes", "error", "normal"
+};
+enum Types { normal = "normal", succes = "succes", error = "error" }
 export default withStyles(styles)(SnackMes);
