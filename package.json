@@ -33,7 +33,7 @@
     "start": "rollup --config rollup.config.js --watch",
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docs": "typedoc --out docs src"
+    "docs": "typedoc --out docs src && echo $null >> ./docs/.nojekyll"
   },
   "repository": {
     "type": "git",
