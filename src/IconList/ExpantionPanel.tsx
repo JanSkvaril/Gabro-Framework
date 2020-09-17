@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Collapse from '@material-ui/core/Collapse';
 import { IconButton } from '@material-ui/core';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { ExpandMore } from '@material-ui/icons';
 
 class ExpantionPanel extends Component<Props, State> {
     constructor(props: Props) {
@@ -29,7 +29,7 @@ class ExpantionPanel extends Component<Props, State> {
                                 <td> {this.props.headline}</td>
                                 <td style={{ width: "50px", }}>
                                     <IconButton style={iconStyles}>
-                                        <ExpandMoreIcon />
+                                        <ExpandMore />
                                     </IconButton>
                                 </td>
                             </tr>
@@ -47,7 +47,7 @@ class ExpantionPanel extends Component<Props, State> {
 }
 
 interface Props {
-    headline: JSX.Element | string,
+    headline: any,
     children: any,
 }
 interface State {
