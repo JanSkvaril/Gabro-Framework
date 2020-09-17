@@ -36,6 +36,7 @@ const Section = (props: Props) => {
         backdropFilter: !!props.bgFilter ? props.bgFilter : "",
         paddingBottom: !!props.paddingBot ? props.paddingBot : "",
         paddingTop: !!props.paddingTop ? props.paddingTop : "",
+        minHeight: !!props.height ? props.height : "450px",
     };
 
     //classes
@@ -72,9 +73,12 @@ const Section = (props: Props) => {
     );
 }
 
+
 //proptypes for section
 interface Props {
     // == Styles ==
+    /** Minimum height, default is 450px */
+    height?: string,
     /** If shadow should be displayed around section */
     shadow?: boolean,
     /** Background attribute of the section, can be color, image, gradient,... */
@@ -105,13 +109,21 @@ interface Props {
 }
 
 interface PartProps {
+    /** Background attribute of the section, can be color, image, gradient,... */
     bg?: string,
+    /** Text color */
     color?: string,
+    /** Padding-bottom attribute, for example 100px */
     paddingBot?: string,
+    /** Padding-top attribute, for example 100px */
     paddingTop?: string,
+    /** If framework styles should be applied on content, default is "false" */
     styled?: boolean,
+    /** Background attribute (color, gradient) of Left line. Line will not be displayed if empty */
     line?: string,
     children?: any,
+    /** Minimum height, default is empty */
+    height?: string,
 }
 
 //In section must be one of "parts" - Full/Half/row
@@ -136,6 +148,7 @@ function Part(type: section_types, props: PartProps) {
         color: !!props.color ? props.color : "#inherit",
         paddingBottom: !!props.paddingBot ? props.paddingBot : "",
         paddingTop: !!props.paddingTop ? props.paddingTop : "",
+        minHeight: !!props.height ? props.height : "0px"
     }
     let classes: string = type;
     if (!!props.styled) classes += " styled";
