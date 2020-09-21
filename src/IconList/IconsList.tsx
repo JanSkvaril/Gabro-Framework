@@ -2,7 +2,34 @@ import React, { Component } from 'react';
 import './IconList.scss';
 import ExpantionPanel from './ExpantionPanel.jsx';
 
-
+/**
+ * List of icons with heading and text.
+ * 
+ * On destop resolution:
+ * one item looks like this: **Heading | Icon | Text** 
+ * 
+ * On mobile resoultion:
+ * Only **Heading** and **Icon** will be displayed. User can click on the item to expand it
+ * and display **Text**.
+ * 
+ * **Example:**
+ *  ```jsx
+ * import {IconListItem, IconList } from "gabro-framework"
+ * ...
+ *<IconList data={[
+ *   new IconListItem(   //first item
+ *   "Some Headline",
+ *   require("./path/to/icon.svg"),
+ *       "More infromation about the topic")
+ *   ,
+ *   new IconListItem(   //second item   
+ *       "Some Headline",
+ *       require("./path/to/icon.svg"),
+ *       "More infromation about the topic")
+ *   ],
+ *   } />
+  *  ```
+ */
 class IconList extends Component<Props, State> {
     constructor(props: Props) {
         super(props);
@@ -11,6 +38,7 @@ class IconList extends Component<Props, State> {
         }
         window.onresize = this.CheckSize.bind(this);
     }
+    /** Called on resize, changes mode */
     CheckSize() {
         if (window.innerWidth < 1200) {
             if (!this.state.small) {
@@ -28,6 +56,7 @@ class IconList extends Component<Props, State> {
     }
 
     render() {
+        // === desktop mode ====
         if (!this.state.small) {
             let tableData = [];
             let key = 0;
@@ -50,6 +79,7 @@ class IconList extends Component<Props, State> {
                 </div>
             );
         }
+        // === Mobile Mode ===
         else {
             let listData = [];
             let key = 0;
@@ -86,17 +116,35 @@ class IconList extends Component<Props, State> {
 }
 
 interface Props {
+    /** Array of IconListItem objects. Check example for more information */
     data: IconListItem[],
 
 }
 interface State {
+    /** Will display textr in expantion panel if true */
     small: boolean
 }
 
+/** One item of icon list. Must constain **headline**, **icon** path and **text***/
 export class IconListItem {
     heading: string;
     icon: string;
     text: JSX.Element | string;
+    /**
+     * 
+     * @param heading Will allways be displayd nexto to icon. Short sentence
+     * @param icon Path (url or require("..."))to icon
+     * @param text More text about the topic. Can be text, or jsx element (for styling)
+     * **Example:**
+     * 
+     * ```jsx
+     * new IconListItem(
+        "Some Headline",
+        require("./path/to/icon.svg"),
+        <React.Fragment>Same text, <b>same bold text</b></React.Fragment>)
+     *  ```
+     * 
+     */
     constructor(heading: string, icon: string, text: JSX.Element | string) {
         this.heading = heading;
         this.icon = icon;

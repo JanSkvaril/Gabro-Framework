@@ -3,6 +3,9 @@ import Collapse from '@material-ui/core/Collapse';
 import { IconButton } from '@material-ui/core';
 import { ExpandMore } from '@material-ui/icons';
 
+/**
+ * Component used in IconList. 
+ */
 class ExpantionPanel extends Component<Props, State> {
     constructor(props: Props) {
         super(props);
@@ -47,7 +50,9 @@ class ExpantionPanel extends Component<Props, State> {
 }
 
 interface Props {
+    /** Allways displayed. */
     headline: any,
+    /** What will be displayed after expantion */
     children: any,
 }
 interface State {
