@@ -97,7 +97,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/b89bd9c/src/Card/Card.tsx#L28">src/Card/Card.tsx:28</a></li>
+									<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/d990f84/src/Card/Card.tsx#L30">src/Card/Card.tsx:30</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -106,7 +106,9 @@
 									<dd><p>Simple Card element, great for listing information with images/icons.
 										Can be used anywhere, but should be used in Section, Row part.</p>
 										<p><strong>Example</strong></p>
-										<pre><code class="language-jsx"> &lt;Card
+										<pre><code class="language-jsx"><span class="hljs-keyword">import</span> {ReactComponent <span class="hljs-keyword">as</span> YourIcon} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./path/your_icon.svg&#x27;</span>
+
+ &lt;Card
   shadow
   iconBg=<span class="hljs-string">&quot;rgb(255, 18, 170)&quot;</span>
   iconColor=<span class="hljs-string">&quot;white&quot;</span>
@@ -114,7 +116,7 @@
   conColor=<span class="hljs-string">&quot;black&quot;</span>
   headline=<span class="hljs-string">&quot;služby&quot;</span>
   height=<span class="hljs-string">&quot;310px&quot;</span>
-  icon={<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">AndroidIcon</span> /&gt;</span></span>}&gt;
+  icon={<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">YourIcon</span> /&gt;</span></span>}&gt;
       Content</code></pre>
 									</dd>
 								</dl>

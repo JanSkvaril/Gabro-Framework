@@ -13,6 +13,8 @@ import './Card.scss';
  * 
  * **Example**
  * ```jsx
+ * import {ReactComponent as YourIcon} from './path/your_icon.svg'
+ * 
  *  <Card
  *   shadow
  *   iconBg="rgb(255, 18, 170)"
@@ -21,7 +23,7 @@ import './Card.scss';
  *   conColor="black"
  *   headline="služby"
  *   height="310px"
- *   icon={<AndroidIcon />}>
+ *   icon={<YourIcon />}>
  *       Content
  * ```
  */
@@ -80,7 +82,13 @@ interface Props {
     conBg?: string,
     /** Color of the text in content (bottom) part of the card */
     conColor?: string,
-    /** svg or img component. Will be displayed in upper part of the card */
+    /** svg or img component. Will be displayed in upper part of the card
+     *  
+     * **Example import:**
+     * ```jsx
+     * import {ReactComponent as YourIcon} from './path/your_icon.svg'
+     *  ```
+    */
     icon?: JSX.Element,
     /** Headline displayed in icon part, will have same color as icon (iconColor prop) */
     headline?: string,
