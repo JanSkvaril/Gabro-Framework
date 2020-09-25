@@ -1,7 +1,6 @@
 @import '../variables';
 
 .img-section-container{
-  width: 100vw;
 
   .version-container {
     width: 100%;
@@ -26,20 +25,6 @@
             font-weight: 400;
           }
         }
-
-        .line {
-          flex-shrink: 0;
-        }
-
-        @mixin horizonzalLine {
-          width: 12px;
-          height: 100%;
-        }
-
-        .line-right, .line-left {
-          @include horizonzalLine;
-          margin-right: 25px;
-        }
       }
     }
   }
@@ -47,10 +32,33 @@
   .v1-version-container {
     .positioning-wrapper {
       .content-wrapper {
-        .line-center {
-          width: 20%;
+        .line {
+          flex-shrink: 0;
+        }
+
+        @mixin horizonzalLine {
+          width: 12px;
+          // height: 100%;
+          height: 100%;
+        }
+
+        @mixin verticalLine {
+          width: 150px;
           height: 12px;
           margin-top: 20px;
+        }
+
+        .line-right, .line-left {
+          @include horizonzalLine();
+          margin-right: 25px;
+
+          @media only screen and (max-width: $break-large) {
+            @include verticalLine();
+          }
+        }
+
+        .line-center {
+          @include verticalLine();
         }
 
         @media only screen and (max-width: $break-large) {
@@ -63,10 +71,11 @@
       }
 
       @mixin cetnerTextOnTablet {
-        @media only screen and (max-width: $break-medium) {
+        @media only screen and (max-width: $break-large) {
           margin: 0;
           text-align: center;
           align-items: center;
+          flex-direction: column-reverse;
         }
       }
 
@@ -86,7 +95,7 @@
     }
 
     @mixin centerOnTablet {
-      @media only screen and (max-width: $break-medium) {
+      @media only screen and (max-width: $break-large) {
         justify-content: center;
       }
     }
