@@ -1,236 +1,214 @@
 @import '../variables';
 
-.text-section-container {
-  position: relative;
-  width: 100%;
-  height: fit-content;
-  padding: 100px 0;
-}
+.img-section-container{
+  width: 100vw;
 
-// Styles for props.children
-.txt-section {
-  h1 {
-    margin: 0;
-    padding: 0;
-    font-size: 3.5em;
-  }
+  .version-container {
+    width: 100%;
+    height: 100%;
 
-  h2 {
-    font-weight: 400;
-  }
-
-  p {
-    font-weight: 400;
-  }
-}
-
-// Styles for versions
-.v1_img-section {
-  .positioning-wrapper {
-    display: flex;
-
-    .text-wrapper {
+    .positioning-wrapper {
       display: flex;
-      max-width: 50%;
-  
-      .txt-section {
-        max-width: 80%;
+
+      .content-wrapper {
+        max-width: 40%;
+        display: flex;
+
+        .txt-section {
+          h2 {  
+            margin: 0;
+            padding: 0;
+            font-size: 3.5em;
+            font-weight: 600;
+          }
+        
+          p {
+            font-weight: 400;
+          }
+        }
+
+        .line {
+          flex-shrink: 0;
+        }
+
+        @mixin horizonzalLine {
+          width: 12px;
+          height: 100%;
+        }
+
+        .line-right, .line-left {
+          @include horizonzalLine;
+          margin-right: 25px;
+        }
       }
-    
-      .center {
+    }
+  }
+
+  .v1-version-container {
+    .positioning-wrapper {
+      .content-wrapper {
+        .line-center {
+          width: 20%;
+          height: 12px;
+          margin-top: 20px;
+        }
+
+        @media only screen and (max-width: $break-large) {
+          max-width: 70%;
+        }
+
+        @media only screen and (max-width: $break-small) {
+          max-width: 85%;
+        }
+      }
+
+      @mixin cetnerTextOnTablet {
+        @media only screen and (max-width: $break-medium) {
+          margin: 0;
+          text-align: center;
+          align-items: center;
+        }
+      }
+
+      .content-wrapper-right {
+        margin-right: 200px;
+        @include cetnerTextOnTablet();
+      }
+      .content-wrapper-left {
+        margin-left: 200px;
+        @include cetnerTextOnTablet();
+      }
+      .content-wrapper-center {
         text-align: center;
-      }
-  
-      .line {
-        flex-shrink: 0;
-      }
-
-      @mixin horizonzalLine {
-        width: 15px;
-        height: 100%;
-      }
-  
-      .line-right {}
-  
-      .line-left, .line-right {
-        @include horizonzalLine;
-        margin-right: 20px;
-      }
-  
-      .line-center {
-        height: 15px;
-        width: 20%;
-        margin-top: 20px;
+        flex-direction: column-reverse;
+        align-items: center;
       }
     }
-  
-    .center {
-      flex-direction: column-reverse;
+
+    @mixin centerOnTablet {
+      @media only screen and (max-width: $break-medium) {
+        justify-content: center;
+      }
+    }
+
+    .positioning-wrapper-right {
+      justify-content: flex-end;
+      @include centerOnTablet();
+    }
+    .positioning-wrapper-left {
+      justify-content: flex-start;
+      @include centerOnTablet();
+    }
+    .positioning-wrapper-center {
+      justify-content: center;
+
     }
   }
-
-  .left {
-    justify-content: flex-start;
-    padding-left: 20px;
-  }
-
-  .right {
-    justify-content: flex-end;
-    padding-right: 20px;
-  }
-
-  .center {
-    justify-content: center;
-  }
+  
+  .v2-version-container {}
+  
+  .v3-version-container {}
 }
 
-.v2_img-section {}
 
-.v3_img-section {}
+// // Container for whole section
+// .img-section-container {
+//   // General styles
 
-
-
-// .text_section_container {
-//   position: relative;
-//   display: flex;
-//   margin-bottom: 50px;
-
-//   .text_half_container {
-//     width: 50%;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-
-//     @media only screen and (max-width: 1300px) {
-//       width: 100%;
-//     }
-
-//     .text_half_wrapper {
+//   .version-container {
+//     // Div for the version
+//     width: 100%;
+//     height: 100%;
+    
+//     .positioning-wrapper {
+//       // Holder for text and line
+//       position: relative;
 //       display: flex;
-//       align-items: center;
-
-//       .rectangle {
-//         width: 15px;
-//         margin-right: 50px;
-//         flex-shrink: 0;
-//         height: 500px;
-
-//         @media only screen and (max-width: 1300px) {
-//           display: none;
-//         }
-//       }
-
-//       .text_half {
-//         .text_section_title {
-//           margin: 0;
-//           padding: 0;
-//           font-size: 4em;
-//         }
-
-//         .text_section_subtitle {
-//           font-weight: 400;
-//         }
-
-//         .text {
-//           font-weight: 400;
-//         }
-//       }
-//     }
-
-
-
-//   }
-
-//   .img_half_container {
-//     display: flex;
-//     width: 50%;
-
-//     @media only screen and (max-width: 1300px) {
+//       height: fit-content;
 //       width: 100%;
+
+//       .content-wrapper {
+//         display: flex;
+//           // Styles for props.children (text content)
+//         .txt-section {
+//           h2 {  
+//             margin: 0;
+//             padding: 0;
+//             font-size: 3.5em;
+//             font-weight: 600;
+//           }
+        
+//           p {
+//             font-weight: 400;
+//           }
+//         }
+
+//         .content-align-center {
+//           text-align: center;
+//         }
+
+//         .content-align-right {
+//           text-align: right;
+//         }
+
+//         .content-align-right, .content-align-left {
+//           @media only screen and (max-width: $break-medium) {
+//             text-align: center;
+//           }
+//         }
+
+//         // Some setup for line next to text
+//         .line {
+//           flex-shrink: 0;
+//         }
+
+//         @mixin horizonzalLine {
+//           width: 15px;
+//           // height: 100%;
+//           height: 100px;
+//         }
+
+//         @mixin verticalLine {
+//           width: 20%;
+//           height: 15px;
+//         }
+
+//         .line-right {
+//           @include horizonzalLine;
+//           margin-left: 20px;
+//         }
+
+//         .line-left {
+//           @include horizonzalLine;
+//           margin-right: 20px;
+//         }
+
+//         .line-center {
+//           @include verticalLine;
+//           margin-top: 20px;
+//         }
+//       }
 //     }
+//   }
+  
+//   // Styles for versions
+  
+//   .v1-img-section {
+//     .positioning-wrapper {
+//       .content-wrapper {
+//         .txt-section {}
 
-//     .img_half {
-//       margin: 5vh 0;
+//       }
+
+//       .content-wrapper-right {
+//         align-items: flex-end;
+//       }
+//       .content-wrapper-left {
+//         flex-direction: row-reverse;
+//         align-items: flex-start;
+//       }
+      
+    
 //     }
-//   }
-// }
-
-
-// .left {
-//   flex-direction: row-reverse;
-// }
-
-// .right {
-//   flex-direction: row;
-// }
-
-// .top {
-//   @media only screen and (max-width: 1300px) {
-//     flex-direction: column-reverse;
-//   }
-// }
-
-// .bot {
-//   @media only screen and (max-width: 1300px) {
-//     flex-direction: column;
-//   }
-// }
-
-// @mixin justify_content_small_desktop {
-//   @media only screen and (max-width: 1300px) {
-//     justify-content: center;
-//   }
-// }
-
-
-// .to_edge_right_full_screen_mobile {
-//   justify-content: flex-end;
-//   @include justify_content_small_desktop()
-// }
-
-// .to_edge_left_full_screen_mobile {
-//   justify-content: flex-start;
-//   @include justify_content_small_desktop()
-// }
-
-// .img_center {
-//   justify-content: center;
-// }
-
-// .img_on_the_left_from_text {
-//   padding-left: 3vw;
-//   padding-right: 10vw;
-
-//   @media only screen and (max-width: 1300px) {
-//     padding: 0 15vw;
-//   }
-
-// }
-
-// .img_on_the_right_from_text {
-//   padding-left: 10vw;
-//   padding-right: 3vw;
-
-//   @media only screen and (max-width: 1300px) {
-//     padding: 0 15vw;
-//   }
-// }
-
-// .img_full_width_mobile {
-//   max-width: 90%;
-//   height: auto;
-
-//   @media only screen and (max-width: 1300px) {
-//     min-width: 100%;
-//   }
-// }
-
-// .img_regular_width_mobile {
-//   max-width: 90%;
-//   height: auto;
-
-//   @media only screen and (max-width: 1300px) {
-//     max-width: 70%;
-//     min-width: 65%;
 //   }
 // }
