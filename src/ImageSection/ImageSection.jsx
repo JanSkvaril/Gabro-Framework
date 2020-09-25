@@ -144,6 +144,27 @@ ImageSection.propTypes = {
    * It is a **standard prop** - this prop apply to every version of the image section.
   */
   orientation:        PropTypes.oneOf("left", "right", "center"), 
+
+  /**
+   * Value: color code
+   * 
+   * If the value is setted, it will draw a line *next to/below* the pharagraph.
+   */
+  line:               PropTypes.string,
+
+  /**
+   * CSS value for background.
+   */
+  background:         PropTypes.string,
+
+  /** Value for css style padding-top.*/
+  paddingTop:         PropTypes.string,
+
+  /** Value for css style padding-bottom.*/
+  paddingBot:         PropTypes.string,
+
+  /** Color of the text */
+  color:              PropTypes.string
 }
 
 export default ImageSection;
