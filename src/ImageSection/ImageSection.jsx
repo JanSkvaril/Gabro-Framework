@@ -62,7 +62,7 @@ const ImageSection = (props) => {
   let line;
 
   if ( !! props.line ) {
-    line = <div className={ generateClassesStr([ "line", "line-" + props.orientation ]) } style={{ backgroundColor: props.line }}></div>
+    line = <div className={ generateClassesStr([ "line", !! props.orientation ? "line-" + props.orientation : "line-left" ]) } style={{ backgroundColor: props.line }}></div>
   }
 
   // v1
@@ -72,11 +72,11 @@ const ImageSection = (props) => {
    */
   let v1 = [
     <div 
-      className={ generateClassesStr(["positioning-wrapper", "positioning-wrapper-" + props.orientation]) }>
+      className={ generateClassesStr(["positioning-wrapper", !! props.orientation ? "positioning-wrapper-" + props.orientation : "positioning-wrapper-left"]) }>
 
-        <div className={ generateClassesStr(["content-wrapper", "content-wrapper-" + props.orientation]) }>
+        <div className={ generateClassesStr(["content-wrapper", !! props.orientation ? "content-wrapper-" + props.orientation : "content-wrapper-left"]) }>
           { line }
-          { getTxtSection([ "content-align-" + props.orientation ]) }
+          { getTxtSection([ !! props.orientation ? "content-align-" + props.orientation : "content-align-left" ]) }
         </div>
     </div>
   ];
@@ -90,13 +90,18 @@ const ImageSection = (props) => {
     <div 
       className={ generateClassesStr([
         "positioning-wrapper", 
-        !! props.orientation ? "positioning-wrapper-" + props.orientation : "positioning-wrapper-left",
-        !! props.positionMobile ? "positioning-wrapper-mobile-" + props.positionMobile : "positioning-wrapper-mobile-top" ]) }>
+        !! props.orientation    ? "positioning-wrapper-"        + props.orientation     : "positioning-wrapper-left",
+        !! props.positionMobile ? "positioning-wrapper-mobile-" + props.positionMobile  : "positioning-wrapper-mobile-top" ]) }>
+
         {/* Text half */}
         <div className="text-half">
-          <div className={ generateClassesStr(["content-wrapper", "content-wrapper-" + props.orientation, !! props.textAlignMobile ? "text-align-mobile-" + props.textAlignMobile : "text-align-mobile-left"]) }>
+          <div className={ generateClassesStr([
+            "content-wrapper", 
+            !! props.orientation      ? "content-wrapper-"    + props.orientation     : "content-wrapper-left", 
+            !! props.textAlignMobile  ? "text-align-mobile-"  + props.textAlignMobile : "text-align-mobile-left"]) }>
+
             { line }
-            { getTxtSection([ "content-align-" + props.orientation ]) }
+            { getTxtSection([ !! props.orientation ? "content-align-" + props.orientation : "content-align-left" ]) }
           </div>
         </div>
 
@@ -111,7 +116,9 @@ const ImageSection = (props) => {
 
   // == main container stuff ==
 
-  let containerClasses = generateClassesStr([ "version-container", !! props.version ? props.version + "-version-container" : "v1-version-container" ]);
+  let containerClasses = generateClassesStr([ 
+    "version-container", 
+    !! props.version ? props.version + "-version-container" : "v1-version-container" ]);
 
 
   return (
@@ -192,7 +199,34 @@ ImageSection.propTypes = {
   paddingBot:         PropTypes.string,
 
   /** Color of the text */
-  color:              PropTypes.string
+  color:              PropTypes.string,
+
+  /** Value for CSS style background-position.
+   * @default "center"
+   */
+  backgroundPosition: PropTypes.string,
+
+  /** Value for CSS style background-size.
+   * @default "contain"
+   */
+  backgroundSize:     PropTypes.string,
+
+  /** Value for CSS style text-align on smaller screen.
+   * @default "left"
+   */
+  textAlignMobile:    PropTypes.string,
+
+  /** Image for the image section.
+   * @example
+   * <ImageSection
+   *    img={ require('./path/to/img.png') }>
+   * ...
+   * </ImageSection>
+   */
+  img:                PropTypes.string, 
+
+  /** Position of the text on mobile relative to the image. */
+  positionMobile:     PropTypes.oneOf("top", "bot")
 }
 
 export default ImageSection;
