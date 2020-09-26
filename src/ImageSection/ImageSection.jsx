@@ -81,6 +81,34 @@ const ImageSection = (props) => {
     </div>
   ];
 
+  // v2
+  
+  /**
+   * Version with **image next to text**.
+   */
+  let v2 = [
+    <div 
+      className={ generateClassesStr([
+        "positioning-wrapper", 
+        !! props.orientation ? "positioning-wrapper-" + props.orientation : "positioning-wrapper-left",
+        !! props.positionMobile ? "positioning-wrapper-mobile-" + props.positionMobile : "positioning-wrapper-mobile-top" ]) }>
+        {/* Text half */}
+        <div className="text-half">
+          <div className={ generateClassesStr(["content-wrapper", "content-wrapper-" + props.orientation, !! props.textAlignMobile ? "text-align-mobile-" + props.textAlignMobile : "text-align-mobile-left"]) }>
+            { line }
+            { getTxtSection([ "content-align-" + props.orientation ]) }
+          </div>
+        </div>
+
+        {/* Image half */}
+        <div className="img-half" style={{ 
+          backgroundImage:      `url(${ props.img })`, 
+          backgroundSize :      !! props.backgroundSize     ? props.backgroundSize      : "contain",
+          backgroundPosition:   !! props.backgroundPosition ? props.backgroundPosition  : "center"  
+        }}></div>
+    </div>
+  ];
+
   // == main container stuff ==
 
   let containerClasses = generateClassesStr([ "version-container", !! props.version ? props.version + "-version-container" : "v1-version-container" ]);

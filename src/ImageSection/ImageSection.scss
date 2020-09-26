@@ -10,7 +10,6 @@
       display: flex;
 
       .content-wrapper {
-        max-width: 40%;
         display: flex;
 
         .txt-section {
@@ -25,27 +24,23 @@
             font-weight: 400;
           }
         }
-      }
-    }
-  }
 
-  .v1-version-container {
-    .positioning-wrapper {
-      .content-wrapper {
         .line {
           flex-shrink: 0;
         }
 
         @mixin horizonzalLine {
           width: 12px;
-          // height: 100%;
-          height: 100%;
         }
 
         @mixin verticalLine {
           width: 150px;
           height: 12px;
           margin-top: 20px;
+
+          @media only screen and (max-width: $break-large) {
+            margin-top: 14px;
+          }
         }
 
         .line-right, .line-left {
@@ -60,6 +55,14 @@
         .line-center {
           @include verticalLine();
         }
+      }
+    }
+  }
+
+  .v1-version-container {
+    .positioning-wrapper {
+      .content-wrapper {
+        max-width: 40%;
 
         @media only screen and (max-width: $break-large) {
           max-width: 70%;
@@ -113,6 +116,127 @@
 
     }
   }
+
+  .v2-version-container {
+    .positioning-wrapper {
+      @media only screen and (max-width: $break-large) {
+        align-items: center;
+      }
+
+      .text-half {
+        display: flex;
+        width: 50%;
+        align-items: center;
+
+        @media only screen and (max-width: $break-large) {
+          width: 80%;
+        }
+
+        @media only screen and (max-width: $break-small) {
+          width: 90%;
+        }
+
+        .content-wrapper {
+          height: fit-content;
+          max-width: 60%;
+
+          @media only screen and (max-width: $break-large) {
+            max-width: 100%;
+            flex-direction: column-reverse;
+          }
+        }
+        
+        .text-align-mobile-left {
+          @media only screen and (max-width: $break-large) {
+            .txt-section {
+              text-align: left;
+            }
+          }
+        }
+        .text-align-mobile-right {
+          @media only screen and (max-width: $break-large) {
+            .txt-section {
+              text-align: right;
+            }
+          }
+        }
+        .text-align-mobile-center {
+          @media only screen and (max-width: $break-large) {
+            align-items: center;
+            
+            .txt-section {
+              text-align: center;
+            }
+          }
+        }
+      }
+      
+      .img-half {
+        min-height: 500px;
+        width: 50%;
+        background-repeat: no-repeat;
+
+        @media only screen and (max-width: $break-large) {
+          width: 80%;
+          min-height: 400px;
+          // !important because I need to overwrite the prop entered by user
+          background-position: center top !important;
+        }
+
+
+        @media only screen and (max-width: $break-small) {
+          width: 90%;
+          min-height: 300px;
+        }
+      }
+    }
+
+    .positioning-wrapper-right {
+      flex-direction: row-reverse;
+
+       .text-half {
+          justify-content: flex-start;
+          margin-left: 80px;
+
+          @media only screen and (max-width: $break-large) {
+            margin: 0;
+          }
+        }
+    }
+    .positioning-wrapper-left {
+      flex-direction: row;
+
+      .text-half {
+        justify-content: flex-end;
+        margin-right: 80px;
+
+        @media only screen and (max-width: $break-large) {
+          margin: 0;
+        }
+      }
+    }
+
+    .positioning-wrapper-mobile-top {
+      @media only screen and (max-width: $break-large) {
+        flex-direction: column;
+      
+        .text-half {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    .positioning-wrapper-mobile-bot {
+      @media only screen and (max-width: $break-large) {
+        flex-direction: column-reverse;
+      
+        .text-half {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+  
   
   .v2-version-container {}
   
