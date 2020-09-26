@@ -196,7 +196,7 @@
 
        .text-half {
           justify-content: flex-start;
-          margin-left: 80px;
+          padding-left: 80px;
 
           @media only screen and (max-width: $break-large) {
             margin: 0;
@@ -208,7 +208,7 @@
 
       .text-half {
         justify-content: flex-end;
-        margin-right: 80px;
+        padding-right: 80px;
 
         @media only screen and (max-width: $break-large) {
           margin: 0;

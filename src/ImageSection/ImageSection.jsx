@@ -5,9 +5,12 @@ import './ImageSection.scss';
 const ImageSection = (props) => {
 
   let containerStyles = {
-    background:     props.background  ? props.background  : "white",
-    paddingTop:     props.paddingTop  ? props.paddingTop  : "50px",
-    paddingBottom:  props.paddingBot  ? props.paddingBot  : "50px"
+    background:     props.background    ? props.background    : "white",
+    paddingTop:     props.paddingTop    ? props.paddingTop    : "50px",
+    paddingBottom:  props.paddingBot    ? props.paddingBot    : "50px",
+    marginTop:      props.marginTop     ? props.marginTop     : "0px",
+    marginBop:      props.marginBottom  ? props.marginBottom  : "0px",
+    background:     props.bg            ? props.bg            : ""
   }
 
   let txt_styles = {
@@ -94,7 +97,7 @@ const ImageSection = (props) => {
         !! props.positionMobile ? "positioning-wrapper-mobile-" + props.positionMobile  : "positioning-wrapper-mobile-top" ]) }>
 
         {/* Text half */}
-        <div className="text-half">
+        <div className="text-half" style={{ background: !! props.bgBehindText ? props.bgBehindText : "" }}>
           <div className={ generateClassesStr([
             "content-wrapper", 
             !! props.orientation      ? "content-wrapper-"    + props.orientation     : "content-wrapper-left", 
@@ -226,7 +229,23 @@ ImageSection.propTypes = {
   img:                PropTypes.string, 
 
   /** Position of the text on mobile relative to the image. */
-  positionMobile:     PropTypes.oneOf("top", "bot")
+  positionMobile:     PropTypes.oneOf("top", "bot"),
+
+  /** Value for CSS style margin-top.
+   * @default "0"
+   */
+  marginTop:          PropTypes.string,
+  
+  /** Value for CSS style margin-bottom.
+   * @default "0"
+   */
+  marginBot:          PropTypes.string,
+
+  /** Background of the whole image section. */
+  bg:                 PropTypes.string,
+
+  /** Background color for the section behind text (currently available only in version 2) */
+  bgBehindText:       PropTypes.string
 }
 
 export default ImageSection;
