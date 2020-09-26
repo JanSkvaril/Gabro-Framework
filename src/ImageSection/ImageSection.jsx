@@ -105,7 +105,7 @@ ImageSection.propTypes = {
     * 
     * It is a **standard prop** - this prop apply to every version of the image section. 
     * 
-    * **Styled** tags: `h1`, `h2`, `p`. You can put anything into this section.
+    * **Styled** tags: `h2`, `p`. You can put anything into this section.
     * 
     * @example
     * <Component>
