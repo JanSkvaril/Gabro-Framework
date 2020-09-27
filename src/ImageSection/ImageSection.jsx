@@ -4,13 +4,21 @@ import './ImageSection.scss';
 
 const ImageSection = (props) => {
 
+  let backgroundStyle;
+
+  if (props.parallax) {
+    backgroundStyle = props.bg + " no-repeat fixed center center";
+  } else {
+    backgroundStyle = props.bg + " no-repeat scroll center center"
+  }
+
   let containerStyles = {
-    background:     props.background    ? props.background    : "white",
-    paddingTop:     props.paddingTop    ? props.paddingTop    : "50px",
-    paddingBottom:  props.paddingBot    ? props.paddingBot    : "50px",
-    marginTop:      props.marginTop     ? props.marginTop     : "0px",
-    marginBop:      props.marginBottom  ? props.marginBottom  : "0px",
-    background:     props.bg            ? props.bg            : ""
+    background:       props.background    ? props.background                  : "white",
+    paddingTop:       props.paddingTop    ? props.paddingTop                  : "50px",
+    paddingBottom:    props.paddingBot    ? props.paddingBot                  : "50px",
+    marginTop:        props.marginTop     ? props.marginTop                   : "0px",
+    marginBop:        props.marginBottom  ? props.marginBottom                : "0px",
+    background:       props.bg            ? backgroundStyle                   : ""
   }
 
   let txt_styles = {
@@ -245,7 +253,10 @@ ImageSection.propTypes = {
   bg:                 PropTypes.string,
 
   /** Background color for the section behind text (currently available only in version 2) */
-  bgBehindText:       PropTypes.string
+  bgBehindText:       PropTypes.string,
+
+  /** Creates parallax effect on background. */
+  parallax:           PropTypes.bool
 }
 
 export default ImageSection;
