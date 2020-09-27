@@ -179,55 +179,77 @@ ImageSection.propTypes = {
    * 
    * > Possible values:
    * * **v1** - Version with only **text**.
+   * * **v2** - Version with an **image** next to **text**.
   */
-  version:            PropTypes.oneOf([ "v1" ]),
+  version:            PropTypes.oneOf([ "v1", "v2" ]),
 
   /** 
    * **Position of the text** section. 
    * 
-   * ! Value **center** may not be valid for all versions.
+   * ! Value **"center"** is **only available for v1**.
    * 
    * It is a **standard prop** - this prop apply to every version of the image section.
+   * @default "left"
   */
   orientation:        PropTypes.oneOf("left", "right", "center"), 
 
   /**
    * Value: color code
    * 
-   * If the value is setted, it will draw a line *next to/below* the pharagraph.
+   * If the value is entered, it will draw a line *next to/below* the pharagraph.
+   * 
+   * It is a **standard prop** - this prop apply to every version of the image section. 
    */
   line:               PropTypes.string,
 
   /**
    * CSS value for background.
+   * 
+   * It is a **standard prop** - this prop apply to every version of the image section. 
+   * 
    */
   background:         PropTypes.string,
 
-  /** Value for css style padding-top.*/
+  /** Value for css style padding-top.
+   * 
+   * It is a **standard prop** - this prop apply to every version of the image section. 
+   * 
+   * @default "50px"
+  */
   paddingTop:         PropTypes.string,
 
-  /** Value for css style padding-bottom.*/
+  /** Value for css style padding-bottom.
+   * 
+   * It is a **standard prop** - this prop apply to every version of the image section. 
+   * 
+   * @default "50px"
+  */
   paddingBot:         PropTypes.string,
 
-  /** Color of the text */
+  /** Color of the text.
+   * 
+   * It is a **standard prop** - this prop apply to every version of the image section. 
+   * 
+   * @default "black"
+   */
   color:              PropTypes.string,
 
-  /** Value for CSS style background-position.
-   * @default "center"
+  /** Value for CSS style background-position. Currently available only in **version 2**.
+   * @default "center" 
    */
   backgroundPosition: PropTypes.string,
 
-  /** Value for CSS style background-size.
+  /** Value for CSS style background-size. Currently available only in **version 2**.
    * @default "contain"
    */
   backgroundSize:     PropTypes.string,
 
-  /** Value for CSS style text-align on smaller screen.
+  /** Value for CSS style text-align on smaller screen. Currently available only in **version 2**.
    * @default "left"
    */
   textAlignMobile:    PropTypes.string,
 
-  /** Image for the image section.
+  /** Image for the image section. Currently available only in **version 2**.
    * @example
    * <ImageSection
    *    img={ require('./path/to/img.png') }>
@@ -236,26 +258,52 @@ ImageSection.propTypes = {
    */
   img:                PropTypes.string, 
 
-  /** Position of the text on mobile relative to the image. */
+  /** Position of the text on mobile relative to the image. Currently available only in **version 2**.
+   * 
+   * @default "bot"
+  */
   positionMobile:     PropTypes.oneOf("top", "bot"),
 
   /** Value for CSS style margin-top.
+   * 
+   * It is a **standard prop** - this prop apply to every version of the image section. 
+   * 
    * @default "0"
    */
   marginTop:          PropTypes.string,
   
   /** Value for CSS style margin-bottom.
+   * 
+   * It is a **standard prop** - this prop apply to every version of the image section. 
+   * 
    * @default "0"
    */
   marginBot:          PropTypes.string,
 
-  /** Background of the whole image section. */
+  /** Background of the whole image section.
+   * 
+   * It is a **standard prop** - this prop apply to every version of the image section. 
+   * 
+   * @example
+   * <ImageSection
+   *    bg={ `url(${ require('./path/to/img.png') })` } // image
+   *    bg="red"> // color
+   * ...
+   * </ImageSection>
+   * 
+   * @default "white"
+   */
   bg:                 PropTypes.string,
 
-  /** Background color for the section behind text (currently available only in version 2) */
+  /** **Background color** for the section behind text (currently available only in **version 2**). */
   bgBehindText:       PropTypes.string,
 
-  /** Creates parallax effect on background. */
+  /** Creates **parallax effect** on background. 
+   * 
+   * It is a **standard prop** - this prop apply to every version of the image section. 
+   * 
+   * @default false
+   */
   parallax:           PropTypes.bool
 }
 
