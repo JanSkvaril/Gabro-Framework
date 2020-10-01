@@ -13,12 +13,7 @@ const ImageSection = (props) => {
   }
 
   let containerStyles = {
-    background:       props.background    ? props.background                  : "white",
-    paddingTop:       props.paddingTop    ? props.paddingTop                  : "50px",
-    paddingBottom:    props.paddingBot    ? props.paddingBot                  : "50px",
-    marginTop:        props.marginTop     ? props.marginTop                   : "0px",
-    marginBop:        props.marginBottom  ? props.marginBottom                : "0px",
-    background:       props.bg            ? backgroundStyle                   : ""
+    background:       backgroundStyle
   }
 
   let txt_styles = {
@@ -102,7 +97,8 @@ const ImageSection = (props) => {
       className={ generateClassesStr([
         "positioning-wrapper", 
         !! props.orientation    ? "positioning-wrapper-"        + props.orientation     : "positioning-wrapper-left",
-        !! props.positionMobile ? "positioning-wrapper-mobile-" + props.positionMobile  : "positioning-wrapper-mobile-top" ]) }>
+        !! props.positionMobile ? "positioning-wrapper-mobile-" + props.positionMobile  : "positioning-wrapper-mobile-top",
+        !! props.block          ? props.block + "-"             + props.orientation     : ""]) }>
 
         {/* Text half */}
         <div className="text-half" style={{ background: !! props.bgBehindText ? props.bgBehindText : "" }}>
@@ -117,10 +113,10 @@ const ImageSection = (props) => {
         </div>
 
         {/* Image half */}
-        <div className="img-half" style={{ 
+        <div className={ generateClassesStr(["img-half", !! props.imgEndToEndPhone ? "imgEndToEndPhone" : ""]) } style={{ 
           backgroundImage:      `url(${ props.img })`, 
           backgroundSize :      !! props.backgroundSize     ? props.backgroundSize      : "contain",
-          backgroundPosition:   !! props.backgroundPosition ? props.backgroundPosition  : "center"  
+          backgroundPosition:   !! props.backgroundPosition ? props.backgroundPosition  : "center"
         }}></div>
     </div>
   ];
@@ -129,16 +125,17 @@ const ImageSection = (props) => {
 
   let containerClasses = generateClassesStr([ 
     "version-container", 
-    !! props.version ? props.version + "-version-container" : "v1-version-container" ]);
+    !! props.version    ? props.version + "-version-container" : "v1-version-container",
+    !! props.paddingTop ? "img-section-paddingTop"             : "",
+    !! props.paddingBot ? "img-section-paddingBot"             : "" ]);
 
 
   return (
     <div
       id={ props.ID }
-      className="img-section-container"
-      style={ containerStyles }>
+      className="img-section-container">
 
-      <div className={ containerClasses }>
+      <div className={ containerClasses } style={ containerStyles }>
         { props.version ? eval(props.version) : v1 }
       </div>
     </div>
@@ -210,21 +207,17 @@ ImageSection.propTypes = {
    */
   background:         PropTypes.string,
 
-  /** Value for css style padding-top.
+  /** If entered, 50px padding will be added to top.
    * 
    * It is a **standard prop** - this prop apply to every version of the image section. 
-   * 
-   * @default "50px"
   */
-  paddingTop:         PropTypes.string,
+  paddingTop:         PropTypes.bool,
 
-  /** Value for css style padding-bottom.
+  /** If entered, 50px padding will be added to bottom.
    * 
    * It is a **standard prop** - this prop apply to every version of the image section. 
-   * 
-   * @default "50px"
   */
-  paddingBot:         PropTypes.string,
+  paddingBot:         PropTypes.bool,
 
   /** Color of the text.
    * 
@@ -264,22 +257,6 @@ ImageSection.propTypes = {
   */
   positionMobile:     PropTypes.oneOf("top", "bot"),
 
-  /** Value for CSS style margin-top.
-   * 
-   * It is a **standard prop** - this prop apply to every version of the image section. 
-   * 
-   * @default "0"
-   */
-  marginTop:          PropTypes.string,
-  
-  /** Value for CSS style margin-bottom.
-   * 
-   * It is a **standard prop** - this prop apply to every version of the image section. 
-   * 
-   * @default "0"
-   */
-  marginBot:          PropTypes.string,
-
   /** Background of the whole image section.
    * 
    * It is a **standard prop** - this prop apply to every version of the image section. 
@@ -304,7 +281,10 @@ ImageSection.propTypes = {
    * 
    * @default false
    */
-  parallax:           PropTypes.bool
+  parallax:           PropTypes.bool,
+
+  /** If entered, image will be end to end on smaller screens. */
+  imgEndToEndPhone:   PropTypes.bool
 }
 
 export default ImageSection;
