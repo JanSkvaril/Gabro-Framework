@@ -1,8 +1,38 @@
+/**
+ *  @fileOverview Image section component
+ *
+ *  @author       Nikol Škvařilová    <skvarilovanikol@gmail.com>
+ */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import './ImageSection.scss';
 
-const ImageSection = (props) => {
+/**
+ * @brief Simgle section with text part and image half. Section features multiple versions with different elements and compositions.
+ * 
+ * **Example**
+ * ```jsx
+ *  import GetImage from 'gabro_framework';
+ * 
+ *
+ *  <ImageSection
+ *    version="v2"
+ *    color="#3E3E3E"
+ *    line="#3E3E3E"
+ *    orientation="left"
+ *    img={ require('./path/to/image.jpg') }
+ *    bg={ GetImage(require('./path/to/bg_image.jpg')) }
+ *    backgroundSize="cover"
+ *    imgEndToEndPhone
+ *    parallax>
+ *       
+ *    Content
+ * 
+ *  </ImageSection>
+ * ```
+ */
+function ImageSection(props: Props): JSX.Element {
 
   let backgroundStyle;
 
@@ -28,7 +58,7 @@ const ImageSection = (props) => {
    * 
    * @param {Array} includeInClass - Array of string which should be classes for the section or anything.
   */
-  function generateClassesStr(includeInClass) {
+  function generateClassesStr(includeInClass:string[]) {
     let classes = "";
 
     if ( includeInClass ) {
@@ -48,8 +78,8 @@ const ImageSection = (props) => {
   /**  
    * Generates a text content of an image section.
   */
-  function getTxtSection(includeInClass) {
-    let classes = generateClassesStr([ "txt-section", includeInClass ]);
+  function getTxtSection(includeInClass:string[]) {
+    let classes = generateClassesStr([ "txt-section" ].concat(includeInClass));
 
     return (
       <div 
@@ -142,7 +172,7 @@ const ImageSection = (props) => {
   );
 }
 
-ImageSection.propTypes = {
+interface Props {
   /**
     * Content of the **text section** (*text, buttons, etc.*).
     * 
@@ -157,67 +187,57 @@ ImageSection.propTypes = {
     *   <p>Some text goes here.</p>
     * </ Component>
   */
-  children:           PropTypes.oneOfType([
-                        PropTypes.arrayOf(PropTypes.node),
-                        PropTypes.node
-                      ]).isRequired, 
+  children?:      any, 
   
   /**
    * **Unique name** for this section. It can be used when navigating though the website.
    * 
    * It is a **standard prop** - this prop apply to every version of the image section.
    */
-  ID:                 PropTypes.string,
+  ID?:            string,
 
   /** 
    * Defines a version applied on image section. Currently there are 3 available version. 
    * 
-   * It is a **standard prop** - this prop apply to every version of the image section.
-   * 
    * > Possible values:
-   * * **v1** - Version with only **text**.
-   * * **v2** - Version with an **image** next to **text**.
+   * * `v1` - Version with only **text**.
+   * * `v2` - Version with an **image** next to **text**.
   */
-  version:            PropTypes.oneOf([ "v1", "v2" ]),
+  version:        string,
 
   /** 
    * **Position of the text** section. 
    * 
    * ! Value **"center"** is **only available for v1**.
    * 
+   * > Possible values:
+   * * `left` - text will be on the left.
+   * * `right` - text will be on the right.
+   * * `center` - text will be centered. This value is only **available for version 1**.
+   * 
    * It is a **standard prop** - this prop apply to every version of the image section.
    * @default "left"
   */
-  orientation:        PropTypes.oneOf("left", "right", "center"), 
+  orientation?:   string, 
 
   /**
-   * Value: color code
-   * 
-   * If the value is entered, it will draw a line *next to/below* the pharagraph.
+   * If the value (color code) is entered, it will draw a line *next to/below* the pharagraph.
    * 
    * It is a **standard prop** - this prop apply to every version of the image section. 
    */
-  line:               PropTypes.string,
+  line?:          string,
 
-  /**
-   * CSS value for background.
-   * 
-   * It is a **standard prop** - this prop apply to every version of the image section. 
-   * 
-   */
-  background:         PropTypes.string,
-
-  /** If entered, 50px padding will be added to top.
+  /** If entered, 70px padding will be added to top.
    * 
    * It is a **standard prop** - this prop apply to every version of the image section. 
   */
-  paddingTop:         PropTypes.bool,
+  paddingTop?:    string,
 
-  /** If entered, 50px padding will be added to bottom.
+  /** If entered, 70px padding will be added to bottom.
    * 
    * It is a **standard prop** - this prop apply to every version of the image section. 
   */
-  paddingBot:         PropTypes.bool,
+  paddingBot?:    string,
 
   /** Color of the text.
    * 
@@ -225,22 +245,22 @@ ImageSection.propTypes = {
    * 
    * @default "black"
    */
-  color:              PropTypes.string,
+  color?:         string,
 
-  /** Value for CSS style background-position. Currently available only in **version 2**.
+  /** Value for CSS style background-position for the image in **version 2**.
    * @default "center" 
    */
-  backgroundPosition: PropTypes.string,
+  backgroundPosition?:  string,
 
-  /** Value for CSS style background-size. Currently available only in **version 2**.
+  /** Value for CSS style background-size for the image in **version 2**.
    * @default "contain"
    */
-  backgroundSize:     PropTypes.string,
+  backgroundSize?:      string,
 
   /** Value for CSS style text-align on smaller screen. Currently available only in **version 2**.
    * @default "left"
    */
-  textAlignMobile:    PropTypes.string,
+  textAlignMobile?:     string,
 
   /** Image for the image section. Currently available only in **version 2**.
    * @example
@@ -249,13 +269,17 @@ ImageSection.propTypes = {
    * ...
    * </ImageSection>
    */
-  img:                PropTypes.string, 
+  img?:                 string, 
 
   /** Position of the text on mobile relative to the image. Currently available only in **version 2**.
    * 
+   * > Values
+   * * `top` - text will be above image.
+   * * `bot` - text will be below image.
+   * 
    * @default "bot"
   */
-  positionMobile:     PropTypes.oneOf("top", "bot"),
+  positionMobile?:      string,
 
   /** Background of the whole image section.
    * 
@@ -270,10 +294,10 @@ ImageSection.propTypes = {
    * 
    * @default "white"
    */
-  bg:                 PropTypes.string,
+  bg?:                  string,
 
   /** **Background color** for the section behind text (currently available only in **version 2**). */
-  bgBehindText:       PropTypes.string,
+  bgBehindText?:        string,
 
   /** Creates **parallax effect** on background. 
    * 
@@ -281,10 +305,18 @@ ImageSection.propTypes = {
    * 
    * @default false
    */
-  parallax:           PropTypes.bool,
+  parallax:             string,
 
-  /** If entered, image will be end to end on smaller screens. */
-  imgEndToEndPhone:   PropTypes.bool
+  /** If entered, image will be end to end on smaller screens. Currently available only in **version 2**. */
+  imgEndToEndPhone:     string,
+
+  /** Available in **version 2**. It creates transition between the text section and image section.
+   * 
+   * > Values: 
+   * * `beleved-top` - wider part is on the top.
+   * * `beleved-bot` - wider parth is on the bottom.
+   */
+  block:                string
 }
 
 export default ImageSection;
