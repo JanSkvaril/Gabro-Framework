@@ -28,7 +28,7 @@ import './Section.scss';
 const Section = (props: Props) => {
     //styles passed by props
     let styles = {
-        boxShadow: !!props.shadow ? "0px 0px 77px -16px rgba(0,0,0,0.75)" : "none",
+        boxShadow: !!props.shadow ? " 0px 0px 17px -2px rgba(0,0,0,0.42)" : "none",
         background: (!!props.bg ? props.bg : "transparent") + " center",
         zIndex: !!props.shadow ? 5 : 0,
         color: !!props.color ? props.color : "#000000",
