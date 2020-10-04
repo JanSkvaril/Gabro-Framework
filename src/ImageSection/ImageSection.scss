@@ -3,13 +3,13 @@
 .img-section-container {
   .img-section-paddingTop {
     @media only screen and (min-width: $break-large) {
-      padding-top: 50px;
+      padding-top: 70px;
     }
   }
   
   .img-section-paddingBot {
     @media only screen and (min-width: $break-large) {
-      padding-bottom: 50px;
+      padding-bottom: 70px;
     }
   }
 
@@ -144,22 +144,26 @@
         display: flex;
         width: 50%;
         align-items: center;
-
+        
+        
         @media only screen and (max-width: $break-large) {
-          width: 80%;
+          width: 100%;
+          justify-content: center;
         }
 
-        @media only screen and (max-width: $break-small) {
-          width: 90%;
-        }
+        // @media only screen and (max-width: $break-small) {
+        //   width: 100%;
+        // }
 
         .content-wrapper {
           height: fit-content;
           max-width: 60%;
 
           @media only screen and (max-width: $break-large) {
-            max-width: 100%;
+            max-width: 90%;
             flex-direction: column-reverse;
+            padding-top: 20px;
+            padding-bottom: 20px;
           }
         }
         
@@ -172,6 +176,8 @@
         }
         .text-align-mobile-right {
           @media only screen and (max-width: $break-large) {
+            align-items: flex-end;
+
             .txt-section {
               text-align: right;
             }
@@ -206,9 +212,17 @@
         }
       }
 
+      .hiddenImgHalf {
+        @media only screen and (max-width: $break-large) {
+          display: none;
+        }
+      }
+
       .imgEndToEndPhone {
         @media only screen and (max-width: $break-medium) {
-          width: 100%
+          width: 100%;
+          // !important because I need to overwrite the prop entered by user
+          background-size: cover !important;
         }
       }
     }
@@ -217,11 +231,9 @@
       flex-direction: row-reverse;
 
        .text-half {
-          justify-content: flex-start;
-          padding-left: 80px;
-
-          @media only screen and (max-width: $break-large) {
-            padding: 0;
+          @media only screen and (min-width: $break-large) {
+            justify-content: flex-start;
+            padding-left: 80px;
           }
         }
     }
@@ -229,11 +241,11 @@
       flex-direction: row;
 
       .text-half {
-        justify-content: flex-end;
-        padding-right: 80px;
+        justify-content: center;
 
-        @media only screen and (max-width: $break-large) {
-          padding: 0;
+        @media only screen and (min-width: $break-large) {
+          justify-content: flex-end;
+          padding-left: 80px;
         }
       }
     }
@@ -241,9 +253,9 @@
     .positioning-wrapper-mobile-top {
       @media only screen and (max-width: $break-large) {
         flex-direction: column;
-      
-        .text-half {
-          margin-bottom: 20px;
+
+        .img-half {
+          margin-top: 20px
         }
       }
     }
@@ -252,8 +264,8 @@
       @media only screen and (max-width: $break-large) {
         flex-direction: column-reverse;
       
-        .text-half {
-          margin-top: 20px;
+        .img-half {
+          margin-bottom: 20px
         }
       }
     }
@@ -264,6 +276,7 @@
 
         .text-half {
           clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
+          padding-right: 150px;
         }
 
         .img-half {
@@ -273,7 +286,7 @@
       .beleved-top-right {
         .text-half {
           clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
-          padding-left: 160px;
+          padding-left: 200px;
         }
         .img-half {
           clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
@@ -282,6 +295,7 @@
       .beleved-bot-left {
         .text-half {
           clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+          padding-right: 150px;
         }
         .img-half {
           clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
@@ -291,7 +305,7 @@
       .beleved-bot-right {
         .text-half {
           clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
-          padding-left: 160px;
+          padding-left: 200px;
         }
         .img-half {
           clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);

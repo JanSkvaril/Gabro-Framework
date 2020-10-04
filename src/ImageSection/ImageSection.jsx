@@ -113,7 +113,7 @@ const ImageSection = (props) => {
         </div>
 
         {/* Image half */}
-        <div className={ generateClassesStr(["img-half", !! props.imgEndToEndPhone ? "imgEndToEndPhone" : ""]) } style={{ 
+        <div className={ generateClassesStr(["img-half", !! props.imgEndToEndPhone ? "imgEndToEndPhone" : "", !! props.img ? "" : "hiddenImgHalf"]) } style={{ 
           backgroundImage:      `url(${ props.img })`, 
           backgroundSize :      !! props.backgroundSize     ? props.backgroundSize      : "contain",
           backgroundPosition:   !! props.backgroundPosition ? props.backgroundPosition  : "center"
