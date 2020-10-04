@@ -73,7 +73,6 @@ function ImageSection(props: Props): JSX.Element {
   // == versions ==
   // Version is an array of inner components.
 
-
   /**  
    * Generates a text content of an image section.
   */
@@ -150,6 +149,13 @@ function ImageSection(props: Props): JSX.Element {
     </div>
   ];
 
+
+  // Object with versions
+  let versions = {
+    v1: v1,
+    v2: v2
+  }
+
   // == main container stuff ==
 
   let containerClasses = generateClassesStr([ 
@@ -165,7 +171,7 @@ function ImageSection(props: Props): JSX.Element {
       className="img-section-container">
 
       <div className={ containerClasses } style={ containerStyles }>
-        { props.version ? eval(props.version) : v1 }
+        { props.version ? versions[props.version] : v1 }
       </div>
     </div>
   );
