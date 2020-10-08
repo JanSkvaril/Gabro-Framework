@@ -25,6 +25,8 @@ import './Card.scss';
  *   height="310px"
  *   icon={<YourIcon />}>
  *       Content
+ * 
+ *  </Card>
  * ```
  */
 function Card(props: Props): JSX.Element {
