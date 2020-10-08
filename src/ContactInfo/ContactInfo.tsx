@@ -199,7 +199,7 @@ function createContactSections(props: Props) {
         sections.push(
             <div className="contact-info-section">
                 <a href={props.place.link}>
-                    <LocationOn fontSize="small" className="text-icon" />&nbsp;{props.place.text}
+                    <LocationOn fontSize="small" className="text-icon" />&nbsp;{props.place}
                 </a>
             </div >
         );
