@@ -11,12 +11,11 @@ import './ImageSection.scss';
 /**
  * @brief Simgle section with text part and image half. Section features multiple versions with different elements and compositions.
  * 
- * **Example**
+ * ## Example
  * ```jsx
  *  import GetImage from 'gabro_framework';
  * 
- *
- *  <ImageSection
+ * <ImageSection
  *    version="v2"
  *    color="#3E3E3E"
  *    line="#3E3E3E"
@@ -27,9 +26,9 @@ import './ImageSection.scss';
  *    imgEndToEndPhone
  *    parallax>
  *       
- *    Content
+ *   Content
  * 
- *  </ImageSection>
+ * </ImageSection>
  * ```
  */
 function ImageSection(props: Props): JSX.Element {
@@ -73,7 +72,6 @@ function ImageSection(props: Props): JSX.Element {
 
   // == versions ==
   // Version is an array of inner components.
-
 
   /**  
    * Generates a text content of an image section.
@@ -151,6 +149,13 @@ function ImageSection(props: Props): JSX.Element {
     </div>
   ];
 
+
+  // Object with versions
+  let versions = {
+    v1: v1,
+    v2: v2
+  }
+
   // == main container stuff ==
 
   let containerClasses = generateClassesStr([ 
@@ -166,7 +171,7 @@ function ImageSection(props: Props): JSX.Element {
       className="img-section-container">
 
       <div className={ containerClasses } style={ containerStyles }>
-        { props.version ? eval(props.version) : v1 }
+        { props.version ? versions[props.version] : v1 }
       </div>
     </div>
   );
@@ -180,12 +185,14 @@ interface Props {
     * 
     * **Styled** tags: `h2`, `p`. You can put anything into this section.
     * 
-    * @example
+    * ## Example
+    * ```jsx
     * <Component>
     *   <h1>Heading 1</h1>
     *   <h2>Heading 2</h2>
     *   <p>Some text goes here.</p>
     * </ Component>
+    * ```
   */
   children?:      any, 
   
@@ -230,14 +237,18 @@ interface Props {
   /** If entered, 70px padding will be added to top.
    * 
    * It is a **standard prop** - this prop apply to every version of the image section. 
+   * 
+   * @default false
   */
-  paddingTop?:    string,
+  paddingTop?:    boolean,
 
   /** If entered, 70px padding will be added to bottom.
    * 
    * It is a **standard prop** - this prop apply to every version of the image section. 
+   * 
+   * @default false
   */
-  paddingBot?:    string,
+  paddingBot?:    boolean,
 
   /** Color of the text.
    * 
@@ -263,11 +274,14 @@ interface Props {
   textAlignMobile?:     string,
 
   /** Image for the image section. Currently available only in **version 2**.
-   * @example
+   * ## Example
+   * ```jsx
    * <ImageSection
    *    img={ require('./path/to/img.png') }>
-   * ...
+   *    
+   *    ...
    * </ImageSection>
+   * ```
    */
   img?:                 string, 
 
@@ -285,12 +299,15 @@ interface Props {
    * 
    * It is a **standard prop** - this prop apply to every version of the image section. 
    * 
-   * @example
+   * ## Example
+   * ```jsx
    * <ImageSection
    *    bg={ `url(${ require('./path/to/img.png') })` } // image
    *    bg="red"> // color
-   * ...
+   * 
+   *    ...
    * </ImageSection>
+   * ```
    * 
    * @default "white"
    */
@@ -305,10 +322,13 @@ interface Props {
    * 
    * @default false
    */
-  parallax:             string,
+  parallax:             boolean,
 
-  /** If entered, image will be end to end on smaller screens. Currently available only in **version 2**. */
-  imgEndToEndPhone:     string,
+  /** If entered, image will be end to end on smaller screens. Currently available only in **version 2**. 
+   * 
+   * @default false
+  */
+  imgEndToEndPhone:     boolean,
 
   /** Available in **version 2**. It creates transition between the text section and image section.
    * 
