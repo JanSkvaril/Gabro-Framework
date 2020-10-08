@@ -40,9 +40,13 @@ function Card(props: Props): JSX.Element {
     let iconStyles = {
         background:         (!!props.iconBg     ? props.iconBg      : "transparent") + " center",
         backgroundSize:     "cover",
-        color: !            !props.iconColor    ? props.iconColor   : "#000000",
+        color:              !!props.iconColor    ? props.iconColor   : "#000000",
         //border between icon and content
         borderBottom:       !!props.divBorder   ? props.divBorder   : "2px solid"
+    }
+
+    let onlyIconStyles = {
+        fill:              !!props.iconColor    ? props.iconColor   : "#000000",
     }
 
     let contentStyles = {
@@ -53,8 +57,8 @@ function Card(props: Props): JSX.Element {
         <div className={`card ${!!props.className ? props.className : ""}`} style={styles} id={!!props.id ? props.id : ""}>
             <div className="icon-holder" style={iconStyles}>
                 <div>
-                    <span className="icon">
-                        {props.icon}
+                    <span className="icon" style={ onlyIconStyles }>
+                        { props.icon }
                     </span>
                 </div>
                 <h2>
