@@ -111,7 +111,7 @@ class ContactForm extends Component {
     render() {
         let props: Props = this.props as Props;
         let styles = {
-            boxShadow: props.shadow ? "0px 0px 77px -16px rgba(0,0,0,0.45)" : "none",
+            boxShadow: props.shadow ? "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)" : "none",
             background: props.bg,
             color: !!props.color ? props.color : "black",
         };
