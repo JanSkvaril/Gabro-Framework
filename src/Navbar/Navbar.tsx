@@ -154,6 +154,10 @@ class Navbar extends Component<Props, State> {
 }
 
 interface Props {
+    /**
+    * **Can be in:** root
+    */
+
     trans?: boolean,
     color?: string,
     txtColor?: string,

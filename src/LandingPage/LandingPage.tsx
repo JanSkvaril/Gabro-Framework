@@ -191,6 +191,9 @@ const LandingPage = (props: Props) => {
 
 interface Props {
     /**
+    * **Can be in:** root
+    */
+    /**
       * Content of the **text section** (*text, buttons, etc.*).
       * 
       * It is a **standard prop** - this prop apply to every version of the landing page. 

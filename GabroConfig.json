@@ -1,344 +1,274 @@
 {
     "components": {
         "Full": {
-            "props": [
-                {
-                    "name": "bg?",
-                    "type": "string"
-                },
-                {
-                    "name": "color?",
-                    "type": "string"
-                },
-                {
-                    "name": "paddingBot?",
-                    "type": "string"
-                },
-                {
-                    "name": "paddingTop?",
-                    "type": "string"
-                },
-                {
-                    "name": "styled?",
-                    "type": "boolean"
-                },
-                {
-                    "name": "line?",
-                    "type": "string"
-                },
-                {
-                    "name": "children?",
-                    "type": "any"
-                },
-                {
-                    "name": "height?",
-                    "type": "string"
-                }
-            ]
+            "props": [{
+                "name": "bg?",
+                "type": "string"
+            }, {
+                "name": "color?",
+                "type": "string"
+            }, {
+                "name": "paddingBot?",
+                "type": "string"
+            }, {
+                "name": "paddingTop?",
+                "type": "string"
+            }, {
+                "name": "styled?",
+                "type": "boolean"
+            }, {
+                "name": "line?",
+                "type": "string"
+            }, {
+                "name": "children?",
+                "type": "any"
+            }, {
+                "name": "height?",
+                "type": "string"
+            }],
+            "can_be_in": ["Section"]
         },
         "Half": {
-            "props": [
-                {
-                    "name": "bg?",
-                    "type": "string"
-                },
-                {
-                    "name": "color?",
-                    "type": "string"
-                },
-                {
-                    "name": "paddingBot?",
-                    "type": "string"
-                },
-                {
-                    "name": "paddingTop?",
-                    "type": "string"
-                },
-                {
-                    "name": "styled?",
-                    "type": "boolean"
-                },
-                {
-                    "name": "line?",
-                    "type": "string"
-                },
-                {
-                    "name": "children?",
-                    "type": "any"
-                },
-                {
-                    "name": "height?",
-                    "type": "string"
-                }
-            ]
+            "props": [{
+                "name": "bg?",
+                "type": "string"
+            }, {
+                "name": "color?",
+                "type": "string"
+            }, {
+                "name": "paddingBot?",
+                "type": "string"
+            }, {
+                "name": "paddingTop?",
+                "type": "string"
+            }, {
+                "name": "styled?",
+                "type": "boolean"
+            }, {
+                "name": "line?",
+                "type": "string"
+            }, {
+                "name": "children?",
+                "type": "any"
+            }, {
+                "name": "height?",
+                "type": "string"
+            }],
+            "can_be_in": ["Section"]
         },
         "Section": {
-            "props": [
-                {
-                    "name": "height?",
-                    "type": "string"
-                },
-                {
-                    "name": "shadow?",
-                    "type": "boolean"
-                },
-                {
-                    "name": "bg?",
-                    "type": "string"
-                },
-                {
-                    "name": "color?",
-                    "type": "string"
-                },
-                {
-                    "name": "bgSize?",
-                    "type": "string"
-                },
-                {
-                    "name": "bgFilter?",
-                    "type": "string"
-                },
-                {
-                    "name": "paddingBot?",
-                    "type": "string"
-                },
-                {
-                    "name": "paddingTop?",
-                    "type": "string"
-                },
-                {
-                    "name": "styled?",
-                    "type": "boolean"
-                },
-                {
-                    "name": "headline_align?",
-                    "type": "\"left\" | \"right\""
-                },
-                {
-                    "name": "line?",
-                    "type": "string"
-                },
-                {
-                    "name": "className?",
-                    "type": "string"
-                },
-                {
-                    "name": "id?",
-                    "type": "string"
-                },
-                {
-                    "name": "children?",
-                    "type": "any"
-                }
-            ]
+            "props": [{
+                "name": "height?",
+                "type": "string"
+            }, {
+                "name": "shadow?",
+                "type": "boolean"
+            }, {
+                "name": "bg?",
+                "type": "string"
+            }, {
+                "name": "color?",
+                "type": "string"
+            }, {
+                "name": "bgSize?",
+                "type": "string"
+            }, {
+                "name": "bgFilter?",
+                "type": "string"
+            }, {
+                "name": "paddingBot?",
+                "type": "string"
+            }, {
+                "name": "paddingTop?",
+                "type": "string"
+            }, {
+                "name": "styled?",
+                "type": "boolean"
+            }, {
+                "name": "headline_align?",
+                "type": "\"left\" | \"right\""
+            }, {
+                "name": "line?",
+                "type": "string"
+            }, {
+                "name": "className?",
+                "type": "string"
+            }, {
+                "name": "id?",
+                "type": "string"
+            }, {
+                "name": "children?",
+                "type": "any"
+            }],
+            "can_be_in": ["root"]
         },
         "Navbar": {
-            "props": [
-                {
-                    "name": "trans?",
-                    "type": "boolean"
-                },
-                {
-                    "name": "color?",
-                    "type": "string"
-                },
-                {
-                    "name": "txtColor?",
-                    "type": "string"
-                },
-                {
-                    "name": "menu",
-                    "type": "any"
-                },
-                {
-                    "name": "version",
-                    "type": "\"v1\" | \"v2\""
-                },
-                {
-                    "name": "title",
-                    "type": "string"
-                },
-                {
-                    "name": "bgFilter",
-                    "type": "string"
-                }
-            ]
+            "props": [{
+                "name": "trans?",
+                "type": "boolean"
+            }, {
+                "name": "color?",
+                "type": "string"
+            }, {
+                "name": "txtColor?",
+                "type": "string"
+            }, {
+                "name": "menu",
+                "type": "any"
+            }, {
+                "name": "version",
+                "type": "\"v1\" | \"v2\""
+            }, {
+                "name": "title",
+                "type": "string"
+            }, {
+                "name": "bgFilter",
+                "type": "string"
+            }],
+            "can_be_in": ["root"]
         },
         "Footer": {
-            "props": [
-                {
-                    "name": "bg?",
-                    "type": "string"
-                },
-                {
-                    "name": "color?",
-                    "type": "string"
-                },
-                {
-                    "name": "logo?",
-                    "type": "string"
-                },
-                {
-                    "name": "children?",
-                    "type": "any"
-                }
-            ]
+            "props": [{
+                "name": "bg?",
+                "type": "string"
+            }, {
+                "name": "color?",
+                "type": "string"
+            }, {
+                "name": "logo?",
+                "type": "string"
+            }, {
+                "name": "children?",
+                "type": "any"
+            }],
+            "can_be_in": ["root"]
         },
         "Card": {
-            "props": [
-                {
-                    "name": "shadow?",
-                    "type": "string"
-                },
-                {
-                    "name": "height?",
-                    "type": "string"
-                },
-                {
-                    "name": "bgFilter?",
-                    "type": "string"
-                },
-                {
-                    "name": "iconBg?",
-                    "type": "string"
-                },
-                {
-                    "name": "iconColor?",
-                    "type": "string"
-                },
-                {
-                    "name": "divBorder?",
-                    "type": "string"
-                },
-                {
-                    "name": "conBg?",
-                    "type": "string"
-                },
-                {
-                    "name": "conColor?",
-                    "type": "string"
-                },
-                {
-                    "name": "icon?",
-                    "type": "JSX.Element"
-                },
-                {
-                    "name": "headline?",
-                    "type": "string"
-                },
-                {
-                    "name": "children?",
-                    "type": "any"
-                },
-                {
-                    "name": "id?",
-                    "type": "string"
-                },
-                {
-                    "name": "className?",
-                    "type": "string"
-                }
-            ]
+            "props": [{
+                "name": "shadow?",
+                "type": "string"
+            }, {
+                "name": "height?",
+                "type": "string"
+            }, {
+                "name": "bgFilter?",
+                "type": "string"
+            }, {
+                "name": "iconBg?",
+                "type": "string"
+            }, {
+                "name": "iconColor?",
+                "type": "string"
+            }, {
+                "name": "divBorder?",
+                "type": "string"
+            }, {
+                "name": "conBg?",
+                "type": "string"
+            }, {
+                "name": "conColor?",
+                "type": "string"
+            }, {
+                "name": "icon?",
+                "type": "JSX.Element"
+            }, {
+                "name": "headline?",
+                "type": "string"
+            }, {
+                "name": "children?",
+                "type": "any"
+            }, {
+                "name": "id?",
+                "type": "string"
+            }, {
+                "name": "className?",
+                "type": "string"
+            }],
+            "can_be_in": ["Full", "Half", "Row"]
         },
         "ContactForm": {
-            "props": [
-                {
-                    "name": "shadow?",
-                    "type": "boolean"
-                },
-                {
-                    "name": "bg?",
-                    "type": "string"
-                },
-                {
-                    "name": "color?",
-                    "type": "string"
-                },
-                {
-                    "name": "formColor?",
-                    "type": "string"
-                },
-                {
-                    "name": "buttonColor?",
-                    "type": "string"
-                },
-                {
-                    "name": "children?",
-                    "type": "any"
-                }
-            ]
+            "props": [{
+                "name": "shadow?",
+                "type": "boolean"
+            }, {
+                "name": "bg?",
+                "type": "string"
+            }, {
+                "name": "color?",
+                "type": "string"
+            }, {
+                "name": "formColor?",
+                "type": "string"
+            }, {
+                "name": "buttonColor?",
+                "type": "string"
+            }, {
+                "name": "children?",
+                "type": "any"
+            }],
+            "can_be_in": ["Full", "Half"]
         },
         "LandingPage": {
-            "props": [
-                {
-                    "name": "children?",
-                    "type": "any"
-                },
-                {
-                    "name": "shadow?",
-                    "type": "boolean"
-                },
-                {
-                    "name": "link?",
-                    "type": "string"
-                },
-                {
-                    "name": "bg?",
-                    "type": "string"
-                },
-                {
-                    "name": "color?",
-                    "type": "string"
-                },
-                {
-                    "name": "bgSize?",
-                    "type": "string"
-                },
-                {
-                    "name": "version",
-                    "type": "\"v1\" | \"v2\" | \"v3\""
-                },
-                {
-                    "name": "orientation",
-                    "type": "\"left\" | \"right\""
-                },
-                {
-                    "name": "iconColor?",
-                    "type": "string"
-                },
-                {
-                    "name": "blockColor?",
-                    "type": "string"
-                },
-                {
-                    "name": "blockOrientation",
-                    "type": "\"top\" | \"bot\""
-                },
-                {
-                    "name": "txtShadow?",
-                    "type": "boolean"
-                },
-                {
-                    "name": "blockShape?",
-                    "type": "\"square\" | \"crossed\""
-                },
-                {
-                    "name": "orientationMobile?",
-                    "type": "\"top\" | \"bot\""
-                },
-                {
-                    "name": "img?",
-                    "type": "string"
-                },
-                {
-                    "name": "className?",
-                    "type": "string"
-                },
-                {
-                    "name": "id?",
-                    "type": "string"
-                }
-            ]
+            "props": [{
+                "name": "children?",
+                "type": "any"
+            }, {
+                "name": "shadow?",
+                "type": "boolean"
+            }, {
+                "name": "link?",
+                "type": "string"
+            }, {
+                "name": "bg?",
+                "type": "string"
+            }, {
+                "name": "color?",
+                "type": "string"
+            }, {
+                "name": "bgSize?",
+                "type": "string"
+            }, {
+                "name": "version",
+                "type": "\"v1\" | \"v2\" | \"v3\""
+            }, {
+                "name": "orientation",
+                "type": "\"left\" | \"right\""
+            }, {
+                "name": "iconColor?",
+                "type": "string"
+            }, {
+                "name": "blockColor?",
+                "type": "string"
+            }, {
+                "name": "blockOrientation",
+                "type": "\"top\" | \"bot\""
+            }, {
+                "name": "txtShadow?",
+                "type": "boolean"
+            }, {
+                "name": "blockShape?",
+                "type": "\"square\" | \"crossed\""
+            }, {
+                "name": "orientationMobile?",
+                "type": "\"top\" | \"bot\""
+            }, {
+                "name": "img?",
+                "type": "string"
+            }, {
+                "name": "className?",
+                "type": "string"
+            }, {
+                "name": "id?",
+                "type": "string"
+            }],
+            "can_be_in": ["root"]
+        },
+        "Text": {
+            "props": [{
+                "name": "children?",
+                "type": "ritch"
+            }],
+            "can_be_in": ["Full", "Half", "Footer", "LandingPage", "Card", "ContactForm"]
         }
     }
 }

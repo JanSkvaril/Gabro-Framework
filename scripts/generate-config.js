@@ -4,11 +4,20 @@ const fs = require('fs');
 function ParseComponent(path, props_name, name) {
     let output = fs.readFileSync(path).toString();
     output = output.split(props_name)[1];
+
+    let can_be_in = output.split("**Can be in:**")[1].split("\n")[0];
+    can_be_in = can_be_in.replace("\r", "").replace(" ", "");
+    can_be_in = can_be_in.split(", ");
+    console.log(can_be_in);
+
     output = output.split("\n");
+
+
+
     let component = {
         name: name,
         props: [],
-        syntax: syntax
+        can_be_in: can_be_in,
     }
     for (let line of output) {
         line = line.trim();
@@ -43,8 +52,16 @@ let result = {
 }
 for (let component of components) {
     result.components[component.name] = {
-        props: component.props
+        props: component.props,
+        can_be_in: component.can_be_in
     }
+}
+result.components["Text"] = {
+    props: [{
+        "name": "children?",
+        "type": "ritch"
+    }],
+    can_be_in: ["Full", "Half", "Footer", "LandingPage", "Card", "ContactForm"]
 }
 
 fs.writeFile("./GabroConfig.json", JSON.stringify(result), (e) => {

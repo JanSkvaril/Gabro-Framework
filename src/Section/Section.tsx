@@ -11,7 +11,7 @@ import './Section.scss';
  * @brief Section component contains part components, its main building block of gabro framework website. 
  * Section component has 100% width a height dependent on its content. Its generally used for text block
  * or to contain other components (like contact form, cords, etc.).
- * 
+ *  
  * **Example**
  * 
  * ```jsx
@@ -76,6 +76,9 @@ const Section = (props: Props) => {
 
 //proptypes for section
 interface Props {
+    /** 
+     * **Can be in:** root
+    */
     // == Styles ==
     /** Minimum height, default is 450px */
     height?: string,
@@ -109,6 +112,9 @@ interface Props {
 }
 
 interface PartProps {
+    /**
+    * **Can be in:** Section
+    */
     /** Background attribute of the section, can be color, image, gradient,... */
     bg?: string,
     /** Text color */
