@@ -1,3 +1,7 @@
+/**
+ *   This file is soon to be reworked!!
+ */
+
 import './Navbar.scss';
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
@@ -5,7 +9,27 @@ import Drawer from '@material-ui/core/Drawer';
 import { IconButton, List, ListItem, ListItemText } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
 
-
+/**
+ * @brief Navbar component, used for typical navigation on your website
+ * @version   2.3.0
+ *
+ * **Example**
+ * ```jsx
+ *   <Navbar
+ *       version="v1"
+ *       color="#ff12aa"
+ *       txtColor="black"
+ *       trans={true}
+ *       title="Your tittle"
+ *       menu={
+ *       [
+ *           { text: "About us", link: "#about_us" },
+ *           { text: "Services", link: "#services" },
+ *           { text: "Contact", link: "#contact" }
+ *       ]
+ *       } />
+ *   ```
+ */
 class Navbar extends Component<Props, State> {
     constructor(props: Props) {
         super(props);
@@ -154,12 +178,31 @@ class Navbar extends Component<Props, State> {
 }
 
 interface Props {
+    /** If should be transparent when user scrolls to top of your website */
     trans?: boolean,
+    /** Background color of the navbar */
     color?: string,
+    /** Text color of the navbar */
     txtColor?: string,
-    menu: any,
+    /**
+    * Array of objects, containing text - text displayed and link - anchor where should website scroll to on click
+    * 
+    * **Example:**
+    * ```jsx
+    * menu={
+    *       [
+    *           { text: "About us", link: "#about_us" },
+    *           { text: "Services", link: "#services" },
+    *           { text: "Contact", link: "#contact" }
+    *       ]
+    *  ```
+     */
+    menu: { text: string, link: string }[],
+    /** Version of your navbar. TODO: add more documentation */
     version: "v1" | "v2",
+    /** Tittle of your website (e.g. name of your company) */
     title: string,
+    /** Bgfilter propperty, e.g blue(5px) - will be only visible, when **color** is partially transparent (e.g. rgba(250,250,250,0.5)) */
     bgFilter: string,
 }
 

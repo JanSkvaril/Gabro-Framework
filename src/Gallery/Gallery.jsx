@@ -1,3 +1,7 @@
+/**
+ * This component is on super early development
+ */
+
 import React, { Component } from 'react';
 import './Gallery.scss';
 import Lightbox from 'react-image-lightbox';

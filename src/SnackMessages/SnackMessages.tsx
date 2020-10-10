@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { Snackbar, IconButton, SnackbarContent } from '@material-ui/core';
@@ -19,7 +21,10 @@ const styles = () => ({
 })
 
 
-
+/**
+ * This Component is used in ContactForm component and is not designed to normally used in your website.
+ * If you still want to use it and need example, please check ContactForm source code.
+ */
 class SnackMes extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);

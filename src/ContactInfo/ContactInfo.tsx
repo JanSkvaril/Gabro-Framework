@@ -51,7 +51,7 @@ function wrapWithSectionTable(data: JSX.Element[]) {
  *           {name:"Phone:",number:"777555777"},
  *           {name:"Phone 2:",number:"777555777"}
  *       ]}
- *       place="Adress 123"
+ *       place={text:"Adress123", link:"google-maps-link.com"}
  *       facebook="https://www.facebook.com/SameUrl"
  *   />
  *   ```
