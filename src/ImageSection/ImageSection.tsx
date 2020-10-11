@@ -42,11 +42,11 @@ function ImageSection(props: Props): JSX.Element {
   }
 
   let containerStyles = {
-    background:       backgroundStyle
+    background: backgroundStyle
   }
 
   let txt_styles = {
-    color:          props.color       ? props.color       : "black"
+    color: props.color ? props.color : "black"
   }
 
 
@@ -57,11 +57,11 @@ function ImageSection(props: Props): JSX.Element {
    * 
    * @param {Array} includeInClass - Array of string which should be classes for the section or anything.
   */
-  function generateClassesStr(includeInClass:string[]) {
+  function generateClassesStr(includeInClass: string[]) {
     let classes = "";
 
-    if ( includeInClass ) {
-      includeInClass.forEach( element => {
+    if (includeInClass) {
+      includeInClass.forEach(element => {
         classes = classes + " " + element
       });
     }
@@ -76,15 +76,15 @@ function ImageSection(props: Props): JSX.Element {
   /**  
    * Generates a text content of an image section.
   */
-  function getTxtSection(includeInClass:string[]) {
-    let classes = generateClassesStr([ "txt-section" ].concat(includeInClass));
+  function getTxtSection(includeInClass: string[]) {
+    let classes = generateClassesStr(["txt-section"].concat(includeInClass));
 
     return (
-      <div 
-        style={ txt_styles } 
-        className={ classes }>
-            
-        { props.children }
+      <div
+        style={txt_styles}
+        className={classes}>
+
+        { props.children}
       </div>
     )
   }
@@ -95,57 +95,57 @@ function ImageSection(props: Props): JSX.Element {
 
   let line;
 
-  if ( !! props.line ) {
-    line = <div className={ generateClassesStr([ "line", !! props.orientation ? "line-" + props.orientation : "line-left" ]) } style={{ backgroundColor: props.line }}></div>
+  if (!!props.line) {
+    line = <div className={generateClassesStr(["line", !!props.orientation ? "line-" + props.orientation : "line-left"])} style={{ backgroundColor: props.line }}></div>
   }
 
   // v1
-  
+
   /**
    * Version with **text**.
    */
   let v1 = [
-    <div 
-      className={ generateClassesStr(["positioning-wrapper", !! props.orientation ? "positioning-wrapper-" + props.orientation : "positioning-wrapper-left"]) }>
+    <div
+      className={generateClassesStr(["positioning-wrapper", !!props.orientation ? "positioning-wrapper-" + props.orientation : "positioning-wrapper-left"])}>
 
-        <div className={ generateClassesStr(["content-wrapper", !! props.orientation ? "content-wrapper-" + props.orientation : "content-wrapper-left"]) }>
-          { line }
-          { getTxtSection([ !! props.orientation ? "content-align-" + props.orientation : "content-align-left" ]) }
-        </div>
+      <div className={generateClassesStr(["content-wrapper", !!props.orientation ? "content-wrapper-" + props.orientation : "content-wrapper-left"])}>
+        {line}
+        {getTxtSection([!!props.orientation ? "content-align-" + props.orientation : "content-align-left"])}
+      </div>
     </div>
   ];
 
   // v2
-  
+
   /**
    * Version with **image next to text**.
    */
   let v2 = [
-    <div 
-      className={ generateClassesStr([
-        "positioning-wrapper", 
-        !! props.orientation    ? "positioning-wrapper-"        + props.orientation     : "positioning-wrapper-left",
-        !! props.positionMobile ? "positioning-wrapper-mobile-" + props.positionMobile  : "positioning-wrapper-mobile-top",
-        !! props.block          ? props.block + "-"             + props.orientation     : ""]) }>
+    <div
+      className={generateClassesStr([
+        "positioning-wrapper",
+        !!props.orientation ? "positioning-wrapper-" + props.orientation : "positioning-wrapper-left",
+        !!props.positionMobile ? "positioning-wrapper-mobile-" + props.positionMobile : "positioning-wrapper-mobile-top",
+        !!props.block ? props.block + "-" + props.orientation : ""])}>
 
-        {/* Text half */}
-        <div className="text-half" style={{ background: !! props.bgBehindText ? props.bgBehindText : "" }}>
-          <div className={ generateClassesStr([
-            "content-wrapper", 
-            !! props.orientation      ? "content-wrapper-"    + props.orientation     : "content-wrapper-left", 
-            !! props.textAlignMobile  ? "text-align-mobile-"  + props.textAlignMobile : "text-align-mobile-left"]) }>
+      {/* Text half */}
+      <div className="text-half" style={{ background: !!props.bgBehindText ? props.bgBehindText : "" }}>
+        <div className={generateClassesStr([
+          "content-wrapper",
+          !!props.orientation ? "content-wrapper-" + props.orientation : "content-wrapper-left",
+          !!props.textAlignMobile ? "text-align-mobile-" + props.textAlignMobile : "text-align-mobile-left"])}>
 
-            { line }
-            { getTxtSection([ !! props.orientation ? "content-align-" + props.orientation : "content-align-left" ]) }
-          </div>
+          {line}
+          {getTxtSection([!!props.orientation ? "content-align-" + props.orientation : "content-align-left"])}
         </div>
+      </div>
 
-        {/* Image half */}
-        <div className={ generateClassesStr(["img-half", !! props.imgEndToEndPhone ? "imgEndToEndPhone" : "", !! props.img ? "" : "hiddenImgHalf"]) } style={{ 
-          backgroundImage:      `url(${ props.img })`, 
-          backgroundSize :      !! props.backgroundSize     ? props.backgroundSize      : "contain",
-          backgroundPosition:   !! props.backgroundPosition ? props.backgroundPosition  : "center"
-        }}></div>
+      {/* Image half */}
+      <div className={generateClassesStr(["img-half", !!props.imgEndToEndPhone ? "imgEndToEndPhone" : "", !!props.img ? "" : "hiddenImgHalf"])} style={{
+        backgroundImage: `url(${props.img})`,
+        backgroundSize: !!props.backgroundSize ? props.backgroundSize : "contain",
+        backgroundPosition: !!props.backgroundPosition ? props.backgroundPosition : "center"
+      }}></div>
     </div>
   ];
 
@@ -158,26 +158,29 @@ function ImageSection(props: Props): JSX.Element {
 
   // == main container stuff ==
 
-  let containerClasses = generateClassesStr([ 
-    "version-container", 
-    !! props.version    ? props.version + "-version-container" : "v1-version-container",
-    !! props.paddingTop ? "img-section-paddingTop"             : "",
-    !! props.paddingBot ? "img-section-paddingBot"             : "" ]);
+  let containerClasses = generateClassesStr([
+    "version-container",
+    !!props.version ? props.version + "-version-container" : "v1-version-container",
+    !!props.paddingTop ? "img-section-paddingTop" : "",
+    !!props.paddingBot ? "img-section-paddingBot" : ""]);
 
 
   return (
     <div
-      id={ props.ID }
+      id={props.ID}
       className="img-section-container">
 
-      <div className={ containerClasses } style={ containerStyles }>
-        { props.version ? versions[props.version] : v1 }
+      <div className={containerClasses} style={containerStyles}>
+        {props.version ? versions[props.version] : v1}
       </div>
     </div>
   );
 }
 
 interface Props {
+  /**
+  * **Can be in:** root
+  */
   /**
     * Content of the **text section** (*text, buttons, etc.*).
     * 
@@ -194,14 +197,14 @@ interface Props {
     * </ Component>
     * ```
   */
-  children?:      any, 
-  
+  children?: any,
+
   /**
    * **Unique name** for this section. It can be used when navigating though the website.
    * 
    * It is a **standard prop** - this prop apply to every version of the image section.
    */
-  ID?:            string,
+  ID?: string,
 
   /** 
    * Defines a version applied on image section. Currently there are 3 available version. 
@@ -210,7 +213,7 @@ interface Props {
    * * `v1` - Version with only **text**.
    * * `v2` - Version with an **image** next to **text**.
   */
-  version:        string,
+  version: string,
 
   /** 
    * **Position of the text** section. 
@@ -225,14 +228,14 @@ interface Props {
    * It is a **standard prop** - this prop apply to every version of the image section.
    * @default "left"
   */
-  orientation?:   string, 
+  orientation?: string,
 
   /**
    * If the value (color code) is entered, it will draw a line *next to/below* the pharagraph.
    * 
    * It is a **standard prop** - this prop apply to every version of the image section. 
    */
-  line?:          string,
+  line?: string,
 
   /** If entered, 70px padding will be added to top.
    * 
@@ -240,7 +243,7 @@ interface Props {
    * 
    * @default false
   */
-  paddingTop?:    boolean,
+  paddingTop?: boolean,
 
   /** If entered, 70px padding will be added to bottom.
    * 
@@ -248,7 +251,7 @@ interface Props {
    * 
    * @default false
   */
-  paddingBot?:    boolean,
+  paddingBot?: boolean,
 
   /** Color of the text.
    * 
@@ -256,22 +259,22 @@ interface Props {
    * 
    * @default "black"
    */
-  color?:         string,
+  color?: string,
 
   /** Value for CSS style background-position for the image in **version 2**.
    * @default "center" 
    */
-  backgroundPosition?:  string,
+  backgroundPosition?: string,
 
   /** Value for CSS style background-size for the image in **version 2**.
    * @default "contain"
    */
-  backgroundSize?:      string,
+  backgroundSize?: string,
 
   /** Value for CSS style text-align on smaller screen. Currently available only in **version 2**.
    * @default "left"
    */
-  textAlignMobile?:     string,
+  textAlignMobile?: string,
 
   /** Image for the image section. Currently available only in **version 2**.
    * ## Example
@@ -283,7 +286,7 @@ interface Props {
    * </ImageSection>
    * ```
    */
-  img?:                 string, 
+  img?: string,
 
   /** Position of the text on mobile relative to the image. Currently available only in **version 2**.
    * 
@@ -293,7 +296,7 @@ interface Props {
    * 
    * @default "bot"
   */
-  positionMobile?:      string,
+  positionMobile?: string,
 
   /** Background of the whole image section.
    * 
@@ -311,10 +314,10 @@ interface Props {
    * 
    * @default "white"
    */
-  bg?:                  string,
+  bg?: string,
 
   /** **Background color** for the section behind text (currently available only in **version 2**). */
-  bgBehindText?:        string,
+  bgBehindText?: string,
 
   /** Creates **parallax effect** on background. 
    * 
@@ -322,13 +325,13 @@ interface Props {
    * 
    * @default false
    */
-  parallax:             boolean,
+  parallax: boolean,
 
   /** If entered, image will be end to end on smaller screens. Currently available only in **version 2**. 
    * 
    * @default false
   */
-  imgEndToEndPhone:     boolean,
+  imgEndToEndPhone: boolean,
 
   /** Available in **version 2**. It creates transition between the text section and image section.
    * 
@@ -336,7 +339,7 @@ interface Props {
    * * `beleved-top` - wider part is on the top.
    * * `beleved-bot` - wider parth is on the bottom.
    */
-  block:                string
+  block: string
 }
 
 export default ImageSection;

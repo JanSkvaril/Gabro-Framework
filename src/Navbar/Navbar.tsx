@@ -178,6 +178,9 @@ class Navbar extends Component<Props, State> {
 }
 
 interface Props {
+     /**
+    * **Can be in:** root
+    */
     /** If should be transparent when user scrolls to top of your website */
     trans?: boolean,
     /** Background color of the navbar */

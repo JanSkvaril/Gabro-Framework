@@ -44,6 +44,9 @@ const Footer = (props: Props) => {
     );
 }
 interface Props {
+    /**
+    * **Can be in:** root
+    */
     /** Background attribute of the section, can be color, image, gradient,... */
     bg?: string,
     /** Text color */

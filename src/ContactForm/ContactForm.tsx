@@ -171,6 +171,9 @@ class ContactForm extends Component {
     }
 }
 interface Props {
+    /**
+    * **Can be in:** Full, Half
+    */
     // == styles ==
     /** If shadow should be displayed around section */
     shadow?: boolean,

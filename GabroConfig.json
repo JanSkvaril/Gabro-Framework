@@ -1,0 +1,405 @@
+{
+    "components": {
+        "ImageSection": {
+            "props": [{
+                "name": "children?",
+                "type": "any"
+            }, {
+                "name": "ID?",
+                "type": "string"
+            }, {
+                "name": "version",
+                "type": "string"
+            }, {
+                "name": "orientation?",
+                "type": "string"
+            }, {
+                "name": "line?",
+                "type": "string"
+            }, {
+                "name": "paddingTop?",
+                "type": "boolean"
+            }, {
+                "name": "paddingBot?",
+                "type": "boolean"
+            }, {
+                "name": "color?",
+                "type": "string"
+            }, {
+                "name": "backgroundPosition?",
+                "type": "string"
+            }, {
+                "name": "backgroundSize?",
+                "type": "string"
+            }, {
+                "name": "textAlignMobile?",
+                "type": "string"
+            }, {
+                "name": "img?",
+                "type": "string"
+            }, {
+                "name": "positionMobile?",
+                "type": "string"
+            }, {
+                "name": "bg?",
+                "type": "string"
+            }, {
+                "name": "bgBehindText?",
+                "type": "string"
+            }, {
+                "name": "parallax",
+                "type": "boolean"
+            }, {
+                "name": "imgEndToEndPhone",
+                "type": "boolean"
+            }, {
+                "name": "block",
+                "type": "string"
+            }],
+            "can_be_in": ["root"]
+        },
+        "Row": {
+            "props": [{
+                "name": "bg?",
+                "type": "string"
+            }, {
+                "name": "color?",
+                "type": "string"
+            }, {
+                "name": "paddingBot?",
+                "type": "string"
+            }, {
+                "name": "paddingTop?",
+                "type": "string"
+            }, {
+                "name": "styled?",
+                "type": "boolean"
+            }, {
+                "name": "line?",
+                "type": "string"
+            }, {
+                "name": "children?",
+                "type": "any"
+            }, {
+                "name": "height?",
+                "type": "string"
+            }],
+            "can_be_in": ["Section"]
+        },
+        "Full": {
+            "props": [{
+                "name": "bg?",
+                "type": "string"
+            }, {
+                "name": "color?",
+                "type": "string"
+            }, {
+                "name": "paddingBot?",
+                "type": "string"
+            }, {
+                "name": "paddingTop?",
+                "type": "string"
+            }, {
+                "name": "styled?",
+                "type": "boolean"
+            }, {
+                "name": "line?",
+                "type": "string"
+            }, {
+                "name": "children?",
+                "type": "any"
+            }, {
+                "name": "height?",
+                "type": "string"
+            }],
+            "can_be_in": ["Section"]
+        },
+        "Half": {
+            "props": [{
+                "name": "bg?",
+                "type": "string"
+            }, {
+                "name": "color?",
+                "type": "string"
+            }, {
+                "name": "paddingBot?",
+                "type": "string"
+            }, {
+                "name": "paddingTop?",
+                "type": "string"
+            }, {
+                "name": "styled?",
+                "type": "boolean"
+            }, {
+                "name": "line?",
+                "type": "string"
+            }, {
+                "name": "children?",
+                "type": "any"
+            }, {
+                "name": "height?",
+                "type": "string"
+            }],
+            "can_be_in": ["Section"]
+        },
+        "Section": {
+            "props": [{
+                "name": "height?",
+                "type": "string"
+            }, {
+                "name": "shadow?",
+                "type": "boolean"
+            }, {
+                "name": "bg?",
+                "type": "string"
+            }, {
+                "name": "color?",
+                "type": "string"
+            }, {
+                "name": "bgSize?",
+                "type": "string"
+            }, {
+                "name": "bgFilter?",
+                "type": "string"
+            }, {
+                "name": "paddingBot?",
+                "type": "string"
+            }, {
+                "name": "paddingTop?",
+                "type": "string"
+            }, {
+                "name": "styled?",
+                "type": "boolean"
+            }, {
+                "name": "headline_align?",
+                "type": "\"left\" | \"right\""
+            }, {
+                "name": "line?",
+                "type": "string"
+            }, {
+                "name": "className?",
+                "type": "string"
+            }, {
+                "name": "id?",
+                "type": "string"
+            }, {
+                "name": "children?",
+                "type": "any"
+            }],
+            "can_be_in": ["root"]
+        },
+        "Navbar": {
+            "props": [{
+                "name": "trans?",
+                "type": "boolean"
+            }, {
+                "name": "color?",
+                "type": "string"
+            }, {
+                "name": "txtColor?",
+                "type": "string"
+            }, {
+                "name": "menu",
+                "type": "{ text"
+            }, {
+                "name": "version",
+                "type": "\"v1\" | \"v2\""
+            }, {
+                "name": "title",
+                "type": "string"
+            }, {
+                "name": "bgFilter",
+                "type": "string"
+            }],
+            "can_be_in": ["root"]
+        },
+        "Footer": {
+            "props": [{
+                "name": "bg?",
+                "type": "string"
+            }, {
+                "name": "color?",
+                "type": "string"
+            }, {
+                "name": "logo?",
+                "type": "string"
+            }, {
+                "name": "children?",
+                "type": "any"
+            }],
+            "can_be_in": ["root"]
+        },
+        "Card": {
+            "props": [{
+                "name": "shadow?",
+                "type": "string"
+            }, {
+                "name": "height?",
+                "type": "string"
+            }, {
+                "name": "bgFilter?",
+                "type": "string"
+            }, {
+                "name": "iconBg?",
+                "type": "string"
+            }, {
+                "name": "iconColor?",
+                "type": "string"
+            }, {
+                "name": "divBorder?",
+                "type": "string"
+            }, {
+                "name": "conBg?",
+                "type": "string"
+            }, {
+                "name": "conColor?",
+                "type": "string"
+            }, {
+                "name": "icon?",
+                "type": "JSX.Element"
+            }, {
+                "name": "headline?",
+                "type": "string"
+            }, {
+                "name": "children?",
+                "type": "any"
+            }, {
+                "name": "id?",
+                "type": "string"
+            }, {
+                "name": "className?",
+                "type": "string"
+            }],
+            "can_be_in": ["Full", "Half", "Row"]
+        },
+        "ContactForm": {
+            "props": [{
+                "name": "shadow?",
+                "type": "boolean"
+            }, {
+                "name": "bg?",
+                "type": "string"
+            }, {
+                "name": "color?",
+                "type": "string"
+            }, {
+                "name": "formColor?",
+                "type": "string"
+            }, {
+                "name": "buttonColor?",
+                "type": "string"
+            }, {
+                "name": "children?",
+                "type": "any"
+            }],
+            "can_be_in": ["Full", "Half"]
+        },
+        "LandingPage": {
+            "props": [{
+                "name": "children?",
+                "type": "any"
+            }, {
+                "name": "shadow?",
+                "type": "boolean"
+            }, {
+                "name": "link?",
+                "type": "string"
+            }, {
+                "name": "bg?",
+                "type": "string"
+            }, {
+                "name": "color?",
+                "type": "string"
+            }, {
+                "name": "bgSize?",
+                "type": "string"
+            }, {
+                "name": "version",
+                "type": "\"v1\" | \"v2\" | \"v3\""
+            }, {
+                "name": "orientation",
+                "type": "\"left\" | \"right\""
+            }, {
+                "name": "iconColor?",
+                "type": "string"
+            }, {
+                "name": "blockColor?",
+                "type": "string"
+            }, {
+                "name": "blockOrientation",
+                "type": "\"top\" | \"bot\""
+            }, {
+                "name": "txtShadow?",
+                "type": "boolean"
+            }, {
+                "name": "blockShape?",
+                "type": "\"square\" | \"crossed\""
+            }, {
+                "name": "orientationMobile?",
+                "type": "\"top\" | \"bot\""
+            }, {
+                "name": "img?",
+                "type": "string"
+            }, {
+                "name": "className?",
+                "type": "string"
+            }, {
+                "name": "id?",
+                "type": "string"
+            }],
+            "can_be_in": ["root"]
+        },
+        "h1": {
+            "props": [{
+                "name": "children?",
+                "type": "string"
+            }],
+            "can_be_in": ["LandingPage"]
+        },
+        "h2": {
+            "props": [{
+                "name": "children?",
+                "type": "string"
+            }],
+            "can_be_in": ["Full", "Half", "LandingPage", "Card", "ContactForm"]
+        },
+        "h3": {
+            "props": [{
+                "name": "children?",
+                "type": "string"
+            }],
+            "can_be_in": ["Full", "Half"]
+        },
+        "h4": {
+            "props": [{
+                "name": "children?",
+                "type": "string"
+            }],
+            "can_be_in": ["Full", "Half"]
+        },
+        "p": {
+            "props": [{
+                "name": "children?",
+                "type": "string"
+            }],
+            "can_be_in": ["Full", "Half", "Footer", "LandingPage", "Card", "ContactForm"]
+        },
+        "a": {
+            "props": [{
+                "name": "href",
+                "type": "string"
+            }, {
+                "name": "children?",
+                "type": "string"
+            }],
+            "can_be_in": ["Full", "Half", "Footer", "LandingPage", "Card", "ContactForm", "h1", "h2", "h3", "h4", "p", "a"]
+        },
+        "Text": {
+            "props": [{
+                "name": "children?",
+                "type": "ritch"
+            }],
+            "can_be_in": ["Full", "Half", "Footer", "LandingPage", "Card", "ContactForm", "h1", "h2", "h3", "h4", "p", "a"]
+        }
+    }
+}

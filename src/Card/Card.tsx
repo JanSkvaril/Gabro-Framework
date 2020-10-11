@@ -74,6 +74,9 @@ function Card(props: Props): JSX.Element {
 }
 //proptypes for cords
 interface Props {
+    /**
+    * **Can be in:** Full, Half, Row
+    */
     /** If shadow around the card should be displayed */
     shadow?:    string,
     /** Height of the card */
