@@ -146,7 +146,7 @@ class Navbar extends Component<Props, State> {
                     </span>
                     <span className="navigation">
                         <span className="menuButtons">
-                            {menuButtons}
+                            {this.props.children}
                         </span>
                         <span className="menuButton">
                             <IconButton onClick={this.ToggleDrawler.bind(this)} color="inherit">
@@ -166,9 +166,9 @@ class Navbar extends Component<Props, State> {
                             background: this.props.color,
                             color: this.props.txtColor,
                         }}>
-                        <List>
-                            {listButtons}
-                        </List>
+
+                        {this.props.children}
+
                     </div>
                 </Drawer>
             </div>
@@ -178,9 +178,9 @@ class Navbar extends Component<Props, State> {
 }
 
 interface Props {
-     /**
-    * **Can be in:** root
-    */
+    /**
+   * **Can be in:** root
+   */
     /** If should be transparent when user scrolls to top of your website */
     trans?: boolean,
     /** Background color of the navbar */
@@ -207,6 +207,8 @@ interface Props {
     title: string,
     /** Bgfilter propperty, e.g blue(5px) - will be only visible, when **color** is partially transparent (e.g. rgba(250,250,250,0.5)) */
     bgFilter: string,
+
+    children?: any,
 }
 
 interface State {
@@ -214,6 +216,20 @@ interface State {
     navbarHidden: boolean,
     transparent: boolean,
     galleryOpen: boolean
+}
+
+export function NavbarLink(props: NavbarLinkProps) {
+    return (
+        <a className="navbar-link" href={props.link}>
+            <div>
+                {props.text}
+            </div>
+        </a>
+    )
+}
+interface NavbarLinkProps {
+    text: string,
+    link: string,
 }
 
 export default Navbar;

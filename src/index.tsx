@@ -1,4 +1,6 @@
-import Navbar from './Navbar/Navbar';
+import Navbar, {
+    NavbarLink
+} from './Navbar/Navbar';
 import Card from './Card/Card';
 import ContactForm from './ContactForm/ContactForm';
 import IconList, {
@@ -23,6 +25,7 @@ import {
 } from './Functions/Functions'
 import Footer from './Footer/Footer'
 
+
 export {
     IconListItem,
     IconList,
@@ -34,6 +37,7 @@ export {
     Section,
     SnackMessages,
     ImageSection,
+    NavbarLink,
 
     ContactEmail,
     ContactPhone,
