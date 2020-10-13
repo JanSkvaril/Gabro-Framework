@@ -14,21 +14,15 @@ import ExpantionPanel from './ExpantionPanel.jsx';
  * 
  * **Example:**
  *  ```jsx
- * import {IconListItem, IconList } from "gabro-framework"
- * ...
- *<IconList data={[
- *   new IconListItem(   //first item
- *   "Some Headline",
- *   require("./path/to/icon.svg"),
- *       "More infromation about the topic")
- *   ,
- *   new IconListItem(   //second item   
- *       "Some Headline",
- *       require("./path/to/icon.svg"),
- *       "More infromation about the topic")
- *   ],
- *   } />
-  *  ```
+ *       <IconList>
+ *          <IconListItem heading="Headline 1" icon_path={require("./logo.svg")}>
+ *            Contrary to popular belief, Lorem Ipsum is not simply random text. Contrary to popular belief, Lorem Ipsum is not simply random text.
+ *          </IconListItem>
+ *          <IconListItem heading="Headline 2" icon_path={require("./logo.svg")}>
+ *            Contrary to popular belief, Lorem Ipsum is not simply random text. Contrary to popular belief, Lorem Ipsum is not simply random text.
+ *          </IconListItem>
+ *        </IconList>
+ *  ```
  */
 class IconList extends Component<Props, State> {
     constructor(props: Props) {
@@ -57,67 +51,46 @@ class IconList extends Component<Props, State> {
 
     render() {
         // === desktop mode ====
-        if (!this.state.small) {
-            let tableData = [];
-            let key = 0;
-            for (let row of this.props.data) {
-                tableData.push(
-                    <tr key={key++}>
-                        <td className="table-heading">{row.heading}</td>
-                        <td className="table-icon"><img src={row.icon} alt="icon" /></td>
-                        <td className="table-text">{row.text}</td>
-                    </tr>
-                )
-            }
-            return (
-                <div className="icon-list">
-                    <table className="table-view">
-                        <tbody>
-                            {tableData}
-                        </tbody>
-                    </table>
-                </div>
-            );
-        }
+        // if (!this.state.small) {
+        //     let tableData = [];
+        //     let key = 0;
+        //     for (let row of this.props.data) {
+        //         tableData.push(
+        //             <tr key={key++}>
+        //                 <td className="table-heading">{row.heading}</td>
+        //                 <td className="table-icon"><img src={row.icon} alt="icon" /></td>
+        //                 <td className="table-text">{row.text}</td>
+        //             </tr>
+        //         )
+        //     }
+        //     return (
+        //         <div className="icon-list">
+        //             <table className="table-view">
+        //                 <tbody>
+        //                     {tableData}
+        //                 </tbody>
+        //             </table>
+        //         </div>
+        //     );
+        // }
         // === Mobile Mode ===
-        else {
-            let listData = [];
-            let key = 0;
-            for (let row of this.props.data) {
-                listData.push(
-                    <ExpantionPanel
-                        key={key++}
-                        headline={
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td className="img-colum"> <img src={row.icon} alt="icon" /> </td>
-                                        <td className="text-colum">    {row.heading}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        }
-                    >
-                        <p className="list-text">
-                            {row.text}
-                        </p>
-                    </ExpantionPanel>
-                )
-            }
-            return (
-                <div className="icon-list">
-                    <div className="list-view">
-                        {listData}
-                    </div>
+        return (
+            <div className="icon-list">
+                <div className="list-view">
+                    {this.props.children}
                 </div>
-            );
-        }
+            </div>
+        );
     }
 }
 
+
 interface Props {
+    /**
+    * **Can be in:** Half, Full
+    */
     /** Array of IconListItem objects. Check example for more information */
-    data: IconListItem[],
+    children?: any
 
 }
 interface State {
@@ -125,31 +98,38 @@ interface State {
     small: boolean
 }
 
-/** One item of icon list. Must constain **headline**, **icon** path and **text***/
-export class IconListItem {
-    heading: string;
-    icon: string;
-    text: JSX.Element | string;
+/** One item of icon list. Must constain **heading**, **icon_path** path and **text***/
+export function IconListItem(props: IconListItemProps) {
+
+    return (
+        <ExpantionPanel
+            headline={
+                <table>
+                    <tbody>
+                        <tr>
+                            <td className="img-colum"> <img src={props.icon_path} alt="icon" /> </td>
+                            <td className="text-colum">    {props.heading}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            }
+        >
+            <p className="list-text">
+                {props.children}
+            </p>
+        </ExpantionPanel>
+    )
+}
+interface IconListItemProps {
     /**
-     * 
-     * @param heading Will allways be displayd nexto to icon. Short sentence
-     * @param icon Path (url or require("..."))to icon
-     * @param text More text about the topic. Can be text, or jsx element (for styling)
-     * **Example:**
-     * 
-     * ```jsx
-     * new IconListItem(
-        "Some Headline",
-        require("./path/to/icon.svg"),
-        <React.Fragment>Same text, <b>same bold text</b></React.Fragment>)
-     *  ```
-     * 
-     */
-    constructor(heading: string, icon: string, text: JSX.Element | string) {
-        this.heading = heading;
-        this.icon = icon;
-        this.text = text;
-    }
+    * **Can be in:** IconList
+    */
+    /** Path to your icon (can be svg or any image format) */
+    icon_path: string,
+    /** Simple and short heading */
+    heading: string,
+    /** Text, can be longer (about 1 - 2 paragrahps) */
+    children?: any,
 }
 
 export default IconList;
