@@ -11,7 +11,12 @@ import Section, {
     Row
 } from './Section/Section';
 import SnackMessages from './SnackMessages/SnackMessages';
-import ContactInfo from './ContactInfo/ContactInfo';
+import ContactInfo, {
+    ContactEmail,
+    ContactPhone,
+    ContactPlace,
+    ContactSocial
+} from './ContactInfo/ContactInfo';
 import ImageSection from './ImageSection/ImageSection'
 import {
     GetImage
@@ -29,6 +34,11 @@ export {
     Section,
     SnackMessages,
     ImageSection,
+
+    ContactEmail,
+    ContactPhone,
+    ContactPlace,
+    ContactSocial,
 
     Full,
     Half,
