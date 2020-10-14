@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './IconList.scss';
 import ExpantionPanel from './ExpantionPanel.jsx';
+import { filePath } from '../Types';
 
 /**
  * List of icons with heading and text.
@@ -125,7 +126,7 @@ interface IconListItemProps {
     * **Can be in:** IconList
     */
     /** Path to your icon (can be svg or any image format) */
-    icon_path: string,
+    icon_path: filePath,
     /** Simple and short heading */
     heading: string,
     /** Text, can be longer (about 1 - 2 paragrahps) */

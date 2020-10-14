@@ -6,6 +6,7 @@
 
 import React from 'react';
 import './Footer.scss';
+import { bg, color, filePath } from '../Types';
 
 /**
  * @brief This is footer component containing ad to our team, that we use for websites created by this ¨
@@ -48,11 +49,11 @@ interface Props {
     * **Can be in:** root
     */
     /** Background attribute of the section, can be color, image, gradient,... */
-    bg?: string,
+    bg?: bg,
     /** Text color */
-    color?: string,
+    color?: color,
     /** Path (with require) to image or svg */
-    logo?: string,
+    logo?: filePath,
 
     children?: any,
 }
