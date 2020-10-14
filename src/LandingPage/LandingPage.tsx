@@ -295,7 +295,7 @@ interface Props {
      * 
      * It is a **standard prop** - this prop apply to every version of the landing page.
     */
-    orientation: "left" | "right",
+    orientation?: "left" | "right",
 
     /** 
      * **Color** of the scroll down **icon**. 
@@ -318,7 +318,7 @@ interface Props {
      * 
      * This will be ignored if the `blockShape` prop is symmetrical.
     */
-    blockOrientation: "top" | "bot",
+    blockOrientation?: "top" | "bot",
 
     /** 
      * If mentioned, text in the text-section will cast **a shadow** on the background.
