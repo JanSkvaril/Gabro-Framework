@@ -228,7 +228,12 @@ export function NavbarLink(props: NavbarLinkProps) {
     )
 }
 interface NavbarLinkProps {
+    /**
+    * **Can be in:** Navbar
+    */
+    /** Displayed text */
     text: string,
+    /** Anchor to element on your website */
     link: string,
 }
 

@@ -5,7 +5,7 @@ import Card from './Card/Card';
 import ContactForm from './ContactForm/ContactForm';
 import IconList, {
     IconListItem
-} from './IconList/IconsList';
+} from './IconList/IconList';
 import LandingPage from './LandingPage/LandingPage';
 import Section, {
     Full,

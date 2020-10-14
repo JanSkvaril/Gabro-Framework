@@ -37,17 +37,24 @@ function ParseComponent(path, props_name, name) {
     return component;
 }
 let components = [];
-//components.push(ParseComponent('./src/ContactInfo/ContactInfo.tsx', "interface Props {", "ContactInfo"));
+components.push(ParseComponent('./src/ContactInfo/ContactInfo.tsx', "interface Props {", "ContactInfo"));
+components.push(ParseComponent('./src/ContactInfo/ContactInfo.tsx', "interface PhoneProps {", "ContactPhone"));
+components.push(ParseComponent('./src/ContactInfo/ContactInfo.tsx', "interface SocialProps {", "ContactSocial"));
+components.push(ParseComponent('./src/ContactInfo/ContactInfo.tsx', "interface EmailProps {", "ContactEmail"));
+components.push(ParseComponent('./src/ContactInfo/ContactInfo.tsx', "interface PlaceProps {", "ContactPlace"));
 components.push(ParseComponent('./src/ImageSection/ImageSection.tsx', "interface Props {", "ImageSection"));
 components.push(ParseComponent('./src/Section/Section.tsx', "interface PartProps {", "Row"));
 components.push(ParseComponent('./src/Section/Section.tsx', "interface PartProps {", "Full"));
 components.push(ParseComponent('./src/Section/Section.tsx', "interface PartProps {", "Half"));
 components.push(ParseComponent('./src/Section/Section.tsx', "interface Props {", "Section"));
 components.push(ParseComponent('./src/Navbar/Navbar.tsx', "interface Props {", "Navbar"));
+components.push(ParseComponent('./src/Navbar/Navbar.tsx', "interface NavbarLinkProps {", "NavbarLink"));
 components.push(ParseComponent('./src/Footer/Footer.tsx', "interface Props {", "Footer"));
 components.push(ParseComponent('./src/Card/Card.tsx', "interface Props {", "Card"));
 components.push(ParseComponent('./src/ContactForm/ContactForm.tsx', "interface Props {", "ContactForm"));
 components.push(ParseComponent('./src/LandingPage/LandingPage.tsx', "interface Props {", "LandingPage"));
+components.push(ParseComponent('./src/IconList/IconList.tsx', "interface Props {", "IconList"));
+components.push(ParseComponent('./src/IconList/IconList.tsx', "interface IconListItemProps {", "IconListItem"));
 
 let result = {
     components: {}
@@ -58,7 +65,7 @@ for (let component of components) {
         can_be_in: component.can_be_in
     }
 }
-let can_be_in_text = ["Full", "Half", "Footer", "LandingPage", "Card", "ContactForm"];
+let can_be_in_text = ["Full", "Half", "Footer", "LandingPage", "Card", "ContactForm", "IconListItem"];
 let text_can_be_in = [...can_be_in_text];
 
 

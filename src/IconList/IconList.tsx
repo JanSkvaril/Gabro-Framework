@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './IconList.scss';
-import ExpantionPanel from './ExpantionPanel.jsx';
+import ExpantionPanel from './ExpantionPanel.js';
 
 /**
  * List of icons with heading and text.
