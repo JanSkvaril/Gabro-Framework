@@ -86,9 +86,9 @@ interface Props {
     /** If shadow should be displayed around section */
     shadow?: boolean,
     /** Background attribute of the section, can be color, image, gradient,... */
-    bg?: string,
+    bg?: bg,
     /** Text color */
-    color?: string,
+    color?: color,
     /** Background-size attribute, default is "cover" */
     bgSize?: string,
     /** Backdrop-filter attribute, for example blur(5px) will blur the background */
@@ -103,7 +103,7 @@ interface Props {
     /** Where should be headlines aligned. If not given, default will be middle */
     headline_align?: "left" | "right",
     /** Background attribute (color, gradient) of Left line. Line will not be displayed if empty */
-    line?: string,
+    line?: bg,
     /** Cutsom classnames for Section component */
     className?: string,
     /** Custom ID for Section component */
