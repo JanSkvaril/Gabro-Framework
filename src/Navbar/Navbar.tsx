@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 import Drawer from '@material-ui/core/Drawer';
 import { IconButton, List, ListItem, ListItemText } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
+import { color, bg } from '../Types';
 
 /**
  * @brief Navbar component, used for typical navigation on your website
@@ -184,9 +185,9 @@ interface Props {
     /** If should be transparent when user scrolls to top of your website */
     trans?: boolean,
     /** Background color of the navbar */
-    color?: string,
+    color?: bg,
     /** Text color of the navbar */
-    txtColor?: string,
+    txtColor?: color,
     /**
     * Array of objects, containing text - text displayed and link - anchor where should website scroll to on click
     * 

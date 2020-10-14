@@ -5,6 +5,7 @@
  */
 
 import React from 'react';
+import { bg, color } from '../Types';
 import './Card.scss';
 
 /**
@@ -84,15 +85,15 @@ interface Props {
     /** Backdrop-filter attribute for the card (e.g blur(5px)) */
     bgFilter?:  string,
     /** Background (color, image, gradient) for upper part of the card */
-    iconBg?:    string,
+    iconBg?:    bg,
     /** Color of the icon */
-    iconColor?: string,
+    iconColor?: color,
     /** Dividing line between first and second half part of the card (e.g "none", "2px solid black,...") */
     divBorder?: string,
     /** Background (color, image, gradient) of content (bottom) part of the card */
-    conBg?:     string,
+    conBg?:     bg,
     /** Color of the text in content (bottom) part of the card */
-    conColor?:  string,
+    conColor?:  color,
     /** svg or img component. Will be displayed in upper part of the card
      *  
      * **Example import:**

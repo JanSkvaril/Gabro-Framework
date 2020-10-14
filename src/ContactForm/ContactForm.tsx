@@ -10,6 +10,7 @@ import SnackMessages from '../SnackMessages/SnackMessages.jsx';
 import './ContactForm.scss';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
+import { color, bg } from "../Types";
 
 /**
  * @brief Simple contact form. Contains mail adress and text. Requires send-mail.php to be placed
@@ -178,14 +179,14 @@ interface Props {
     /** If shadow should be displayed around section */
     shadow?: boolean,
     /** Background attribute of the section, can be color, image, gradient,... */
-    bg?: string,
+    bg?: bg,
     /** Text color */
-    color?: string,
+    color?: color,
     // == form specific == 
     /** Color of input elements - email adress and textbox */
-    formColor?: string,
+    formColor?: color,
     /** Color of submit button */
-    buttonColor?: string,
+    buttonColor?: color,
 
     children?: any,
 }

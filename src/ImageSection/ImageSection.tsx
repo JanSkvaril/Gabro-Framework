@@ -7,6 +7,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './ImageSection.scss';
+import { bg, color, filePath } from '../Types';
 
 /**
  * @brief Simgle section with text part and image half. Section features multiple versions with different elements and compositions.
@@ -235,7 +236,7 @@ interface Props {
    * 
    * It is a **standard prop** - this prop apply to every version of the image section. 
    */
-  line?: string,
+  line?: color,
 
   /** If entered, 70px padding will be added to top.
    * 
@@ -259,7 +260,7 @@ interface Props {
    * 
    * @default "black"
    */
-  color?: string,
+  color?: color,
 
   /** Value for CSS style background-position for the image in **version 2**.
    * @default "center" 
@@ -286,7 +287,7 @@ interface Props {
    * </ImageSection>
    * ```
    */
-  img?: string,
+  img?: filePath,
 
   /** Position of the text on mobile relative to the image. Currently available only in **version 2**.
    * 
@@ -314,10 +315,10 @@ interface Props {
    * 
    * @default "white"
    */
-  bg?: string,
+  bg?: bg,
 
   /** **Background color** for the section behind text (currently available only in **version 2**). */
-  bgBehindText?: string,
+  bgBehindText?: bg,
 
   /** Creates **parallax effect** on background. 
    * 

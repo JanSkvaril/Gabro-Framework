@@ -5,6 +5,7 @@
 
 import React from 'react';
 import './Section.scss';
+import { bg, color } from '../Types';
 
 
 /**
@@ -116,9 +117,9 @@ interface PartProps {
     * **Can be in:** Section
     */
     /** Background attribute of the section, can be color, image, gradient,... */
-    bg?: string,
+    bg?: bg,
     /** Text color */
-    color?: string,
+    color?: color,
     /** Padding-bottom attribute, for example 100px */
     paddingBot?: string,
     /** Padding-top attribute, for example 100px */
@@ -126,7 +127,7 @@ interface PartProps {
     /** If framework styles should be applied on content, default is "false" */
     styled?: boolean,
     /** Background attribute (color, gradient) of Left line. Line will not be displayed if empty */
-    line?: string,
+    line?: bg,
     children?: any,
     /** Minimum height, default is empty */
     height?: string,
