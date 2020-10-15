@@ -24,21 +24,30 @@
         display: flex;
         justify-content: space-between;
 
+        // .navbar-tab, .navbar-brand {
+        //     color: inherit;
+        // }
 
         .brand-wrapper {
             display: flex;
             align-items: center;
-    
-            .navbar-brand {
-                font-size: 1.2em;
+            
+            .navbar-tab-component {
+                color: inherit;
+                .navbar-brand {
+                    font-size: 1.2em;
+                }
             }
         }
-    
         .tab-wrapper {
-            .navbar-tab {
-                margin: 0 10px;
-                font-size: 1.1em;
+            .navbar-tab-component {
+                color: inherit;
+                .navbar-tab {
+                    margin: 0 10px;
+                    font-size: 1.1em;
+                }
             }
+            
         }
     }
 }
@@ -50,8 +59,15 @@
     height: 100%;
 
     .brand-wrapper-mobile {
-        margin: 26px 15px 20px 15px;
         display: flex;
+
+        .navbar-tab-component {
+            margin: 30px;
+            margin-top: 40px;
+            font-size: 1em;
+            width: 100%;
+            color: inherit;
+        }
     }
 
     .tab-wrapper-mobile {
@@ -59,7 +75,9 @@
         flex-direction: column;
 
         .navbar-tab-component {
-            margin: 15px;
+            margin: 14px 30px;
+            font-size: 0.9em;
+            color: inherit;
         }
     }
 }

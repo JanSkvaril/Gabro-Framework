@@ -9,7 +9,6 @@ import React, { Component } from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import { Menu } from '@material-ui/icons';
 import { color, bg } from '../Types';
-
 /**
  * @brief Navbar component, used for typical navigation on your website
  * @version   2.3.0
@@ -102,11 +101,12 @@ class Navbar extends Component<Props, State> {
     render() {
 
         let styles = {
+            // Navbar will slide up 
             top: this.state.navbarHidden ? "-70px" : "0px",
-            background: this.props.color,
-            color: this.props.txtColor,
+            background: !! this.props.bg ? this.props.bg : "",
             backdropFilter: !!this.props.bgFilter ? this.props.bgFilter : "",
         }
+
         if (this.state.transparent) styles.background = "transparent";
 
         // Object with children components
@@ -126,16 +126,15 @@ class Navbar extends Component<Props, State> {
 
             }
         });
-
         
 
         return (
-            <div className="navbar">
+            <div className="navbar" style={ styles }>
                 <div className="container">
-                    <Menu className="menu-icon desktop-hidden" onClick={ this.ToggleDrawer.bind(this) }/>
+                    <Menu style={{ color: !! this.props.color ? this.props.color : "black" }} className="menu-icon desktop-hidden" onClick={ this.ToggleDrawer.bind(this) }/>
                     
-                    { content.brand.Length != 0 ? <span className="brand-wrapper mobile-hidden">{ content.brand }</span> : "" }
-                    { content.tab.Length != 0 ? <span className="tab-wrapper mobile-hidden">{ content.tab }</span> : "" }
+                    { content.brand.Length != 0 ? <span className="brand-wrapper mobile-hidden" style={{ color: !! this.props.color? this.props.color : "black" }}>{ content.brand }</span> : "" }
+                    { content.tab.Length != 0 ? <span className="tab-wrapper mobile-hidden" style={{ color: !! this.props.color? this.props.color : "black" }}>{ content.tab }</span> : "" }
                 </div>
 
                 <Drawer
@@ -145,9 +144,10 @@ class Navbar extends Component<Props, State> {
 
                     <div className="drawer-bg"
                         style={{
-                            background: this.props.color,
-                            color: this.props.txtColor,
-                        }}>
+                            background: this.props.bg,
+                            color: this.props.color,
+                        }}
+                        >
 
                         { content.brand.Length != 0 ? <span className="brand-wrapper-mobile">{ content.brand }</span> : "" }
 
@@ -167,10 +167,9 @@ interface Props {
    */
     /** If should be transparent when user scrolls to top of your website */
     trans?: boolean,
-    /** Background color of the navbar */
-    color?: bg,
     /** Text color of the navbar */
-    txtColor?: color,
+    color?: color,
+    bg?: bg,
     /**
     * Array of objects, containing text - text displayed and link - anchor where should website scroll to on click
     * 
@@ -205,8 +204,8 @@ interface State {
 
 export function NavbarTab(props: NavbarTabProps) {
     return (
-    <a href={ !! props.link ? props.link : "#" } style={{ textDecoration: "none", color: "black" }}>
-        <span className={ `navbar-tab-component navbar-${ props.type }` }>{ props.children }</span>
+    <a className="navbar-tab-component" href={ !! props.link ? props.link : "#" } style={{ textDecoration: "none" }}>
+        <span className={ `navbar-${ props.type }` }>{ props.children }</span>
     </a>
     )
 }
