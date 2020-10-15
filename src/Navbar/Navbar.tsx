@@ -112,8 +112,7 @@ class Navbar extends Component<Props, State> {
         // Object with children components
         let content : any = {
             brand: [],
-            tab: [],
-            icon: []
+            tab: []
         };
 
         // Filling the content object
@@ -124,10 +123,6 @@ class Navbar extends Component<Props, State> {
             }
             else if (component.props.type === "tab") {
                 content.tab.push(component);
-
-            }
-            else if (component.props.type === "icon") {
-                content.icon.push(component);
 
             }
         });
@@ -167,15 +162,6 @@ class Navbar extends Component<Props, State> {
 }
 
 interface Props {
-    /** Ordering tabs in the navbar.
-     * 
-     * * `my-order` - tabs will be in the order you entered them.
-     * * `auto-order` - tabs will be ordered like this: brand - tabs - icons
-     */
-    order:      "my-order" | "auto-order",
-
-
-
     /**
    * **Can be in:** root
    */
@@ -219,13 +205,16 @@ interface State {
 
 export function NavbarTab(props: NavbarTabProps) {
     return (
-    <span className={ `navbar-tab-component navbar-${ props.type }` }>{ props.children }</span>
+    <a href={ !! props.link ? props.link : "#" } style={{ textDecoration: "none", color: "black" }}>
+        <span className={ `navbar-tab-component navbar-${ props.type }` }>{ props.children }</span>
+    </a>
     )
 }
 
 interface NavbarTabProps {
-    type:       "brand" | "tab" | "icon",
-    children:   string
+    type:       "brand" | "tab",
+    children:   string,
+    link:       string
 }
 
 export default Navbar;
