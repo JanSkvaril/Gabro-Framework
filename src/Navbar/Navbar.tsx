@@ -1,12 +1,12 @@
 /**
- *   This file is soon to be reworked!!
+ *  @fileOverview Navbar component
+ *
+ *  @author       Nikol Škvařilová    <skvarilovanikol@gmail.com>
  */
 
 import './Navbar.scss';
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
 import Drawer from '@material-ui/core/Drawer';
-import { IconButton, List, ListItem, ListItemText } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
 import { color, bg } from '../Types';
 
@@ -35,7 +35,7 @@ class Navbar extends Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
-            drawlerOpenned: false,
+            drawerOpenned: false,
             navbarHidden: false,
             transparent: props.trans == undefined ? false : props.trans,
             galleryOpen: false
@@ -92,14 +92,15 @@ class Navbar extends Component<Props, State> {
         }
     }
 
-    ToggleDrawler() {
+    ToggleDrawer() {
         this.setState({
-            drawlerOpenned: !this.state.drawlerOpenned,
+            drawerOpenned: !this.state.drawerOpenned,
         })
     }
 
 
     render() {
+
         let styles = {
             top: this.state.navbarHidden ? "-70px" : "0px",
             background: this.props.color,
@@ -108,77 +109,73 @@ class Navbar extends Component<Props, State> {
         }
         if (this.state.transparent) styles.background = "transparent";
 
-        let menuButtons = [];
-        let listButtons = [];
-        for (let menuItem of this.props.menu) {
-            menuButtons.push(
-                <Button color="inherit" href={menuItem.link}>{menuItem.text}</Button>
-            )
-            listButtons.push(
-                <ListItem button component="a" href={menuItem.link} onClick={this.ToggleDrawler.bind(this)}>
-                    <ListItemText>
-                        {menuItem.text}
-                    </ListItemText>
-                </ListItem>
-            )
-        }
-        let navbar_ver = "v1";
-        if (!!this.props.version) {
-            if (this.props.version == "v2") {
-                navbar_ver = "v2"
+        // Object with children components
+        let content : any = {
+            brand: [],
+            tab: [],
+            icon: []
+        };
+
+        // Filling the content object
+        this.props.children.forEach((component) => {
+
+            if (component.props.type === "brand") {
+                content.brand.push(component);
             }
-        }
+            else if (component.props.type === "tab") {
+                content.tab.push(component);
+
+            }
+            else if (component.props.type === "icon") {
+                content.icon.push(component);
+
+            }
+        });
+
+        
 
         return (
-
-            <div
-                className={"navbar " + navbar_ver}
-                id="navbar"
-                style={styles}>
+            <div className="navbar">
                 <div className="container">
-
-                    <span className="heading">
-
-                        <a href="#landing-page"
-                            style={{ color: this.props.txtColor }}>
-                            {this.props.title}
-                        </a>
-
-                    </span>
-                    <span className="navigation">
-                        <span className="menuButtons">
-                            {this.props.children}
-                        </span>
-                        <span className="menuButton">
-                            <IconButton onClick={this.ToggleDrawler.bind(this)} color="inherit">
-                                <Menu />
-                            </IconButton>
-                        </span>
-                    </span>
+                    <Menu className="menu-icon desktop-hidden" onClick={ this.ToggleDrawer.bind(this) }/>
+                    
+                    { content.brand.Length != 0 ? <span className="brand-wrapper mobile-hidden">{ content.brand }</span> : "" }
+                    { content.tab.Length != 0 ? <span className="tab-wrapper mobile-hidden">{ content.tab }</span> : "" }
                 </div>
+
                 <Drawer
                     anchor="top"
-                    open={this.state.drawlerOpenned}
-                    onClose={this.ToggleDrawler.bind(this)}
+                    open={this.state.drawerOpenned}
+                    onClose={this.ToggleDrawer.bind(this)}>
 
-                >
-                    <div className="drawerBg"
+                    <div className="drawer-bg"
                         style={{
                             background: this.props.color,
                             color: this.props.txtColor,
                         }}>
 
-                        {this.props.children}
+                        { content.brand.Length != 0 ? <span className="brand-wrapper-mobile">{ content.brand }</span> : "" }
+
+                        { content.tab.Length != 0 ? <span className="tab-wrapper-mobile">{ content.tab }</span> : "" }
 
                     </div>
                 </Drawer>
+                
             </div>
-
         );
     }
 }
 
 interface Props {
+    /** Ordering tabs in the navbar.
+     * 
+     * * `my-order` - tabs will be in the order you entered them.
+     * * `auto-order` - tabs will be ordered like this: brand - tabs - icons
+     */
+    order:      "my-order" | "auto-order",
+
+
+
     /**
    * **Can be in:** root
    */
@@ -209,33 +206,26 @@ interface Props {
     /** Bgfilter propperty, e.g blue(5px) - will be only visible, when **color** is partially transparent (e.g. rgba(250,250,250,0.5)) */
     bgFilter: string,
 
-    children?: any,
+    children: Array<JSX.Element>,
 }
 
 interface State {
-    drawlerOpenned: boolean,
+    drawerOpenned: boolean,
     navbarHidden: boolean,
     transparent: boolean,
     galleryOpen: boolean
 }
 
-export function NavbarLink(props: NavbarLinkProps) {
+
+export function NavbarTab(props: NavbarTabProps) {
     return (
-        <a className="navbar-link" href={props.link}>
-            <div>
-                {props.text}
-            </div>
-        </a>
+    <span className={ `navbar-tab-component navbar-${ props.type }` }>{ props.children }</span>
     )
 }
-interface NavbarLinkProps {
-    /**
-    * **Can be in:** Navbar
-    */
-    /** Displayed text */
-    text: string,
-    /** Anchor to element on your website */
-    link: string,
+
+interface NavbarTabProps {
+    type:       "brand" | "tab" | "icon",
+    children:   string
 }
 
 export default Navbar;
