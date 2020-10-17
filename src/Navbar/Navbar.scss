@@ -1,9 +1,14 @@
 .navbar {
-    $break-point: 700px;
+    position: fixed;
+    $break-point: 800px;
 
     transition: top 0.4s, background 0.4s;
     z-index: 10;
-    padding: 15px 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 40px;
+    width: 100vw;
     
     .desktop-hidden {
         @media screen and (min-width: $break-point) {
@@ -20,13 +25,9 @@
     }
 
     .container {
-        width: 100%;
+        width: 95%;
         display: flex;
         justify-content: space-between;
-
-        // .navbar-tab, .navbar-brand {
-        //     color: inherit;
-        // }
 
         .brand-wrapper {
             display: flex;
@@ -34,7 +35,9 @@
             
             .navbar-tab-component {
                 color: inherit;
+
                 .navbar-brand {
+                    margin: 0 15x;
                     font-size: 1.2em;
                 }
             }
@@ -42,8 +45,9 @@
         .tab-wrapper {
             .navbar-tab-component {
                 color: inherit;
+
                 .navbar-tab {
-                    margin: 0 10px;
+                    margin: 0 15px;
                     font-size: 1.1em;
                 }
             }

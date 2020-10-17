@@ -39,8 +39,8 @@ class Navbar extends Component<Props, State> {
             transparent: props.trans == undefined ? false : props.trans,
             galleryOpen: false
         }
-        if (props.version == "v1" || !!props.version)
-            this.InitScrolling();
+
+        this.InitScrolling();
     }
 
     //hiding when scrolling up
@@ -149,9 +149,9 @@ class Navbar extends Component<Props, State> {
                         }}
                         >
 
-                        { content.brand.Length != 0 ? <span className="brand-wrapper-mobile">{ content.brand }</span> : "" }
+                        { content.brand.Length != 0 ? <span onClick={ this.ToggleDrawer.bind(this) } className="brand-wrapper-mobile">{ content.brand }</span> : "" }
 
-                        { content.tab.Length != 0 ? <span className="tab-wrapper-mobile">{ content.tab }</span> : "" }
+                        { content.tab.Length != 0 ? <span onClick={ this.ToggleDrawer.bind(this) } className="tab-wrapper-mobile">{ content.tab }</span> : "" }
 
                     </div>
                 </Drawer>
