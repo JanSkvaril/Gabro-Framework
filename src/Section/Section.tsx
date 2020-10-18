@@ -5,7 +5,7 @@
 
 import React from 'react';
 import './Section.scss';
-import { bg, color } from '../Types';
+import { bg, color, numberOfPixels } from '../Types';
 
 
 /**
@@ -82,7 +82,7 @@ interface Props {
     */
     // == Styles ==
     /** Minimum height, default is 450px */
-    height?: string,
+    height?: numberOfPixels,
     /** If shadow should be displayed around section */
     shadow?: boolean,
     /** Background attribute of the section, can be color, image, gradient,... */
@@ -94,9 +94,9 @@ interface Props {
     /** Backdrop-filter attribute, for example blur(5px) will blur the background */
     bgFilter?: string,
     /** Padding-bottom attribute, for example 100px */
-    paddingBot?: string,
+    paddingBot?: numberOfPixels,
     /** Padding-top attribute, for example 100px */
-    paddingTop?: string,
+    paddingTop?: numberOfPixels,
     // == Other ==
     /** If framework styles should be applied on content, default is "false" */
     styled?: boolean,
@@ -121,16 +121,16 @@ interface PartProps {
     /** Text color */
     color?: color,
     /** Padding-bottom attribute, for example 100px */
-    paddingBot?: string,
+    paddingBot?: numberOfPixels,
     /** Padding-top attribute, for example 100px */
-    paddingTop?: string,
+    paddingTop?: numberOfPixels,
     /** If framework styles should be applied on content, default is "false" */
     styled?: boolean,
     /** Background attribute (color, gradient) of Left line. Line will not be displayed if empty */
     line?: bg,
     children?: any,
     /** Minimum height, default is empty */
-    height?: string,
+    height?: numberOfPixels,
 }
 
 //In section must be one of "parts" - Full/Half/row
