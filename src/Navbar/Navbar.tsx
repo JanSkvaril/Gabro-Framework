@@ -103,11 +103,9 @@ class Navbar extends Component<Props, State> {
         let styles = {
             // Navbar will slide up 
             top: this.state.navbarHidden ? "-70px" : "0px",
-            background: !! this.props.bg ? this.props.bg : "",
             backdropFilter: !!this.props.bgFilter ? this.props.bgFilter : "",
+            background: this.state.transparent ? "rgba(0,0,0,0)" : this.props.bg
         }
-
-        if (this.state.transparent) styles.background = "transparent";
 
         // Object with children components
         let content : any = {
