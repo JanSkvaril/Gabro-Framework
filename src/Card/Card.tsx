@@ -24,7 +24,7 @@ import './Card.scss';
  *   conColor="black"
  *   headline="služby"
  *   height="310px"
- *   icon={<YourIcon />}>
+ *   icon={require("./your_icon.svg")}>
  *       Content
  * 
  *  </Card>

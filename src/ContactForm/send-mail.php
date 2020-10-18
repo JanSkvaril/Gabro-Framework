@@ -1,8 +1,8 @@
 <?php
-//$to      = 'jan.skvaril@gabros.cz';
 
-$to      = 'mail@mail.cz';
-$subject = 'Zprava ze stránky';
+
+$to      = 'mail@mail.com';
+$subject = 'Message from website';
 $message = $_POST['mailAdress']." <br> ". $_POST['mailText'];
 $headers = 'Content-type:text/html;charset=UTF-8' . "\r\n".
 'From: web@mail.cz' . "\r\n" .

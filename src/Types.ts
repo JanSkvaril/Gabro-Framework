@@ -1,4 +1,6 @@
-// export type jmeno = string
+/**
+ * Special types - mainly for Gabro Builder
+ */
 
 /**
  * Color of the text or general color.
@@ -8,7 +10,7 @@
  * * hex value `"#584659"`
  * * name of the color `"pink"`
  */
-export type color     = string; 
+export type color = string;
 
 /**
  * Color/img of the background. You can enter:
@@ -19,15 +21,15 @@ export type color     = string;
  * * name of the color `"pink"`
  * * image source `{ GetImage(require('./path/to/img.jpg')) }`
  */
-export type bg        = string;
+export type bg = string;
 
 /**
  * Path to a file: `{ require("./myDir/myFile.file") }`
  */
-export type filePath  = string;
+export type filePath = string;
 
 /** A lot of text `"Lorem Ipsum dolor ..."` */
-export type richText  = string;
+export type richText = string;
 
 
 
