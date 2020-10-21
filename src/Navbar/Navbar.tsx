@@ -11,7 +11,7 @@ import { Menu } from '@material-ui/icons';
 import { color, bg } from '../Types';
 /**
  * @brief Navbar component, used for typical navigation on your website
- * @version   2.3.0
+ * @version   2.4.3
  *
  * **Example**
  * ```jsx
