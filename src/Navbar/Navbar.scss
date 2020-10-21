@@ -7,9 +7,9 @@
     z-index: 10;
     padding-top: 15px;
     padding-bottom: 15px;
-    padding-left: 20px;
-    padding-right: 40px;
     width: 100vw;
+    display: flex;
+    justify-content: center;
 
     @media screen and (max-width: $break-point) {
         height: 25px;
