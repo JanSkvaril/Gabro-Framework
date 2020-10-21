@@ -131,7 +131,7 @@ class Navbar extends Component<Props, State> {
                 <div className="container">
                     <Menu style={{ color: !! this.props.color ? this.props.color : "black" }} className="menu-icon desktop-hidden" onClick={ this.ToggleDrawer.bind(this) }/>
                     
-                    { content.brand.Length != 0 ? <span className="brand-wrapper mobile-hidden" style={{ color: !! this.props.color? this.props.color : "black" }}>{ content.brand }</span> : "" }
+                    { content.brand.Length != 0 ? <span className="brand-wrapper" style={{ color: !! this.props.color? this.props.color : "black" }}>{ content.brand }</span> : "" }
                     { content.tab.Length != 0 ? <span className="tab-wrapper mobile-hidden" style={{ color: !! this.props.color? this.props.color : "black" }}>{ content.tab }</span> : "" }
                 </div>
 

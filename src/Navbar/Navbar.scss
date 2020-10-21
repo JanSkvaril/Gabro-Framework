@@ -34,6 +34,21 @@
         display: flex;
         justify-content: space-between;
 
+        @media screen and (max-width: $break-point) {
+            justify-content: initial;
+            justify-content: flex-end;
+
+            .menu-icon {
+                left: 20px;
+                position: absolute;
+            }
+
+            .brand-wrapper {
+                margin-top: 2.5px;
+                margin-right: 22px;
+            }
+        }
+
         .brand-wrapper {
             display: flex;
             align-items: center;
