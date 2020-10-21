@@ -108,7 +108,7 @@ class Navbar extends Component<Props, State> {
             tab: []
         };
 
-        if ( !! this.props.children ) {
+        if (!!this.props.children) {
             // Filling the content object
             for (let i = 0; i < this.props.children?.length; i++) {
                 let component = this.props.children[i];
@@ -173,7 +173,7 @@ interface Props {
     bgFilter?: string,
 
     /** Your conent */
-    children?: Array<JSX.Element>,
+    children?: any,
 }
 
 interface State {
@@ -204,7 +204,7 @@ interface NavbarTabProps {
     type: "brand" | "tab",
 
     /** Your content (name of the tab) */
-    children: string,
+    children?: any,
 
     /** Link for the tab */
     link: string

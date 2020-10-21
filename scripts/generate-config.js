@@ -8,7 +8,6 @@ function ParseComponent(path, props_name, name) {
     let can_be_in = output.split("**Can be in:**")[1].split("\n")[0];
     can_be_in = can_be_in.replace("\r", "").replace(" ", "");
     can_be_in = can_be_in.split(", ");
-    console.log(can_be_in);
 
     output = output.split("\n");
 
@@ -125,7 +124,7 @@ result.components["a"] = {
     ],
     can_be_in: text_can_be_in
 }
-
+text_can_be_in.push("NavbarTab");
 result.components["Text"] = {
     props: [{
         "name": "children?",
