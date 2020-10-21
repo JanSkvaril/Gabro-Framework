@@ -108,18 +108,20 @@ class Navbar extends Component<Props, State> {
             tab: []
         };
 
-        // Filling the content object
-        this.props.children.forEach((component) => {
+        if ( !! this.props.children ) {
+            // Filling the content object
+            for (let i = 0; i < this.props.children?.length; i++) {
+                let component = this.props.children[i];
 
-            if (component.props.type === "brand") {
-                content.brand.push(component);
+                if (component.props.type === "brand") {
+                    content.brand.push(component);
+                }
+                else if (component.props.type === "tab") {
+                    content.tab.push(component);
+
+                }
             }
-            else if (component.props.type === "tab") {
-                content.tab.push(component);
-
-            }
-        });
-
+        }
 
         return (
             <div className="navbar" style={styles}>
@@ -168,10 +170,10 @@ interface Props {
     bg?: bg,
 
     /** Bgfilter propperty, e.g blue(5px) - will be only visible, when **bg** is partially transparent (e.g. rgba(250,250,250,0.5)) */
-    bgFilter: string,
+    bgFilter?: string,
 
     /** Your conent */
-    children: Array<JSX.Element>,
+    children?: Array<JSX.Element>,
 }
 
 interface State {
