@@ -103,7 +103,7 @@ class Navbar extends Component<Props, State> {
         }
 
         // Object with children components
-        let content : any = {
+        let content: any = {
             brand: [],
             tab: []
         };
@@ -119,15 +119,15 @@ class Navbar extends Component<Props, State> {
 
             }
         });
-        
+
 
         return (
-            <div className="navbar" style={ styles }>
+            <div className="navbar" style={styles}>
                 <div className="container">
-                    <Menu style={{ color: !! this.props.color ? this.props.color : "black" }} className="menu-icon desktop-hidden" onClick={ this.ToggleDrawer.bind(this) }/>
-                    
-                    { content.brand.Length != 0 ? <span className="brand-wrapper" style={{ color: !! this.props.color? this.props.color : "black" }}>{ content.brand }</span> : "" }
-                    { content.tab.Length != 0 ? <span className="tab-wrapper mobile-hidden" style={{ color: !! this.props.color? this.props.color : "black" }}>{ content.tab }</span> : "" }
+                    <Menu style={{ color: !!this.props.color ? this.props.color : "black" }} className="menu-icon desktop-hidden" onClick={this.ToggleDrawer.bind(this)} />
+
+                    {content.brand.Length != 0 ? <span className="brand-wrapper" style={{ color: !!this.props.color ? this.props.color : "black" }}>{content.brand}</span> : ""}
+                    {content.tab.Length != 0 ? <span className="tab-wrapper mobile-hidden" style={{ color: !!this.props.color ? this.props.color : "black" }}>{content.tab}</span> : ""}
                 </div>
 
                 <Drawer
@@ -140,23 +140,26 @@ class Navbar extends Component<Props, State> {
                             background: this.props.bg,
                             color: this.props.color,
                         }}
-                        >
+                    >
 
-                        { content.brand.Length != 0 ? <span onClick={ this.ToggleDrawer.bind(this) } className="brand-wrapper-mobile">{ content.brand }</span> : "" }
+                        {content.brand.Length != 0 ? <span onClick={this.ToggleDrawer.bind(this)} className="brand-wrapper-mobile">{content.brand}</span> : ""}
 
-                        { content.tab.Length != 0 ? <span onClick={ this.ToggleDrawer.bind(this) } className="tab-wrapper-mobile">{ content.tab }</span> : "" }
+                        {content.tab.Length != 0 ? <span onClick={this.ToggleDrawer.bind(this)} className="tab-wrapper-mobile">{content.tab}</span> : ""}
 
                     </div>
                 </Drawer>
-                
+
             </div>
         );
     }
 }
 
 interface Props {
+    /**
+    * **Can be in:** root
+    */
     /** If should be transparent when user scrolls to top of your website. */
-    trans?:     boolean,
+    trans?: boolean,
 
     /** Text color of the navbar. */
     color?: color,
@@ -181,25 +184,28 @@ interface State {
 
 export function NavbarTab(props: NavbarTabProps) {
     return (
-    <a className="navbar-tab-component" href={ !! props.link ? props.link : "#" } style={{ textDecoration: "none" }}>
-        <span className={ `navbar-${ props.type }` }>{ props.children }</span>
-    </a>
+        <a className="navbar-tab-component" href={!!props.link ? props.link : "#"} style={{ textDecoration: "none" }}>
+            <span className={`navbar-${props.type}`}>{props.children}</span>
+        </a>
     )
 }
 
 interface NavbarTabProps {
+    /**
+    * **Can be in:** Navbar
+    */
     /** Type of the tab. 
      * 
      * * `tab` - casual tab
      * * `brand` - place for your brand name or logo.
      */
-    type:       "brand" | "tab",
+    type: "brand" | "tab",
 
     /** Your content (name of the tab) */
-    children:   string,
+    children: string,
 
     /** Link for the tab */
-    link:       string
+    link: string
 }
 
 export default Navbar;

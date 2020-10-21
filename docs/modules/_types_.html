@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;Functions/Functions&quot; | @janskvaril/gabro-framework</title>
+	<title>&quot;Types&quot; | @janskvaril/gabro-framework</title>
 	<meta name="description" content="Documentation for @janskvaril/gabro-framework">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_functions_functions_.html">&quot;Functions/Functions&quot;</a>
+					<a href="_types_.html">&quot;Types&quot;</a>
 				</li>
 			</ul>
-			<h1>Module &quot;Functions/Functions&quot;</h1>
+			<h1>Module &quot;Types&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -68,14 +68,9 @@
 		<div class="col-8 col-content">
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<dl class="tsd-comment-tags">
-						<dt>file</dt>
-						<dd><p>Contains usefull functions</p>
-						</dd>
-						<dt>author</dt>
-						<dd><p>Jan Škvařil</p>
-						</dd>
-					</dl>
+					<div class="lead">
+						<p>Special types - mainly for Gabro Builder</p>
+					</div>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -83,48 +78,107 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Functions</h3>
+							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_functions_functions_.html#getimage" class="tsd-kind-icon">Get<wbr>Image</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_types_.html#bg" class="tsd-kind-icon">bg</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_types_.html#color" class="tsd-kind-icon">color</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_types_.html#filepath" class="tsd-kind-icon">file<wbr>Path</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_types_.html#numberofpixels" class="tsd-kind-icon">number<wbr>OfPixels</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_types_.html#richtext" class="tsd-kind-icon">rich<wbr>Text</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="getimage" class="tsd-anchor"></a>
-					<h3>Get<wbr>Image</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">Get<wbr>Image<span class="tsd-signature-symbol">(</span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/65b5751/src/Functions/Functions.tsx#L12">src/Functions/Functions.tsx:12</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>brief</dt>
-									<dd><p>Cretes &quot;url(path)&quot; string</p>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>path: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>path to file</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-						</li>
-					</ul>
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="bg" class="tsd-anchor"></a>
+					<h3>bg</h3>
+					<div class="tsd-signature tsd-kind-icon">bg<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/65b5751/src/Types.ts#L24">src/Types.ts:24</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Color/img of the background. You can enter:</p>
+						</div>
+						<ul>
+							<li>rgb value <code>&quot;rgb(15, 35, 69)&quot;</code></li>
+							<li>rgba value <code>&quot;rgba1(5, 35, 69, 0.5)&quot;</code></li>
+							<li>hex value <code>&quot;#584659&quot;</code></li>
+							<li>name of the color <code>&quot;pink&quot;</code></li>
+							<li>image source <code>{ GetImage(require(&#39;./path/to/img.jpg&#39;)) }</code></li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="color" class="tsd-anchor"></a>
+					<h3>color</h3>
+					<div class="tsd-signature tsd-kind-icon">color<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/65b5751/src/Types.ts#L13">src/Types.ts:13</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Color of the text or general color.</p>
+						</div>
+						<ul>
+							<li>rgb value <code>&quot;rgb(15, 35, 69)&quot;</code></li>
+							<li>rgba value <code>&quot;rgba(15, 35, 69, 0.5)&quot;</code></li>
+							<li>hex value <code>&quot;#584659&quot;</code></li>
+							<li>name of the color <code>&quot;pink&quot;</code></li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="filepath" class="tsd-anchor"></a>
+					<h3>file<wbr>Path</h3>
+					<div class="tsd-signature tsd-kind-icon">file<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/65b5751/src/Types.ts#L29">src/Types.ts:29</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Path to a file: <code>{ require(&quot;./myDir/myFile.file&quot;) }</code></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="numberofpixels" class="tsd-anchor"></a>
+					<h3>number<wbr>OfPixels</h3>
+					<div class="tsd-signature tsd-kind-icon">number<wbr>OfPixels<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/65b5751/src/Types.ts#L35">src/Types.ts:35</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Number of pixels: 120px - for props like height etc.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="richtext" class="tsd-anchor"></a>
+					<h3>rich<wbr>Text</h3>
+					<div class="tsd-signature tsd-kind-icon">rich<wbr>Text<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/65b5751/src/Types.ts#L32">src/Types.ts:32</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A lot of text <code>&quot;Lorem Ipsum dolor ...&quot;</code></p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -146,7 +200,7 @@
 					<li class=" tsd-kind-module">
 						<a href="_footer_footer_.html">&quot;<wbr>Footer/<wbr>Footer&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="_functions_functions_.html">&quot;<wbr>Functions/<wbr>Functions&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -170,7 +224,7 @@
 					<li class=" tsd-kind-module">
 						<a href="_snackmessages_snackmessages_.html">&quot;<wbr>Snack<wbr>Messages/<wbr>Snack<wbr>Messages&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="_types_.html">&quot;<wbr>Types&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -180,8 +234,20 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_functions_functions_.html#getimage" class="tsd-kind-icon">Get<wbr>Image</a>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_types_.html#bg" class="tsd-kind-icon">bg</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_types_.html#color" class="tsd-kind-icon">color</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_types_.html#filepath" class="tsd-kind-icon">file<wbr>Path</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_types_.html#numberofpixels" class="tsd-kind-icon">number<wbr>OfPixels</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_types_.html#richtext" class="tsd-kind-icon">rich<wbr>Text</a>
 					</li>
 				</ul>
 			</nav>

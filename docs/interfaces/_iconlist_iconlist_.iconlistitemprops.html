@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Props | @janskvaril/gabro-framework</title>
+	<title>IconListItemProps | @janskvaril/gabro-framework</title>
 	<meta name="description" content="Documentation for @janskvaril/gabro-framework">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_iconlist_expantionpanel_.html">&quot;IconList/ExpantionPanel&quot;</a>
+					<a href="../modules/_iconlist_iconlist_.html">&quot;IconList/IconList&quot;</a>
 				</li>
 				<li>
-					<a href="_iconlist_expantionpanel_.props.html">Props</a>
+					<a href="_iconlist_iconlist_.iconlistitemprops.html">IconListItemProps</a>
 				</li>
 			</ul>
-			<h1>Interface Props</h1>
+			<h1>Interface IconListItemProps</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Props</span>
+						<span class="target">IconListItemProps</span>
 					</li>
 				</ul>
 			</section>
@@ -84,8 +84,9 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_iconlist_expantionpanel_.props.html#children" class="tsd-kind-icon">children</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_iconlist_expantionpanel_.props.html#headline" class="tsd-kind-icon">headline</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_iconlist_iconlist_.iconlistitemprops.html#children" class="tsd-kind-icon">children</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_iconlist_iconlist_.iconlistitemprops.html#heading" class="tsd-kind-icon">heading</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_iconlist_iconlist_.iconlistitemprops.html#icon_path" class="tsd-kind-icon">icon_<wbr>path</a></li>
 							</ul>
 						</section>
 					</div>
@@ -95,31 +96,46 @@
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
 					<a name="children" class="tsd-anchor"></a>
-					<h3>children</h3>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> children</h3>
 					<div class="tsd-signature tsd-kind-icon">children<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/65b5751/src/IconList/ExpantionPanel.tsx#L56">src/IconList/ExpantionPanel.tsx:56</a></li>
+							<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/65b5751/src/IconList/IconList.tsx#L132">src/IconList/IconList.tsx:132</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>What will be displayed after expantion</p>
+							<p>Text, can be longer (about 1 - 2 paragrahps)</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="headline" class="tsd-anchor"></a>
-					<h3>headline</h3>
-					<div class="tsd-signature tsd-kind-icon">headline<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<a name="heading" class="tsd-anchor"></a>
+					<h3>heading</h3>
+					<div class="tsd-signature tsd-kind-icon">heading<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/65b5751/src/IconList/ExpantionPanel.tsx#L54">src/IconList/ExpantionPanel.tsx:54</a></li>
+							<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/65b5751/src/IconList/IconList.tsx#L130">src/IconList/IconList.tsx:130</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Allways displayed.</p>
+							<p>Simple and short heading</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="icon_path" class="tsd-anchor"></a>
+					<h3>icon_<wbr>path</h3>
+					<div class="tsd-signature tsd-kind-icon">icon_<wbr>path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/65b5751/src/IconList/IconList.tsx#L128">src/IconList/IconList.tsx:128</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Path to your icon (can be svg or any image format)</p>
 						</div>
 					</div>
 				</section>
@@ -146,10 +162,10 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_functions_functions_.html">&quot;<wbr>Functions/<wbr>Functions&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/_iconlist_expantionpanel_.html">&quot;<wbr>Icon<wbr>List/<wbr>Expantion<wbr>Panel&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/_iconlist_iconlist_.html">&quot;<wbr>Icon<wbr>List/<wbr>Icon<wbr>List&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -178,25 +194,34 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_iconlist_expantionpanel_.expantionpanel.html" class="tsd-kind-icon">Expantion<wbr>Panel</a>
+						<a href="../classes/_iconlist_iconlist_.iconlist.html" class="tsd-kind-icon">Icon<wbr>List</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_iconlist_expantionpanel_.props.html" class="tsd-kind-icon">Props</a>
+						<a href="_iconlist_iconlist_.iconlistitemprops.html" class="tsd-kind-icon">Icon<wbr>List<wbr>Item<wbr>Props</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_iconlist_expantionpanel_.props.html#children" class="tsd-kind-icon">children</a>
+								<a href="_iconlist_iconlist_.iconlistitemprops.html#children" class="tsd-kind-icon">children</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_iconlist_expantionpanel_.props.html#headline" class="tsd-kind-icon">headline</a>
+								<a href="_iconlist_iconlist_.iconlistitemprops.html#heading" class="tsd-kind-icon">heading</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="_iconlist_iconlist_.iconlistitemprops.html#icon_path" class="tsd-kind-icon">icon_<wbr>path</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_iconlist_expantionpanel_.state.html" class="tsd-kind-icon">State</a>
+						<a href="_iconlist_iconlist_.props.html" class="tsd-kind-icon">Props</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_iconlist_iconlist_.state.html" class="tsd-kind-icon">State</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_iconlist_iconlist_.html#iconlistitem" class="tsd-kind-icon">Icon<wbr>List<wbr>Item</a>
 					</li>
 				</ul>
 			</nav>

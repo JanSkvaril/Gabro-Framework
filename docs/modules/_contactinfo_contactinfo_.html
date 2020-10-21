@@ -73,16 +73,21 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported"><a href="../interfaces/_contactinfo_contactinfo_.emailprops.html" class="tsd-kind-icon">Email<wbr>Props</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported"><a href="../interfaces/_contactinfo_contactinfo_.phoneprops.html" class="tsd-kind-icon">Phone<wbr>Props</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported"><a href="../interfaces/_contactinfo_contactinfo_.placeprops.html" class="tsd-kind-icon">Place<wbr>Props</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported"><a href="../interfaces/_contactinfo_contactinfo_.props.html" class="tsd-kind-icon">Props</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported"><a href="../interfaces/_contactinfo_contactinfo_.socialprops.html" class="tsd-kind-icon">Social<wbr>Props</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_contactinfo_contactinfo_.html#contactemail" class="tsd-kind-icon">Contact<wbr>Email</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_contactinfo_contactinfo_.html#contactinfo" class="tsd-kind-icon">Contact<wbr>Info</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_contactinfo_contactinfo_.html#createcontactsections" class="tsd-kind-icon">create<wbr>Contact<wbr>Sections</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_contactinfo_contactinfo_.html#getphonenumberstring" class="tsd-kind-icon">get<wbr>Phone<wbr>Number<wbr>String</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_contactinfo_contactinfo_.html#wrapwithsectiontable" class="tsd-kind-icon">wrap<wbr>With<wbr>Section<wbr>Table</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_contactinfo_contactinfo_.html#contactphone" class="tsd-kind-icon">Contact<wbr>Phone</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_contactinfo_contactinfo_.html#contactplace" class="tsd-kind-icon">Contact<wbr>Place</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_contactinfo_contactinfo_.html#contactsocial" class="tsd-kind-icon">Contact<wbr>Social</a></li>
 							</ul>
 						</section>
 					</div>
@@ -90,6 +95,34 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="contactemail" class="tsd-anchor"></a>
+					<h3>Contact<wbr>Email</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">Contact<wbr>Email<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><a href="../interfaces/_contactinfo_contactinfo_.emailprops.html" class="tsd-signature-type">EmailProps</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/65b5751/src/ContactInfo/ContactInfo.tsx#L144">src/ContactInfo/ContactInfo.tsx:144</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>For displaying email address. Will envoke mail event of clients os on click</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>props: <a href="../interfaces/_contactinfo_contactinfo_.emailprops.html" class="tsd-signature-type">EmailProps</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Element</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="contactinfo" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> Contact<wbr>Info</h3>
@@ -100,7 +133,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/002030c/src/ContactInfo/ContactInfo.tsx#L59">src/ContactInfo/ContactInfo.tsx:59</a></li>
+									<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/65b5751/src/ContactInfo/ContactInfo.tsx#L24">src/ContactInfo/ContactInfo.tsx:24</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -109,20 +142,14 @@
 									<dd><p>Contact info is used for displaing things like phone numbers, emails, adressess etc.</p>
 									</dd>
 									<dt>version</dt>
-									<dd><p>2.3.0</p>
+									<dd><p>2.4.0</p>
 										<p><strong>Example</strong></p>
-										<pre><code class="language-jsx">&lt;ContactInfo
-      email={[
-          <span class="hljs-string">&quot;same_mail&quot;</span>,
-          <span class="hljs-string">&quot;different mail&quot;</span>
-      ]}
-      phone={[
-          {<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;Phone:&quot;</span>,<span class="hljs-attr">number</span>:<span class="hljs-string">&quot;777555777&quot;</span>},
-          {<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;Phone 2:&quot;</span>,<span class="hljs-attr">number</span>:<span class="hljs-string">&quot;777555777&quot;</span>}
-      ]}
-      place=<span class="hljs-string">&quot;Adress 123&quot;</span>
-      facebook=<span class="hljs-string">&quot;https://www.facebook.com/SameUrl&quot;</span>
-  /&gt;</code></pre>
+										<pre><code class="language-jsx"> &lt;ContactInfo&gt;
+     <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ContactPhone</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;Same Person&quot;</span> <span class="hljs-attr">number</span>=<span class="hljs-string">&quot;777 666 222&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;phone&quot;</span> /&gt;</span></span>
+     <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ContactPhone</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;Samone Else&quot;</span> <span class="hljs-attr">number</span>=<span class="hljs-string">&quot;666 888 777&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;mobile&quot;</span> /&gt;</span></span>
+     <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ContactEmail</span> <span class="hljs-attr">email</span>=<span class="hljs-string">&quot;emailaddress&quot;</span> /&gt;</span></span>
+     <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ContactSocial</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;facebook&quot;</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;https://googlemapsurl.com&quot;</span> /&gt;</span></span>
+ &lt;/ContactInfo&gt;</code></pre>
 									</dd>
 								</dl>
 							</div>
@@ -136,100 +163,88 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="createcontactsections" class="tsd-anchor"></a>
-					<h3>create<wbr>Contact<wbr>Sections</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Contact<wbr>Sections<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><a href="../interfaces/_card_card_.props.html" class="tsd-signature-type">Props</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">[]</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="contactphone" class="tsd-anchor"></a>
+					<h3>Contact<wbr>Phone</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">Contact<wbr>Phone<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><a href="../interfaces/_contactinfo_contactinfo_.phoneprops.html" class="tsd-signature-type">PhoneProps</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/002030c/src/ContactInfo/ContactInfo.tsx#L131">src/ContactInfo/ContactInfo.tsx:131</a></li>
+									<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/65b5751/src/ContactInfo/ContactInfo.tsx#L61">src/ContactInfo/ContactInfo.tsx:61</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Genertates all sections for contact info</p>
+									<p>For displaying phone number. Will envoke call event of clients os on click</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>props: <a href="../interfaces/_card_card_.props.html" class="tsd-signature-type">Props</a></h5>
+									<h5>props: <a href="../interfaces/_contactinfo_contactinfo_.phoneprops.html" class="tsd-signature-type">PhoneProps</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">[]</span></h4>
-							<p>all sections in one array</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Element</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="getphonenumberstring" class="tsd-anchor"></a>
-					<h3>get<wbr>Phone<wbr>Number<wbr>String</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Phone<wbr>Number<wbr>String<span class="tsd-signature-symbol">(</span>phone_number<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="contactplace" class="tsd-anchor"></a>
+					<h3>Contact<wbr>Place</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">Contact<wbr>Place<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><a href="../interfaces/_contactinfo_contactinfo_.placeprops.html" class="tsd-signature-type">PlaceProps</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/002030c/src/ContactInfo/ContactInfo.tsx#L14">src/ContactInfo/ContactInfo.tsx:14</a></li>
+									<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/65b5751/src/ContactInfo/ContactInfo.tsx#L176">src/ContactInfo/ContactInfo.tsx:176</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>brief</dt>
-									<dd><p>Creates react fragment from number and ads hard spaces between every 3 numbers</p>
-									</dd>
-								</dl>
+								<div class="lead">
+									<p>For displaying your address. If provided with <em>mapsUrl</em>, user can click on the address and it will redirect him to
+									google maps app (on mobile devices)</p>
+								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>phone_number: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>phone number in 111222333 format</p>
-									</div>
+									<h5>props: <a href="../interfaces/_contactinfo_contactinfo_.placeprops.html" class="tsd-signature-type">PlaceProps</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Element</span></h4>
-							<p>React.Fragment with phone number</p>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="wrapwithsectiontable" class="tsd-anchor"></a>
-					<h3>wrap<wbr>With<wbr>Section<wbr>Table</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">wrap<wbr>With<wbr>Section<wbr>Table<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="contactsocial" class="tsd-anchor"></a>
+					<h3>Contact<wbr>Social</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">Contact<wbr>Social<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><a href="../interfaces/_contactinfo_contactinfo_.socialprops.html" class="tsd-signature-type">SocialProps</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/002030c/src/ContactInfo/ContactInfo.tsx#L27">src/ContactInfo/ContactInfo.tsx:27</a></li>
+									<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/65b5751/src/ContactInfo/ContactInfo.tsx#L112">src/ContactInfo/ContactInfo.tsx:112</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>brief</dt>
-									<dd><p>Wraps data in table and contact-info-section div</p>
-									</dd>
-								</dl>
+								<div class="lead">
+									<p>For url of your social media page</p>
+								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>data: <span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">[]</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>rows, that should be wrapen in table</p>
-									</div>
+									<h5>props: <a href="../interfaces/_contactinfo_contactinfo_.socialprops.html" class="tsd-signature-type">SocialProps</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Element</span></h4>
-							<p>contact info section div containing table</p>
 						</li>
 					</ul>
 				</section>
@@ -260,7 +275,7 @@
 						<a href="_iconlist_expantionpanel_.html">&quot;<wbr>Icon<wbr>List/<wbr>Expantion<wbr>Panel&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="_iconlist_iconslist_.html">&quot;<wbr>Icon<wbr>List/<wbr>Icons<wbr>List&quot;</a>
+						<a href="_iconlist_iconlist_.html">&quot;<wbr>Icon<wbr>List/<wbr>Icon<wbr>List&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="_imagesection_imagesection_.html">&quot;<wbr>Image<wbr>Section/<wbr>Image<wbr>Section&quot;</a>
@@ -278,6 +293,9 @@
 						<a href="_snackmessages_snackmessages_.html">&quot;<wbr>Snack<wbr>Messages/<wbr>Snack<wbr>Messages&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="_types_.html">&quot;<wbr>Types&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="_index_.html">&quot;index&quot;</a>
 					</li>
 				</ul>
@@ -285,19 +303,34 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../interfaces/_contactinfo_contactinfo_.emailprops.html" class="tsd-kind-icon">Email<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../interfaces/_contactinfo_contactinfo_.phoneprops.html" class="tsd-kind-icon">Phone<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../interfaces/_contactinfo_contactinfo_.placeprops.html" class="tsd-kind-icon">Place<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
 						<a href="../interfaces/_contactinfo_contactinfo_.props.html" class="tsd-kind-icon">Props</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../interfaces/_contactinfo_contactinfo_.socialprops.html" class="tsd-kind-icon">Social<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_contactinfo_contactinfo_.html#contactemail" class="tsd-kind-icon">Contact<wbr>Email</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_contactinfo_contactinfo_.html#contactinfo" class="tsd-kind-icon">Contact<wbr>Info</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_contactinfo_contactinfo_.html#createcontactsections" class="tsd-kind-icon">create<wbr>Contact<wbr>Sections</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_contactinfo_contactinfo_.html#contactphone" class="tsd-kind-icon">Contact<wbr>Phone</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_contactinfo_contactinfo_.html#getphonenumberstring" class="tsd-kind-icon">get<wbr>Phone<wbr>Number<wbr>String</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_contactinfo_contactinfo_.html#contactplace" class="tsd-kind-icon">Contact<wbr>Place</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_contactinfo_contactinfo_.html#wrapwithsectiontable" class="tsd-kind-icon">wrap<wbr>With<wbr>Section<wbr>Table</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_contactinfo_contactinfo_.html#contactsocial" class="tsd-kind-icon">Contact<wbr>Social</a>
 					</li>
 				</ul>
 			</nav>
@@ -310,6 +343,7 @@
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

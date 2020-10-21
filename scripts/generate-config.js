@@ -48,7 +48,7 @@ components.push(ParseComponent('./src/Section/Section.tsx', "interface PartProps
 components.push(ParseComponent('./src/Section/Section.tsx', "interface PartProps {", "Half"));
 components.push(ParseComponent('./src/Section/Section.tsx', "interface Props {", "Section"));
 components.push(ParseComponent('./src/Navbar/Navbar.tsx', "interface Props {", "Navbar"));
-components.push(ParseComponent('./src/Navbar/Navbar.tsx', "interface NavbarLinkProps {", "NavbarLink"));
+components.push(ParseComponent('./src/Navbar/Navbar.tsx', "interface NavbarTabProps {", "NavbarTab"));
 components.push(ParseComponent('./src/Footer/Footer.tsx', "interface Props {", "Footer"));
 components.push(ParseComponent('./src/Card/Card.tsx', "interface Props {", "Card"));
 components.push(ParseComponent('./src/ContactForm/ContactForm.tsx', "interface Props {", "ContactForm"));

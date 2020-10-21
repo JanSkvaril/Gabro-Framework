@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Props | @janskvaril/gabro-framework</title>
+	<title>PhoneProps | @janskvaril/gabro-framework</title>
 	<meta name="description" content="Documentation for @janskvaril/gabro-framework">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_iconlist_iconslist_.html">&quot;IconList/IconsList&quot;</a>
+					<a href="../modules/_contactinfo_contactinfo_.html">&quot;ContactInfo/ContactInfo&quot;</a>
 				</li>
 				<li>
-					<a href="_iconlist_iconslist_.props.html">Props</a>
+					<a href="_contactinfo_contactinfo_.phoneprops.html">PhoneProps</a>
 				</li>
 			</ul>
-			<h1>Interface Props</h1>
+			<h1>Interface PhoneProps</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Props</span>
+						<span class="target">PhoneProps</span>
 					</li>
 				</ul>
 			</section>
@@ -84,7 +84,9 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_iconlist_iconslist_.props.html#data" class="tsd-kind-icon">data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_contactinfo_contactinfo_.phoneprops.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_contactinfo_contactinfo_.phoneprops.html#number" class="tsd-kind-icon">number</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_contactinfo_contactinfo_.phoneprops.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
 						</section>
 					</div>
@@ -93,17 +95,47 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="data" class="tsd-anchor"></a>
-					<h3>data</h3>
-					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <a href="../classes/_iconlist_iconslist_.iconlistitem.html" class="tsd-signature-type">IconListItem</a><span class="tsd-signature-symbol">[]</span></div>
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/002030c/src/IconList/IconsList.tsx#L120">src/IconList/IconsList.tsx:120</a></li>
+							<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/65b5751/src/ContactInfo/ContactInfo.tsx#L103">src/ContactInfo/ContactInfo.tsx:103</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Array of IconListItem objects. Check example for more information</p>
+							<p>Name of person/department coresponding to the number. Should not be long</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="number" class="tsd-anchor"></a>
+					<h3>number</h3>
+					<div class="tsd-signature tsd-kind-icon">number<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/65b5751/src/ContactInfo/ContactInfo.tsx#L105">src/ContactInfo/ContactInfo.tsx:105</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Phone/Mobile number in any format</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="type" class="tsd-anchor"></a>
+					<h3>type</h3>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"phone"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"mobile"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/65b5751/src/ContactInfo/ContactInfo.tsx#L107">src/ContactInfo/ContactInfo.tsx:107</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Icon displayed (phone or mobile)</p>
 						</div>
 					</div>
 				</section>
@@ -121,7 +153,7 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_contactform_contactform_.html">&quot;<wbr>Contact<wbr>Form/<wbr>Contact<wbr>Form&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/_contactinfo_contactinfo_.html">&quot;<wbr>Contact<wbr>Info/<wbr>Contact<wbr>Info&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -133,8 +165,8 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_iconlist_expantionpanel_.html">&quot;<wbr>Icon<wbr>List/<wbr>Expantion<wbr>Panel&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
-						<a href="../modules/_iconlist_iconslist_.html">&quot;<wbr>Icon<wbr>List/<wbr>Icons<wbr>List&quot;</a>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_iconlist_iconlist_.html">&quot;<wbr>Icon<wbr>List/<wbr>Icon<wbr>List&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/_imagesection_imagesection_.html">&quot;<wbr>Image<wbr>Section/<wbr>Image<wbr>Section&quot;</a>
@@ -152,32 +184,59 @@
 						<a href="../modules/_snackmessages_snackmessages_.html">&quot;<wbr>Snack<wbr>Messages/<wbr>Snack<wbr>Messages&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="../modules/_types_.html">&quot;<wbr>Types&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="../modules/_index_.html">&quot;index&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_iconlist_iconslist_.iconlist.html" class="tsd-kind-icon">Icon<wbr>List</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/_iconlist_iconslist_.iconlistitem.html" class="tsd-kind-icon">Icon<wbr>List<wbr>Item</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_contactinfo_contactinfo_.emailprops.html" class="tsd-kind-icon">Email<wbr>Props</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_iconlist_iconslist_.props.html" class="tsd-kind-icon">Props</a>
+						<a href="_contactinfo_contactinfo_.phoneprops.html" class="tsd-kind-icon">Phone<wbr>Props</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_iconlist_iconslist_.props.html#data" class="tsd-kind-icon">data</a>
+								<a href="_contactinfo_contactinfo_.phoneprops.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="_contactinfo_contactinfo_.phoneprops.html#number" class="tsd-kind-icon">number</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="_contactinfo_contactinfo_.phoneprops.html#type" class="tsd-kind-icon">type</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_iconlist_iconslist_.state.html" class="tsd-kind-icon">State</a>
+						<a href="_contactinfo_contactinfo_.placeprops.html" class="tsd-kind-icon">Place<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_contactinfo_contactinfo_.props.html" class="tsd-kind-icon">Props</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_contactinfo_contactinfo_.socialprops.html" class="tsd-kind-icon">Social<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_contactinfo_contactinfo_.html#contactemail" class="tsd-kind-icon">Contact<wbr>Email</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_contactinfo_contactinfo_.html#contactinfo" class="tsd-kind-icon">Contact<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_contactinfo_contactinfo_.html#contactphone" class="tsd-kind-icon">Contact<wbr>Phone</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_contactinfo_contactinfo_.html#contactplace" class="tsd-kind-icon">Contact<wbr>Place</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_contactinfo_contactinfo_.html#contactsocial" class="tsd-kind-icon">Contact<wbr>Social</a>
 					</li>
 				</ul>
 			</nav>
@@ -189,11 +248,12 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

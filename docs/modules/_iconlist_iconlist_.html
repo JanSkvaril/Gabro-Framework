@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;Functions/Functions&quot; | @janskvaril/gabro-framework</title>
+	<title>&quot;IconList/IconList&quot; | @janskvaril/gabro-framework</title>
 	<meta name="description" content="Documentation for @janskvaril/gabro-framework">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,36 +56,38 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_functions_functions_.html">&quot;Functions/Functions&quot;</a>
+					<a href="_iconlist_iconlist_.html">&quot;IconList/IconList&quot;</a>
 				</li>
 			</ul>
-			<h1>Module &quot;Functions/Functions&quot;</h1>
+			<h1>Module &quot;IconList/IconList&quot;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<dl class="tsd-comment-tags">
-						<dt>file</dt>
-						<dd><p>Contains usefull functions</p>
-						</dd>
-						<dt>author</dt>
-						<dd><p>Jan Škvařil</p>
-						</dd>
-					</dl>
-				</div>
-			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Classes</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/_iconlist_iconlist_.iconlist.html" class="tsd-kind-icon">Icon<wbr>List</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported"><a href="../interfaces/_iconlist_iconlist_.iconlistitemprops.html" class="tsd-kind-icon">Icon<wbr>List<wbr>Item<wbr>Props</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported"><a href="../interfaces/_iconlist_iconlist_.props.html" class="tsd-kind-icon">Props</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported"><a href="../interfaces/_iconlist_iconlist_.state.html" class="tsd-kind-icon">State</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_functions_functions_.html#getimage" class="tsd-kind-icon">Get<wbr>Image</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_iconlist_iconlist_.html#iconlistitem" class="tsd-kind-icon">Icon<wbr>List<wbr>Item</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,35 +96,30 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="getimage" class="tsd-anchor"></a>
-					<h3>Get<wbr>Image</h3>
+					<a name="iconlistitem" class="tsd-anchor"></a>
+					<h3>Icon<wbr>List<wbr>Item</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">Get<wbr>Image<span class="tsd-signature-symbol">(</span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">Icon<wbr>List<wbr>Item<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><a href="../interfaces/_iconlist_iconlist_.iconlistitemprops.html" class="tsd-signature-type">IconListItemProps</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/65b5751/src/Functions/Functions.tsx#L12">src/Functions/Functions.tsx:12</a></li>
+									<li>Defined in <a href="https://github.com/JanSkvaril/Gabro-Framework/blob/65b5751/src/IconList/IconList.tsx#L102">src/IconList/IconList.tsx:102</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>brief</dt>
-									<dd><p>Cretes &quot;url(path)&quot; string</p>
-									</dd>
-								</dl>
+								<div class="lead">
+									<p>One item of icon list. Must constain <strong>heading</strong>, <strong>icon_path</strong> path and **text</p>
+								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>path: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>path to file</p>
-									</div>
+									<h5>props: <a href="../interfaces/_iconlist_iconlist_.iconlistitemprops.html" class="tsd-signature-type">IconListItemProps</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Element</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -146,13 +143,13 @@
 					<li class=" tsd-kind-module">
 						<a href="_footer_footer_.html">&quot;<wbr>Footer/<wbr>Footer&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="_functions_functions_.html">&quot;<wbr>Functions/<wbr>Functions&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="_iconlist_expantionpanel_.html">&quot;<wbr>Icon<wbr>List/<wbr>Expantion<wbr>Panel&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="_iconlist_iconlist_.html">&quot;<wbr>Icon<wbr>List/<wbr>Icon<wbr>List&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -180,8 +177,20 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_iconlist_iconlist_.iconlist.html" class="tsd-kind-icon">Icon<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../interfaces/_iconlist_iconlist_.iconlistitemprops.html" class="tsd-kind-icon">Icon<wbr>List<wbr>Item<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../interfaces/_iconlist_iconlist_.props.html" class="tsd-kind-icon">Props</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../interfaces/_iconlist_iconlist_.state.html" class="tsd-kind-icon">State</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_functions_functions_.html#getimage" class="tsd-kind-icon">Get<wbr>Image</a>
+						<a href="_iconlist_iconlist_.html#iconlistitem" class="tsd-kind-icon">Icon<wbr>List<wbr>Item</a>
 					</li>
 				</ul>
 			</nav>

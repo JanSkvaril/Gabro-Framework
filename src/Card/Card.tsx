@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { bg, color, numberOfPixels } from '../Types';
+import { bg, color, filePath, numberOfPixels } from '../Types';
 import './Card.scss';
 
 /**
