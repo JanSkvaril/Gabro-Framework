@@ -8,6 +8,7 @@ import React from 'react';
 import { IconButton } from '@material-ui/core';
 import { KeyboardArrowDown } from '@material-ui/icons';
 import './LandingPage.scss';
+import { bg, color, filePath } from '../Types';
 
 /**
  * @brief The landing page component.
@@ -249,7 +250,7 @@ interface Props {
      * It is a **standard prop** - this prop apply to every version of the landing page.
      * 
     */
-    bg?: string,
+    bg?: bg,
 
     /** 
      * **Color of the text** in the text section. This color will be applied on every text in the section. 
@@ -265,7 +266,7 @@ interface Props {
      * </LandingPage> 
      * ```
     */
-    color?: string,
+    color?: color,
 
     /** 
      * CSS value for `background-size`.
@@ -294,22 +295,24 @@ interface Props {
      * **Position of the text** section on the landing page. 
      * 
      * It is a **standard prop** - this prop apply to every version of the landing page.
+     * 
+     * ! `center` is only **available in the v1 Landing Page**!
     */
-    orientation?: "left" | "right",
+    orientation: "left" | "right" | "center",
 
     /** 
      * **Color** of the scroll down **icon**. 
      * 
      * It is a **standard prop** - this prop apply to every version of the landing page.
     */
-    iconColor?: string,
+    iconColor?: color,
 
     /** 
      * **Color** of the **block**. 
      * 
      * This props is avalilable for these versions: v3.
     */
-    blockColor?: string,
+    blockColor?: color,
 
     /** 
      * **Orientation of the block** - when `blockShape=crossed`, should the wider side be on top or bottom? 
@@ -350,7 +353,8 @@ interface Props {
      */
     orientationMobile?: "top" | "bot",
 
-    img?: string,
+    /** Image for the v2. */
+    img?: filePath,
 
     /**Your custom classnames. */
     className?: string,

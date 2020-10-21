@@ -5,6 +5,7 @@
  */
 
 import React from 'react';
+import { bg, color, numberOfPixels } from '../Types';
 import './Card.scss';
 
 /**
@@ -23,7 +24,7 @@ import './Card.scss';
  *   conColor="black"
  *   headline="služby"
  *   height="310px"
- *   icon={<YourIcon />}>
+ *   icon={require("./your_icon.svg")}>
  *       Content
  * 
  *  </Card>
@@ -31,34 +32,34 @@ import './Card.scss';
  */
 function Card(props: Props): JSX.Element {
     let styles = {
-        boxShadow:          !!props.shadow      ? "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)"    : "none",
-        height:             !!props.height      ? props.height                                                  : "310px",
-        backdropFilter:     !!props.bgFilter    ? props.bgFilter                                                : "",
+        boxShadow: !!props.shadow ? "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)" : "none",
+        height: !!props.height ? props.height : "310px",
+        backdropFilter: !!props.bgFilter ? props.bgFilter : "",
     };
 
     // Styles for icon
     let iconStyles = {
-        background:         (!!props.iconBg     ? props.iconBg      : "transparent") + " center",
-        backgroundSize:     "cover",
-        color:              !!props.iconColor    ? props.iconColor   : "#000000",
+        background: (!!props.iconBg ? props.iconBg : "transparent") + " center",
+        backgroundSize: "cover",
+        color: !!props.iconColor ? props.iconColor : "#000000",
         //border between icon and content
-        borderBottom:       !!props.divBorder   ? props.divBorder   : "2px solid"
+        borderBottom: !!props.divBorder ? props.divBorder : "2px solid"
     }
 
     let onlyIconStyles = {
-        fill:              !!props.iconColor    ? props.iconColor   : "#000000",
+        fill: !!props.iconColor ? props.iconColor : "#000000",
     }
 
     let contentStyles = {
-        background:         !!props.conBg       ? props.conBg       : "#ffffff",
-        color:              !!props.conColor    ? props.conColor    : "#000000",
+        background: !!props.conBg ? props.conBg : "#ffffff",
+        color: !!props.conColor ? props.conColor : "#000000",
     }
     return (
         <div className={`card ${!!props.className ? props.className : ""}`} style={styles} id={!!props.id ? props.id : ""}>
             <div className="icon-holder" style={iconStyles}>
                 <div>
-                    <span className="icon" style={ onlyIconStyles }>
-                        { props.icon }
+                    <span className="icon" style={onlyIconStyles}>
+                        <img src={props.icon} />
                     </span>
                 </div>
                 <h2>
@@ -78,34 +79,28 @@ interface Props {
     * **Can be in:** Full, Half, Row
     */
     /** If shadow around the card should be displayed */
-    shadow?:    string,
+    shadow?: string,
     /** Height of the card */
-    height?:    string,
+    height?: numberOfPixels,
     /** Backdrop-filter attribute for the card (e.g blur(5px)) */
-    bgFilter?:  string,
+    bgFilter?: string,
     /** Background (color, image, gradient) for upper part of the card */
-    iconBg?:    string,
+    iconBg?: bg,
     /** Color of the icon */
-    iconColor?: string,
+    iconColor?: color,
     /** Dividing line between first and second half part of the card (e.g "none", "2px solid black,...") */
     divBorder?: string,
     /** Background (color, image, gradient) of content (bottom) part of the card */
-    conBg?:     string,
+    conBg?: bg,
     /** Color of the text in content (bottom) part of the card */
-    conColor?:  string,
-    /** svg or img component. Will be displayed in upper part of the card
-     *  
-     * **Example import:**
-     * ```jsx
-     * import {ReactComponent as YourIcon} from './path/your_icon.svg'
-     *  ```
-    */
-    icon?:      JSX.Element,
+    conColor?: color,
+    /** Path to your icon (in svg or any image format) */
+    icon?: filePath,
     /** Headline displayed in icon part, will have same color as icon (iconColor prop) */
-    headline?:  string,
+    headline?: string,
 
-    children?:  any,
-    id?:        string,
+    children?: any,
+    id?: string,
     className?: string,
 };
 
