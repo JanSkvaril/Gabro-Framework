@@ -31,6 +31,9 @@ export type filePath = string;
 /** A lot of text `"Lorem Ipsum dolor ..."` */
 export type richText = string;
 
+/** Number of pixels: 120px - for props like height etc. */
+export type numberOfPixels = string;
+
 
 
 

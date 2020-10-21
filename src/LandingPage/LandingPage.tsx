@@ -295,8 +295,10 @@ interface Props {
      * **Position of the text** section on the landing page. 
      * 
      * It is a **standard prop** - this prop apply to every version of the landing page.
+     * 
+     * ! `center` is only **available in the v1 Landing Page**!
     */
-    orientation: "left" | "right",
+    orientation: "left" | "right" | "center",
 
     /** 
      * **Color** of the scroll down **icon**. 

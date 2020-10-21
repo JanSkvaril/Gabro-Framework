@@ -326,13 +326,13 @@ interface Props {
    * 
    * @default false
    */
-  parallax: boolean,
+  parallax?: boolean,
 
   /** If entered, image will be end to end on smaller screens. Currently available only in **version 2**. 
    * 
    * @default false
   */
-  imgEndToEndPhone: boolean,
+  imgEndToEndPhone?: boolean,
 
   /** Available in **version 2**. It creates transition between the text section and image section.
    * 
@@ -340,7 +340,7 @@ interface Props {
    * * `beleved-top` - wider part is on the top.
    * * `beleved-bot` - wider parth is on the bottom.
    */
-  block: string
+  block?: string
 }
 
 export default ImageSection;

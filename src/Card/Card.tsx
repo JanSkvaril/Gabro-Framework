@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { bg, color, filePath } from '../Types';
+import { bg, color, numberOfPixels } from '../Types';
 import './Card.scss';
 
 /**
@@ -81,7 +81,7 @@ interface Props {
     /** If shadow around the card should be displayed */
     shadow?: string,
     /** Height of the card */
-    height?: string,
+    height?: numberOfPixels,
     /** Backdrop-filter attribute for the card (e.g blur(5px)) */
     bgFilter?: string,
     /** Background (color, image, gradient) for upper part of the card */
