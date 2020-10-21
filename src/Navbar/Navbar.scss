@@ -1,134 +1,108 @@
 .navbar {
-    $break-point: 700px;
+    position: fixed;
+    $break-point: 800px;
+    height: 20px;
 
-
-    width: 100vw;
     transition: top 0.4s, background 0.4s;
-    // background-color: $secondary;
-    height: 50px;
     z-index: 10;
-    left: 0px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
 
-    .navbar-link {
-        margin: 10px;
-        display: block;
-        width: 100%;
-
-
+    @media screen and (max-width: $break-point) {
+        height: 25px;
+    }
+    
+    .desktop-hidden {
         @media screen and (min-width: $break-point) {
-            text-decoration: none !important;
-            display: inline-block;
-            width: auto;
+            visibility: hidden;
+            display: none;
+        }
+    }
+
+    .mobile-hidden {
+        @media screen and (max-width: $break-point) {
+            visibility: hidden;
+            display: none;
         }
     }
 
     .container {
+        width: 95%;
+        display: flex;
+        justify-content: space-between;
 
+        @media screen and (max-width: $break-point) {
+            justify-content: initial;
+            justify-content: flex-end;
 
-        .heading {
-            position: absolute;
-            display: inline-block;
-            font-size: 20px;
-            left: 20px;
-            top: 50%;
-            transform: translate(0%, -50%);
+            .menu-icon {
+                left: 20px;
+                position: absolute;
+            }
 
-            a {
-                text-decoration: none;
-                // color: rgb(177, 39, 39);
+            .brand-wrapper {
+                margin-top: 2.5px;
+                margin-right: 22px;
             }
         }
 
-        .navigation {
-            position: absolute;
+        .brand-wrapper {
+            display: flex;
+            align-items: center;
+            margin-top: 2.5px;
+            
+            .navbar-tab-component {
+                color: inherit;
 
-            right: 25px;
-            top: 50%;
-            transform: translate(0%, -50%);
-
-            .menuButtons {
-                display: none;
-
-                @media screen and (min-width: $break-point) {
-                    display: inline-block;
-                }
-            }
-
-            .menuButton {
-                display: inline-block;
-
-                @media screen and (min-width: $break-point) {
-
-                    display: none;
+                .navbar-brand {
+                    margin: 0 15x;
+                    font-size: 1.2em;
                 }
             }
         }
-    }
+        .tab-wrapper {
+            .navbar-tab-component {
+                color: inherit;
 
-
-
-}
-
-.navbar.v1 {
-    position: fixed;
-    height: 50px;
-}
-
-.navbar.v2 {
-    position: absolute;
-    width: 100%;
-    height: 100px;
-    font-size: 50px;
-
-    .heading {
-        left: 15px;
-
-
-        a {
-            border-right: 3px solid;
-
-            padding-right: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 20px;
-
-            @media screen and (min-width: 700px) {
-
-                font-size: 40px;
+                .navbar-tab {
+                    margin: 0 15px;
+                    font-size: 1.1em;
+                }
             }
-
-            transition-duration: 0.4s;
-        }
-
-        a:hover {
-            transition-duration: 0.4s;
-            background-color: rgba(0, 0, 0, 0.15);
-
-        }
-    }
-
-    .navigation {
-        @media screen and (min-width: 800px) {
-            right: 50%;
-            transform: translate(+50%, -50%);
-        }
-
-
-        a {
-            font-size: 15px;
-
-            @media screen and (min-width: 700px) {
-                font-weight: bold;
-                font-size: 20px;
-            }
-
-
+            
         }
     }
 }
 
-.drawerBg {
+.drawer-bg {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
 
+    .brand-wrapper-mobile {
+        display: flex;
+
+        .navbar-tab-component {
+            margin: 30px;
+            margin-top: 40px;
+            font-size: 1em;
+            width: 100%;
+            color: inherit;
+        }
+    }
+
+    .tab-wrapper-mobile {
+        display: flex;
+        flex-direction: column;
+
+        .navbar-tab-component {
+            margin: 14px 30px;
+            font-size: 0.9em;
+            color: inherit;
+        }
+    }
 }

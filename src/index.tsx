@@ -1,5 +1,5 @@
 import Navbar, {
-    NavbarLink
+    NavbarTab,
 } from './Navbar/Navbar';
 import Card from './Card/Card';
 import ContactForm from './ContactForm/ContactForm';
@@ -37,7 +37,7 @@ export {
     Section,
     SnackMessages,
     ImageSection,
-    NavbarLink,
+    NavbarTab,
 
     ContactEmail,
     ContactPhone,
