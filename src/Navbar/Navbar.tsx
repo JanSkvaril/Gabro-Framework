@@ -15,19 +15,14 @@ import { color, bg } from '../Types';
  *
  * **Example**
  * ```jsx
- *   <Navbar
- *       version="v1"
- *       color="#ff12aa"
- *       txtColor="black"
- *       trans={true}
- *       title="Your tittle"
- *       menu={
- *       [
- *           { text: "About us", link: "#about_us" },
- *           { text: "Services", link: "#services" },
- *           { text: "Contact", link: "#contact" }
- *       ]
- *       } />
+ *   import { Navbar, NavbarTab } from 'gabro-framework';
+ * 
+ *  <Navbar bg="#4d2def" color="white" trans>
+        *       <NavbarTab type="brand" link="#">BRAND</NavbarTab>
+        *       <NavbarTab type="tab" link="#about">ABOUT</NavbarTab>
+        *       <NavbarTab type="tab" link="#help">HELP</NavbarTab>
+        *       <NavbarTab type="tab" link="#foo">FOO</NavbarTab>
+    </Navbar>
  *   ```
  */
 class Navbar extends Component<Props, State> {
