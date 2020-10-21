@@ -122,7 +122,7 @@ result.components["a"] = {
             "type": "string"
         }
     ],
-    can_be_in: text_can_be_in
+    can_be_in: [...text_can_be_in]
 }
 text_can_be_in.push("NavbarTab");
 result.components["Text"] = {
@@ -130,7 +130,7 @@ result.components["Text"] = {
         "name": "children?",
         "type": "ritch"
     }],
-    can_be_in: text_can_be_in
+    can_be_in: [...text_can_be_in]
 }
 
 fs.writeFile("./GabroConfig.json", JSON.stringify(result), (e) => {
