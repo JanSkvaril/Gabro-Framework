@@ -160,35 +160,19 @@ class Navbar extends Component<Props, State> {
 }
 
 interface Props {
-    /**
-   * **Can be in:** root
-   */
-    /** If should be transparent when user scrolls to top of your website */
-    trans?: boolean,
-    /** Text color of the navbar */
+    /** If should be transparent when user scrolls to top of your website. */
+    trans?:     boolean,
+
+    /** Text color of the navbar. */
     color?: color,
+
+    /** Background of the navbar. */
     bg?: bg,
-    /**
-    * Array of objects, containing text - text displayed and link - anchor where should website scroll to on click
-    * 
-    * **Example:**
-    * ```jsx
-    * menu={
-    *       [
-    *           { text: "About us", link: "#about_us" },
-    *           { text: "Services", link: "#services" },
-    *           { text: "Contact", link: "#contact" }
-    *       ]
-    *  ```
-     */
-    menu: { text: string, link: string }[],
-    /** Version of your navbar. TODO: add more documentation */
-    version: "v1" | "v2",
-    /** Tittle of your website (e.g. name of your company) */
-    title: string,
-    /** Bgfilter propperty, e.g blue(5px) - will be only visible, when **color** is partially transparent (e.g. rgba(250,250,250,0.5)) */
+
+    /** Bgfilter propperty, e.g blue(5px) - will be only visible, when **bg** is partially transparent (e.g. rgba(250,250,250,0.5)) */
     bgFilter: string,
 
+    /** Your conent */
     children: Array<JSX.Element>,
 }
 
@@ -209,8 +193,17 @@ export function NavbarTab(props: NavbarTabProps) {
 }
 
 interface NavbarTabProps {
+    /** Type of the tab. 
+     * 
+     * * `tab` - casual tab
+     * * `brand` - place for your brand name or logo.
+     */
     type:       "brand" | "tab",
+
+    /** Your content (name of the tab) */
     children:   string,
+
+    /** Link for the tab */
     link:       string
 }
 
