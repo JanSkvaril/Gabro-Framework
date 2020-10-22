@@ -6,6 +6,7 @@
 
 import React from 'react';
 import { bg, color, filePath, numberOfPixels } from '../Types';
+import { ReactSVG } from 'react-svg'
 import './Card.scss';
 
 /**
@@ -59,7 +60,7 @@ function Card(props: Props): JSX.Element {
             <div className="icon-holder" style={iconStyles}>
                 <div>
                     <span className="icon" style={onlyIconStyles}>
-                        <img src={props.icon} />
+                        <ReactSVG src={props.icon || ""} />
                     </span>
                 </div>
                 <h2>
