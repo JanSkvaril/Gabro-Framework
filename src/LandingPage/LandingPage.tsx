@@ -44,8 +44,7 @@ const LandingPage = (props: Props) => {
     let container_styles = {
         boxShadow: !!props.shadow ? "0px 0px 77px -16px rgba(0,0,0,0.75)" : "none",
         background: props.bg ? props.bg : "#407BFF",
-        backgroundSize: props.bgSize ? props.bgSize : "cover",
-        zIndex: !!props.shadow ? 5 : -1
+        backgroundSize: props.bgSize ? props.bgSize : "cover"
     }
 
     /** **Styles** for the **text section**. */
@@ -177,13 +176,20 @@ const LandingPage = (props: Props) => {
         scrollDownIcon
     ]
 
+      // Object with versions
+    let versions = {
+        v1: v1,
+        v2: v2,
+        v3: v3
+    }
+
     return (
         <div
             className={generateClassesStr(["landing-page", !!props.version ? props.version + "_landing_page" : "v1_landing_page", !!props.className ? props.className : ""])}
             style={container_styles}
             id={`landing-page ${!!props.id ? props.id : ""}`}>
 
-            {props.version ? eval(props.version) : v1}
+            { props.version ? versions[props.version] : v1 }
 
         </div>
     );
