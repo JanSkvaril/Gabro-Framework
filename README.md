@@ -20,7 +20,7 @@ MIT
 We also develop a simple app for creating websites using this framework: [Gabro-Builder](https://github.com/JanSkvaril/Gabro-Builder). 
 
 ## Installition
-TODO
+`npm install @janskvaril/gabro-framework`
 
 ### Basic usage
 Import any components you want to use:
