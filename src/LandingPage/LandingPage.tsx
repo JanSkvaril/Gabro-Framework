@@ -176,13 +176,20 @@ const LandingPage = (props: Props) => {
         scrollDownIcon
     ]
 
+      // Object with versions
+    let versions = {
+        v1: v1,
+        v2: v2,
+        v3: v3
+    }
+
     return (
         <div
             className={generateClassesStr(["landing-page", !!props.version ? props.version + "_landing_page" : "v1_landing_page", !!props.className ? props.className : ""])}
             style={container_styles}
             id={`landing-page ${!!props.id ? props.id : ""}`}>
 
-            {props.version ? eval(props.version) : v1}
+            { props.version ? versions[props.version] : v1 }
 
         </div>
     );
