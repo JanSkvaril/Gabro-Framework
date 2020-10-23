@@ -67,6 +67,10 @@
 				<a href="#gabro-framework" id="gabro-framework" style="color: inherit; text-decoration: none;">
 					<h1>Gabro Framework</h1>
 				</a>
+				<a href="#⬇️-please-read-this-⬇️" id="⬇️-please-read-this-⬇️" style="color: inherit; text-decoration: none;">
+					<h2>⬇️ Please read this ⬇️</h2>
+				</a>
+				<p>Please keep in mind that, this project is in early development.</p>
 				<a href="#introduction" id="introduction" style="color: inherit; text-decoration: none;">
 					<h2>Introduction</h2>
 				</a>
@@ -85,12 +89,35 @@
 					<h3>Licence</h3>
 				</a>
 				<p>MIT</p>
+				<a href="#gabro-builder" id="gabro-builder" style="color: inherit; text-decoration: none;">
+					<h2>Gabro-Builder</h2>
+				</a>
+				<p>We also develop a simple app for creating websites using this framework: <a href="https://github.com/JanSkvaril/Gabro-Builder">Gabro-Builder</a>. </p>
 				<a href="#installition" id="installition" style="color: inherit; text-decoration: none;">
 					<h2>Installition</h2>
 				</a>
+				<p>TODO</p>
 				<a href="#basic-usage" id="basic-usage" style="color: inherit; text-decoration: none;">
 					<h3>Basic usage</h3>
 				</a>
+				<p>Import any components you want to use:</p>
+				<pre><code class="language-jsx"><span class="hljs-keyword">import</span> {
+  <span class="hljs-comment">//Here write components you want to use</span>
+  <span class="hljs-comment">//e.g. Section, LandingPage, Full, Half</span>
+} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@janskvaril/gabro-framework&#x27;</span></code></pre>
+				<p>And use them :)</p>
+				<pre><code class="language-jsx">
+&lt;Section styled={<span class="hljs-literal">true</span>} color=<span class="hljs-string">&quot;rgba(0,0,0,0.8)&quot;</span>&gt;
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Half</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Hello from Gabro-Framework!<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>And enjoy using it ❤️<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Half</span>&gt;</span></span>
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Half</span>&gt;</span>  
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Need help?<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Reading documentation may help 😊<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Half</span>&gt;</span></span>
+&lt;/Section&gt;
+</code></pre>
 				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
 					<h2>Documentation</h2>
 				</a>
