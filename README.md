@@ -23,7 +23,7 @@ MIT
 We also develop a simple app for creating websites using this framework: [Gabro-Builder](https://github.com/JanSkvaril/Gabro-Builder). 
 
 ## installation
-`npm install @janskvaril/gabro-framework`
+`npm i gabro-framework`
 
 ### Basic usage
 Import any components you want to use:
@@ -31,7 +31,7 @@ Import any components you want to use:
 import {
   //Here write components you want to use
   //e.g. Section, LandingPage, Full, Half
-} from '@janskvaril/gabro-framework'
+} from 'gabro-framework'
 ```
 And use them :)
 ```jsx
